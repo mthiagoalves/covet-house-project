@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Header from '@/components/used-components/Header.vue';
 import AppLayout from '@/layouts/app/AppSidebarLayout.vue';
 import type { BreadcrumbItemType } from '@/types';
 
@@ -12,7 +13,11 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-    <AppLayout :breadcrumbs="breadcrumbs">
-        <slot />
-    </AppLayout>
+    <div class="min-h-screen bg-gray-50 text-gray-900">
+        <Header />
+        <main class="mx-auto max-w-7xl p-6">
+            <slot />
+        </main>
+        <!-- Footer virá depois -->
+    </div>
 </template>
