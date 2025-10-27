@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Header from '@/components/used-components/Header.vue';
+import Footer from '@/components/used-components/Footer.vue';
 import AppLayout from '@/layouts/app/AppSidebarLayout.vue';
 import type { BreadcrumbItemType } from '@/types';
 
@@ -18,6 +19,6 @@ withDefaults(defineProps<Props>(), {
         <main class="mx-auto max-w-7xl p-6">
             <slot />
         </main>
-        <!-- Footer virá depois -->
+        <Footer />
     </div>
 </template>
