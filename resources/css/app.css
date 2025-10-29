@@ -80,6 +80,29 @@
     html {
         font-family: 'Lato', sans-serif;
     }
+
+    html::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    html::-webkit-scrollbar-track {
+        background: #333333;
+    }
+
+    html::-webkit-scrollbar-thumb {
+        background-color: #bca479;
+        border-radius: 6px;
+        border: 3px solid #2a2a2a;
+    }
+
+    html::-webkit-scrollbar-thumb:hover {
+        background-color: #aaa;
+    }
+
+    html {
+        scrollbar-width: thin;
+        scrollbar-color: #bca479 #333333;
+    }
 }
 
 :root {

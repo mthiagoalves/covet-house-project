@@ -9,11 +9,10 @@ import { initializeTheme } from './composables/useAppearance';
 // 1. Importe o seu layout principal
 import AppLayout from '@/layouts/AppLayout.vue'; // <-- ADICIONE ESTA LINHA
 
-const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
+const appName = import.meta.env.VITE_APP_NAME;
 
 createInertiaApp({
-    title: (title) => (title ? `${title} - ${appName}` : appName),
-
+    title: (title) => (title ? `${appName} - ${title}` : appName),
     // 2. Modifique a função 'resolve' para ser 'async'
     resolve: async (name) => { // <-- MUDE AQUI
         const page = await resolvePageComponent( // <-- MUDE AQUI

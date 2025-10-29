@@ -43,7 +43,7 @@ const inputClass = "w-full bg-white border-0 border-b text-sm border-gray-500 py
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
-                <div class="lg:col-span-8 m-auto md:pr-24">
+                <div class="lg:col-span-8 m-auto md:pr-24 md:px-0 px-2 pt-5 md:pt-0">
 
                     <div class="grid grid-cols-1 md:grid-cols-12 items-center">
 
@@ -54,7 +54,7 @@ const inputClass = "w-full bg-white border-0 border-b text-sm border-gray-500 py
                         </div>
 
                         <div class="md:col-span-7">
-                            <h2 class="text-[16px] font-bold text-white mb-4">THE ULTIMATE INSPIRATIONS DESIGN BOOK</h2>
+                            <h2 class="text-[16px] font-bold text-white md:mb-3 md:mt-0 mt-4">THE ULTIMATE INSPIRATIONS DESIGN BOOK</h2>
                             <p class="text-[10px] font-bold mb-2">SELECT YOUR PROFILE</p>
 
                             <div class="flex gap-4 mb-2 text-[10px]">
@@ -104,7 +104,7 @@ const inputClass = "w-full bg-white border-0 border-b text-sm border-gray-500 py
                                 <div class="flex items-start justify-between gap-2">
 
                                     <label for="terms" class="text-[10px]">
-                                        BY CLICKING REQUEST YOU CONFIRM THAT YOU HAVE <br>
+                                        BY CLICKING REQUEST YOU CONFIRM THAT YOU HAVE <br class="hidden md:block">
                                         READ AND ACCEPTED OUR
                                         <Link href="#" class="text-[#bca479]">PRIVACY POLICY.</Link>
                                     </label>
