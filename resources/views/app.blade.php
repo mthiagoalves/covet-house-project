@@ -1,43 +1,35 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"  @class(['dark' => ($appearance ?? 'system') == 'dark'])>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" @class(['dark' => ($appearance ?? 'system') == 'dark'])>
 
-        <script>
-            (function() {
-                const appearance = '{{ $appearance ?? "system" }}';
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-                if (appearance === 'system') {
-                    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    <script>
+        (function() {
+            const appearance = '{{ $appearance ?? 'system' }}';
 
-                    if (prefersDark) {
-                        document.documentElement.classList.add('dark');
-                    }
+            if (appearance === 'system') {
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+                if (prefersDark) {
+                    document.documentElement.classList.add('dark');
                 }
-            })();
-        </script>
-
-        <style>
-            html {
-                background-color: oklch(1 0 0);
             }
+        })();
+    </script>
+    <title inertia>{{ config('app.name') }}</title>
 
-            html.dark {
-                background-color: oklch(0.145 0 0);
-            }
-        </style>
+    <link rel="icon" href="/favicon-covet-house.ico" sizes="any">
+    <link rel="icon" href="/favicon-covet-house.png" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/favicon-covet-house.png">
 
-        <title inertia>{{ config('app.name') }}</title>
+    @vite(['resources/js/app.ts', "resources/js/pages/{$page['component']}.vue"])
+    @inertiaHead
+</head>
 
-        <link rel="icon" href="/favicon-covet-house.ico" sizes="any">
-        <link rel="icon" href="/favicon-covet-house.png" type="image/svg+xml">
-        <link rel="apple-touch-icon" href="/favicon-covet-house.png">
+<body class="font-sans antialiased">
+    @inertia
+</body>
 
-        @vite(['resources/js/app.ts', "resources/js/pages/{$page['component']}.vue"])
-        @inertiaHead
-    </head>
-    <body class="font-sans antialiased">
-        @inertia
-    </body>
 </html>
