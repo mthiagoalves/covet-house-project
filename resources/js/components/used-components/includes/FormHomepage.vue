@@ -33,7 +33,7 @@ watch(() => form.profile_type, (newProfileType) => {
     }
 });
 
-const inputClass = "w-full bg-white border-0 border-b text-sm border-gray-500 py-1 px-2 text-black placeholder-gray-400 focus:outline-none focus:border-white focus:ring-0";
+const inputClass = "w-full bg-white border-0 border-b text-[11px] font-bold border-gray-500 py-1 px-2 text-black placeholder-gray-400 focus:outline-none focus:border-white focus:ring-0";
 </script>
 
 <template>
@@ -54,7 +54,8 @@ const inputClass = "w-full bg-white border-0 border-b text-sm border-gray-500 py
                         </div>
 
                         <div class="md:col-span-7">
-                            <h2 class="text-[16px] font-bold text-white md:mb-3 md:mt-0 mt-4">THE ULTIMATE INSPIRATIONS DESIGN BOOK</h2>
+                            <h2 class="text-[16px] font-bold text-white md:mb-3 md:mt-0 mt-4">THE ULTIMATE INSPIRATIONS
+                                DESIGN BOOK</h2>
                             <p class="text-[10px] font-bold mb-2">SELECT YOUR PROFILE</p>
 
                             <div class="flex gap-4 mb-2 text-[10px]">
@@ -118,14 +119,16 @@ const inputClass = "w-full bg-white border-0 border-b text-sm border-gray-500 py
                         </div>
                     </div>
                 </div>
-
-                <div class="lg:col-span-4 flex flex-col items-center justify-center text-center py-14 bg-[url(/images/backgrounds/background-form-home.jpg)] bg-no-repeat bg-cover">
-                    <p class="text-[1.1rem] tracking-wider leading-5 font-bold text-white mb-4">COVET HOUSE <br> <span class="text-[12px]">CATALOGUE</span></p>
-                    <img src="/images/mockup-ebooks/catalogue-covet-house.png"
-                        alt="The Most Powerful Tool to Inspire" class="max-w-full h-auto mb-6">
-                    <Link href="/catalogue/download"
-                        class="border-b border-white text-white tracking-wider hover:bg-white hover:text-black transition-colors">
-                    DOWNLOAD NOW
+                <div
+                    class="lg:col-span-4 flex flex-col items-center justify-center text-center py-14 bg-[url(/images/backgrounds/background-form-home.jpg)] bg-no-repeat bg-cover">
+                    <Link href="#">
+                    <p class="text-[1.1rem] tracking-wider leading-5 font-bold text-white mb-4">COVET HOUSE <br> <span
+                            class="text-[12px]">CATALOGUE</span></p>
+                    <img src="/images/mockup-ebooks/catalogue-covet-house.png" alt="The Most Powerful Tool to Inspire"
+                        class="max-w-full h-auto mb-6">
+                    <p class="border-b border-white text-white tracking-wider transition-colors inline-block">
+                        DOWNLOAD NOW
+                    </p>
                     </Link>
                 </div>
 
