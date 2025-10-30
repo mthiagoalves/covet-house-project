@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
-import { ref, onMounted, onBeforeUnmount } from 'vue';
-import { usePage, Link } from '@inertiajs/vue3';
+import { Link, usePage } from '@inertiajs/vue3';
+import { onBeforeUnmount, onMounted, ref } from 'vue';
 
 const utilityLinks = [
     { label: 'ABOUT', href: '/about' },
@@ -67,11 +67,7 @@ function onScroll() { isSticky.value = window.scrollY > 24 }
 onMounted(() => { window.addEventListener('scroll', onScroll) })
 onBeforeUnmount(() => { window.removeEventListener('scroll', onScroll) })
 
-
-// opcional: active state simples com path atual
 const currentUrl = usePage().url
-const isActive = (href: string) => currentUrl === href
-
 </script>
 <template>
     <header :class="['w-full z-40', isSticky ? 'sticky top-0 shadow-[0_1px_0_rgba(255,255,255,0.06)]' : '']">
