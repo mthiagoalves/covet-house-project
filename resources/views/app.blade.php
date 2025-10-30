@@ -29,6 +29,27 @@
 </head>
 
 <body class="font-sans antialiased">
+    <style>
+        .swiper-button-prev,
+        .swiper-button-next {
+            color: #ffffff83;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            transition: ease-in-out;
+            transition-duration: .5s;
+        }
+
+        .swiper-button-prev:hover,
+        .swiper-button-next:hover {
+            color: #ffffff;
+        }
+
+        .swiper-button-prev::after,
+        .swiper-button-next::after {
+            font-size: 16px;
+        }
+    </style>
     @inertia
 </body>
 

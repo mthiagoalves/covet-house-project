@@ -105,7 +105,7 @@ const modules = [Navigation];
 
 <template>
     <div class="w-full room-slider bg-black">
-        <h3 class="text-white text-[20px] text-center py-5 font-normal tracking-wider">SHOP BY ROOM</h3>
+        <h3 class="text-white text-[20px] text-center py-5 font-light tracking-wider">SHOP BY ROOM</h3>
         <Swiper :modules="modules" :slides-per-view="1" :space-between="6" :navigation="true" :loop="true" :breakpoints="{
             768: {
                 slidesPerView: 2,
@@ -143,25 +143,5 @@ const modules = [Navigation];
         width: auto !important;
         max-width: 59.3% !important
     }
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-    color: #ffffff83;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    transition: ease-in-out;
-    transition-duration: .5s;
-}
-
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-    color: #ffffff;
-}
-
-.swiper-button-prev::after,
-.swiper-button-next::after {
-    font-size: 16px;
 }
 </style>

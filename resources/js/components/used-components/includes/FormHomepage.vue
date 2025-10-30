@@ -50,7 +50,7 @@ const inputClass = "w-full bg-white border-0 border-b text-[11px] font-bold bord
                         <div class="md:col-span-5">
                             <img src="/images/mockup-ebooks/the-ultimate-inspirations-design-book.png"
                                 alt="The Ultimate Inspirations Design Book - Mockup - Covet House"
-                                class="max-w-full h-auto m-auto">
+                                class="m-auto">
                         </div>
 
                         <div class="md:col-span-7">
@@ -125,7 +125,7 @@ const inputClass = "w-full bg-white border-0 border-b text-[11px] font-bold bord
                     <p class="text-[1.1rem] tracking-wider leading-5 font-bold text-white mb-4">COVET HOUSE <br> <span
                             class="text-[12px]">CATALOGUE</span></p>
                     <img src="/images/mockup-ebooks/catalogue-covet-house.png" alt="The Most Powerful Tool to Inspire"
-                        class="max-w-full h-auto mb-6">
+                        class="mb-6">
                     <p class="border-b border-white text-white tracking-wider transition-colors inline-block">
                         DOWNLOAD NOW
                     </p>

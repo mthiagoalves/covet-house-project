@@ -12,7 +12,7 @@ import { Link } from '@inertiajs/vue3';
                         playsinline>
                         Seu navegador não suporta a tag de vídeo.
                     </video>
-                    <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/70 to-transparent">
+                    <div class="absolute -bottom-0.5 left-0 w-full h-1/2 bg-gradient-to-t from-black/70 to-transparent">
                     </div>
                     <div class="absolute bottom-6 left-0 text-white w-full text-center z-10">
                         <h3 class="text-sm font-bold">PROJECTS</h3>
@@ -30,7 +30,7 @@ import { Link } from '@inertiajs/vue3';
                         <img src="/images/banners/id-service-m.jpg" alt="The Most Powerful Tool to Inspire"
                             class="w-full h-full object-cover block md:hidden">
                         <div
-                            class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/70 to-transparent">
+                            class="absolute -bottom-0.5 left-0 w-full h-1/2 bg-gradient-to-t from-black/70 to-transparent">
                         </div>
                         <div class="absolute bottom-6 left-0 text-white w-full text-center z-10">
                             <h3 class="text-sm font-bold uppercase">Looking for Interior Design Solutions <br
