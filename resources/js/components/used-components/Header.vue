@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
-import { Link, usePage } from '@inertiajs/vue3';
-import { onBeforeUnmount, onMounted, ref } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { usePage, Link } from '@inertiajs/vue3';
 
 const utilityLinks = [
     { label: 'ABOUT', href: '/about' },
@@ -68,6 +68,8 @@ onMounted(() => { window.addEventListener('scroll', onScroll) })
 onBeforeUnmount(() => { window.removeEventListener('scroll', onScroll) })
 
 const currentUrl = usePage().url
+const isActive = (href: string) => currentUrl === href
+
 </script>
 <template>
     <header :class="['w-full z-40', isSticky ? 'sticky top-0 shadow-[0_1px_0_rgba(255,255,255,0.06)]' : '']">
@@ -120,7 +122,7 @@ const currentUrl = usePage().url
         <div class="w-full bg-black text-gray-200">
             <div class="mx-auto max-w-full px-4">
                 <div class="h-18 flex items-center justify-between">
-                    <div class="flex items-center gap-3 justify-between">
+                    <div class="flex items-center gap-3 justify-between w-full md:w-3/6">
                         <button class="md:hidden" @click="mobileOpen = true" aria-label="Open menu">
                             <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class="w-6 h-6" fill='none'
                                 stroke='currentColor' stroke-width='1.5'>
