@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useForm, Link } from '@inertiajs/vue3';
-import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/vue';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -12,6 +12,7 @@ const slideData = [
         title: 'A MODERN HAVEN BY THE LAKE',
         subtitle: 'A SWISS VILLA BETWEEN GENEVA AND LAUSANNE',
         imgSrc: '/images/mockup-ebooks/a-modern-haven-by-the-lake.png',
+        linkToPage: '#',
         formPostUrl: '/download-catalogue'
     },
     {
@@ -19,6 +20,7 @@ const slideData = [
         title: 'NEW CATALOGUE',
         subtitle: 'COVET HOUSE',
         imgSrc: '/images/mockup-ebooks/catalogue-covet-house.png',
+        linkToPage: '#',
         formPostUrl: '/download-catalogue'
     },
     {
@@ -26,6 +28,7 @@ const slideData = [
         title: 'THE ULTIMATE INSPIRATIONS',
         subtitle: 'DESIGN BOOK',
         imgSrc: '/images/mockup-ebooks/the-ultimate-inspirations-design-book.png',
+        linkToPage: '#',
         formPostUrl: '/download-catalogue'
     },
     {
@@ -33,6 +36,7 @@ const slideData = [
         title: '100 LUXURY KIDS ROOMS',
         subtitle: 'CIRCU',
         imgSrc: '/images/mockup-ebooks/100-luxury-kids-rooms-circu.png',
+        linkToPage: '#',
         formPostUrl: '/download-catalogue'
     },
     {
@@ -40,6 +44,7 @@ const slideData = [
         title: 'THE SIGNATURE CAPSULES INSPIRATIONS DESIGN BOOK',
         subtitle: 'COVET COLLECTION',
         imgSrc: '/images/mockup-ebooks/the-signature-capsules-inspirations-book.png',
+        linkToPage: '#',
         formPostUrl: '/download-catalogue'
     },
     {
@@ -47,6 +52,7 @@ const slideData = [
         title: 'NEUTRAL MODERN INSPIRATIONS BOOK',
         subtitle: 'CAFFE LATTE',
         imgSrc: '/images/mockup-ebooks/neutral-modern-inspirations-book-caffe-latte.png',
+        linkToPage: '#',
         formPostUrl: '/download-catalogue'
     },
     {
@@ -54,6 +60,7 @@ const slideData = [
         title: 'CATALOGUE',
         subtitle: 'BOCA DO LOBO',
         imgSrc: '/images/mockup-ebooks/catalogue-boca-lobo.png',
+        linkToPage: '#',
         formPostUrl: '/download-catalogue'
     },
     {
@@ -61,6 +68,7 @@ const slideData = [
         title: 'COVETED MAGAZINE',
         subtitle: '30TH EDITION',
         imgSrc: '/images/mockup-ebooks/coveted-30.png',
+        linkToPage: '#',
         formPostUrl: '/download-catalogue'
     },
 ];
@@ -95,12 +103,10 @@ const modules = [Navigation];
         <div class="max-w-full mx-auto catalogue-slider">
             <Swiper :modules="modules" :slides-per-view="1" :space-between="6" :navigation="true" :loop="true"
                 :breakpoints="{
-                    // 768px (tablets): 2 slides
                     768: {
                         slidesPerView: 2,
                         spaceBetween: 6
                     },
-                    // 1024px (desktops): 3 slides
                     1024: {
                         slidesPerView: 3,
                         spaceBetween: 6
@@ -108,20 +114,20 @@ const modules = [Navigation];
                 }">
                 <SwiperSlide v-for="(slide, index) in slideData" :key="slide.id" class="bg-[#333333]">
                     <div class="flex flex-col text-center my-6">
-
+                        <Link :href="slide.linkToPage">
                         <h3 class="text-sm font-semibold text-white tracking-wider">{{ slide.title }}</h3>
                         <p class="text-sm text-white h-8">{{ slide.subtitle }}</p>
 
-                        <img :src="slide.imgSrc" :alt="slide.title" class="max-w-full h-auto m-auto mb-4"
-                            style="max-width: 400px; max-height: 400px;" />
+                        <img :src="slide.imgSrc" :alt="slide.title" class="h-auto m-auto mb-4 max-w-[400px] max-h-[400px]"/>
 
+                        </Link>
                         <form @submit.prevent="submit(forms[index], slide.formPostUrl)" class="w-9/12 mx-auto">
-                            <div class="flex items-center bg-white p-1">
+                            <div class="flex items-center bg-[#333333] border border-white p-1">
                                 <input type="email" v-model="forms[index].email"
-                                    class="w-full bg-transparent border-0 text-black placeholder-gray-500 text-sm focus:outline-none px-2"
+                                    class="w-full bg-transparent border-0 text-white placeholder-gray-500 text-sm focus:outline-none px-2"
                                     placeholder="EMAIL*" required>
                                 <button type="submit"
-                                    class="text-xs text-black font-semibold whitespace-nowrap px-3 py-2 hover:bg-gray-100 transition-colors"
+                                    class="text-xs text-black bg-white font-semibold whitespace-nowrap px-3 py-1 cursor-pointer hover:bg-gray-100 transition-colors"
                                     :disabled="forms[index].processing">
                                     DOWNLOAD NOW
                                 </button>
