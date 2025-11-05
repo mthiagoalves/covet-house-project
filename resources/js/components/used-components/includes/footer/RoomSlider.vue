@@ -2,7 +2,7 @@
 import { Link } from '@inertiajs/vue3';
 import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-
+import { useGeneralModal } from '@/composables/useGeneralModal';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
@@ -101,6 +101,20 @@ const rooms = [
 ];
 
 const modules = [Navigation];
+
+const { open } = useGeneralModal();
+
+function openGeneralModal(room: any) {
+    const modalData = {
+        title: room.title,
+        imgSrc: 'Image room: ' + room.imgSrc,
+        href: room.href,
+        pagePosition: 'Bottom',
+        formType: 'Price',
+        page: 'Landing Pages',
+    };
+    open(modalData); // Chama a função global
+}
 </script>
 
 <template>
@@ -126,10 +140,10 @@ const modules = [Navigation];
 
                 <div class="absolute bottom-6 left-0 text-white w-full text-center">
                     <h3 class="text-sm font-bold">{{ room.title }}</h3>
-                    <Link :href="room.priceHref"
-                        class="text-[12px] font-light tracking-wider text-white transition-colors border-b border-white">
-                    GET ROOM PRICE >
-                    </Link>
+                    <button @click.prevent="openGeneralModal(room)"
+                        class="text-[12px] font-light tracking-wider text-white transition-colors border-b border-white cursor-pointer">
+                        GET ROOM PRICE >
+                    </button>
                 </div>
                 </Link>
             </SwiperSlide>
