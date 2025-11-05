@@ -2,6 +2,7 @@
 
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import { usePage, Link } from '@inertiajs/vue3';
+import { useSearchModal } from '@/composables/useSearchModal';
 
 const utilityLinks = [
     { label: 'ABOUT', href: '/about' },
@@ -10,8 +11,6 @@ const utilityLinks = [
     { label: '$ STOCKLIST', href: '/stocklist' },
 ]
 
-// --- DADOS ATUALIZADOS ---
-// 'roomCats' foi movido para dentro de '❤ ROOM BY ROOM'
 const mainLinks = [
     {
         label: 'BRANDS',
@@ -104,9 +103,10 @@ function onScroll() { isSticky.value = window.scrollY > 24 }
 onMounted(() => { window.addEventListener('scroll', onScroll) })
 onBeforeUnmount(() => { window.removeEventListener('scroll', onScroll) })
 
-const currentUrl = usePage().url
-const isActive = (href: string) => currentUrl === href
+const currentUrl = usePage().url;
+const isActive = (href: string) => currentUrl === href;
 
+const { open: openSearch } = useSearchModal();
 </script>
 <template>
     <header :class="['w-full z-40', isSticky ? 'sticky top-0 shadow-[0_1px_0_rgba(255,255,255,0.06)]' : '']">
@@ -147,7 +147,7 @@ const isActive = (href: string) => currentUrl === href
                             </transition>
                         </div>
                     </nav>
-                    <button class="hover:text-[#ffffff]" aria-label="Search">
+                    <button class="hover:text-[#bca479] cursor-pointer" aria-label="Search" @click="openSearch">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="1.5">
                             <circle cx="11" cy="11" r="7" />
@@ -161,7 +161,7 @@ const isActive = (href: string) => currentUrl === href
             <div class="mx-auto max-w-full px-4">
                 <div class="h-20 flex items-center justify-between">
                     <div class="flex items-center gap-3 justify-between w-full md:w-3/6">
-                        <button class="md:hidden" @click="mobileOpen = true" aria-label="Open menu">
+                        <button class="md:hidden" @click="mobileOpen = true" aria-label="Open menu" >
                             <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class="w-6 h-6" fill='none'
                                 stroke='currentColor' stroke-width='1.5'>
                                 <path d='M4 7h16M4 12h16M4 17h16' />
@@ -170,7 +170,7 @@ const isActive = (href: string) => currentUrl === href
                         <Link href="/" class="block"> <img src="/images/header/logo.png" alt="Logo Covet House"
                             class="w-[167px] h-full">
                         </Link>
-                        <button class="hover:text-[#bca479] md:hidden" aria-label="Search"> <svg
+                        <button class="hover:text-[#bca479] md:hidden" aria-label="Search" @click="openSearch"> <svg
                                 xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" stroke-width="1.5">
                                 <circle cx="11" cy="11" r="7" />
