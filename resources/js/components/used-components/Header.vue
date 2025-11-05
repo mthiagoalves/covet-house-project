@@ -65,17 +65,17 @@ const mainLinks = [
 const productLinks = [
     {
         label: 'PRODUCTS',
-        href: '/products',
+        href: '/all-products',
         children: [
-            { label: 'ALL PRODUCTS', href: '/products/all-products' },
-            { label: 'NEW PRODUCTS', href: '/products/new-products' },
-            { label: 'CASEGOODS', href: '/products/casegoods' },
-            { label: 'SEATING', href: '/products/seating' },
-            { label: 'TABLES', href: '/products/tables' },
-            { label: 'LIGHTING', href: '/products/lighting' },
-            { label: 'KIDS', href: '/products/kids' },
-            { label: 'BATHROOMS', href: '/products/bathrooms' },
-            { label: 'RUGS', href: '/products/rugs' }
+            { label: 'ALL PRODUCTS', href: '/all-products' },
+            { label: 'NEW PRODUCTS', href: '/new-products' },
+            { label: 'CASEGOODS', href: '/category/casegoods' },
+            { label: 'SEATING', href: '/category/seating' },
+            { label: 'TABLES', href: '/category/tables' },
+            { label: 'LIGHTING', href: '/category/lighting' },
+            { label: 'KIDS', href: '/category/kids' },
+            { label: 'BATHROOMS', href: '/category/bathrooms' },
+            { label: 'RUGS', href: '/category/rugs' }
         ]
     }
 ]
