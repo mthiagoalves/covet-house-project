@@ -80,6 +80,7 @@
     html {
         font-family: 'Lato', sans-serif;
         background: black;
+        scroll-behavior: smooth;
     }
 
     html::-webkit-scrollbar {
