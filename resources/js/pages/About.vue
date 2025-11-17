@@ -106,7 +106,10 @@ function openNewsletterModal() {
     openModal({
         title: 'NEWSLETTER',
         slug: 'newsletter-subscription',
-        btnName: 'SUBSCRIBE'
+        btnName: 'SUBSCRIBE',
+        pagePosition: 'Bottom',
+        formType: 'Subscribe',
+        page: 'Landing Pages',
     });
 }
 
@@ -114,7 +117,10 @@ function openContactModal() {
     openModal({
         title: 'CONTACT US',
         slug: 'contact-form',
-        btnName: 'SEND MESSAGE'
+        btnName: 'SEND MESSAGE',
+        pagePosition: 'Bottom',
+        formType: 'Contact',
+        page: 'Landing Pages',
     });
 }
 </script>
@@ -167,11 +173,11 @@ function openContactModal() {
                 <h3 class="text-lg font-semibold uppercase tracking-widest mb-3">
                     NEWSLETTER
                 </h3>
-                <p class="text-sm text-gray-600 mb-6 max-w-xs">
+                <p class="text-sm text-gray-600 mb-6 max-w-xs h-9">
                     Subscribe to our newsletter and be the first to discover all news.
                 </p>
                 <button @click="openNewsletterModal" class="border border-black text-black py-2.5 px-10 text-sm font-semibold tracking-wider
-                           hover:bg-black hover:text-white transition-colors">
+                           hover:bg-black hover:text-white transition-colors cursor-pointer">
                     SUBSCRIBE NEWS
                 </button>
             </div>
@@ -180,11 +186,11 @@ function openContactModal() {
                 <h3 class="text-lg font-semibold uppercase tracking-widest mb-3">
                     CONTACT
                 </h3>
-                <p class="text-sm text-gray-600 mb-6 max-w-xs">
+                <p class="text-sm text-gray-600 mb-6 max-w-xs h-9">
                     Let's KEEP the conversation going.
                 </p>
                 <button @click="openContactModal" class="border border-black text-black py-2.5 px-10 text-sm font-semibold tracking-wider
-                           hover:bg-black hover:text-white transition-colors">
+                           hover:bg-black hover:text-white transition-colors cursor-pointer">
                     CONTACT US
                 </button>
             </div>

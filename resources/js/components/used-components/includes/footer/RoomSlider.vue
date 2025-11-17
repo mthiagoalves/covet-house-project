@@ -113,7 +113,7 @@ function openGeneralModal(room: any) {
         formType: 'Price',
         page: 'Landing Pages',
     };
-    open(modalData); // Chama a função global
+    open(modalData);
 }
 </script>
 
