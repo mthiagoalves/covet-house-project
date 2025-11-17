@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -14,6 +15,8 @@ Route::get('/all-products', [ProductController::class, 'allProducts'])->name('pr
 Route::get('/new-products', [ProductController::class, 'newProducts'])->name('products.new');
 
 Route::get('/category/{slug}', [ProductController::class, 'category'])->name('products.category');
+
+Route::get('/about', [PageController::class, 'about'])->name('about');
 
 Route::get('dashboard', function () {
     return Inertia::render('Dashboard');
