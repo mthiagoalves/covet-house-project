@@ -12,9 +12,7 @@ const videoPlayer = ref<HTMLVideoElement | null>(null);
 
 const mobileVideoUrl = computed(() => `${props.videoUrlBase}-mobile.mp4`);
 const desktopVideoUrlMp4 = computed(() => `${props.videoUrlBase}.mp4`);
-const desktopVideoUrlWebm = computed(() => `${props.videoUrlBase}.webm`); // Opcional, mas recomendado
 
-// 4. Lógica de Mute/Unmute (como na imagem)
 const isMuted = ref(true);
 function toggleMute() {
     if (videoPlayer.value) {
@@ -29,7 +27,6 @@ function toggleMute() {
 
         <video ref="videoPlayer" class="absolute inset-0 w-full h-full object-cover z-0" autoplay loop muted playsinline
             preload="auto">
-            <source :src="desktopVideoUrlWebm" type="video/webm" media="all and (min-width: 768px)">
             <source :src="desktopVideoUrlMp4" type="video/mp4" media="all and (min-width: 768px)">
             <source :src="desktopVideoUrlMp4" type="video/mp4" media="(max-width: 767px)">
             O seu navegador não suporta a tag de vídeo.
