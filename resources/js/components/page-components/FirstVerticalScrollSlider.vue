@@ -30,8 +30,8 @@ defineProps<{
 
 <template>
     <div class="relative h-[calc(100svh-72px)] md:h-[calc(100svh-108px)] bg-black text-white">
-        <div class="position absolute top-10 left-16 z-20 text-start">
-            <h2 class="text-4xl font-light tracking-widest uppercase mb-10">
+        <div class="position absolute top-10 md:left-16 z-20 text-center md:text-start w-full">
+            <h2 class="text-xl md:text-4xl font-light tracking-widest uppercase mb-10">
                 {{ mainTitle }} </h2>
         </div>
 
@@ -46,10 +46,10 @@ defineProps<{
                 bulletActiveClass: 'vertical-pagination-bullet-active',
             }">
 
-            <SwiperSlide v-for="(slide, index) in slides" :key="index" class="w-full h-full bg-cover bg-center"
+            <SwiperSlide v-for="(slide, index) in slides" :key="index" class="w-full md:h-full bg-cover bg-center"
                 :style="{ backgroundImage: `url(${slide.imgSrc})` }">
-                <div class="relative z-10 max-w-1/3 h-full flex flex-col justify-center bg-[#00000080]">
-                    <div class="w-full md:w-4/5 mx-16 px-6">
+                <div class="relative z-10 max-w-full md:max-w-1/3 h-full flex flex-col justify-center bg-[#00000080]">
+                    <div class="w-full md:w-4/5 md:mx-16 px-6">
                         <ul class="space-y-4">
                             <li v-for="item in slide.items" :key="item.title">
                                 <h4 class="text-sm font-semibold tracking-wider uppercase">
@@ -75,7 +75,7 @@ defineProps<{
             </SwiperSlide>
         </Swiper>
 
-        <div class="absolute w-full max-w-1/4 bottom-10 left-16 z-20 flex flex-col items-center gap-1 cursor-pointer">
+        <div class="absolute w-full md:max-w-1/4 bottom-10 md:left-16 z-20 flex flex-col items-center gap-1 cursor-pointer">
             <div class="w-8 h-12 border border-white rounded-full relative flex justify-center pt-2">
                 <div class="w-1 h-3 bg-white rounded-full animate-bounce"></div>
             </div>
