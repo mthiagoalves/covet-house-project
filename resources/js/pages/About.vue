@@ -3,6 +3,7 @@ import { Head } from '@inertiajs/vue3';
 import VideoHero from '@/components/page-components/VideoHero.vue';
 import CategorySlider from '@/components/page-components/CategorySlider.vue';
 import FirstVerticalScrollSlider from '@/components/page-components/FirstVerticalScrollSlider.vue';
+import { useGeneralModal } from '@/composables/useGeneralModal';
 
 const videoHeroData = {
     videoUrlBase: '/videos/covet-house-about-hero',
@@ -96,6 +97,26 @@ const ourToolsData = {
         },
     ]
 };
+
+// 2. Obtenha a função 'open'
+const { open: openModal } = useGeneralModal();
+
+// 3. Função para o botão "Newsletter"
+function openNewsletterModal() {
+    openModal({
+        title: 'NEWSLETTER',
+        slug: 'newsletter-subscription',
+        btnName: 'SUBSCRIBE'
+    });
+}
+
+function openContactModal() {
+    openModal({
+        title: 'CONTACT US',
+        slug: 'contact-form',
+        btnName: 'SEND MESSAGE'
+    });
+}
 </script>
 
 <template>
@@ -136,5 +157,39 @@ const ourToolsData = {
         :main-title="whyWorkWithUsData.mainTitle" />
 
     <FirstVerticalScrollSlider class="mt-[6px]" :slides="ourToolsData.slides" :main-title="ourToolsData.mainTitle" />
+
+    <div class="w-full bg-white text-black py-20 px-6">
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 relative">
+
+            <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gray-200 hidden md:block"></div>
+
+            <div class="flex flex-col items-center text-center relative z-10">
+                <h3 class="text-lg font-semibold uppercase tracking-widest mb-3">
+                    NEWSLETTER
+                </h3>
+                <p class="text-sm text-gray-600 mb-6 max-w-xs">
+                    Subscribe to our newsletter and be the first to discover all news.
+                </p>
+                <button @click="openNewsletterModal" class="border border-black text-black py-2.5 px-10 text-sm font-semibold tracking-wider
+                           hover:bg-black hover:text-white transition-colors">
+                    SUBSCRIBE NEWS
+                </button>
+            </div>
+
+            <div class="flex flex-col items-center text-center relative z-10">
+                <h3 class="text-lg font-semibold uppercase tracking-widest mb-3">
+                    CONTACT
+                </h3>
+                <p class="text-sm text-gray-600 mb-6 max-w-xs">
+                    Let's KEEP the conversation going.
+                </p>
+                <button @click="openContactModal" class="border border-black text-black py-2.5 px-10 text-sm font-semibold tracking-wider
+                           hover:bg-black hover:text-white transition-colors">
+                    CONTACT US
+                </button>
+            </div>
+
+        </div>
+    </div>
 
 </template>

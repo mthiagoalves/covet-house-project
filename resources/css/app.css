@@ -81,6 +81,7 @@
         font-family: 'Lato', sans-serif;
         background: black;
         scroll-behavior: smooth;
+        overflow-x: hidden;
     }
 
     html::-webkit-scrollbar {
