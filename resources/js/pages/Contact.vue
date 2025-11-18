@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Head, useForm } from '@inertiajs/vue3';
 import { countries } from '@/data/countries';
+import CategorySlider from '@/components/page-components/CategorySlider.vue';
 
 const form = useForm({
     profile_type: 'professional', // professional | private
@@ -35,7 +36,8 @@ const inputClass = "w-full bg-[#f4f4f4] border-0 py-2 px-4 text-gray-700 placeho
         <div class="grid grid-cols-1 lg:grid-cols-2">
 
             <div class="relative h-96 lg:h-auto min-h-full">
-                <img src="/images/contact/ambience-contact.jpg" alt="Contact Us Covet House" />
+                <img src="/images/contact/ambience-contact.png"
+                    class="absolute inset-0 w-full h-full object-cover object-bottom" alt="Contact Us Covet House" />
             </div>
 
             <div class="p-8 bg-white text-black">
@@ -134,4 +136,7 @@ const inputClass = "w-full bg-[#f4f4f4] border-0 py-2 px-4 text-gray-700 placeho
 
         </div>
     </div>
+
+    <CategorySlider class="mt-1" />
+
 </template>
