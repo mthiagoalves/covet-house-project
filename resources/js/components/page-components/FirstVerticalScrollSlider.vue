@@ -1,17 +1,12 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-// 1. Importe os módulos de Scroll (Mousewheel) e Paginação
 import { Mousewheel, Pagination } from 'swiper/modules';
-
-// 2. Importe o CSS do Swiper E o CSS de Paginação
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-// 3. Defina os módulos que o Swiper vai usar
 const modules = [Mousewheel, Pagination];
 
-// 4. Defina a "forma" (interface) das props que esta página espera
 interface SlideItem {
     title: string;
     description: string;

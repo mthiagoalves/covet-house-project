@@ -6,6 +6,7 @@ import GeneralModal from '@/components/used-components/includes/modals/GeneralMo
 import { useSearchModal } from '@/composables/useSearchModal';
 import SearchModal from '@/components/used-components/includes/modals/SearchModal.vue';
 import type { BreadcrumbItemType } from '@/types';
+import ExitIntentModal from '@/components/used-components/includes/modals/ExitIntentModal.vue';
 
 interface Props {
     breadcrumbs?: BreadcrumbItemType[];
@@ -27,6 +28,7 @@ const { isOpen: isSearchOpen } = useSearchModal();
         </main>
         <GeneralModal v-if="isOpen" />
         <SearchModal v-if="isSearchOpen" />
+        <ExitIntentModal />
         <Footer />
     </div>
 </template>
