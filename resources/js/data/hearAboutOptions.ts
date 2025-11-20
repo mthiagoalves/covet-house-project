@@ -1,0 +1,22 @@
+export const hearAboutOptions = [
+    'MAGAZINE',
+    'AGENT',
+    'DISTRIBUTOR',
+    'INTERIOR DESIGNER',
+    'ARCHITECT',
+    'STORE',
+    'ONLINE STORE',
+    'ONLINE SEARCH',
+    'WEBSITE',
+    'BLOG',
+    'NEWSLETTER',
+    'MAISON & OBJET',
+    'ISALONI',
+    'FACEBOOK',
+    'TWITTER',
+    'PINTEREST',
+    'INSTAGRAM',
+    'LINKEDIN',
+    'YOUTUBE',
+    'OTHER'
+];
