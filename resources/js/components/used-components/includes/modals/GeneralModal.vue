@@ -111,7 +111,7 @@ const inputClass = "w-full bg-white border border-gray-300 text-[10px] py-1.5 px
                             </label>
                             <div class="md:text-right mt-2 md:mt-0 ml-auto md:ml-0">
                                 <button type="submit" :disabled="form.processing"
-                                    class="bg-black text-[11px] text-white py-1.5 px-10 font-light tracking-wider hover:bg-gray-800">
+                                    class="bg-black text-[11px] text-white py-1.5 px-10 font-light tracking-wider hover:bg-gray-800 cursor-pointer">
                                     {{ data.btnName }}
                                 </button>
                             </div>
