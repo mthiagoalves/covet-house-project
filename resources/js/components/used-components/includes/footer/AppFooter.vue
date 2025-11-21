@@ -18,10 +18,10 @@ const socialLinks = [
     { name: 'Pinterest', href: 'https://www.pinterest.com/covet__house/', src: 'pinterest.png' },
 ];
 const footerLinks = [
-    { label: 'FINISHES & MATERIALS', href: '#' },
-    { label: 'TALK WITH A DESIGNER', href: '#' },
-    { label: 'CUSTOMER SERVICE', href: '#' },
-    { label: 'CONTACT US', href: '#' },
+    { label: 'FINISHES & MATERIALS', href: '/samples' },
+    { label: 'TALK WITH A DESIGNER', href: '/interior-design-service' },
+    { label: 'CUSTOMER SERVICE', href: '/customer-service' },
+    { label: 'CONTACT US', href: '/contact-us' },
 ];
 const logos = [
     { name: 'Covet Design Group', href: 'https://covetgroup.com/?utm_source=website&utm_medium=partnersfooter&utm_content=covethouse-lifestyle&utm_campaign=brandawareness', src: '/images/logos/covet-group-logo.png' },

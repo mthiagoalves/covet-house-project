@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
-// Usando 'useGeneralModal' como você definiu no CategoryFormItem
 import { useGeneralModal } from '@/composables/useGeneralModal';
 
-// 1. Defina a "forma" (shape) do produto que este card espera
 const props = defineProps<{
     product: {
         id: number;
