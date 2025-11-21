@@ -6,7 +6,7 @@ import CategorySlider from '@/components/page-components/CategorySlider.vue';
 import BestSellersProducts from '@/components/page-components/BestSellersProducts.vue';
 
 defineProps<{
-    relatedProducts: any[]; // Ou use a interface completa se preferir tipagem forte
+    relatedProducts: any[];
 }>();
 
 const form = useForm({
@@ -72,7 +72,10 @@ const showrooms = [
 
                     <h1 class="text-2xl font-semibold tracking-widest uppercase mb-2">SEND US A MESSAGE</h1>
                     <p class="text-xs text-gray-500 mb-4 uppercase tracking-wide">
-                        Please provide your contact information below, along with any questions you may have...
+                        Please provide your contact information below, along with any questions you may have, so that
+                        our team can get in touch with you as soon as possible.
+
+
                     </p>
 
                     <form @submit.prevent="submit" class="space-y-2">
@@ -80,12 +83,12 @@ const showrooms = [
                         <div class="mb-2">
                             <p class="text-xs text-gray-400 mb-2 uppercase">Select Your Profile:</p>
                             <div class="flex gap-6 text-xs font-bold">
-                                <label class="flex items-center gap-2 cursor-pointer">
+                                <label class="flex items-center gap-2 cursor-pointer text-[10px]">
                                     <input type="radio" v-model="form.profile_type" value="professional"
                                         class="text-black focus:ring-black">
                                     PROFESSIONAL
                                 </label>
-                                <label class="flex items-center gap-2 cursor-pointer">
+                                <label class="flex items-center gap-2 cursor-pointer text-[10px]">
                                     <input type="radio" v-model="form.profile_type" value="private"
                                         class="text-black focus:ring-black">
                                     PRIVATE CLIENT
@@ -183,7 +186,8 @@ const showrooms = [
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90">
                 </div>
 
-                <div class="absolute bottom-5 md:bottom-10 left-0 right-0 flex flex-col items-center text-center text-white px-4">
+                <div
+                    class="absolute bottom-5 md:bottom-10 left-0 right-0 flex flex-col items-center text-center text-white px-4">
 
                     <h3 class="text-lg font-bold tracking-wider uppercase mb-1">
                         {{ room.title }}

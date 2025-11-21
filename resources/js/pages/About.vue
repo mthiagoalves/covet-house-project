@@ -129,6 +129,7 @@ function openContactModal() {
 
     <Head title="About Us" />
 
+    
     <VideoHero :video-url-base="videoHeroData.videoUrlBase" :title="videoHeroData.title"
         :subtitle="videoHeroData.subtitle" />
 
