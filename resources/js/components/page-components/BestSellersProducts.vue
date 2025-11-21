@@ -16,14 +16,14 @@ interface ProductData {
 }
 
 defineProps<{
-    title: string;
+    title?: string;
     products: ProductData[];
 }>();
 </script>
 
 <template>
     <div class="w-full bg-white">
-        <h3 class="text-center text-xl md:text-2xl font-light tracking-widest uppercase py-5 text-black">
+        <h3 v-if="title" class="text-center text-xl md:text-2xl font-light tracking-widest uppercase py-5 text-black">
             {{ title }}
         </h3>
 
