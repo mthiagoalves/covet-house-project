@@ -3,14 +3,67 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import { usePage, Link } from '@inertiajs/vue3';
 import { useSearchModal } from '@/composables/useSearchModal';
+import { useGeneralModal } from '@/composables/useGeneralModal';
 
-const utilityLinks = [
-    { label: 'ABOUT', href: '/about' },
-    { label: 'CONTACT US', href: '/contact' },
-    { label: 'CATALOGUE', href: '/catalogues', icon: 'download' },
-    { label: '$ STOCKLIST', href: '/stocklist' },
-]
+const { open: openGeneralModal } = useGeneralModal();
 
+interface LinkItem {
+    label: string;
+    href: string;
+    type: 'link';
+    icon?: string;
+    modalData?: undefined; // Links nunca têm modalData
+}
+
+interface ModalItem {
+    label: string;
+    href?: undefined; // Modais nunca têm href
+    type: 'modal';
+    icon?: string;
+    modalData: { // Modais SEMPRE têm modalData
+        title: string;
+        slug: string;
+        btnName: string;
+        formType: string;
+    };
+}
+
+type UtilityLink = LinkItem | ModalItem;
+
+// 2. Aplique o tipo ao array
+const utilityLinks: UtilityLink[] = [
+    {
+        label: 'ABOUT',
+        href: '/about',
+        type: 'link'
+    },
+    {
+        label: 'CONTACT US',
+        href: '/contact-us',
+        type: 'link'
+    },
+    {
+        label: 'CATALOGUE',
+        type: 'modal',
+        icon: 'download',
+        modalData: {
+            title: 'DOWNLOAD CATALOGUE',
+            slug: 'catalogue',
+            formType: 'Catalogue',
+            btnName: 'DOWNLOAD NOW'
+        }
+    },
+    {
+        label: '$ STOCKLIST',
+        type: 'modal',
+        modalData: {
+            title: 'GET STOCKLIST',
+            slug: 'stocklist',
+            formType: 'Stocklist',
+            btnName: 'DOWNLOAD NOW'
+        }
+    },
+];
 const mainLinks = [
     {
         label: 'BRANDS',
@@ -43,7 +96,7 @@ const mainLinks = [
     { label: 'CATALOGUES & BOOKS', href: '/catalogues-books' },
     {
         label: '❤ ROOM BY ROOM',
-        href: '/room-by-room',
+        href: '/inspirations',
         caret: false,
         children: [
             { label: 'ENTRYWAYS', href: '/rooms/entryways' },
@@ -109,13 +162,24 @@ const isActive = (href: string) => currentUrl === href;
 const { open: openSearch } = useSearchModal();
 </script>
 <template>
-    <header :class="['w-full z-40', isSticky ? 'sticky top-0 shadow-[0_1px_0_rgba(255,255,255,0.06)]' : '']">
+    <header :class="['w-full z-40 fixed top-0', isSticky ? 'shadow-[0_1px_0_rgba(255,255,255,0.06)]' : '']">
         <div class="hidden md:block w-full bg-[#333333] text-white text-[12px] tracking-[0.666px]">
             <div class="mx-auto flex justify-between px-4">
                 <nav class="flex items-center gap-4 h-7">
-                    <Link v-for="l in utilityLinks" :key="l.label" :href="l.href" class="flex items-center gap-1">
-                    <span v-if="l.icon === 'download'" aria-hidden="true">⬇</span>{{ l.label }}
-                    </Link>
+                    <template v-for="l in utilityLinks" :key="l.label">
+
+                        <Link v-if="l.type === 'link'" :href="l.href"
+                            class="flex items-center gap-1 hover:text-gray-300 transition-colors">
+                        {{ l.label }}
+                        </Link>
+
+                        <button v-else @click="openGeneralModal(l.modalData)"
+                            class="flex items-center gap-1 hover:text-gray-300 transition-colors cursor-pointer">
+                            <span v-if="l.icon === 'download'" aria-hidden="true">⬇</span>
+                            {{ l.label }}
+                        </button>
+
+                    </template>
                 </nav>
 
                 <div class="flex items-center gap-3">
@@ -161,7 +225,7 @@ const { open: openSearch } = useSearchModal();
             <div class="mx-auto max-w-full px-4">
                 <div class="h-20 flex items-center justify-between">
                     <div class="flex items-center gap-3 justify-between w-full md:w-3/6">
-                        <button class="md:hidden" @click="mobileOpen = true" aria-label="Open menu" >
+                        <button class="md:hidden" @click="mobileOpen = true" aria-label="Open menu">
                             <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class="w-6 h-6" fill='none'
                                 stroke='currentColor' stroke-width='1.5'>
                                 <path d='M4 7h16M4 12h16M4 17h16' />

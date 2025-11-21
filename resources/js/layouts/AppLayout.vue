@@ -21,9 +21,9 @@ const { isOpen: isSearchOpen } = useSearchModal();
 </script>
 
 <template>
-    <div class="min-h-screen bg-gray-50 text-gray-900">
+    <div class="bg-gray-50 text-gray-900">
         <Header />
-        <main class="max-w-full">
+        <main class="flex-grow pt-[72px] md:pt-[108px]">
             <slot />
         </main>
         <GeneralModal v-if="isOpen" />
