@@ -18,7 +18,9 @@ Route::get('/category/{slug}', [ProductController::class, 'category'])->name('pr
 
 Route::get('/about', [PageController::class, 'about'])->name('about');
 
-Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+Route::get('/contact-us', [PageController::class, 'contact'])->name('contact');
+
+Route::get('/interior-design-service', [PageController::class, 'interiorDesignService'])->name('interior-design-service');
 
 Route::get('dashboard', function () {
     return Inertia::render('Dashboard');
