@@ -22,6 +22,8 @@ Route::get('/contact-us', [PageController::class, 'contact'])->name('contact');
 
 Route::get('/interior-design-service', [PageController::class, 'interiorDesignService'])->name('interior-design-service');
 
+Route::get('/customer-service', [PageController::class, 'customerService'])->name('customer-service');
+
 Route::get('dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

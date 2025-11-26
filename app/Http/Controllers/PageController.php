@@ -208,4 +208,9 @@ class PageController extends Controller
 
         ]);
     }
+
+    public function customerService()
+    {
+        return Inertia::render('CustomerService');
+    }
 }
