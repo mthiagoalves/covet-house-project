@@ -37,7 +37,7 @@ const toggle = (index: number) => {
 </script>
 
 <template>
-    <div class="w-full bg-white pt=16 pb-8 px-4 text-black border-t border-gray-100" id="privacy-policy">
+    <div class="w-full bg-white pt-16 pb-8 px-4 text-black border-t border-gray-100" id="privacy-policy">
         <div class="max-w-7xl mx-auto text-center">
 
             <div class="mb-12">
