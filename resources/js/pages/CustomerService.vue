@@ -4,6 +4,7 @@ import { countries } from '@/data/countries';
 import { industries } from '@/data/industries';
 import { FileText, MessageCircleQuestionIcon, ShieldCheck } from 'lucide-vue-next';
 import TermsBlock from '@/components/page-components/TermsBlock.vue';
+import FaqBlock from '@/components/page-components/FaqBlock.vue';
 
 
 // Dados dos Links de Topo
@@ -51,70 +52,70 @@ const termsData = [
             </ol>` },
     {
         title: 'ACCOUNTS & PAYMENT TERMS', content: `<ol class="list-decimal pl-4 space-y-3 marker:text-gray-900">
-  <li>
-    All accounts will be registered once the first Proforma Invoice COVET
-    (FPCVT) is issued;
-  </li>
-  <li>
-    Client has to provide valid company details such as: Billing name, Billing
-    address, VAT number (company registration number or resale certificate
-    number).
-  </li>
-  <li>
-    Proforma Invoices will require a 50% deposit to start the production of
-    orders and the payment of the final balance prior shipping or pick up from
-    Portugal; We reserve the right to negotiate a deposit higher than 60% for
-    large value orders;
-  </li>
-  <li>
-    Customized/bespoke proformas will require 100% of the payment;
-  </li>
-  <li>
-Proforma Invoices must be signed and stamped by the client in order to approve the
-    described content;  </li>
-  <li>Payment must be made by wire transfer <span class="text-black font-bold">(in Euros € or in Dollars $)</span> and a
-      confirmation (receipt) of the transfer must be send to the sales
-      representative. Payment also confirms data described on proforma
-      Invoice;
-  </li>
-</ol>
+        <li>
+            All accounts will be registered once the first Proforma Invoice COVET
+            (FPCVT) is issued;
+        </li>
+        <li>
+            Client has to provide valid company details such as: Billing name, Billing
+            address, VAT number (company registration number or resale certificate
+            number).
+        </li>
+        <li>
+            Proforma Invoices will require a 50% deposit to start the production of
+            orders and the payment of the final balance prior shipping or pick up from
+            Portugal; We reserve the right to negotiate a deposit higher than 60% for
+            large value orders;
+        </li>
+        <li>
+            Customized/bespoke proformas will require 100% of the payment;
+        </li>
+        <li>
+        Proforma Invoices must be signed and stamped by the client in order to approve the
+            described content;  </li>
+        <li>Payment must be made by wire transfer <span class="text-black font-bold">(in Euros € or in Dollars $)</span> and a
+            confirmation (receipt) of the transfer must be send to the sales
+            representative. Payment also confirms data described on proforma
+            Invoice;
+        </li>
+        </ol>
 
-<div
-  class="my-6 grid grid-cols-1 md:grid-cols-2 gap-6 bg-gray-50 p-5 rounded border border-gray-100 text-[10px] md:text-xs"
->
-  <div>
-    <p class="font-bold text-black mb-1">COVET LDA</p>
-    <p class="text-gray-500 mb-2 italic">Bank Details - BPI Account EUR</p>
-    <div class="space-y-1 text-gray-700 font-mono">
-      <p><span class="font-semibold">NIB:</span> 0010 0000 55721160001 68</p>
-      <p>
-        <span class="font-semibold">IBAN:</span> PT50 0010 0000 5572 1160 0016 8
-      </p>
-      <p><span class="font-semibold">SWIFT:</span> BBPIPTPL</p>
-    </div>
-  </div>
+        <div
+        class="my-6 grid grid-cols-1 md:grid-cols-2 gap-6 bg-gray-50 p-5 rounded border border-gray-100 text-[10px] md:text-xs"
+        >
+        <div>
+            <p class="font-bold text-black mb-1">COVET LDA</p>
+            <p class="text-gray-500 mb-2 italic">Bank Details - BPI Account EUR</p>
+            <div class="space-y-1 text-gray-700 font-mono">
+            <p><span class="font-semibold">NIB:</span> 0010 0000 55721160001 68</p>
+            <p>
+                <span class="font-semibold">IBAN:</span> PT50 0010 0000 5572 1160 0016 8
+            </p>
+            <p><span class="font-semibold">SWIFT:</span> BBPIPTPL</p>
+            </div>
+        </div>
 
-  <div>
-    <p class="font-bold text-black mb-1">COVET LDA</p>
-    <p class="text-gray-500 mb-2 italic">Bank Details - BPI Account USD</p>
-    <div class="space-y-1 text-gray-700 font-mono">
-      <p><span class="font-semibold">NIB:</span> 0010 9999 55721160601 88</p>
-      <p>
-        <span class="font-semibold">IBAN:</span> PT50 0010 9999 5572 1160 6018 8
-      </p>
-      <p><span class="font-semibold">SWIFT:</span> BBPIPTPL</p>
-    </div>
-  </div>
-</div>
-<ol class="list-decimal pl-4 space-y-3 marker:text-gray-900" start="7">
-  <li>
-    All products are property of COVET HOUSE until full payment is received.
-  </li>
-  <li>
-    COVET HOUSE reserve the right to defer the dispatch date until the balance of the order is received.
-  </li>
-</ol>
-` },
+        <div>
+            <p class="font-bold text-black mb-1">COVET LDA</p>
+            <p class="text-gray-500 mb-2 italic">Bank Details - BPI Account USD</p>
+            <div class="space-y-1 text-gray-700 font-mono">
+            <p><span class="font-semibold">NIB:</span> 0010 9999 55721160601 88</p>
+            <p>
+                <span class="font-semibold">IBAN:</span> PT50 0010 9999 5572 1160 6018 8
+            </p>
+            <p><span class="font-semibold">SWIFT:</span> BBPIPTPL</p>
+            </div>
+        </div>
+        </div>
+        <ol class="list-decimal pl-4 space-y-3 marker:text-gray-900" start="7">
+        <li>
+            All products are property of COVET HOUSE until full payment is received.
+        </li>
+        <li>
+            COVET HOUSE reserve the right to defer the dispatch date until the balance of the order is received.
+        </li>
+        </ol>
+    ` },
     {
         title: 'PRODUCT & STORAGE FEES', content: `<ol class="list-decimal pl-4 space-y-3 marker:text-gray-900">
                 <li>COVET HOUSE reserves the right to apply a warehouse fee except for mutual agreement between both parties.</li>
@@ -172,6 +173,100 @@ Proforma Invoices must be signed and stamped by the client in order to approve t
     {
         title: 'ORDER CANCELLATION', content: 'Merchandise is manufactured upon the receipt of the order and deposit. Cancellations will not be accepted after 5 working days from the order issue date. A 50% restocking fee for standard orders and 60% for orders with custom products will be applied to any cancellations received after the order issue date.'
     },
+];
+
+const faqData = [
+    {
+        title: 'ORDERS',
+        content: `<p>
+            How do I place an order? <br>
+            To order one of our exclusive pieces please fill the form to be contacted or send us an email to <a href="mailto:info@covethouse.eu" class="font-bold text-black">info@covethouse.eu</a>.
+            <br><br>
+            When will my order ship? When will it arrive?<br>
+            Your order will be shipped once the production is complete and you have made the full payment. The delivery time depends on the shipping options you choose and on your location.<br><br>
+
+            Do we need to open a trade account?<br>
+            All accounts will only be registered once the first proforma Invoice is issued. THE CLIENT HAS TO PROVIDE VALID COMPANY DETAILS SUCH AS BILLING NAME, BILLING ADDRESS, VAT NUMBER (COMPANY REGISTRATION
+            NUMBER OR RESALE NUMBER). <br>
+            The Trade discount can be applied for initial quotes with the valid VAT, Registration number or resale certificate number.<br><br>
+
+            What is the status of my order? How do I track my order?<br>
+            You can always check the status of your order by email with your sales representative and we also provide details about updates before shipping.<br><br>
+
+            Is Packaging included in my order?<br>
+            Packging is included in the price. When the use of a wooden box is mandatory, the client must let his sales representative know when placing the order. Also, if the client requires specific packging, it will be charged accordingly.<br><br>
+
+            I couldn’t find the answer I’m looking for here, what do I do now?<br>
+            Send us an email! Our customer service team will be happy to help with any other question you may have! Send your name, PF number (if applicable), and question to <a href="mailto:concierge@covethouse.eu" class="font-bold text-black">concierge@covethouse.eu</a> .<br>
+            Our hours of operation for customer service are Monday through Friday, 9 a.m. to 6.30 p.m. Portuguese time, excluding weekends and major portuguese holidays. Our customer service teams will do their best to respond as quickly as possible.<br><br>
+
+            Do you want to carry us in your store?<br>
+            Please, contact our team at info@covethouse.eu in order to receive our wholesale conditions. </p>
+        `
+    },
+    {
+        title: 'DESIGN AND PRODUCTION',
+        content: `<p>
+                    Can the pieces be customized?<br>
+                    Yes, we can produce custom pieces, per prior approval from our design department.<br><br>
+
+                    When does the production start?<br>
+                    Once you place your order we will send you a Proforma invoice stating all the details regarding your order and how to proceed. Once you made the advanced payment we will start the production. 40% advanced payment is required for standard orders and 50% for custom orders.<br><br>
+
+                    What is the lead-time of production?<br>
+                    Production time is between 7 to 14 weeks and depends on the brand represented by Covet House.
+                    Delivery time is not included.<br><br>
+
+                    Where are your headquarters located? And the production?<br>
+                    They are both located in Oporto, one of the best European destinations, a historical city in the North of Portugal.
+                </p>
+`
+    },
+    {
+        title: 'PAYMENT',
+        content: `<p>
+                    How are your payment conditions?<br>
+                    Proforma Invoices will require a 40% deposit with the order and the balance prior to shipping from Portugal (shipping EXW Portugal).<br>
+                    Customized pro-forma orders will require 50% deposit.<br>
+                    All pieces are the property of Covet House until payment in full is received.<br>
+                    We reserve the right to defer the dispatch date until the balance of the order is received.<br><br>
+                    All the prices are ex-VAT?<br>
+                    All our prices are tax-free so they do not include the VAT.
+
+                </p>
+                `
+    },
+    {
+        title: 'SHIPPING',
+        content: `<p>
+                        What shipping options do you offer?<br>
+                        If you wish you can schedule the transport from our factory to the desired location. If you prefer we can help you thru the process and find the best available transport option for you. In this case we will be happy to assist you and clarify any question during the transport period. Please make sure that the shipping address is correct, as we’re unable to redirect orders once they are on their way to you. Although, if you choose to select the transportation company by yourself we don’t take any responsibility for anything related with this matter.<br><br>
+                        Do you ship overseas?<br>
+                        Covet House sells its pieces all over the world and we provide help with the transportation. We work closely with our shipping partners to minimize the potential impact of custom delays on our overseas customers.
+
+                    </p>
+                    `
+    },
+    {
+        title: 'WARRANTY',
+        content: `<p>
+                    What is your return/exchange policy?<br>
+                    No returns will be accepted without written consent from Covet House.<br>
+                    Unauthorized returns will be refused at the customers expense. For authorized return we will provide all the information needed.<br><br>
+
+                    How do you proceed if the pieces arrive damaged to the final destination?<br>
+                    All our pieces leave our factory in perfect condition and perfectly packed. We are not responsible for loss or damage in transit. If a visible or concealed damage occurs in transit, please notify immediately the delivering carrier with a file notification of claim intention. Please note: Failure to report concealed damage within fifteen days of receipt will result in the denial of your claim. Any damage should also be communicated to Covet House during the first 48 hours after receiving the order; photographic evidence of the damages should be sent by email to  <a href="mailto:customerservice@covethouse.eu" class="font-bold text-black">customerservice@covethouse.eu</a> or to the sales representative.<br><br>
+
+                    Do you offer a repairs service?<br>
+                    If the product is correctly used it and for some reason it gets damage, we will take responsibility and repair it.<br><br>
+
+                    How can I clean my product?<br>
+                    Each product has a clean and care guide. You will find the most suitable cleaning option in our website, in each product page, or with your sales representative.<br><br>
+
+                    How long is the products warranty?<br>
+                    We offer a 2 years warranty as long as the products is correctly used and maintained in the most suitable conditions.
+                </p>`
+    }
 ];
 
 const submit = () => {
@@ -296,5 +391,7 @@ const inputClass = "w-full bg-white border border-gray-300 py-2 px-2 text-gray-7
         </div>
 
         <TermsBlock :terms="termsData" />
+
+        <FaqBlock :faqs="faqData" />
     </div>
 </template>

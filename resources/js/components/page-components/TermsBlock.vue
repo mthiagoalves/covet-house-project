@@ -21,7 +21,7 @@ const toggle = (index: number) => {
 </script>
 
 <template>
-    <div class="w-full bg-white px-4 text-black" id="terms-and-conditions">
+    <div class="w-full bg-white px-4 text-black mb-8" id="terms-and-conditions">
         <div class="max-w-7xl mx-auto">
 
             <div class="text-center mb-16">
@@ -34,7 +34,7 @@ const toggle = (index: number) => {
 
             <div class="text-center mb-10">
                 <div class="flex justify-center mb-4">
-                    <FileText :stroke-width="1" class="w-10 h-10 text-black" />
+                    <FileText :stroke-width="1" class="w-12 h-12 text-black" />
                 </div>
                 <h2 class="text-xl md:text-2xl uppercase tracking-[0.2em] mb-4">
                     <span class="font-bold">TERMS AND CONDITIONS</span> <span class="font-light">COVET HOUSE</span>
@@ -69,7 +69,7 @@ const toggle = (index: number) => {
                     <div class="grid transition-[grid-template-rows,opacity] duration-500 ease-in-out"
                         :class="openIndex === index ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'">
                         <div class="overflow-hidden">
-                            <div class="pb-6 pl-8 pr-8 text-md text-gray-500 leading-relaxed space-y-2"
+                            <div class="pt-2 pb-6 px-8 text-md text-gray-500 leading-relaxed space-y-2"
                                 v-html="term.content"></div>
                         </div>
                     </div>
