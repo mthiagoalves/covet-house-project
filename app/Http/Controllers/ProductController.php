@@ -1335,7 +1335,7 @@ class ProductController extends Controller
         // 2. Definir os Acabamentos Disponíveis (Isso viria do banco)
         $finishesData = [
             ['name' => 'Standard', 'slug' => 'standard', 'is_standard' => true], // O padrão não tem sufixo no arquivo
-            ['name' => 'Green', 'slug' => 'green', 'is_standard' => false],
+            ['name' => 'Heritage', 'slug' => 'heritage', 'is_standard' => false],
             ['name' => 'Walnut Edition', 'slug' => 'walnut', 'is_standard' => false],
         ];
 
@@ -1386,8 +1386,9 @@ class ProductController extends Controller
             ],
             'is_in_stock' => true,
             'description' => 'Pixel is an effort to honor the union between design and craftsmanship...',
-            'dimensions' => ['width' => '81 cm', 'depth' => '60 cm', 'height' => '163 cm'],
-            'materials' => 'Wood, Mirror, Acrylic...',
+            'dimensions_cm' => ['width' => '81 cm', 'depth' => '60 cm', 'height' => '163 cm'],
+            'dimensions_in' => ['width' => '31.5"', 'depth' => '23.6"', 'height' => '64.2"'],
+            'materials' => 'BASE: WOOD, MIRROR, ACRYLIC, GOLD LEAF, SILVER LEAF. VARIED CHOICE OF COLORS',
             'finishes' => $processedFinishes // Enviamos a lista processada
         ];
 
