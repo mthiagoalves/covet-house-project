@@ -34,7 +34,8 @@ const props = defineProps<{
         is_in_stock: boolean;
         brand: { name: string; slug: string };
         category: { name: string; slug: string; subcategory: { name: string } };
-        dimensions: { width: string; depth: string; height: string };
+        dimensions_cm: { width: string; depth: string; height: string };
+        dimensions_in: { width: string; depth: string; height: string };
         materials: string;
         image_count: number;
         finishes?: Array<{
@@ -133,13 +134,13 @@ const openRequest = (type: string, title: string) => {
 
     <div class="bg-white min-h-screen">
 
-        <div class="mx-auto p-4 md:p-8">
+        <div class="mx-auto p-4 md:px-8 md:py-2">
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
 
-                <div class="lg:col-span-7 flex flex-col-reverse lg:flex-row gap-4 h-[600px] lg:h-[800px]">
+                <div class="lg:col-span-8 flex flex-col-reverse lg:flex-row gap-4 h-[600px] lg:h-[800px]">
 
-                    <div class="w-full lg:w-24 h-24 lg:h-full flex-shrink-0">
+                    <div class="w-full lg:w-36 h-24 lg:h-full flex-shrink-0">
                         <Swiper @swiper="setThumbsSwiper" :direction="'horizontal'" :space-between="10"
                             :slides-per-view="4" :breakpoints="{
                                 1024: {
@@ -160,7 +161,7 @@ const openRequest = (type: string, title: string) => {
                         <Swiper :modules="modules" :thumbs="{ swiper: thumbsSwiper }" :navigation="true"
                             class="h-full w-full main-product-swiper" @swiper="onMainSwiperInit">
                             <SwiperSlide v-for="(img, idx) in galleryImages" :key="idx">
-                                <img :src="img" :alt="product.name" class="w-full h-full object-contain p-8" />
+                                <img :src="img" :alt="product.name" class="w-full h-full object-cover" />
                             </SwiperSlide>
                         </Swiper>
 
@@ -170,28 +171,29 @@ const openRequest = (type: string, title: string) => {
                     </div>
                 </div>
 
-                <div class="lg:col-span-5 text-black flex flex-col">
+                <div class="lg:col-span-4 text-black flex flex-col">
 
-                    <nav class="text-[10px] uppercase text-gray-400 tracking-wider mb-4">
+                    <nav class="text-[10px] uppercase text-gray-400 tracking-wider pb-2 border-b border-gray-200">
                         <Link href="/" class="hover:text-black">HOME</Link> /
                         <span class="hover:text-black cursor-pointer">{{ product.category.name }}</span> /
                         <span class="text-black">{{ product.category.subcategory.name }}</span>
                     </nav>
 
-                    <h1 class="text-2xl md:text-3xl font-bold tracking-widest uppercase mb-1">
+                    <h1 class="text-2xl md:text-3xl font-bold tracking-widest uppercase mb-1 pt-2">
                         {{ product.name }}
                     </h1>
-                    <h2 class="text-sm text-[#bca479] font-semibold tracking-widest uppercase mb-6">
+                    <h2
+                        class="text-sm text-[#bca479] font-semibold tracking-widest uppercase pb-2 border-b border-gray-200">
                         {{ product.brand.name }}
                     </h2>
 
                     <div v-if="product.is_in_stock"
-                        class="flex items-center gap-2 text-[#4a7c59] text-xs font-bold tracking-wider uppercase mb-6">
+                        class="flex items-center gap-2 text-[#4a7c59] text-xs font-bold tracking-wider uppercase mb-2 pt-2">
                         <Clock class="w-4 h-4" />
                         <span>IN STOCK</span>
                     </div>
 
-                    <div class="flex items-stretch gap-4 mb-8">
+                    <div class="flex items-stretch gap-4 mb-4">
                         <div class="border border-gray-300 flex items-center px-3 w-20 justify-between">
                             <button @click="quantity > 1 ? quantity-- : null"
                                 class="text-gray-500 hover:text-black">-</button>
@@ -205,7 +207,7 @@ const openRequest = (type: string, title: string) => {
                         </button>
                     </div>
 
-                    <div class="space-y-3 mb-10 border-b border-gray-200 pb-8">
+                    <div class="space-y-3 mb-4 border-b border-gray-200 pb-4">
                         <button @click="openRequest('Product Sheet', 'PRODUCT SHEET PDF')"
                             class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider hover:text-[#bca479] transition-colors">
                             <FileText class="w-4 h-4" /> PRODUCT SHEET PDF >
@@ -220,19 +222,24 @@ const openRequest = (type: string, title: string) => {
                         </button>
                     </div>
 
-                    <div class="mb-6">
+                    <div class="mb-4">
                         <div class="flex items-center gap-2 mb-2">
                             <Maximize class="w-4 h-4 text-gray-400 rotate-45" />
                             <span class="text-xs font-bold uppercase tracking-widest">DIMENSIONS:</span>
                         </div>
                         <div class="text-[11px] text-gray-500 tracking-wide pl-6">
-                            WIDTH: {{ product.dimensions.width }} <span class="mx-2">|</span>
-                            DEPTH: {{ product.dimensions.depth }} <span class="mx-2">|</span>
-                            HEIGHT: {{ product.dimensions.height }}
+                            WIDTH: {{ product.dimensions_cm.width }} <span class="mx-2">|</span>
+                            DEPTH: {{ product.dimensions_cm.depth }} <span class="mx-2">|</span>
+                            HEIGHT: {{ product.dimensions_cm.height }}
+                        </div>
+                        <div class="text-[11px] text-gray-500 tracking-wide pl-6">
+                            WIDTH: {{ product.dimensions_in.width }} <span class="mx-2">|</span>
+                            DEPTH: {{ product.dimensions_in.depth }} <span class="mx-2">|</span>
+                            HEIGHT: {{ product.dimensions_in.height }}
                         </div>
                     </div>
 
-                    <div class="mb-8">
+                    <div class="mb-4">
                         <div class="flex items-center gap-2 mb-2">
                             <Hammer class="w-4 h-4 text-gray-400" />
                             <span class="text-xs font-bold uppercase tracking-widest">MATERIALS AND FINISHES:</span>
@@ -242,7 +249,7 @@ const openRequest = (type: string, title: string) => {
                         </p>
                     </div>
 
-                    <div v-if="product.finishes && product.finishes.length > 0" class="mb-8">
+                    <div v-if="product.finishes && product.finishes.length > 0" class="mb-4">
                         <span
                             class="text-xs font-bold uppercase tracking-widest border-b border-black pb-1 inline-block mb-4">
                             COLOR OPTIONS <span class="text-gray-400 text-[10px] font-normal">- STANDARD</span>
@@ -261,24 +268,25 @@ const openRequest = (type: string, title: string) => {
                         </div>
                     </div>
 
-                    <div class="space-y-2 mb-8">
+                    <div class="space-y-2 mb-2">
                         <button @click="openRequest('Expert', 'TALK WITH A SPECIALIST')"
-                            class="w-full bg-[#999] text-white text-[10px] font-bold py-3 uppercase tracking-widest hover:bg-gray-700 transition-colors">
+                            class="w-full bg-[#999] text-black text-[10px] font-bold py-2 uppercase tracking-widest hover:bg-[#999999cd] transition-colors cursor-pointer">
                             TALK WITH A PRODUCT SPECIALIST
                         </button>
                         <button @click="openRequest('Customization', 'REQUEST CUSTOMIZATION')"
-                            class="w-full bg-[#ccc] text-black text-[10px] font-bold py-3 uppercase tracking-widest hover:bg-gray-400 hover:text-white transition-colors">
+                            class="w-full bg-[#999] text-black text-[10px] font-bold py-2 uppercase tracking-widest hover:bg-[#999999cd] transition-colors cursor-pointer">
                             REQUEST CUSTOMIZATION
                         </button>
                     </div>
 
-                    <div class="flex items-center justify-between border-t border-gray-200 pt-6 mt-auto">
+                    <div class="flex items-center justify-between border-t border-gray-200 pt-4">
                         <span class="text-xs font-bold uppercase tracking-widest">SHARE:</span>
                         <div class="flex gap-4 text-gray-500">
                             <a href="#" class="hover:text-black">
                                 <Share2 class="w-4 h-4" />
                             </a>
-                            <a href="#" class="hover:text-black">
+                            <a href='https://www.facebook.com/sharer/sharer.php?u=https://www.covethouse.eu/products/{{ product. }}'
+                                class="hover:text-black">
                                 <Facebook class="w-4 h-4" />
                             </a>
                             <a href="#" class="hover:text-black">
@@ -290,7 +298,7 @@ const openRequest = (type: string, title: string) => {
                         </div>
                     </div>
 
-                    <p class="text-[9px] text-gray-400 text-right mt-2 uppercase tracking-widest">
+                    <p class="text-[9px] text-gray-400 text-center mt-4 uppercase tracking-widest">
                         HANDCRAFTED AND MADE IN PORTUGAL
                     </p>
 
