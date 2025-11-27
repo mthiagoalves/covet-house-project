@@ -16,6 +16,8 @@ Route::get('/new-products', [ProductController::class, 'newProducts'])->name('pr
 
 Route::get('/category/{slug}', [ProductController::class, 'category'])->name('products.category');
 
+Route::get('/products/{slug}', [ProductController::class, 'show'])->name('products.show');
+
 Route::get('/about', [PageController::class, 'about'])->name('about');
 
 Route::get('/contact-us', [PageController::class, 'contact'])->name('contact');

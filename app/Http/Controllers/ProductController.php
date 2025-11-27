@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {
@@ -1249,19 +1250,6 @@ class ProductController extends Controller
     }
 
     /**
-     * Simula um paginator a partir de um array (para manter o frontend consistente)
-     */
-    private function mockPaginate(Collection $items, int $perPage = 23): array
-    {
-        return [
-            'data' => $items->all(),
-            'links' => [],
-            'current_page' => 1,
-            'total' => $items->count(),
-        ];
-    }
-
-    /**
      * Mostra 'All Products'
      * Rota: /all-products
      */
@@ -1322,6 +1310,89 @@ class ProductController extends Controller
             'pageTitle' => $pageTitle,
             'category' => $mockCategory,
             'productGroups' => $subcategoryGroups, // Envia 'productGroups'
+        ]);
+    }
+
+    public function show($slug)
+    {
+
+        $categorySlug = 'casegoods';
+        $productPath = public_path("images/products/slide-product-page/{$categorySlug}/{$slug}");
+
+        // 1. Contar Imagens PADRÃO (slug-1.jpg, slug-2.jpg...)
+        $standardImageCount = 0;
+        if (File::exists($productPath)) {
+            $files = File::files($productPath);
+            $standardImages = array_filter($files, function ($file) use ($slug) {
+                // Regex estrito: começa com slug, traço, número, ponto, extensão
+                // Ex: pixel-cabinet-1.jpg
+                return preg_match("/^{$slug}-\d+\.(jpg|jpeg|png|webp)$/i", $file->getFilename());
+            });
+            $standardImageCount = count($standardImages);
+        }
+        if ($standardImageCount == 0) $standardImageCount = 1; // Fallback
+
+        // 2. Definir os Acabamentos Disponíveis (Isso viria do banco)
+        $finishesData = [
+            ['name' => 'Standard', 'slug' => 'standard', 'is_standard' => true], // O padrão não tem sufixo no arquivo
+            ['name' => 'Green', 'slug' => 'green', 'is_standard' => false],
+            ['name' => 'Walnut Edition', 'slug' => 'walnut', 'is_standard' => false],
+        ];
+
+        // 3. Processar Acabamentos (Contar imagens e definir slide_index)
+        $processedFinishes = [];
+        $currentSlideIndex = 0; // Começa no 0
+
+        foreach ($finishesData as $finish) {
+            $count = 0;
+
+            if ($finish['is_standard']) {
+                // Se for o padrão, usa a contagem que já fizemos
+                $count = $standardImageCount;
+            } else {
+                // Se for um acabamento (ex: walnut), conta: slug-walnut-1.jpg
+                if (File::exists($productPath)) {
+                    $finishImages = array_filter($files, function ($file) use ($slug, $finish) {
+                        return preg_match("/^{$slug}-{$finish['slug']}-\d+\.(jpg|jpeg|png|webp)$/i", $file->getFilename());
+                    });
+                    $count = count($finishImages);
+                }
+            }
+
+            // Se tiver imagens (ou for o padrão), adiciona à lista
+            if ($count > 0) {
+                $processedFinishes[] = [
+                    'name' => $finish['name'],
+                    'slug' => $finish['slug'],
+                    'image_count' => $count,      // Quantas fotos esse acabamento tem
+                    'slide_index' => $currentSlideIndex, // Onde começa no slide
+                    'is_standard' => $finish['is_standard']
+                ];
+
+                // Incrementa o índice para o próximo acabamento
+                $currentSlideIndex += $count;
+            }
+        }
+
+        $product = [
+            'id' => 999,
+            'name' => 'PIXEL CABINET',
+            'slug' => $slug,
+            'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+            'category' => [
+                'name' => 'Casegoods',
+                'slug' => $categorySlug,
+                'subcategory' => ['name' => 'Cabinets', 'slug' => 'cabinets']
+            ],
+            'is_in_stock' => true,
+            'description' => 'Pixel is an effort to honor the union between design and craftsmanship...',
+            'dimensions' => ['width' => '81 cm', 'depth' => '60 cm', 'height' => '163 cm'],
+            'materials' => 'Wood, Mirror, Acrylic...',
+            'finishes' => $processedFinishes // Enviamos a lista processada
+        ];
+
+        return Inertia::render('products/Show', [
+            'product' => $product,
         ]);
     }
 }
