@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
 import { ChevronDown, ShieldCheck } from 'lucide-vue-next';
-import FaqBlock from '@/components/page-components/FaqBlock.vue';
+import { computed, ref } from 'vue';
 
 // Definição de tipos para os dados
 interface FaqItem {

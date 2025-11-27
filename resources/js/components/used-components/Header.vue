@@ -1,9 +1,12 @@
 <script setup lang="ts">
 
-import { ref, onMounted, onBeforeUnmount } from 'vue';
-import { usePage, Link } from '@inertiajs/vue3';
-import { useSearchModal } from '@/composables/useSearchModal';
 import { useGeneralModal } from '@/composables/useGeneralModal';
+import { useSearchModal } from '@/composables/useSearchModal';
+import { Link, usePage } from '@inertiajs/vue3';
+import { Download } from 'lucide-vue-next';
+import { onBeforeUnmount, onMounted, ref } from 'vue';
+
+
 
 const { open: openGeneralModal } = useGeneralModal();
 
@@ -175,7 +178,9 @@ const { open: openSearch } = useSearchModal();
 
                         <button v-else @click="openGeneralModal(l.modalData)"
                             class="flex items-center gap-1 hover:text-gray-300 transition-colors cursor-pointer">
-                            <span v-if="l.icon === 'download'" aria-hidden="true">⬇</span>
+                            <span v-if="l.icon === 'download'" aria-hidden="true">
+                                <Download :stroke-width="1" class="w-3.5 h-3.5 text-white" />
+                            </span>
                             {{ l.label }}
                         </button>
 
