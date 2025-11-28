@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import { Head, Link } from '@inertiajs/vue3';
-import { ref, computed } from 'vue';
+import { ref, computed, watch, onUnmounted } from 'vue';
 import { useGeneralModal } from '@/composables/useGeneralModal';
-
-// Ícones Lucide
 import {
     Clock,
     FileText,
@@ -14,15 +12,22 @@ import {
     Share2,
     Facebook,
     Twitter,
-    Linkedin
+    Linkedin,
+    Mail,
 } from 'lucide-vue-next';
-
-// Swiper
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation, Thumbs, Controller } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
+
+import VueEasyLightbox from 'vue-easy-lightbox';
+import 'vue-easy-lightbox/external-css/vue-easy-lightbox.css';
+import ProductAmbienceSlider from '@/components/page-components/ProductAmbienceSlider.vue';
+import BestSellersProducts from '@/components/page-components/BestSellersProducts.vue';
+import FormHomepage from '@/components/used-components/includes/FormHomepage.vue';
+import CategorySlider from '@/components/page-components/CategorySlider.vue';
+import ProductDetailsBlock from '@/components/page-components/ProductDetailsBlock.vue';
 
 // --- PROPS ---
 const props = defineProps<{
@@ -46,6 +51,8 @@ const props = defineProps<{
             is_standard: boolean;
         }>;
     };
+    ambiences?: Array<{ name: string; slug: string; }>;
+    bestSellersProducts: any[];
 }>();
 
 // --- LÓGICA DE IMAGENS DINÂMICAS ---
@@ -80,7 +87,7 @@ const galleryImages = computed(() => {
 });
 
 const getFinishImage = (finishSlug: string) => {
-    return `${imageFolder.value}/${props.product.slug}-swatch-${finishSlug}.jpg`;
+    return `${imageFolder.value}/finishes/${finishSlug}.jpg`;
 };
 
 // --- SWIPER LOGIC ---
@@ -88,6 +95,7 @@ const thumbsSwiper = ref(null);
 const mainSwiperInstance = ref(null);
 const quantity = ref(1);
 const modules = [Navigation, Thumbs, Controller];
+const currentMainSlideIndex = ref(0);
 
 const setThumbsSwiper = (swiper: any) => {
     thumbsSwiper.value = swiper;
@@ -95,6 +103,9 @@ const setThumbsSwiper = (swiper: any) => {
 
 const onMainSwiperInit = (swiper: any) => {
     mainSwiperInstance.value = swiper;
+    swiper.on('slideChange', () => {
+        currentMainSlideIndex.value = swiper.activeIndex;
+    });
 };
 
 // Ao clicar na cor, muda o slide principal
@@ -126,13 +137,56 @@ const openRequest = (type: string, title: string) => {
         formType: type
     });
 };
+
+const selectedFinishName = ref(
+    props.product.finishes && props.product.finishes.length > 0
+        ? props.product.finishes[0].name
+        : 'STANDARD'
+);
+
+// 2. Função composta: Muda o slide E atualiza o nome
+const selectFinish = (finish: any) => {
+    // Atualiza o nome
+    selectedFinishName.value = finish.name;
+
+    // Muda o slide (lógica que já existia)
+    goToSlide(finish.slide_index);
+};
+
+const lightboxVisible = ref(false);
+const lightboxIndex = ref(0);
+
+
+const showLightbox = (index: number) => {
+    lightboxIndex.value = index;
+    lightboxVisible.value = true;
+};
+
+watch(lightboxVisible, (isOpen) => {
+    if (isOpen) {
+        // Trava o scroll
+        document.body.style.overflow = 'hidden';
+    } else {
+        // Destrava o scroll
+        document.body.style.overflow = '';
+    }
+});
+
+// Segurança: Garante que o scroll é liberado se o utilizador sair da página
+onUnmounted(() => {
+    document.body.style.overflow = '';
+});
+
+const hideLightbox = () => {
+    lightboxVisible.value = false;
+};
 </script>
 
 <template>
 
     <Head :title="product.name" />
 
-    <div class="bg-white min-h-screen">
+    <div class="bg-white">
 
         <div class="mx-auto p-4 md:px-8 md:py-2">
 
@@ -140,7 +194,7 @@ const openRequest = (type: string, title: string) => {
 
                 <div class="lg:col-span-8 flex flex-col-reverse lg:flex-row gap-4 h-[600px] lg:h-[800px]">
 
-                    <div class="w-full lg:w-36 h-24 lg:h-full flex-shrink-0">
+                    <div class="w-full lg:w-40 h-24 lg:h-full flex-shrink-0">
                         <Swiper @swiper="setThumbsSwiper" :direction="'horizontal'" :space-between="10"
                             :slides-per-view="4" :breakpoints="{
                                 1024: {
@@ -160,12 +214,14 @@ const openRequest = (type: string, title: string) => {
                     <div class="flex-grow h-full bg-[#f4f4f4] relative min-w-0">
                         <Swiper :modules="modules" :thumbs="{ swiper: thumbsSwiper }" :navigation="true"
                             class="h-full w-full main-product-swiper" @swiper="onMainSwiperInit">
-                            <SwiperSlide v-for="(img, idx) in galleryImages" :key="idx">
-                                <img :src="img" :alt="product.name" class="w-full h-full object-cover" />
+                            <SwiperSlide v-for="(img, idx) in galleryImages" :key="idx" class="cursor-pointer">
+                                <img :src="img" :alt="product.name" class="w-full h-full object-cover"
+                                    @click="showLightbox(idx)" />
                             </SwiperSlide>
                         </Swiper>
 
-                        <button class="absolute bottom-4 right-4 z-10 text-gray-400 hover:text-black transition-colors">
+                        <button class="absolute bottom-4 right-4 z-10 text-gray-400 hover:text-black transition-colors"
+                            @click="showLightbox(currentMainSlideIndex)">
                             <Maximize class="w-6 h-6" stroke-width="1.5" />
                         </button>
                     </div>
@@ -173,17 +229,17 @@ const openRequest = (type: string, title: string) => {
 
                 <div class="lg:col-span-4 text-black flex flex-col">
 
-                    <nav class="text-[10px] uppercase text-gray-400 tracking-wider pb-2 border-b border-gray-200">
+                    <nav class="text-xs uppercase text-gray-400 tracking-wider pb-2 border-b border-gray-200">
                         <Link href="/" class="hover:text-black">HOME</Link> /
                         <span class="hover:text-black cursor-pointer">{{ product.category.name }}</span> /
                         <span class="text-black">{{ product.category.subcategory.name }}</span>
                     </nav>
 
-                    <h1 class="text-2xl md:text-3xl font-bold tracking-widest uppercase mb-1 pt-2">
+                    <h1 class="text-base md:text-lg font-bold tracking-widest uppercase mb-1 pt-2">
                         {{ product.name }}
                     </h1>
                     <h2
-                        class="text-sm text-[#bca479] font-semibold tracking-widest uppercase pb-2 border-b border-gray-200">
+                        class="text-sm md:text-base text-[#c6a479] tracking-widest uppercase pb-2 border-b border-gray-200">
                         {{ product.brand.name }}
                     </h2>
 
@@ -202,22 +258,22 @@ const openRequest = (type: string, title: string) => {
                         </div>
 
                         <button @click="openGetPrice"
-                            class="bg-[#bca479] text-white flex-grow py-3 px-6 text-xs font-bold tracking-[0.2em] hover:bg-[#a38d65] transition-colors uppercase">
+                            class="bg-[#c6a479] text-black flex-grow py-2 px-6 text-xs font-bold tracking-[0.2em] hover:bg-[#a38d65] transition-colors uppercase cursor-pointer">
                             GET PRICE
                         </button>
                     </div>
 
                     <div class="space-y-3 mb-4 border-b border-gray-200 pb-4">
                         <button @click="openRequest('Product Sheet', 'PRODUCT SHEET PDF')"
-                            class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider hover:text-[#bca479] transition-colors">
+                            class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider hover:text-[#c6a479] transition-colors cursor-pointer">
                             <FileText class="w-4 h-4" /> PRODUCT SHEET PDF >
                         </button>
                         <button @click="openRequest('3D Files', 'DOWNLOAD 3D FILES')"
-                            class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider hover:text-[#bca479] transition-colors">
+                            class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider hover:text-[#c6a479] transition-colors cursor-pointer">
                             <Box class="w-4 h-4" /> DOWNLOAD 3D / DWG FILES >
                         </button>
                         <button @click="openRequest('Samples', 'REQUEST SAMPLES')"
-                            class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider hover:text-[#bca479] transition-colors">
+                            class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider hover:text-[#c6a479] transition-colors cursor-pointer">
                             <Layers class="w-4 h-4" /> REQUEST SAMPLES >
                         </button>
                     </div>
@@ -227,12 +283,12 @@ const openRequest = (type: string, title: string) => {
                             <Maximize class="w-4 h-4 text-gray-400 rotate-45" />
                             <span class="text-xs font-bold uppercase tracking-widest">DIMENSIONS:</span>
                         </div>
-                        <div class="text-[11px] text-gray-500 tracking-wide pl-6">
+                        <div class="text-[10px] text-gray-500 tracking-wide pl-6">
                             WIDTH: {{ product.dimensions_cm.width }} <span class="mx-2">|</span>
                             DEPTH: {{ product.dimensions_cm.depth }} <span class="mx-2">|</span>
                             HEIGHT: {{ product.dimensions_cm.height }}
                         </div>
-                        <div class="text-[11px] text-gray-500 tracking-wide pl-6">
+                        <div class="text-[10px] text-gray-500 tracking-wide pl-6">
                             WIDTH: {{ product.dimensions_in.width }} <span class="mx-2">|</span>
                             DEPTH: {{ product.dimensions_in.depth }} <span class="mx-2">|</span>
                             HEIGHT: {{ product.dimensions_in.height }}
@@ -244,24 +300,30 @@ const openRequest = (type: string, title: string) => {
                             <Hammer class="w-4 h-4 text-gray-400" />
                             <span class="text-xs font-bold uppercase tracking-widest">MATERIALS AND FINISHES:</span>
                         </div>
-                        <p class="text-[11px] text-gray-500 tracking-wide pl-6 uppercase leading-relaxed">
+                        <p class="text-[10px] text-gray-500 tracking-wide pl-6 uppercase leading-relaxed">
                             {{ product.materials }}
                         </p>
                     </div>
 
-                    <div v-if="product.finishes && product.finishes.length > 0" class="mb-4">
+                    <div v-if="product.finishes && product.finishes.length > 0" class="mb-8">
                         <span
                             class="text-xs font-bold uppercase tracking-widest border-b border-black pb-1 inline-block mb-4">
-                            COLOR OPTIONS <span class="text-gray-400 text-[10px] font-normal">- STANDARD</span>
+                            COLOR OPTIONS <span class="text-gray-400 text-[10px] font-normal">- {{ selectedFinishName
+                                }}</span>
                         </span>
 
                         <div class="flex gap-4">
-                            <div v-for="finish in product.finishes" :key="finish.slug"
-                                @click="goToSlide(finish.slide_index)" class="cursor-pointer group relative">
+                            <div v-for="finish in product.finishes" :key="finish.slug" @click="selectFinish(finish)"
+                                class="cursor-pointer group relative">
                                 <img :src="getFinishImage(finish.slug)" :alt="finish.name"
-                                    class="w-12 h-12 rounded-sm border border-gray-200 group-hover:border-black transition-colors" />
+                                    class="w-12 h-12 rounded-sm transition-all duration-200" :class="[
+                                        selectedFinishName === finish.name
+                                            ? 'border-2 border-black shadow-sm'  // Estilo SELECIONADO
+                                            : 'border border-gray-200 group-hover:border-black opacity-80 group-hover:opacity-100' // Estilo NÃO SELECIONADO
+                                    ]" />
+
                                 <span
-                                    class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[9px] uppercase whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity bg-white px-1 shadow-sm">
+                                    class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[9px] uppercase whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity bg-white px-1 shadow-sm z-10">
                                     {{ finish.name }}
                                 </span>
                             </div>
@@ -282,18 +344,12 @@ const openRequest = (type: string, title: string) => {
                     <div class="flex items-center justify-between border-t border-gray-200 pt-4">
                         <span class="text-xs font-bold uppercase tracking-widest">SHARE:</span>
                         <div class="flex gap-4 text-gray-500">
-                            <a href="#" class="hover:text-black">
-                                <Share2 class="w-4 h-4" />
-                            </a>
-                            <a href='https://www.facebook.com/sharer/sharer.php?u=https://www.covethouse.eu/products/{{ product. }}'
-                                class="hover:text-black">
+                            <Share2 class="w-4 h-4 hover:text-black" />
+                            <a href='#' class="hover:text-black">
                                 <Facebook class="w-4 h-4" />
                             </a>
                             <a href="#" class="hover:text-black">
-                                <Twitter class="w-4 h-4" />
-                            </a>
-                            <a href="#" class="hover:text-black">
-                                <Linkedin class="w-4 h-4" />
+                                <Mail class="w-4 h-4" />
                             </a>
                         </div>
                     </div>
@@ -305,10 +361,36 @@ const openRequest = (type: string, title: string) => {
                 </div>
             </div>
         </div>
+
+        <ProductAmbienceSlider v-if="ambiences && ambiences.length > 0" :ambiences="ambiences" />
+
+        <ProductDetailsBlock :product="product" />
+
+        <FormHomepage />
+
+        <VueEasyLightbox :visible="lightboxVisible" :imgs="galleryImages" :index="lightboxIndex" @hide="hideLightbox"
+            :moveDisabled="false" />
+
+        <CategorySlider />
+        <BestSellersProducts :products="bestSellersProducts" />
+
     </div>
 </template>
 
 <style scoped>
+:deep(.vel-modal) {
+    background: #000000fc;
+    /* Fundo branco translúcido */
+}
+
+:deep(.vel-btns-wrapper .btn__close),
+:deep(.vel-btns-wrapper .btn__next),
+:deep(.vel-btns-wrapper .btn__prev) {
+    color: #fff;
+    /* Ícones pretos */
+}
+
+
 /* Destaque na thumbnail ativa */
 .thumb-swiper .swiper-slide-thumb-active img {
     border: 1px solid #000;
