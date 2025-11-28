@@ -27,7 +27,7 @@ defineProps<{
             {{ title }}
         </h3>
 
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-1">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-[6px]">
             <ProductCard v-for="product in products" :key="product.id" :product="product" />
         </div>
     </div>

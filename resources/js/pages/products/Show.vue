@@ -309,7 +309,7 @@ const hideLightbox = () => {
                         <span
                             class="text-xs font-bold uppercase tracking-widest border-b border-black pb-1 inline-block mb-4">
                             COLOR OPTIONS <span class="text-gray-400 text-[10px] font-normal">- {{ selectedFinishName
-                                }}</span>
+                            }}</span>
                         </span>
 
                         <div class="flex gap-4">
@@ -368,12 +368,12 @@ const hideLightbox = () => {
 
         <FormHomepage />
 
+        <CategorySlider class="pt-[6px] bg-black"/>
+
+        <BestSellersProducts :products="bestSellersProducts" class="pt-[6px]"/>
+
         <VueEasyLightbox :visible="lightboxVisible" :imgs="galleryImages" :index="lightboxIndex" @hide="hideLightbox"
             :moveDisabled="false" />
-
-        <CategorySlider />
-        <BestSellersProducts :products="bestSellersProducts" />
-
     </div>
 </template>
 
