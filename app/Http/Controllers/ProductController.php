@@ -1192,6 +1192,66 @@ class ProductController extends Controller
         ];
     }
 
+    private function getBestSellersProducts(): array
+    {
+        return [
+            [
+                'id' => 101,
+                'name' => 'LAPIAZ SIDEBOARD',
+                'slug' => 'lapiaz-sideboard',
+                'type' => 'product',
+                'main_image_url' => 'https://placehold.co/800x800/eee/333?text=Lapiaz',
+                'brand' => ['name' => 'BOCA DO LOBO'],
+                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Sideboards', 'slug' => 'sideboards']]
+            ],
+            [
+                'id' => 102,
+                'name' => 'CHARLA DINING CHAIR',
+                'slug' => 'charla-dining-chair',
+                'type' => 'product',
+                'main_image_url' => 'https://placehold.co/800x800/ddd/333?text=Charla',
+                'brand' => ['name' => 'LUXXU'],
+                'category' => ['name' => 'Seatings', 'slug' => 'seatings', 'subcategory' => ['name' => 'Chairs', 'slug' => 'chairs']]
+            ],
+            [
+                'id' => 103,
+                'name' => 'ARDARA CONSOLE TABLE',
+                'slug' => 'ardara-console',
+                'type' => 'product',
+                'main_image_url' => 'https://placehold.co/800x800/ccc/333?text=Ardara',
+                'brand' => ['name' => 'BRABBU'],
+                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Consoles', 'slug' => 'consoles']]
+            ],
+            [
+                'id' => 101,
+                'name' => 'LAPIAZ SIDEBOARD',
+                'slug' => 'lapiaz-sideboard',
+                'type' => 'product',
+                'main_image_url' => 'https://placehold.co/800x800/eee/333?text=Lapiaz',
+                'brand' => ['name' => 'BOCA DO LOBO'],
+                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Sideboards', 'slug' => 'sideboards']]
+            ],
+            [
+                'id' => 102,
+                'name' => 'CHARLA DINING CHAIR',
+                'slug' => 'charla-dining-chair',
+                'type' => 'product',
+                'main_image_url' => 'https://placehold.co/800x800/ddd/333?text=Charla',
+                'brand' => ['name' => 'LUXXU'],
+                'category' => ['name' => 'Seatings', 'slug' => 'seatings', 'subcategory' => ['name' => 'Chairs', 'slug' => 'chairs']]
+            ],
+            [
+                'id' => 103,
+                'name' => 'ARDARA CONSOLE TABLE',
+                'slug' => 'ardara-console',
+                'type' => 'product',
+                'main_image_url' => 'https://placehold.co/800x800/ccc/333?text=Ardara',
+                'brand' => ['name' => 'BRABBU'],
+                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Consoles', 'slug' => 'consoles']]
+            ],
+        ];
+    }
+
     /**
      * NOVA FUNÇÃO: Agrupa e ordena os produtos.
      */
@@ -1385,15 +1445,94 @@ class ProductController extends Controller
                 'subcategory' => ['name' => 'Cabinets', 'slug' => 'cabinets']
             ],
             'is_in_stock' => true,
-            'description' => 'Pixel is an effort to honor the union between design and craftsmanship...',
+            'description' => '<p><span style="text-decoration: underline;"><em><strong><a href="https://www.bocadolobo.com/en/limited-edition/cabinets-and-bookcases/pixel/">Pixel</a> Cabinet</strong></em></span>&nbsp;by <a href="https://www.covethouse.eu/brands/boca-do-lobo/"><span style="text-decoration: underline;"><em><strong>Boca do Lobo</strong></em></span> </a>is an effort to honor the union between design and craftsmanship. The 1088 triangles that complete&nbsp;<span style="text-decoration: underline;"><em><strong>Pixel Cabinet</strong></em></span> carries the dedication and art of those who built it – with a diversity of finishes never seen before. The polished brass base gives <span style="text-decoration: underline;"><em><strong>Pixel Cabinet</strong></em></span> a unique personality, a strong and at the same time sophisticated character.</p>',
             'dimensions_cm' => ['width' => '81 cm', 'depth' => '60 cm', 'height' => '163 cm'],
             'dimensions_in' => ['width' => '31.5"', 'depth' => '23.6"', 'height' => '64.2"'],
             'materials' => 'BASE: WOOD, MIRROR, ACRYLIC, GOLD LEAF, SILVER LEAF. VARIED CHOICE OF COLORS',
             'finishes' => $processedFinishes // Enviamos a lista processada
         ];
 
+        $relatedAmbiences = [
+            [
+                'name' => 'Classic Hallway',
+                'slug' => 'ambience-pixel-cabinet-1',
+                'hotspots' => [
+                    [
+                        'product_name' => 'EMPIRE WALL LAMP',
+                        'product_slug' => 'empire-wall-lamp', // Link para o produto
+                        'top' => '45%',  // Posição Vertical
+                        'left' => '60%', // Posição Horizontal
+                    ],
+                    [
+                        'product_name' => 'PIXEL CABINET',
+                        'product_slug' => 'pixel-cabinet',
+                        'top' => '65%',
+                        'left' => '20%',
+                    ]
+                ]
+            ],
+            [
+                'name' => 'Modern Living Room',
+                'slug' => 'ambience-pixel-cabinet-2',
+                'hotspots' => [
+                    [
+                        'product_name' => 'EMPIRE WALL LAMP',
+                        'product_slug' => 'empire-wall-lamp', // Link para o produto
+                        'top' => '45%',  // Posição Vertical
+                        'left' => '60%', // Posição Horizontal
+                    ],
+                    [
+                        'product_name' => 'PIXEL CABINET',
+                        'product_slug' => 'pixel-cabinet',
+                        'top' => '65%',
+                        'left' => '20%',
+                    ]
+                ]
+            ],
+            [
+                'name' => 'Eclectic Entryway',
+                'slug' => 'ambience-pixel-cabinet-3',
+                'hotspots' => [
+                    [
+                        'product_name' => 'EMPIRE WALL LAMP',
+                        'product_slug' => 'empire-wall-lamp', // Link para o produto
+                        'top' => '45%',  // Posição Vertical
+                        'left' => '60%', // Posição Horizontal
+                    ],
+                    [
+                        'product_name' => 'PIXEL CABINET',
+                        'product_slug' => 'pixel-cabinet',
+                        'top' => '65%',
+                        'left' => '20%',
+                    ]
+                ]
+            ],
+            [
+                'name' => 'Luxury Office',
+                'slug' => 'ambience-pixel-cabinet-4',
+                'hotspots' => [
+                    [
+                        'product_name' => 'EMPIRE WALL LAMP',
+                        'product_slug' => 'empire-wall-lamp', // Link para o produto
+                        'top' => '45%',  // Posição Vertical
+                        'left' => '60%', // Posição Horizontal
+                    ],
+                    [
+                        'product_name' => 'PIXEL CABINET',
+                        'product_slug' => 'pixel-cabinet',
+                        'top' => '65%',
+                        'left' => '20%',
+                    ]
+                ]
+            ],
+        ];
+
+
+
         return Inertia::render('products/Show', [
             'product' => $product,
+            'ambiences' => $relatedAmbiences,
+            'bestSellersProducts' => $this->getBestSellersProducts(),
         ]);
     }
 }
