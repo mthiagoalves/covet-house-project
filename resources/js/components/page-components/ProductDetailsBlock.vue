@@ -38,14 +38,14 @@ const termsContent = `
 
     <p>Terms and Conditions are subject to change at any time, without prior notice. These Conditions can be saved electronically or printed by all users of our Website. These Conditions will apply to all transactions carried out by placing an order via our Website or Email from COVET HOUSE’s Sales Representative, it is implied that you accept our terms and conditions as listed below: Updated version 10/01/2023</p>
 
-    <h5>Price</h5>
+    <h5 class="font-bold">Price</h5>
     <p>1. We reserve the right, without prior notice, to discontinue products or change specifications and prices on products; <br>
         2. Prices always refer to a single unit and VAT is not included in the price. Legal tax and fees must be subsequently added to the price; <br>
         3. The prices are EX WORK Rio Tinto, Portugal. They do not include don´t include shipping or assembly service; <br>
         4. Specifically, on Upholstery items, the price includes the standard fabric; in case a different fabric from one of the brands from Covet House is required, the client should contact the sales Rep enquiry the price; <br>
         5. Standard packaging is included in the price. Should the client require specific packaging, it will be charged accordingly.</p>
 
-    <h5>Accounts &amp; Payment Terms</h5>
+    <h5 class="font-bold">Accounts &amp; Payment Terms</h5>
     <p>1. All accounts will be registered once the first Proforma Invoice COVET (FPCVT) is issued;<br>
         2. Client has to provide valid company details such as: Billing name, Billing address, VAT number (company registration number or resale certificate number).<br>
         3. Proforma Invoices will require a 50% deposit to start the production of orders and the payment of the final balance prior shipping or pick up from Portugal; We reserve the right to negotiate a deposit higher than 60% for large value orders;<br>
@@ -53,26 +53,26 @@ const termsContent = `
         Proforma Invoices must be signed and stamped by the client in order to approve the described content;<br>
         6. Payment must be made by wire transfer (in Euros € or in Dollars $) and a confirmation (receipt) of the transfer must be send to the sales representative. Payment also confirms data described on proforma Invoice;</p>
 
-    <h5>COVET LDA</h5>
+    <h5 class="font-bold">COVET LDA</h5>
     <p>Bank Details <br>
         BPI Account EUR <br>
         NIB: 0010 0000 55721160001 68 <br>
         IBAN: PT50 0010 0000 5572 1160 0016 8 <br>
         SWIFT: BBPIPTPL </p>
 
-    <h5>COVET LDA</h5>
+    <h5 class="font-bold">COVET LDA</h5>
     <p>Bank Details <br>
         BPI Account USD <br><br>
 
         7. All pieces are the property of COVET HOUSE until payment in full is received. <br>
         8. COVET HOUSE reserve the right to defer the dispatch date until the balance of the order is received. </p>
 
-    <h5>Product &amp; Storage Fees</h5>
+    <h5 class="font-bold">Product &amp; Storage Fees</h5>
     <p>1. COVET HOUSE reserves the right to apply a warehouse fee except for mutual agreement between both parties. <br>
         2. Upon completion, an additional storage fee of 120€/m3 per week will be charged to any stored merchandise if the invoice balance is not fully paid and shipping arrangements have not been made within 2 weeks from the date the goods are received in our warehouse. <br>
         3. This fee will be cumulative until the remaining amount (invoice balance and storage fees) is fully paid and shipping arrangements have been made.</p>
 
-    <h5>Lead Times</h5>
+    <h5 class="font-bold">Lead Times</h5>
     <p>1. All quoted completion and delivery dates are estimates only.<br>
         2. Production time from Covet House’s brands is 4 to 6 weeks. Sales representative will inform the correct lead time, depending on the brands’ orders.<br>
         3. For pieces with custom specifications or orders of large quantities COVET HOUSE reserves the right to agree with the client on a different lead time.<br>
@@ -81,7 +81,7 @@ const termsContent = `
         6. COVET HOUSE is not responsible for delays in production or any fabric misuse if the fabric is sent without identification by the client.<br>
         7. COVET HOUSE is not responsible for delay in production time if there is failure in submitting the confirmation (receipt) of the transfer.</p>
 
-    <h5>Stock &amp; Outlet Products</h5>
+    <h5 class="font-bold">Stock &amp; Outlet Products</h5>
     <p>1. We keep a reasonable number of products in Stock and a product only can be reserved upon a deposit received from the client.<br>
         2. We offer great deals on all available floor and sample items, up to 70% off. These items have been used in showrooms, trade shows or other product placement events. Therefore, finishes variations, slight different dimensions and minor imperfections may occur from the standard product displayed on our website and catalogues. We will provide details about individual condition of each item upon request. COVET HOUSE Outlet items are available to be purchased at their current condition. We take all reasonable care to ensure that the product descriptions and details provided are accurate before purchase. Items are subject to availability and quantities are limited. Outlet sales are final – no returns or refunds.<br>
         3. Availability of the product must be confirmed with the sales representative, due to our stock turnover.</p>
@@ -200,7 +200,7 @@ const inputClass = "w-full bg-white border border-gray-300 py-2 px-4 text-xs tra
                             class="w-full max-w-[340px] h-auto object-contain mix-blend-multiply" />
 
                         <button @click="openCustomizationModal"
-                            class="w-full bg-[#ccc] text-black text-[10px] font-bold py-2.5 uppercase tracking-widest hover:bg-gray-400 transition-colors text-center">
+                            class="w-full bg-[#ccc] text-black text-[10px] font-bold py-2.5 uppercase tracking-widest hover:bg-gray-400 transition-colors text-center cursor-pointer">
                             REQUEST CUSTOMIZATION
                         </button>
 
@@ -270,7 +270,7 @@ const inputClass = "w-full bg-white border border-gray-300 py-2 px-4 text-xs tra
                                         CONFIRM THAT YOU HAVE <br class="hidden md:block"> READ AND ACCEPTED OUR <a
                                             class="text-[#bca479]" href="">PRIVACY POLICY.</a></label>
                                     <button type="submit"
-                                        class="bg-black text-white text-[10px] font-bold py-2 px-8 tracking-widest hover:bg-gray-800 transition-colors uppercase w-full md:w-auto"
+                                        class="bg-black text-white text-[10px] font-bold py-2 px-8 tracking-widest hover:bg-gray-800 transition-colors uppercase w-full md:w-auto cursor-pointer"
                                         :disabled="customizationForm.processing">
                                         REQUEST CUSTOMIZATION
                                     </button>

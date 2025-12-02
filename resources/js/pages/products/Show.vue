@@ -28,6 +28,7 @@ import BestSellersProducts from '@/components/page-components/BestSellersProduct
 import FormHomepage from '@/components/used-components/includes/FormHomepage.vue';
 import CategorySlider from '@/components/page-components/CategorySlider.vue';
 import ProductDetailsBlock from '@/components/page-components/ProductDetailsBlock.vue';
+import ServiceRoomGrid from '@/components/page-components/ServiceRoomGrid.vue';
 
 // --- PROPS ---
 const props = defineProps<{
@@ -283,12 +284,12 @@ const hideLightbox = () => {
                             <Maximize class="w-4 h-4 text-gray-400 rotate-45" />
                             <span class="text-xs font-bold uppercase tracking-widest">DIMENSIONS:</span>
                         </div>
-                        <div class="text-[10px] text-gray-500 tracking-wide pl-6">
+                        <div class="text-[10px] text-gray-500 tracking-wide pl-6 uppercase">
                             WIDTH: {{ product.dimensions_cm.width }} <span class="mx-2">|</span>
                             DEPTH: {{ product.dimensions_cm.depth }} <span class="mx-2">|</span>
                             HEIGHT: {{ product.dimensions_cm.height }}
                         </div>
-                        <div class="text-[10px] text-gray-500 tracking-wide pl-6">
+                        <div class="text-[10px] text-gray-500 tracking-wide pl-6 uppercase">
                             WIDTH: {{ product.dimensions_in.width }} <span class="mx-2">|</span>
                             DEPTH: {{ product.dimensions_in.depth }} <span class="mx-2">|</span>
                             HEIGHT: {{ product.dimensions_in.height }}
@@ -309,7 +310,7 @@ const hideLightbox = () => {
                         <span
                             class="text-xs font-bold uppercase tracking-widest border-b border-black pb-1 inline-block mb-4">
                             COLOR OPTIONS <span class="text-gray-400 text-[10px] font-normal">- {{ selectedFinishName
-                            }}</span>
+                                }}</span>
                         </span>
 
                         <div class="flex gap-4">
@@ -332,11 +333,11 @@ const hideLightbox = () => {
 
                     <div class="space-y-2 mb-2">
                         <button @click="openRequest('Expert', 'TALK WITH A SPECIALIST')"
-                            class="w-full bg-[#999] text-black text-[10px] font-bold py-2 uppercase tracking-widest hover:bg-[#999999cd] transition-colors cursor-pointer">
+                            class="w-full bg-[#cccccc] text-black text-xs font-bold py-2 uppercase tracking-widest hover:bg-[#cccccccd] transition-colors cursor-pointer">
                             TALK WITH A PRODUCT SPECIALIST
                         </button>
                         <button @click="openRequest('Customization', 'REQUEST CUSTOMIZATION')"
-                            class="w-full bg-[#999] text-black text-[10px] font-bold py-2 uppercase tracking-widest hover:bg-[#999999cd] transition-colors cursor-pointer">
+                            class="w-full bg-[#cccccc] text-black text-xs font-bold py-2 uppercase tracking-widest hover:bg-[#cccccccd] transition-colors cursor-pointer">
                             REQUEST CUSTOMIZATION
                         </button>
                     </div>
@@ -368,9 +369,11 @@ const hideLightbox = () => {
 
         <FormHomepage />
 
-        <CategorySlider class="pt-[6px] bg-black"/>
+        <ServiceRoomGrid class="pt-[6px] bg-black" />
 
-        <BestSellersProducts :products="bestSellersProducts" class="pt-[6px]"/>
+        <CategorySlider class="pt-[6px] bg-black" />
+
+        <BestSellersProducts :products="bestSellersProducts" class="pt-[6px]" />
 
         <VueEasyLightbox :visible="lightboxVisible" :imgs="galleryImages" :index="lightboxIndex" @hide="hideLightbox"
             :moveDisabled="false" />
