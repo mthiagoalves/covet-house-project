@@ -44,7 +44,7 @@ class BrandController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Brands/Index', [
+        return Inertia::render('brands/Index', [
             'brands' => $this->getMockBrands(),
             'pageTitle' => 'Our Brands'
         ]);
@@ -65,7 +65,7 @@ class BrandController extends Controller
             abort(404); // Retorna 404 se a marca não existir
         }
 
-        return Inertia::render('Brands/Show', [
+        return Inertia::render('brands/Show', [
             'brand' => $brand,
             'pageTitle' => $brand['name']
         ]);
