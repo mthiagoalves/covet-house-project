@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -25,6 +26,13 @@ Route::get('/contact-us', [PageController::class, 'contact'])->name('contact');
 Route::get('/interior-design-service', [PageController::class, 'interiorDesignService'])->name('interior-design-service');
 
 Route::get('/customer-service', [PageController::class, 'customerService'])->name('customer-service');
+
+Route::prefix('brands')->name('brands.')->group(function () {
+
+    Route::get('/', [BrandController::class, 'index'])->name('index');
+
+    Route::get('/{slug}', [BrandController::class, 'show'])->name('show');
+});
 
 Route::get('dashboard', function () {
     return Inertia::render('Dashboard');
