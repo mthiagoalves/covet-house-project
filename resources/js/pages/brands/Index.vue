@@ -14,6 +14,7 @@ interface Brand {
     name: string;
     slug: string;
     website: string;
+    website_text: string;
     subtitle: string;
     description: string;
     image_count: number; // <-- Adicionado
