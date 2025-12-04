@@ -84,6 +84,7 @@ const mainLinks = [
         href: '/brands',
         caret: true,
         children: [
+            { label: 'ALL BRANDS', href: '/brands' },
             { label: 'BOCA DO LOBO', href: '/brands/boca-do-lobo' },
             { label: 'LUXXU', href: '/brands/luxxu' },
             { label: 'CIRCU', href: '/brands/circu' },
