@@ -6,7 +6,18 @@ import { Link, usePage } from '@inertiajs/vue3';
 import { Download } from 'lucide-vue-next';
 import { onBeforeUnmount, onMounted, ref } from 'vue';
 
+const page = usePage();
 
+// Função para verificar se o link está ativo
+const isUrlActive = (href: string) => {
+    // Se for a home, tem que ser exato
+    if (href === '/') {
+        return page.url === '/';
+    }
+    // Para outras páginas, verifica se a URL começa com o href
+    // Ex: /about-us ativa o link /about
+    return page.url.startsWith(href);
+};
 
 const { open: openGeneralModal } = useGeneralModal();
 
@@ -172,7 +183,8 @@ const { open: openSearch } = useSearchModal();
                     <template v-for="l in utilityLinks" :key="l.label">
 
                         <Link v-if="l.type === 'link'" :href="l.href"
-                            class="flex items-center gap-1 hover:text-gray-300 transition-colors">
+                            class="flex items-center gap-1 hover:text-gray-300 transition-colors"
+                            :class="isUrlActive(l.href) ? 'text-[#bca479]' : 'hover:text-gray-300 text-white'">
                         {{ l.label }}
                         </Link>
 
@@ -191,10 +203,14 @@ const { open: openSearch } = useSearchModal();
                     <nav class="hidden md:flex items-center gap-4 h-7 text-[12px] text-[#ffffffcc]">
                         <div v-for="l in mainLinks" :key="l.label" class="relative h-full flex items-center"
                             @mouseleave="openDropdown = null">
-                            <Link :href="l.href"
-                                :class="['flex items-center gap-1 h-full hover:text-[#ffffff]', l.highlight ? 'text-red-500 hover:text-red-600' : '']"
-                                @mouseenter="l.caret ? openDropdown = l.label : openDropdown = null"> <span>{{ l.label
-                                }}</span>
+                            <Link :href="l.href" :class="[
+                                // Se estiver ativo -> Dourado
+                                isUrlActive(l.href) ? 'text-[#bca479]' : 'text-[#ffffffcc] hover:text-[#ffffff]',
+
+                                // Se tiver highlight (SPECIAL PRICES) -> Vermelho (sobrescreve o resto se necessário)
+                                l.highlight ? 'text-red-500 hover:text-red-600' : ''
+                            ]" @mouseenter="l.caret ? openDropdown = l.label : openDropdown = null"> <span>{{ l.label
+                            }}</span>
 
                             <span v-if="l.caret" aria-hidden="true"> ▾</span>
                             </Link>
@@ -252,7 +268,9 @@ const { open: openSearch } = useSearchModal();
                         <div class="max-w-full">
                             <ul class="hidden md:flex items-center gap-4 h-8 text-[11px] text-white">
                                 <li v-for="child in productLinks[0].children" :key="child.label">
-                                    <Link :href="child.href" class="hover:text-[#bca479] inline-block">{{ child.label }}
+                                    <Link :href="child.href" class="hover:text-[#bca479] inline-block"
+                                        :class="isUrlActive(child.href) ? 'text-[#bca479]' : 'hover:text-gray-300 text-white'">
+                                    {{ child.label }}
                                     </Link>
                                 </li>
                             </ul>
@@ -261,7 +279,9 @@ const { open: openSearch } = useSearchModal();
                             <ul
                                 class="hidden md:flex items-center md:justify-end gap-4 h-9 text-[11px] text-white border-t-[#bca479] border-t">
                                 <li v-for="child in mainLinks[3].children" :key="child.label">
-                                    <Link :href="child.href" class="hover:text-[#bca479] inline-block">{{ child.label }}
+                                    <Link :href="child.href" class="hover:text-[#bca479] inline-block"
+                                        :class="isUrlActive(child.href) ? 'text-[#bca479]' : 'hover:text-gray-300 text-white'">
+                                    {{ child.label }}
                                     </Link>
                                 </li>
                             </ul>
