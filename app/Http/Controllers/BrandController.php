@@ -17,6 +17,7 @@ class BrandController extends Controller
             [
                 'name' => 'BOCA DO LOBO',
                 'slug' => 'boca-do-lobo',
+                'has_video' => true,
                 'subtitle' => 'EXCLUSIVE DESIGN',
                 'description' => 'Boca do Lobo was founded in 2005, and early-on committed to encourage and represent the most authentic handcrafting techniques, by understanding and re-interpreting the past through technology and contemporary design. Each creation carries the legacy of centuries of the finest craftsmanship. In the workshops, talented artisans challenge and combine traditional manufacturing techniques with the latest technological methods to shape the high-quality materials into remarkable furniture, upholstery, and lighting pieces, which gives rise to timeless cosmopolitan environments.
                 <br/><br/>
@@ -32,6 +33,7 @@ class BrandController extends Controller
             [
                 'name' => 'LUXXU',
                 'slug' => 'luxxu',
+                'has_video' => true,
                 'subtitle' => 'MODERN DESIGN AND LIVING',
                 'description' => 'Everything we create, we believe in redesigning your definition of art.
                 <br/><br/>
@@ -49,6 +51,7 @@ class BrandController extends Controller
             [
                 'name' => 'CIRCU',
                 'slug' => 'circu',
+                'has_video' => true,
                 'subtitle' => 'MAGICAL FURNITURE',
                 'description' => 'CIRCU was built under a dream! The dream is to allow children to live their own fantasies and create a magical world for them to fly under an imagination that has no limit.
                 With its hand-crafted and hand-tailored pieces made in Portugal with the finest materials, they deliver only the highest quality furnishings that turn children’s dreams into reality!
@@ -65,6 +68,7 @@ class BrandController extends Controller
             [
                 'name' => 'MAISON VALENTINA',
                 'slug' => 'maison-valentina',
+                'has_video' => true,
                 'subtitle' => 'LUXURY BATHROOMS',
                 'description' => 'Maison Valentina was born in Porto, Portugal, aiming to deliver the most exquisite and sophisticated bathroom furniture. Offers high-end solutions made with the finest material selection, combined with rare handwork techniques, contemporary design and assuring supreme quality.',
                 'website' => 'https://www.maisonvalentina.net/en/?utm_source=website&utm_medium=brands&utm_content=covethouse&utm_campaign=brandawareness',
@@ -78,6 +82,7 @@ class BrandController extends Controller
             [
                 'name' => 'COVET COLLECTION',
                 'slug' => 'covet-collection',
+                'has_video' => false,
                 'subtitle' => 'DESIGN EDITIONS',
                 'description' => 'Covet Collection – Design Editions offers highly curated capsule collections to create show-stopping interiors. These capsules include furniture, lighting and accessories developed in partnership with the world’s most creative minds.
                 <br/><br/>
@@ -93,6 +98,7 @@ class BrandController extends Controller
             [
                 'name' => 'KOKET',
                 'slug' => 'koket',
+                'has_video' => true,
                 'subtitle' => 'LOVE HAPPENS',
                 'description' => 'Daring design aesthetic, high impact events, lavish presentations, notoriously risqué ad campaigns, and inspiring editorial, have an uncanny way of conveying KOKET’s mission to inspire love and empower through its statement pieces and unique design-driven experiences and content.
                 <br/><br/>
@@ -110,6 +116,7 @@ class BrandController extends Controller
             [
                 'name' => 'CAFFE LATTE',
                 'slug' => 'caffe-latte',
+                'has_video' => false,
                 'subtitle' => 'NEUTRAL DESIGNS FOR FUNCTIONAL INTERIORS WITH MODERN AESTHETICS',
                 'description' => 'CAFFE LATTE is a collection of furniture, lighting and acessories with a remarkable ability to fit into any style of interiors due to its modern aesthetic, minimalist and functional design, and consensual focus on neutral tones.
                 <br/><br/>
@@ -125,6 +132,7 @@ class BrandController extends Controller
             [
                 'name' => 'BRABBU',
                 'slug' => 'brabbu',
+                'has_video' => true,
                 'subtitle' => 'DESIGN FORCES',
                 'description' => 'BRABBU is a design brand that reflects an intense way of living, bringing fierceness, strength and power into an urban lifestyle. With a diverse range of furniture, casegoods, upholstery, lighting and rugs, and through sensory design, we pass on a unique experience in every piece we design and produce.
                 <br/><br/>
@@ -140,6 +148,7 @@ class BrandController extends Controller
             [
                 'name' => 'DELIGHTFULL',
                 'slug' => 'delightfull',
+                'has_video' => true,
                 'subtitle' => 'UNIQUE LAMPS',
                 'description' => 'A fresh reinterpretation of mid-century lighting design. We revive design and inspirational art from the 40s to 70s, bringing to you fresh classic lamps with the progress of colors and materials of modern décor. Our mid-century spirit can be suitable for any project customizing any piece that you need.
                 <br/><br/>
@@ -155,6 +164,7 @@ class BrandController extends Controller
             [
                 'name' => 'ESSENTIAL HOME',
                 'slug' => 'essential-home',
+                'has_video' => true,
                 'subtitle' => 'MID CENTURY FURNITURE',
                 'description' => 'Essential Home is an innovative mid-century modern furniture brand that takes important historical and cinematographic references from the 1930s and 1960s and turns them into unique furnishing pieces. What started out as ‘Essentials’ in 2015, a furniture collection by the mid-century lighting brand DelightFULL, quickly grew to be one of the most elegant representations of mid-century modern design, thus creating a new name, and a new brand, Essential Home.
                 <br/><br/>
@@ -170,6 +180,7 @@ class BrandController extends Controller
             [
                 'name' => 'RUG`SOCIETY',
                 'slug' => 'rug-society',
+                'has_video' => true,
                 'subtitle' => 'THE DELUXE OF PAST & PRESENT',
                 'description' => 'Rug`Society is an exquisite Portuguese brand of Rugs and covering sellections, that mainly aims to transform rugs into pieces of art. Rug’Society appears with a strong connotation to the eclectic style, a brand that transmits emotions, and that is our starting point for every different design that we conceive to stimulate and develop new trends.
                 <br/><br/>
@@ -185,6 +196,7 @@ class BrandController extends Controller
             [
                 'name' => 'PULLCAST',
                 'slug' => 'pullcast',
+                'has_video' => true,
                 'subtitle' => 'JEWELRY HARDWARE',
                 'description' => 'PullCast was born digging deep into the wonders of nature by a jeweller and a designer, which adore collecting objects from outdoor experiences.
                 <br/><br/>
@@ -196,6 +208,69 @@ class BrandController extends Controller
                     'facebook' => 'https://www.pinterest.pt/pullcast/',
                     'linkedin' => 'https://www.linkedin.com/company/pullcastsculpt/'
                 ]
+            ],
+        ];
+    }
+
+    /**
+     * Helper para retornar a lista de produtos da marca mocada
+     */
+    private function getMockBrandProducts()
+    {
+        return [
+            [
+                'id' => 101,
+                'name' => 'LAPIAZ SIDEBOARD',
+                'slug' => 'lapiaz-sideboard',
+                'type' => 'product',
+                'main_image_url' => 'https://placehold.co/800x800/eee/333?text=Lapiaz',
+                'brand' => ['name' => 'BOCA DO LOBO'],
+                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Sideboards', 'slug' => 'sideboards']]
+            ],
+            [
+                'id' => 102,
+                'name' => 'CHARLA DINING CHAIR',
+                'slug' => 'charla-dining-chair',
+                'type' => 'product',
+                'main_image_url' => 'https://placehold.co/800x800/ddd/333?text=Charla',
+                'brand' => ['name' => 'LUXXU'],
+                'category' => ['name' => 'Seatings', 'slug' => 'seatings', 'subcategory' => ['name' => 'Chairs', 'slug' => 'chairs']]
+            ],
+            [
+                'id' => 103,
+                'name' => 'ARDARA CONSOLE TABLE',
+                'slug' => 'ardara-console',
+                'type' => 'product',
+                'main_image_url' => 'https://placehold.co/800x800/ccc/333?text=Ardara',
+                'brand' => ['name' => 'BRABBU'],
+                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Consoles', 'slug' => 'consoles']]
+            ],
+            [
+                'id' => 101,
+                'name' => 'LAPIAZ SIDEBOARD',
+                'slug' => 'lapiaz-sideboard',
+                'type' => 'product',
+                'main_image_url' => 'https://placehold.co/800x800/eee/333?text=Lapiaz',
+                'brand' => ['name' => 'BOCA DO LOBO'],
+                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Sideboards', 'slug' => 'sideboards']]
+            ],
+            [
+                'id' => 102,
+                'name' => 'CHARLA DINING CHAIR',
+                'slug' => 'charla-dining-chair',
+                'type' => 'product',
+                'main_image_url' => 'https://placehold.co/800x800/ddd/333?text=Charla',
+                'brand' => ['name' => 'LUXXU'],
+                'category' => ['name' => 'Seatings', 'slug' => 'seatings', 'subcategory' => ['name' => 'Chairs', 'slug' => 'chairs']]
+            ],
+            [
+                'id' => 103,
+                'name' => 'ARDARA CONSOLE TABLE',
+                'slug' => 'ardara-console',
+                'type' => 'product',
+                'main_image_url' => 'https://placehold.co/800x800/ccc/333?text=Ardara',
+                'brand' => ['name' => 'BRABBU'],
+                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Consoles', 'slug' => 'consoles']]
             ],
         ];
     }
@@ -231,6 +306,29 @@ class BrandController extends Controller
     }
 
     /**
+     * Helper para injetar a contagem de imagens da marca individual
+     */
+    private function countImagesOfTheBrand($slug)
+    {
+        $imageCount = 0;
+
+        $path = public_path("images/brands/slider-ambiences/{$slug}");
+
+        if (File::exists($path)) {
+            $files = File::files($path);
+
+            // Filtra arquivos: ambience-1.jpg, ambience-2.jpg, etc.
+            $images = array_filter($files, function ($file) {
+                return preg_match('/^ambience-\d+\.(jpg|jpeg|png|webp)$/i', $file->getFilename());
+            });
+
+            $imageCount = count($images);
+        }
+
+        return $imageCount;
+    }
+
+    /**
      * Página Principal de Marcas (/brands)
      * Lista todas as marcas.
      */
@@ -238,7 +336,6 @@ class BrandController extends Controller
     {
         $rawBrands = $this->getMockBrands();
 
-        // Processa as marcas para adicionar 'image_count'
         $brandsWithImages = $this->processBrandsWithImages($rawBrands);
 
         return Inertia::render('brands/Index', [
@@ -260,16 +357,26 @@ class BrandController extends Controller
     {
         $brands = collect($this->getMockBrands());
 
-        // Encontra a marca pelo slug (simulando banco de dados)
         $brand = $brands->firstWhere('slug', $slug);
 
         if (!$brand) {
-            abort(404); // Retorna 404 se a marca não existir
+            abort(404);
         }
+
+        $countBrandImages = $this->countImagesOfTheBrand($slug);
+
+        $heroData = [
+            'videoUrlBase' => "/videos/brands/{$slug}",
+            'title' => $brand['name'],
+            'subtitle' => $brand['subtitle'] ?? 'LUXURY FURNITURE',
+        ];
 
         return Inertia::render('brands/Show', [
             'brand' => $brand,
-            'pageTitle' => $brand['name']
+            'hero' => $heroData,
+            'count_images' => $countBrandImages,
+            'relatedProducts' => $this->getMockBrandProducts()
+
         ]);
     }
 }
