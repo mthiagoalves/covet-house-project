@@ -15,6 +15,7 @@ interface Brand {
     name: string;
     slug: string;
     website: string;
+    has_video: boolean;
     website_text: string;
     subtitle: string;
     description: string;

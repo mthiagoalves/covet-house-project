@@ -1,34 +1,44 @@
 <script setup lang="ts">
-import { Link } from '@inertiajs/vue3';
+import VideoHeroBrands from '@/components/page-components/VideoHeroBrands.vue';
+import { Head, Link } from '@inertiajs/vue3';
+import { computed } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
 import { Instagram, Facebook, Linkedin } from 'lucide-vue-next';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/pagination';
-import { computed } from 'vue';
+import BestSellersProducts from '@/components/page-components/BestSellersProducts.vue';
+import { useGeneralModal } from '@/composables/useGeneralModal';
 
 const modules = [Autoplay, EffectFade, Pagination, Navigation];
 
-interface Brand {
-    name: string;
-    slug: string;
-    website: string;
-    website_text: string;
-    subtitle: string;
-    description: string;
-    image_count: number;
-    socials: { instagram?: string; facebook?: string; linkedin?: string; };
-}
+const { open: openModal } = useGeneralModal();
 
 const props = defineProps<{
-    brand: Brand;
-    index: number;
+    brand: {
+        name: string;
+        slug: string;
+        website: string;
+        has_video: boolean;
+        website_text: string;
+        subtitle: string;
+        description: string;
+        socials: { instagram?: string; facebook?: string; linkedin?: string; };
+    };
+    hero: {
+        videoUrlBase: string;
+        title: string;
+        subtitle: string;
+        link: string;
+    };
+    count_images: number;
+    relatedProducts: any[];
 }>();
 
 const galleryImages = computed(() => {
     const images = [];
-    const count = props.brand.image_count;
+    const count = props.count_images;
 
     if (count === 0) {
         return [`https://placehold.co/900x1200/222/fff?text=${props.brand.name}+Ambience`];
@@ -40,9 +50,25 @@ const galleryImages = computed(() => {
 
     return images;
 });
+
+const openDownloadModal = () => {
+    openModal({
+        title: props.brand.name + ' CATALOGUE ',
+        slug: props.brand.slug + 'catalogue',
+        btnName: 'DOWNLOAD NOW',
+        formType: 'Catalogue'
+    });
+};
 </script>
 
 <template>
+
+    <Head :title="brand.name" />
+
+    <div v-if="brand.has_video == true">
+        <VideoHeroBrands :video-url-base="hero.videoUrlBase" :title="hero.title" :subtitle="hero.subtitle" />
+    </div>
+
     <section
         class="w-full flex flex-col md:flex-row snap-start bg-white relative overflow-hidden md:h-[calc(100svh-108px)]">
 
@@ -64,10 +90,10 @@ const galleryImages = computed(() => {
             </p>
 
             <div class="flex gap-4 mb-12">
-                <Link :href="`brands/${brand.slug}`"
-                    class="bg-black text-white text-[10px] font-bold py-2 px-8 tracking-widest hover:bg-[#bca479] transition-colors uppercase">
-                SEE MORE
-                </Link>
+                <button @click="openDownloadModal()"
+                    class="bg-black text-white text-[10px] font-bold py-2 px-8 tracking-widest hover:bg-[#bca479] transition-colors uppercase cursor-pointer">
+                    DOWNLOAD CATALOGUE
+                </button>
                 <a :href="`${brand.website}`" target="_blank"
                     class="border border-black text-black text-[10px] font-bold py-2 px-8 tracking-widest hover:bg-black hover:text-white transition-colors uppercase">
                     {{ brand.website_text }}
@@ -101,8 +127,10 @@ const galleryImages = computed(() => {
                 </SwiperSlide>
             </Swiper>
         </div>
-
     </section>
+
+    <BestSellersProducts :title='"new best sellers"' :products="relatedProducts" />
+
 </template>
 
 <style>
