@@ -3,6 +3,7 @@
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ShowroomController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Laravel\Fortify\Features;
@@ -32,6 +33,13 @@ Route::prefix('brands')->name('brands.')->group(function () {
     Route::get('/', [BrandController::class, 'index'])->name('index');
 
     Route::get('/{slug}', [BrandController::class, 'show'])->name('show');
+});
+
+Route::prefix('showrooms')->name('showrooms.')->group(function () {
+
+    Route::get('/', [ShowroomController::class, 'index'])->name('index');
+
+    Route::get('/{slug}', [ShowroomController::class, 'show'])->name('show');
 });
 
 Route::get('dashboard', function () {
