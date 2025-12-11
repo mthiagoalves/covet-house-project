@@ -101,11 +101,11 @@ const mainLinks = [
     },
     {
         label: 'SHOWROOMS',
-        href: '/showrooms',
+        href: '/showroom-covet-douro',
         caret: true,
         children: [
-            { label: 'COVET DOURO', href: '/showrooms' },
-            { label: 'COVET TOWN', href: '/showrooms/london' },
+            { label: 'COVET DOURO', href: '/showroom-covet-douro' },
+            { label: 'COVET TOWN', href: '/showroom-covet-town' },
         ]
     },
     { label: 'CATALOGUES & BOOKS', href: '/catalogues-books' },
