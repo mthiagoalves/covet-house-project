@@ -14,6 +14,7 @@ class ShowroomController extends Controller
             [
                 'name' => 'COVET DOURO',
                 'slug' => 'covet-douro',
+                'title_form' => 'SCHEDULE YOUR VISIT TO COVET DOURO',
                 'location' => 'Porto, Portugal',
                 'cover_image' => '/images/showrooms/covet-douro/covet-douro.jpg',
                 'description' => 'An ancient three-floor waterfront mansion in Oporto, filled with remarkable architectural details that hold the glory from a noble past and traditions of Portugal.',
@@ -25,6 +26,7 @@ class ShowroomController extends Controller
                 'name' => 'Curated Showroom - The Ultimate Luxury Experience',
                 'slug' => 'curated-showroom-the-ultimate-luxury-experience',
                 'location' => 'Porto, Portugal',
+                'title_form' => 'Covet House`s brand new 4`000 sqm showroom',
                 'cover_image' => '/images/showrooms/the-ultimate-curated-design-digital-showroom/the-ultimate-curated-design-digital-showroom.jpg',
                 'description' => 'A private showroom in the heart of London’s design district, offering an intimate design experience.',
                 'address' => '1 Regent Street, London - UK',
@@ -64,6 +66,30 @@ class ShowroomController extends Controller
         return $images;
     }
 
+    // Adicione esta função auxiliar
+    private function getShowroomGridImages($slug)
+    {
+        $path = public_path("images/showrooms/grid-section/{$slug}");
+        $images = [];
+
+        if (File::exists($path)) {
+            $files = File::files($path);
+            natsort($files);
+            foreach ($files as $file) {
+                $images[] = "/images/showrooms/grid-section/{$slug}/" . $file->getFilename();
+            }
+        }
+
+        // Mock se estiver vazio (Garante 8 imagens para o layout ficar bonito)
+        if (empty($images)) {
+            for ($i = 1; $i <= 8; $i++) {
+                $images[] = "https://placehold.co/800x800/e5e5e5/333?text=Grid+{$i}";
+            }
+        }
+
+        return $images;
+    }
+
     /**
      * Lista todos os Showrooms (/showrooms)
      */
@@ -93,6 +119,8 @@ class ShowroomController extends Controller
         }
 
         $gallery = $this->getShowroomImages($slug);
+
+        $gridImages = $this->getShowroomGridImages($slug);
 
         $heroSlides = [];
 
@@ -126,7 +154,8 @@ class ShowroomController extends Controller
         return Inertia::render('showrooms/Show', [
             'showroom' => $showroom,
             'gallery' => $gallery,
-            'heroSlides' => $heroSlides // <-- Novo dado
+            'heroSlides' => $heroSlides,
+            'gridImages' => $gridImages 
         ]);
     }
 }
