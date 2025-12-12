@@ -66,28 +66,97 @@ class ShowroomController extends Controller
         return $images;
     }
 
-    // Adicione esta função auxiliar
+    /**
+     * AQUI VOCÊ DEFINE TUDO MANUALMENTE
+     * O índice (0, 1, 2...) corresponde à ordem das imagens na pasta (alfabética).
+     */
+    private function getManualHotspots()
+    {
+        return [
+            // Imagem 1 (Index 0)
+            0 => [
+                [
+                    'product_name' => 'Lapiaz White Headboard',
+                    'product_slug' => 'imperfectio-sofa',
+                    'top' => '33%',
+                    'left' => '50%'
+                ],
+                [
+                    'product_name' => 'Lapiaz Table Lamp',
+                    'product_slug' => 'lapiaz-table-lamp',
+                    'top' => '40%',
+                    'left' => '19%'
+                ],
+                [
+                    'product_name' => 'Frank Nightstand',
+                    'product_slug' => 'frank-nightstand',
+                    'top' => '52%',
+                    'left' => '80%'
+                ]
+            ],
+
+            // Imagem 2 (Index 1)
+            1 => [
+                [
+                    'product_name' => 'HERA SUSPENSION',
+                    'product_slug' => 'hera-suspension',
+                    'top' => '52%',
+                    'left' => '80%'
+                ]
+            ],
+
+            // Imagem 3 (Index 2)
+            2 => [
+                [
+                    'product_name' => 'PIXEL CABINET',
+                    'product_slug' => 'pixel-cabinet',
+                    'top' => '50%',
+                    'left' => '50%'
+                ]
+            ],
+
+            // ... Continue para as outras imagens (3, 4, 5, 6, 7...)
+            // Se uma imagem não tiver definição aqui, ela ficará sem hotspots.
+        ];
+    }
+
     private function getShowroomGridImages($slug)
     {
         $path = public_path("images/showrooms/grid-section/{$slug}");
-        $images = [];
+        $gridData = [];
+
+        // Carrega a sua configuração manual
+        $manualConfig = $this->getManualHotspots();
 
         if (File::exists($path)) {
             $files = File::files($path);
-            natsort($files);
-            foreach ($files as $file) {
-                $images[] = "/images/showrooms/grid-section/{$slug}/" . $file->getFilename();
+            natsort($files); // Ordena: 1.jpg, 2.jpg...
+
+            // Reindexa o array para garantir que começa do 0 sequencialmente
+            $files = array_values($files);
+
+            foreach ($files as $index => $file) {
+                // Verifica se existe configuração para este índice, senão retorna array vazio
+                $hotspots = $manualConfig[$index] ?? [];
+
+                $gridData[] = [
+                    'url' => "/images/showrooms/grid-section/{$slug}/" . $file->getFilename(),
+                    'hotspots' => $hotspots
+                ];
             }
         }
 
-        // Mock se estiver vazio (Garante 8 imagens para o layout ficar bonito)
-        if (empty($images)) {
-            for ($i = 1; $i <= 8; $i++) {
-                $images[] = "https://placehold.co/800x800/e5e5e5/333?text=Grid+{$i}";
+        // Mock de Fallback (apenas se a pasta estiver vazia)
+        if (empty($gridData)) {
+            for ($i = 0; $i < 8; $i++) {
+                $gridData[] = [
+                    'url' => "https://placehold.co/800x800/e5e5e5/333?text=Grid+" . ($i + 1),
+                    'hotspots' => []
+                ];
             }
         }
 
-        return $images;
+        return $gridData;
     }
 
     /**
@@ -155,7 +224,7 @@ class ShowroomController extends Controller
             'showroom' => $showroom,
             'gallery' => $gallery,
             'heroSlides' => $heroSlides,
-            'gridImages' => $gridImages 
+            'gridImages' => $gridImages
         ]);
     }
 }
