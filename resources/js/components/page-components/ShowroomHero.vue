@@ -82,7 +82,7 @@ function toggleMute() {
                     </div>
 
                     <a v-if="slide.link_url" :href="slide.link_url" target="_blank"
-                        class="bg-transparent text-white text-[10px] font-bold py-3 px-15 tracking-widest border-white border-1 hover:bg-white hover:text-black cursor-pointer transition-colors uppercase w-full md:w-auto mb-10 pointer-events-auto">
+                        class="bg-transparent text-white text-[10px] font-bold py-3 px-15 tracking-widest border-white border-1 hover:bg-white hover:text-black cursor-pointer transition-colors uppercase w-auto mb-10 pointer-events-auto">
                         explore
                     </a>
                 </div>
