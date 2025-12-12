@@ -20,7 +20,6 @@ class ShowroomController extends Controller
                 'address' => 'Avenida da República, Gaia - Portugal',
                 'email' => 'douro@covethouse.eu',
                 'phone' => '+351 912 345 678',
-                'map_url' => 'https://www.google.com/maps/embed?...',
             ],
             [
                 'name' => 'Curated Showroom - The Ultimate Luxury Experience',
@@ -31,7 +30,6 @@ class ShowroomController extends Controller
                 'address' => '1 Regent Street, London - UK',
                 'email' => 'london@covethouse.eu',
                 'phone' => '+44 20 1234 5678',
-                'map_url' => 'https://www.google.com/maps/embed?...',
             ]
         ];
     }
@@ -103,12 +101,15 @@ class ShowroomController extends Controller
                 [
                     'url' => "/videos/showrooms/{$slug}",
                     'title' => $showroom['name'],
-                    'subtitle' => 'SHOWROOM'
+                    'subtitle' => 'SHOWROOM',
+                    'link_url' => 'https://covethouse.eu/virtual-tours/douro/',
+
                 ],
                 [
                     'url' => "/videos/showrooms/virtual-tour-{$slug}",
                     'title' => 'VITUAL TOUR',
-                    'subtitle' => '360º'
+                    'subtitle' => '360º',
+                    'link_url' => 'https://www.youtube.com/watch?v=q8kllBLg0LQ',
                 ]
             ];
         } else {
@@ -116,7 +117,8 @@ class ShowroomController extends Controller
                 [
                     'url' => "/videos/showrooms/{$slug}",
                     'title' => $showroom['name'],
-                    'subtitle' => 'SHOWROOM'
+                    'subtitle' => 'SHOWROOM',
+                    'link_url' => '',
                 ]
             ];
         }
