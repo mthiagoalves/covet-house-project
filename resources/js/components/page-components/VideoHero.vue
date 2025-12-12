@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { Link } from '@inertiajs/vue3';
-import { ref, computed, onMounted } from 'vue';
+import { computed, ref } from 'vue';
 
 const props = defineProps<{
     videoUrlBase: string;

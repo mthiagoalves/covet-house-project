@@ -41,19 +41,6 @@ const modules = [Navigation, Autoplay];
 
     <div class="pt-[72px] md:pt-[108px] bg-white min-h-screen">
 
-        <div class="relative w-full h-[60vh] md:h-[70vh]">
-            <img :src="showroom.cover_image" :alt="showroom.name" class="w-full h-full object-cover" />
-            <div
-                class="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-white p-4 text-center">
-                <h1 class="text-4xl md:text-6xl font-light tracking-[0.2em] uppercase mb-4">
-                    {{ showroom.name }}
-                </h1>
-                <p class="text-sm font-bold tracking-widest uppercase">
-                    {{ showroom.location }}
-                </p>
-            </div>
-        </div>
-
         <div class="max-w-[1400px] mx-auto px-4 py-16 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12">
 
             <div class="lg:col-span-4 flex flex-col gap-8">
