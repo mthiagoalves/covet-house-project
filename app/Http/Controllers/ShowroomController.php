@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Inertia\Inertia;
 
 class ShowroomController extends Controller
 {
@@ -13,27 +15,55 @@ class ShowroomController extends Controller
                 'name' => 'COVET DOURO',
                 'slug' => 'covet-douro',
                 'location' => 'Porto, Portugal',
-                'cover_image' => 'https://placehold.co/1920x1080/222/fff?text=Covet+Douro+Cover',
+                'cover_image' => '/images/showrooms/covet-douro/covet-douro.jpg',
                 'description' => 'An ancient three-floor waterfront mansion in Oporto, filled with remarkable architectural details that hold the glory from a noble past and traditions of Portugal.',
                 'address' => 'Avenida da República, Gaia - Portugal',
                 'email' => 'douro@covethouse.eu',
                 'phone' => '+351 912 345 678',
-                'map_url' => 'https://www.google.com/maps/embed?...', // Link do iframe do Google Maps
-                'image_count' => 5 // Mock para a galeria
+                'map_url' => 'https://www.google.com/maps/embed?...',
             ],
             [
-                'name' => 'COVET TOWN',
-                'slug' => 'london', // Baseado no seu menu (/showrooms/london)
-                'location' => 'London, UK',
-                'cover_image' => 'https://placehold.co/1920x1080/333/fff?text=Covet+London+Cover',
+                'name' => 'Curated Showroom - The Ultimate Luxury Experience',
+                'slug' => 'curated-showroom-the-ultimate-luxury-experience',
+                'location' => 'Porto, Portugal',
+                'cover_image' => '/images/showrooms/the-ultimate-curated-design-digital-showroom/the-ultimate-curated-design-digital-showroom.jpg',
                 'description' => 'A private showroom in the heart of London’s design district, offering an intimate design experience.',
                 'address' => '1 Regent Street, London - UK',
                 'email' => 'london@covethouse.eu',
                 'phone' => '+44 20 1234 5678',
                 'map_url' => 'https://www.google.com/maps/embed?...',
-                'image_count' => 4
             ]
         ];
+    }
+
+    /**
+     * Helper para buscar imagens dinamicamente na pasta
+     */
+    private function getShowroomImages($slug)
+    {
+        $path = public_path("images/showrooms/ambiences-section/{$slug}");
+        $images = [];
+
+        if (File::exists($path)) {
+            $files = File::files($path);
+
+            natsort($files);
+
+            foreach ($files as $file) {
+
+                $images[] = "/images/showrooms/ambiences-section/{$slug}/" . $file->getFilename();
+            }
+        }
+
+
+        if (empty($images)) {
+            return [
+                "https://placehold.co/1200x800/ccc/333?text={$slug}+1",
+                "https://placehold.co/1200x800/ccc/333?text={$slug}+2",
+            ];
+        }
+
+        return $images;
     }
 
     /**
@@ -41,7 +71,7 @@ class ShowroomController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Showrooms/Index', [
+        return Inertia::render('showrooms/Index', [
             'pageTitle' => 'Our Showrooms',
             'showrooms' => $this->getMockShowrooms(),
             'hero' => [
@@ -64,22 +94,37 @@ class ShowroomController extends Controller
             abort(404);
         }
 
-        // Lógica de Galeria (igual a Brands/Products)
-        // Caminho: /images/showrooms/{slug}/gallery-{i}.jpg
-        $gallery = [];
-        // Se quiser usar a lógica real de arquivos:
-        // $path = public_path("images/showrooms/{$slug}");
-        // ... (lógica de File::exists) ...
+        $gallery = $this->getShowroomImages($slug);
 
-        // Mock rápido da galeria baseado no image_count
-        for ($i = 1; $i <= $showroom['image_count']; $i++) {
-            // $gallery[] = "/images/showrooms/{$slug}/gallery-{$i}.jpg";
-            $gallery[] = "https://placehold.co/1200x800/ccc/333?text={$showroom['name']}+{$i}";
+        $heroSlides = [];
+
+        if ($slug === 'covet-douro') {
+            $heroSlides = [
+                [
+                    'url' => "/videos/showrooms/{$slug}",
+                    'title' => $showroom['name'],
+                    'subtitle' => 'SHOWROOM'
+                ],
+                [
+                    'url' => "/videos/showrooms/virtual-tour-{$slug}",
+                    'title' => 'VITUAL TOUR',
+                    'subtitle' => '360º'
+                ]
+            ];
+        } else {
+            $heroSlides = [
+                [
+                    'url' => "/videos/showrooms/{$slug}",
+                    'title' => $showroom['name'],
+                    'subtitle' => 'SHOWROOM'
+                ]
+            ];
         }
 
-        return Inertia::render('Showrooms/Show', [
+        return Inertia::render('showrooms/Show', [
             'showroom' => $showroom,
-            'gallery' => $gallery
+            'gallery' => $gallery,
+            'heroSlides' => $heroSlides // <-- Novo dado
         ]);
     }
 }
