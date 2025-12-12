@@ -49,16 +49,15 @@ const getAmbienceImage = (slug: string) => `/images/products/ambiences/${slug}.j
                         :style="{ top: hotspot.top, left: hotspot.left }">
                         <div class="absolute w-full h-full bg-white rounded-full opacity-50 animate-ping"></div>
                         <Link :href="`/products/${hotspot.product_slug}`">
-                        <div
-                            class="relative w-6 h-6 bg-transparent border border-white rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
-                            <div class="w-1 h-1 bg-white rounded-full"></div>
-                        </div>
+                            <div
+                                class="relative w-8 h-8 bg-transparent border border-white rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+                                <div class="w-1 h-1 bg-white rounded-full"></div>
+                            </div>
                         </Link>
 
                         <Link :href="`/products/${hotspot.product_slug}`"
-                            class="absolute left-full ml-3 bg-white text-gray-500 text-[10px] font-normal uppercase tracking-widest z-[99] py-3 px-4 shadow-lg opacity-0 group-hover/hotspot:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none group-hover/hotspot:pointer-events-auto hidden md:block">
-                        {{ hotspot.product_name }}
-                        <div class="absolute top-1/2 right-full -mt-1 border-4 border-transparent border-r-white"></div>
+                            class="absolute bottom-full ml-3 bg-white text-gray-500 text-[10px] font-normal uppercase tracking-widest z-[99] py-3 px-4 shadow-lg opacity-0 group-hover/hotspot:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none group-hover/hotspot:pointer-events-auto hidden md:block">
+                            {{ hotspot.product_name }}
                         </Link>
                     </div>
                 </SwiperSlide>
