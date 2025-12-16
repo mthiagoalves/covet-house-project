@@ -11,6 +11,7 @@ interface Hotspot {
 interface GridItem {
     url: string;
     hotspots: Hotspot[];
+    title?: string | null;
 }
 
 const props = defineProps<{
@@ -47,7 +48,11 @@ const getImageClass = (index: number) => {
                 <div
                     class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-300 pointer-events-none">
                 </div>
-
+                <div v-if="item.title" class="absolute top-6 left-6 z-20 pointer-events-none">
+                    <h4 class="text-white font-bold uppercase tracking-widest text-sm md:text-base drop-shadow-md">
+                        {{ item.title }}
+                    </h4>
+                </div>
                 <div v-for="(hotspot, idx) in item.hotspots" :key="idx"
                     class="absolute z-20 w-8 h-8 flex items-center justify-center cursor-pointer group/hotspot"
                     :style="{ top: hotspot.top, left: hotspot.left }">

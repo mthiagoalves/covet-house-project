@@ -259,71 +259,248 @@ class ShowroomController extends Controller
             'curated-showroom-the-ultimate-luxury-experience' => [
 
                 0 => [
-                    [
-                        'product_name' => 'Lapiaz White Headboard',
-                        'product_slug' => 'imperfectio-sofa',
-                        'top' => '33%',
-                        'left' => '50%'
-                    ],
-                    [
-                        'product_name' => 'Lapiaz Table Lamp',
-                        'product_slug' => 'lapiaz-table-lamp',
-                        'top' => '40%',
-                        'left' => '19%'
-                    ],
-                    [
-                        'product_name' => 'Frank Nightstand',
-                        'product_slug' => 'frank-nightstand',
-                        'top' => '52%',
-                        'left' => '80%'
+                    'title' => 'Boca do Lobo',
+                    'hotspots' => [
+                        [
+                            'product_name' => 'Lapiaz Console',
+                            'product_slug' => 'lapiaz-console',
+                            'top' => '47%',
+                            'left' => '8%'
+                        ],
+                        [
+                            'product_name' => 'Glance Mirror',
+                            'product_slug' => 'glance-mirror',
+                            'top' => '23%',
+                            'left' => '17%'
+                        ],
+                        [
+                            'product_name' => 'Symphony Cabinet',
+                            'product_slug' => 'symphony-cabinet',
+                            'top' => '37%',
+                            'left' => '36%'
+                        ],
+                        [
+                            'product_name' => 'Hera Suspension Lamp',
+                            'product_slug' => 'hera-suspension-lamp',
+                            'top' => '16%',
+                            'left' => '46%'
+                        ],
+                        [
+                            'product_name' => 'Metamorphosis Dining Table',
+                            'product_slug' => 'metamorphosis-dining-table',
+                            'top' => '51%',
+                            'left' => '46%'
+                        ],
+                        [
+                            'product_name' => 'Lapiaz Mirror',
+                            'product_slug' => 'lapiaz-mirror',
+                            'top' => '27%',
+                            'left' => '77%'
+                        ],
+                        [
+                            'product_name' => 'Voltaire Walnut Sideboard',
+                            'product_slug' => 'voltaire-walnut-sideboard',
+                            'top' => '47%',
+                            'left' => '81%'
+                        ],
+                        [
+                            'product_name' => 'Nº11 Dining Chair',
+                            'product_slug' => 'n11-dining-chair',
+                            'top' => '65%',
+                            'left' => '74%'
+                        ],
                     ]
+
                 ],
                 1 => [
-                    [
-                        'product_name' => 'nº 11 Dining Chair',
-                        'product_slug' => 'n11-dining-chair',
-                        'top' => '69%',
-                        'left' => '14%'
-                    ],
-                    [
-                        'product_name' => 'Empire Dining Table',
-                        'product_slug' => 'empire-dining-table',
-                        'top' => '56%',
-                        'left' => '43%'
-                    ],
-                    [
-                        'product_name' => 'Emporium Gold Fur Chair',
-                        'product_slug' => 'emporium-gold-fur-chair',
-                        'top' => '69%',
-                        'left' => '80%'
-                    ],
-                    [
-                        'product_name' => 'Guggenheim Patch Cabinet',
-                        'product_slug' => 'guggenheim-patch-cabinet',
-                        'top' => '36%',
-                        'left' => '13%'
-                    ],
-                    [
-                        'product_name' => 'Palatino Slim Display Case',
-                        'product_slug' => 'palatino-slim-display-case',
-                        'top' => '34%',
-                        'left' => '80%'
-                    ],
-                    [
-                        'product_name' => 'Charles Suspension Lamp',
-                        'product_slug' => 'charles-suspension-lamp',
-                        'top' => '20%',
-                        'left' => '35%'
-                    ],
+                    'title' => 'Luxxu',
+                    'hotspots' => [
+                        [
+                            'product_name' => 'Littus Dining Table',
+                            'product_slug' => 'littus-dining-table',
+                            'top' => '72%',
+                            'left' => '50%'
+                        ],
+                        [
+                            'product_name' => 'Tenor Sideboard',
+                            'product_slug' => 'tenor-sideboard',
+                            'top' => '57%',
+                            'left' => '16%'
+                        ],
+                        [
+                            'product_name' => 'Empire II Suspension Lamp',
+                            'product_slug' => 'empire-ii-suspension-lamp',
+                            'top' => '21%',
+                            'left' => '45%'
+                        ],
+                    ]
                 ],
-
-                // Imagem 3 (Index 2)
                 2 => [
-                    [
-                        'product_name' => 'PIXEL CABINET',
-                        'product_slug' => 'pixel-cabinet',
-                        'top' => '50%',
-                        'left' => '50%'
+                    'title' => 'Maison Valentina',
+                    'hotspots' => [
+                        [
+                            'product_name' => 'Darian Freestanding',
+                            'product_slug' => 'darian-freestanding',
+                            'top' => '49%',
+                            'left' => '10%'
+                        ],
+                        [
+                            'product_name' => 'Colosseum Mirror',
+                            'product_slug' => 'colosseum-mirror',
+                            'top' => '29%',
+                            'left' => '22%'
+                        ],
+                    ]
+                ],
+                3 => [
+                    'title' => 'Circu',
+                    'hotspots' => [
+                        [
+                            'product_name' => 'Fantasy Air Balloon Lounge',
+                            'product_slug' => 'fantasy-air-balloon-lounge',
+                            'top' => '34%',
+                            'left' => '43%'
+                        ],
+                    ]
+                ],
+                4 => [
+                    'title' => 'Brabbu',
+                    'hotspots' => [
+                        [
+                            'product_name' => 'Ardara Console',
+                            'product_slug' => 'ardara-console',
+                            'top' => '72%',
+                            'left' => '54%'
+                        ],
+                        [
+                            'product_name' => 'Cay Rectangular Mirror',
+                            'product_slug' => 'cay-rectangular-mirror',
+                            'top' => '17%',
+                            'left' => '23%'
+                        ],
+                    ]
+                ],
+                5 => [
+                    'title' => 'Caffe Latte',
+                    'hotspots' => [
+                        [
+                            'product_name' => 'Maya Armchair',
+                            'product_slug' => 'maya-armchair',
+                            'top' => '70%',
+                            'left' => '11%'
+                        ],
+                        [
+                            'product_name' => 'Capuchin Modular Sofa',
+                            'product_slug' => 'imperfectio-sofa',
+                            'top' => '63%',
+                            'left' => '39%'
+                        ],
+                        [
+                            'product_name' => 'Matheny Round Suspension',
+                            'product_slug' => 'matheny-round-suspension',
+                            'top' => '21%',
+                            'left' => '44%'
+                        ],
+                    ]
+                ],
+                6 => [
+                    'title' => 'Delightfull & Essential home',
+                    'hotspots' => [
+                        [
+                            'product_name' => 'Altura Mirror',
+                            'product_slug' => 'altura-mirror',
+                            'top' => '32%',
+                            'left' => '8%'
+                        ],
+                        [
+                            'product_name' => 'Amy Floor Lamp',
+                            'product_slug' => 'amy-floor-lamp',
+                            'top' => '28%',
+                            'left' => '22%'
+                        ],
+                        [
+                            'product_name' => 'Altura Mirror',
+                            'product_slug' => 'altura-mirror',
+                            'top' => '67%',
+                            'left' => '26%'
+                        ],
+                        [
+                            'product_name' => 'Craig Console Table',
+                            'product_slug' => 'craig-console-table',
+                            'top' => '32%',
+                            'left' => '8%'
+                        ],
+                        [
+                            'product_name' => 'Katia Table Lamp',
+                            'product_slug' => 'katia-table-lamp',
+                            'top' => '52%',
+                            'left' => '37%'
+                        ],
+                        [
+                            'product_name' => 'Anthony Sideboard',
+                            'product_slug' => 'anthony-sideboard',
+                            'top' => '42%',
+                            'left' => '48%'
+                        ],
+                        [
+                            'product_name' => 'Turner Table Lamp',
+                            'product_slug' => 'turner-table-lamp',
+                            'top' => '32%',
+                            'left' => '58%'
+                        ],
+                        [
+                            'product_name' => 'Ike Suspension Lamp',
+                            'product_slug' => 'ike-suspension-lamp',
+                            'top' => '20%',
+                            'left' => '52%'
+                        ],
+                    ]
+                ],
+                7 => [
+                    'title' => 'Rug`Society',
+                    'hotspots' => [
+                        [
+                            'product_name' => 'Turner Table Lamp',
+                            'product_slug' => 'turner-table-lamp',
+                            'top' => '38%',
+                            'left' => '3%'
+                        ],
+                        [
+                            'product_name' => 'Iguazu Armchair',
+                            'product_slug' => 'iguazu-armchair',
+                            'top' => '53%',
+                            'left' => '11%'
+                        ],
+                        [
+                            'product_name' => 'Botti Side Table',
+                            'product_slug' => 'botti-side-table',
+                            'top' => '61%',
+                            'left' => '22%'
+                        ],
+                        [
+                            'product_name' => 'Imperial Snake Rug',
+                            'product_slug' => 'imperial-snake-rug',
+                            'top' => '82%',
+                            'left' => '19%'
+                        ],
+                        [
+                            'product_name' => 'Charla Dining Chair',
+                            'product_slug' => 'charla-dining-chair',
+                            'top' => '65%',
+                            'left' => '42%'
+                        ],
+                        [
+                            'product_name' => 'Apotheosis XL Dining Table',
+                            'product_slug' => 'apothosis-xl-dining-table',
+                            'top' => '54%',
+                            'left' => '39%'
+                        ],
+                        [
+                            'product_name' => 'Moka Dining Chair',
+                            'product_slug' => 'moka-dining-chair',
+                            'top' => '57%',
+                            'left' => '66%'
+                        ],
                     ]
                 ],
             ],
@@ -337,27 +514,35 @@ class ShowroomController extends Controller
         $gridData = [];
 
         $fullConfig = $this->getManualHotspots();
+        $showroomConfig = $fullConfig[$slug] ?? [];
 
-        // 2. Filtra APENAS a configuração do showroom atual usando o $slug
-        // Se não encontrar o slug no array, usa um array vazio []
         $showroomConfig = $fullConfig[$slug] ?? [];
         if (File::exists($path)) {
             $files = File::files($path);
-            natsort($files); // Ordena: 1.jpg, 2.jpg...
+            natsort($files);
 
-            // Reindexa o array para garantir que começa do 0 sequencialmente
             $files = array_values($files);
 
             foreach ($files as $index => $file) {
-                $hotspots = $showroomConfig[$index] ?? [];
+                $config = $showroomConfig[$index] ?? [];
+
+                $hotspots = [];
+                $title = null;
+                if (isset($config['hotspots'])) {
+                    $hotspots = $config['hotspots'];
+                    $title = $config['title'] ?? null;
+                } else {
+                    $hotspots = $config;
+                }
+
                 $gridData[] = [
                     'url' => "/images/showrooms/grid-section/{$slug}/" . $file->getFilename(),
-                    'hotspots' => $hotspots
+                    'hotspots' => $hotspots,
+                    'title' => $title
                 ];
             }
         }
 
-        // Mock de Fallback (apenas se a pasta estiver vazia)
         if (empty($gridData)) {
             for ($i = 0; $i < 8; $i++) {
                 $gridData[] = [
