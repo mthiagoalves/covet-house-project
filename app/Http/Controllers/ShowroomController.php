@@ -66,6 +66,68 @@ class ShowroomController extends Controller
         return $images;
     }
 
+    private function getMockRelatedProducts()
+    {
+        $productsMock = [
+            [
+                'id' => 101,
+                'name' => 'LAPIAZ SIDEBOARD',
+                'slug' => 'lapiaz-sideboard',
+                'type' => 'product',
+                'main_image_url' => 'https://placehold.co/800x800/eee/333?text=Lapiaz',
+                'brand' => ['name' => 'BOCA DO LOBO'],
+                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Sideboards', 'slug' => 'sideboards']]
+            ],
+            [
+                'id' => 102,
+                'name' => 'CHARLA DINING CHAIR',
+                'slug' => 'charla-dining-chair',
+                'type' => 'product',
+                'main_image_url' => 'https://placehold.co/800x800/ddd/333?text=Charla',
+                'brand' => ['name' => 'LUXXU'],
+                'category' => ['name' => 'Seatings', 'slug' => 'seatings', 'subcategory' => ['name' => 'Chairs', 'slug' => 'chairs']]
+            ],
+            [
+                'id' => 103,
+                'name' => 'ARDARA CONSOLE TABLE',
+                'slug' => 'ardara-console',
+                'type' => 'product',
+                'main_image_url' => 'https://placehold.co/800x800/ccc/333?text=Ardara',
+                'brand' => ['name' => 'BRABBU'],
+                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Consoles', 'slug' => 'consoles']]
+            ],
+            [
+                'id' => 101,
+                'name' => 'LAPIAZ SIDEBOARD',
+                'slug' => 'lapiaz-sideboard',
+                'type' => 'product',
+                'main_image_url' => 'https://placehold.co/800x800/eee/333?text=Lapiaz',
+                'brand' => ['name' => 'BOCA DO LOBO'],
+                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Sideboards', 'slug' => 'sideboards']]
+            ],
+            [
+                'id' => 102,
+                'name' => 'CHARLA DINING CHAIR',
+                'slug' => 'charla-dining-chair',
+                'type' => 'product',
+                'main_image_url' => 'https://placehold.co/800x800/ddd/333?text=Charla',
+                'brand' => ['name' => 'LUXXU'],
+                'category' => ['name' => 'Seatings', 'slug' => 'seatings', 'subcategory' => ['name' => 'Chairs', 'slug' => 'chairs']]
+            ],
+            [
+                'id' => 103,
+                'name' => 'ARDARA CONSOLE TABLE',
+                'slug' => 'ardara-console',
+                'type' => 'product',
+                'main_image_url' => 'https://placehold.co/800x800/ccc/333?text=Ardara',
+                'brand' => ['name' => 'BRABBU'],
+                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Consoles', 'slug' => 'consoles']]
+            ],
+        ];
+
+        return $productsMock;
+    }
+
     /**
      * AQUI VOCÊ DEFINE TUDO MANUALMENTE
      * O índice (0, 1, 2...) corresponde à ordem das imagens na pasta (alfabética).
@@ -587,6 +649,9 @@ class ShowroomController extends Controller
 
         $gridImages = $this->getShowroomGridImages($slug);
 
+        $relatedProducts = $this->getMockRelatedProducts();
+
+
         $heroSlides = [];
 
         if ($slug === 'covet-douro') {
@@ -620,7 +685,8 @@ class ShowroomController extends Controller
             'showroom' => $showroom,
             'gallery' => $gallery,
             'heroSlides' => $heroSlides,
-            'gridImages' => $gridImages
+            'gridImages' => $gridImages,
+            'relatedProducts' => $relatedProducts,
         ]);
     }
 }
