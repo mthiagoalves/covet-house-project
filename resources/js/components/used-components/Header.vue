@@ -108,7 +108,7 @@ const mainLinks = [
             { label: 'COVET TOWN', href: '/showrooms/curated-showroom-the-ultimate-luxury-experience' },
         ]
     },
-    { label: 'CATALOGUES & BOOKS', href: '/catalogues-books' },
+    { label: 'CATALOGUES & BOOKS', href: '/catalogues-and-ebooks' },
     {
         label: '❤ ROOM BY ROOM',
         href: '/inspirations',
