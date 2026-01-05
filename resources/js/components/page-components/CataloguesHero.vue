@@ -52,7 +52,7 @@ onUnmounted(() => {
 const heroStyles = computed(() => {
     return {
         // Se a imagem vier pronta na prop:
-        '--bg-desk': `url('/images/catalogues-and-ebooks/${props.slug}-banner-top.jpg')`,
+        '--bg-desk': `url('/images/catalogues-and-ebooks/banner-form-top/${props.slug}-banner-top.jpg')`,
 
         // OU, se você quiser montar usando o slug como tentou:
         // '--bg-desk': `url('/images/banners/${props.slug}.jpg')`,
@@ -121,7 +121,7 @@ const heroStyles = computed(() => {
             <div
                 class="md:col-span-5 md:col-start-8 justify-center md:justify-end items-center h-full relative order-1 md:order-2 block md:hidden">
                 <picture>
-                    <img :src="`/images/catalogues-and-ebooks/${props.slug}-banner-top-m.jpg`" alt="Inspirations Book"
+                    <img :src="`/images/catalogues-and-ebooks/banner-form-top/${props.slug}-banner-top-m.jpg`" alt="Inspirations Book"
                         class="object-contain max-h-full w-auto drop-shadow-2xl" />
                 </picture>
             </div>
