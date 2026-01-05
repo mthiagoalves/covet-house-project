@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\CatalogueAndEbooksController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShowroomController;
@@ -40,6 +41,13 @@ Route::prefix('showrooms')->name('showrooms.')->group(function () {
     Route::get('/', [ShowroomController::class, 'index'])->name('index');
 
     Route::get('/{slug}', [ShowroomController::class, 'show'])->name('show');
+});
+
+Route::prefix('catalogues-and-ebooks')->name('catalogues-and-ebooks')->group(function () {
+
+    Route::get('/', [CatalogueAndEbooksController::class, 'index'])->name('index');
+
+    Route::get('/{slug}', [CatalogueAndEbooksController::class, 'show'])->name('show');
 });
 
 Route::get('dashboard', function () {
