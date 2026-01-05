@@ -15,9 +15,9 @@ defineProps<{
 
     <div class="relative z-10 bg-white min-h-screen w-full md:mt-[410px]">
 
-        <div class="max-w-[1400px] mx-auto px-4 py-20">
-            <h2 class="text-3xl font-light text-center mb-10 uppercase tracking-widest">
-                Our Latest Catalogues
+        <div class="max-w-[1400px] mx-auto px-4 py-4">
+            <h2 class="text-2xl font-bold text-center mb-5 uppercase tracking-widest">
+                ALL EDITORIAL CONTENT
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
