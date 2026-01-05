@@ -48,6 +48,8 @@ Route::prefix('catalogues-and-ebooks')->name('catalogues-and-ebooks')->group(fun
     Route::get('/', [CatalogueAndEbooksController::class, 'index'])->name('index');
 
     Route::get('/{slug}', [CatalogueAndEbooksController::class, 'show'])->name('show');
+
+    Route::post('/download', [CatalogueAndEbooksController::class, 'download'])->name('catalogues.download');
 });
 
 Route::get('dashboard', function () {
