@@ -660,6 +660,8 @@ class ShowroomController extends Controller
                     'url' => "/videos/showrooms/{$slug}",
                     'title' => $showroom['name'],
                     'subtitle' => 'SHOWROOM',
+                    'slug_form' => 'porto-guide',
+                    'title_form' => 'PORTO GUIDE',
                     'link_url' => 'https://covethouse.eu/virtual-tours/douro/',
 
                 ],
@@ -677,6 +679,8 @@ class ShowroomController extends Controller
                     'title' => $showroom['name'],
                     'subtitle' => 'SHOWROOM',
                     'link_url' => '',
+                    'slug_form' => 'pricelist-covet-house-brands-showroom-euros',
+                    'title_form' => 'PRICELIST SHOWROOM',
                 ]
             ];
         }

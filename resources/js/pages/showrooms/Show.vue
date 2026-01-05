@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import BestSellersProducts from '@/components/page-components/BestSellersProducts.vue';
+<<<<<<< HEAD
+import FormShowroomPage from '@/components/page-components/FormShowroomPage.vue';
+=======
+>>>>>>> 737064ca95d954a1829ca55dcb1f4a1840f7c6c5
 import IdServiceForm from '@/components/page-components/IdServiceForm.vue';
 import ShowroomHero from '@/components/page-components/ShowroomHero.vue';
 import ShowroomImageGrid from '@/components/page-components/ShowroomImageGrid.vue';
@@ -46,6 +50,11 @@ const visitDescription = "Interior designers from all over the world are invited
 
     <ShowroomImageGrid :images="gridImages" />
 
+<<<<<<< HEAD
+    <FormShowroomPage :title-form="heroSlides[0].title_form" :slug-form="heroSlides[0].slug_form" />
+
+=======
+>>>>>>> 737064ca95d954a1829ca55dcb1f4a1840f7c6c5
     <BestSellersProducts :title='"you may also like"' :products="relatedProducts" />
 
     <IdServiceForm />
