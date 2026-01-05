@@ -36,7 +36,7 @@ const getImageClass = (index: number) => {
 </script>
 
 <template>
-    <div class="w-full bg-black pt-16 md:pt-[6px]">
+    <div class="w-full bg-black pt-16 md:py-[6px]">
 
         <div class="grid grid-cols-1 md:grid-cols-4 gap-[6px] auto-rows-[300px] md:auto-rows-[600px]">
 
