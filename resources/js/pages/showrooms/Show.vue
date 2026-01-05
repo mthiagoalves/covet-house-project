@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import BestSellersProducts from '@/components/page-components/BestSellersProducts.vue';
+import IdServiceForm from '@/components/page-components/IdServiceForm.vue';
 import ShowroomHero from '@/components/page-components/ShowroomHero.vue';
 import ShowroomImageGrid from '@/components/page-components/ShowroomImageGrid.vue';
 import ShowroomVisitBlock from '@/components/page-components/ShowroomVisitBlock.vue';
@@ -12,6 +14,7 @@ const props = defineProps<{
     gallery: string[];
     heroSlides: any[];
     gridImages: any[];
+    relatedProducts: any[];
 }>();
 
 const { open: openGeneral } = useGeneralModal();
@@ -42,6 +45,11 @@ const visitDescription = "Interior designers from all over the world are invited
         :showroom-slug="showroom.slug" :virtual-tour-url="heroSlides[0].link_url" />
 
     <ShowroomImageGrid :images="gridImages" />
+
+    <BestSellersProducts :title='"you may also like"' :products="relatedProducts" />
+
+    <IdServiceForm />
+
 </template>
 
 <style scoped>
