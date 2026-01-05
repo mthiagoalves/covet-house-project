@@ -31,9 +31,7 @@ const description = computed(() => {
 
     <div class="min-h-[600px] w-full flex flex-col items-center justify-center bg-white px-4 text-center">
 
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20 bg-gray-200"></div>
-
-        <h1 class="text-[120px] md:text-[200px] font-light leading-none text-[#bca479] select-none">
+        <h1 class="text-[120px] md:text-[200px] font-light leading-none text-[#bca479] select-none mb-4">
             {{ status }}
         </h1>
 
