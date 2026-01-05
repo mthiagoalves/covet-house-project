@@ -11,9 +11,9 @@ defineProps<{
 
     <Head :title="pageTitle" />
 
-    <CataloguesHero />
+    <CataloguesHero title="The Ultimate Inspirations Design Book" slug="the-ultimate-inspirations-design-book" />
 
-    <div class="relative z-10 bg-white min-h-screen w-full mt-[400px]">
+    <div class="relative z-10 bg-white min-h-screen w-full md:mt-[410px]">
 
         <div class="max-w-[1400px] mx-auto px-4 py-20">
             <h2 class="text-3xl font-light text-center mb-10 uppercase tracking-widest">

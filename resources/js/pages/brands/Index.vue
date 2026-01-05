@@ -19,7 +19,7 @@ interface Brand {
     website_text: string;
     subtitle: string;
     description: string;
-    image_count: number; // <-- Adicionado
+    image_count: number;
     socials: { instagram?: string; facebook?: string; linkedin?: string; };
 }
 
