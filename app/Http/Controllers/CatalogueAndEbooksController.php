@@ -7,35 +7,45 @@ use Inertia\Inertia;
 
 class CatalogueAndEbooksController extends Controller
 {
-    // Função auxiliar para Mock Data
     private function getMockCatalogues()
     {
         $catalogues = [];
 
-        // Vamos gerar 18 itens para ter bastante conteúdo para o Load More
-        for ($i = 1; $i <= 18; $i++) {
+        for ($i = 1; $i <= 19; $i++) {
+
+            $isFeatured = ($i === 1);
+
             $catalogues[] = [
                 'id' => $i,
-                'title' => $i === 1 ? 'THE ULTIMATE INSPIRATIONS DESIGN BOOK' : "COVET HOUSE NEW CATALOGUE VOL. $i",
-                'subtitle' => $i === 1 ? 'EBOOK' : 'CATALOGUE',
-                'image' => $i === 1
-                    ? '/images/catalogues-and-ebooks/the-ultimate-inspirations-design-book-banner-top-m.jpg' // Imagem real p/ destaque
-                    : "https://placehold.co/400x500/e5e5e5/333?text=Catalogue+$i",
+                'title' => $isFeatured ? 'THE ULTIMATE INSPIRATIONS DESIGN BOOK' : "COVET HOUSE NEW CATALOGUE VOL. $i",
+                'subtitle' => $isFeatured ? 'EBOOK' : 'CATALOGUE',
+                'image' => $isFeatured
+                    ? '/images/catalogues-and-ebooks/thumbnails/the-ultimate-inspirations-design-book-featured.png'
+                    : "/images/catalogues-and-ebooks/thumbnails/catalogue-covet-house.png",
                 'slug' => "catalogue-$i",
-                'download_link' => '#'
+                'download_link' => '#',
+                'is_featured' => $isFeatured,
             ];
         }
 
-        return $catalogues;
+        return collect($catalogues);
     }
 
     public function index()
     {
         $allCatalogues = $this->getMockCatalogues();
 
-        // Separa o primeiro como destaque e o resto como lista
-        $featuredCatalogue = $allCatalogues[0];
-        $regularCatalogues = array_slice($allCatalogues, 1);
+        $featuredCatalogue = $allCatalogues->firstWhere('is_featured', true);
+
+        $regularCatalogues = $allCatalogues
+            ->where('is_featured', false)
+            ->values()
+            ->all();
+
+        if (!$featuredCatalogue && count($regularCatalogues) > 0) {
+            $featuredCatalogue = $regularCatalogues[0];
+            array_shift($regularCatalogues);
+        }
         return Inertia::render('catalogues-and-ebooks/Index', [
             'pageTitle' => 'Catalogues & Ebooks',
             'featuredCatalogue' => $featuredCatalogue,
