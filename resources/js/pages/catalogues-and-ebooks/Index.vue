@@ -25,11 +25,6 @@ defineProps<{
 
             <CatalogueGrid :featured="featuredCatalogue" :list="regularCatalogues" />
         </div>
-
-        <div class="bg-gray-100 py-20 text-center">
-            <p class="text-sm text-gray-500">END OF CATALOGUES</p>
-        </div>
-
     </div>
 
 </template>
