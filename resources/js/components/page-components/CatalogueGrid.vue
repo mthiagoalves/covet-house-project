@@ -1,33 +1,73 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
-import { Link } from '@inertiajs/vue3';
-
+import { ref, computed, onMounted, onUnmounted, nextTick, watch } from 'vue';
 // Props recebidas do Pai (Index.vue)
 const props = defineProps<{
     featured: any;
     list: any[];
 }>();
 
-// --- LÓGICA DO LOAD MORE ---
-const initialCount = 6;
-const itemsToShow = ref(initialCount);
+// --- CONFIGURAÇÃO ---
+const initialBatch = 6; // Quantos itens aparecem ao lado do destaque
+const loadBatch = 10;   // Quantos itens carregam ao clicar em See More
 
-// Lista computada que mostra apenas a quantidade definida em itemsToShow
-const visibleList = computed(() => {
-    return props.list.slice(0, itemsToShow.value);
+const itemsToShow = ref(initialBatch);
+
+// --- SEPARAÇÃO DAS LISTAS ---
+
+// 1. Lista do Topo (Máximo 6 itens) - Vai para a direita do destaque
+const topList = computed(() => {
+    // Pega do 0 até o limite atual, mas travado no máximo de 'initialBatch' (6)
+    return props.list.slice(0, Math.min(itemsToShow.value, initialBatch));
 });
 
-// Verifica se ainda há itens para mostrar
+// 2. Lista de Baixo (O Resto) - Vai para o grid 5x5
+const bottomList = computed(() => {
+    // Se não carregamos mais que 6, retorna vazio.
+    // Se carregamos, retorna do 6 até o total atual.
+    if (itemsToShow.value <= initialBatch) return [];
+    return props.list.slice(initialBatch, itemsToShow.value);
+});
+
 const hasMore = computed(() => {
     return itemsToShow.value < props.list.length;
 });
 
-const loadMore = () => {
-    itemsToShow.value += 6; // Carrega mais 6 de cada vez
+const loadMore = async () => {
+    itemsToShow.value += loadBatch;
+    await nextTick();
+    // Re-sincroniza a altura do topo caso algo tenha mudado,
+    // embora o load more agora afete principalmente a parte de baixo.
+    syncHeight();
 };
 
-// Estilo comum do botão de download
-const btnClass = "bg-[#333] text-white text-[10px] font-bold py-3 px-6 uppercase tracking-widest hover:bg-[#bca479] transition-colors w-full text-center flex items-center justify-center group";
+const btnClass = "bg-[#333] text-white text-[10px] font-bold py-2 px-6 uppercase tracking-widest hover:bg-[#bca479] transition-colors w-full text-center flex items-center justify-center group";
+
+const featuredCardRef = ref<HTMLElement | null>(null);
+const rightColRef = ref<HTMLElement | null>(null);
+let resizeObserver: ResizeObserver | null = null;
+
+const syncHeight = () => {
+    if (!featuredCardRef.value || !rightColRef.value) return;
+
+    if (window.innerWidth >= 1024) {
+        const height = rightColRef.value.offsetHeight;
+        featuredCardRef.value.style.height = `${height}px`;
+    } else {
+        featuredCardRef.value.style.height = 'auto';
+    }
+};
+
+onMounted(() => {
+    resizeObserver = new ResizeObserver(() => syncHeight());
+    if (rightColRef.value) resizeObserver.observe(rightColRef.value);
+    window.addEventListener('resize', syncHeight);
+    setTimeout(syncHeight, 100);
+});
+
+onUnmounted(() => {
+    if (resizeObserver) resizeObserver.disconnect();
+    window.removeEventListener('resize', syncHeight);
+});
 </script>
 
 <template>
@@ -35,8 +75,8 @@ const btnClass = "bg-[#333] text-white text-[10px] font-bold py-3 px-6 uppercase
 
     <div class="grid grid-cols-1 lg:grid-cols-5 gap-3">
 
-        <div class="lg:col-span-2 flex flex-col gap-4">
-            <div class="flex flex-col items-center text-center h-full">
+        <div ref="leftColRef" class="lg:col-span-2 flex flex-col gap-4">
+            <div class="flex flex-col items-center justify-center text-center h-full">
                 <div class="px-8 bg-[#e5e5e5] mb-5">
                     <div class="w-full aspect-[3/4] relative group cursor-pointer overflow-hidden">
                         <a :href="`/catalogues-and-ebooks/${featured.slug}`">
@@ -53,10 +93,10 @@ const btnClass = "bg-[#333] text-white text-[10px] font-bold py-3 px-6 uppercase
                     {{ featured.subtitle }}
                 </p>
 
-                <div class="flex items-center gap-3 w-2/5">
+                <div class="flex items-center gap-3 md:w-2/5">
                     <div
-                        class="w-10 h-10 border border-black flex items-center justify-center cursor-pointer hover:bg-black group/check transition-colors flex-shrink-0">
-                        <div class="w-3 h-3 bg-transparent group-hover/check:bg-white transition-colors"></div>
+                        class="w-9 h-9 border border-black flex items-center justify-center cursor-pointer hover:bg-black group/check transition-colors flex-shrink-0">
+                        <div class="w-2.5 h-2.5 bg-transparent group-hover/check:bg-white transition-colors"></div>
                     </div>
 
                     <a :href="`/catalogues-and-ebooks/${featured.slug}`" :class="btnClass">
@@ -69,52 +109,69 @@ const btnClass = "bg-[#333] text-white text-[10px] font-bold py-3 px-6 uppercase
             </div>
         </div>
 
-        <div class="lg:col-span-3 flex flex-col">
+        <div ref="rightColRef" class="lg:col-span-3 flex flex-col">
+            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-3 gap-y-3">
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-3 gap-y-3">
-
-                <div v-for="item in visibleList" :key="item.id" class="flex flex-col items-center text-center">
+                <div v-for="item in topList" :key="item.id" class="flex flex-col items-center text-center">
                     <div class="w-full bg-[#e4e4e4] mb-2 relative overflow-hidden cursor-pointer py-4">
                         <a :href="`/catalogues-and-ebooks/${item.slug}`">
                             <img :src="item.image" :alt="item.title"
                                 class="w-full h-full object-cover transition-transform duration-500" />
                         </a>
                     </div>
-
-                    <h4 class="text-[11px] font-bold uppercase tracking-widest mb-1 px-2 line-clamp-2 min-h-[2.5em]">
-                        {{ item.title }}
-                    </h4>
-                    <p class="text-[11px] text-gray-500 uppercase tracking-wider mb-2">
-                        {{ item.subtitle }}
-                    </p>
-
-                    <div class="flex items-center gap-2 w-2/3 mt-auto px-2">
+                    <h4 class="text-xs font-bold uppercase tracking-widest mb-1 px-2">{{ item.title }}</h4>
+                    <p class="text-[10px] text-gray-500 uppercase tracking-wider mb-6">{{ item.subtitle }}</p>
+                    <div class="flex items-center gap-2 md:w-2/3 mt-auto px-2">
                         <div
                             class="w-9 h-9 border border-black flex items-center justify-center cursor-pointer hover:bg-black group/check transition-colors flex-shrink-0">
                             <div class="w-2.5 h-2.5 bg-transparent group-hover/check:bg-white transition-colors"></div>
                         </div>
-
                         <a :href="`/catalogues-and-ebooks/thumbnails/${item.slug}/thumbnail.png`"
-                            :class="[btnClass, 'py-2.5 px-4 text-[9px]']">
+                            :class="[btnClass, 'py-2.5 text-[9px]']">
                             <span>Download</span>
                             <span
                                 class="text-base leading-none group-hover:translate-x-1 transition-transform ml-2 mb-0.5">›</span>
                         </a>
                     </div>
-
                 </div>
 
             </div>
+        </div>
+    </div>
 
-            <div v-if="hasMore" class="mt-16 text-center">
-                <button @click="loadMore"
-                    class="bg-black text-white text-[10px] font-bold py-4 px-12 tracking-[0.2em] uppercase hover:bg-[#bca479] transition-colors">
-                    See More
-                </button>
+    <div v-if="bottomList.length > 0"
+        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-3 gap-y-12 animate-fade-in-up mt-6">
+
+        <div v-for="item in bottomList" :key="item.id" class="flex flex-col items-center text-center">
+            <div class="w-full bg-[#e4e4e4] mb-2 relative overflow-hidden cursor-pointer py-4">
+                <a :href="`/catalogues-and-ebooks/${item.slug}`">
+                    <img :src="item.image" :alt="item.title"
+                        class="w-full h-full object-cover transition-transform duration-500" />
+                </a>
             </div>
-
+            <h4 class="text-xs font-bold uppercase tracking-widest mb-1 px-2">{{ item.title }}</h4>
+            <p class="text-[10px] text-gray-500 uppercase tracking-wider mb-6">{{ item.subtitle }}</p>
+            <div class="flex items-center gap-2 w-2/3 mt-auto px-2">
+                <div
+                    class="w-9 h-9 border border-black flex items-center justify-center cursor-pointer hover:bg-black group/check transition-colors flex-shrink-0">
+                    <div class="w-2.5 h-2.5 bg-transparent group-hover/check:bg-white transition-colors"></div>
+                </div>
+                <a :href="`/catalogues-and-ebooks/thumbnails/${item.slug}/thumbnail.png`"
+                    :class="[btnClass, 'py-2.5 text-[9px]']">
+                    <span>Download</span>
+                    <span
+                        class="text-base leading-none group-hover:translate-x-1 transition-transform ml-2 mb-0.5">›</span>
+                </a>
+            </div>
         </div>
 
+    </div>
+
+    <div v-if="hasMore" class="mt-8 text-center w-full max-w-[200px] mx-auto">
+        <button @click="loadMore" :class="[btnClass, 'py-2.5 text-[9px] cursor-pointer']">
+            See More <span
+                class="text-base leading-none group-hover:translate-x-1 transition-transform ml-2 mb-0.5">›</span>
+        </button>
     </div>
 
 </template>
