@@ -19,7 +19,7 @@ defineProps<{
     <div class="relative z-10 bg-white min-h-screen w-full md:mt-[410px]">
 
         <div class="max-w-full mx-auto px-4 py-4">
-            <h2 class="text-2xl font-bold text-center mb-5 uppercase tracking-widest">
+            <h2 class="text-xl font-bold text-center mb-5 uppercase tracking-widest">
                 ALL EDITORIAL CONTENT
             </h2>
 

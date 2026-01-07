@@ -6,6 +6,20 @@ const props = defineProps<{
     list: any[];
 }>();
 
+const selectedItems = ref<number[]>([]);
+
+const toggleSelection = (id: number) => {
+    if (selectedItems.value.includes(id)) {
+        selectedItems.value = selectedItems.value.filter(itemId => itemId !== id);
+    } else {
+        selectedItems.value.push(id);
+    }
+};
+
+const isSelected = (id: number) => {
+    return selectedItems.value.includes(id);
+};
+
 // --- CONFIGURAÇÃO ---
 const initialBatch = 6; // Quantos itens aparecem ao lado do destaque
 const loadBatch = 10;   // Quantos itens carregam ao clicar em See More
@@ -40,27 +54,41 @@ const loadMore = async () => {
     syncHeight();
 };
 
-const btnClass = "bg-[#333] text-white text-[10px] font-bold py-2 px-6 uppercase tracking-widest hover:bg-[#bca479] transition-colors w-full text-center flex items-center justify-center group";
+const btnClass = "bg-[#333] text-white text-[10px] font-bold py-2 md:px-6 px-2 uppercase tracking-widest hover:bg-[#bca479] transition-colors w-full text-center flex items-center justify-center group";
 
 const featuredCardRef = ref<HTMLElement | null>(null);
 const rightColRef = ref<HTMLElement | null>(null);
 let resizeObserver: ResizeObserver | null = null;
 
 const syncHeight = () => {
+    // Verificação de segurança
     if (!featuredCardRef.value || !rightColRef.value) return;
 
-    if (window.innerWidth >= 1024) {
-        const height = rightColRef.value.offsetHeight;
-        featuredCardRef.value.style.height = `${height}px`;
-    } else {
-        featuredCardRef.value.style.height = 'auto';
-    }
+    // requestAnimationFrame garante que o CSS atualize em sincronia com a taxa de atualização do monitor
+    window.requestAnimationFrame(() => {
+        // Verificação dupla dentro do frame
+        if (!featuredCardRef.value || !rightColRef.value) return;
+
+        // Breakpoint LG do Tailwind é 1024px
+        if (window.innerWidth >= 1024) {
+            const height = rightColRef.value.offsetHeight;
+            featuredCardRef.value.style.height = `${height - 2}px`;
+        } else {
+            // No mobile, removemos a altura forçada
+            featuredCardRef.value.style.height = 'auto';
+        }
+    });
 };
 
 onMounted(() => {
+    // 1. Cria o observador para mudanças de conteúdo (Load More)
     resizeObserver = new ResizeObserver(() => syncHeight());
     if (rightColRef.value) resizeObserver.observe(rightColRef.value);
+
+    // 2. Adiciona o listener para redimensionamento da janela
     window.addEventListener('resize', syncHeight);
+
+    // 3. Chamada inicial com delay para garantir que o DOM renderizou imagens/fontes
     setTimeout(syncHeight, 100);
 });
 
@@ -71,14 +99,12 @@ onUnmounted(() => {
 </script>
 
 <template>
-
-
     <div class="grid grid-cols-1 lg:grid-cols-5 gap-3">
 
-        <div ref="leftColRef" class="lg:col-span-2 flex flex-col gap-4">
+        <div ref="featuredCardRef" class="lg:col-span-2 flex flex-col gap-4">
             <div class="flex flex-col items-center justify-center text-center h-full">
-                <div class="px-8 bg-[#e5e5e5] mb-5">
-                    <div class="w-full aspect-[3/4] relative group cursor-pointer overflow-hidden">
+                <div class="bg-[#e5e5e5] mb-2 h-full">
+                    <div class="w-full h-full relative group cursor-pointer overflow-hidden">
                         <a :href="`/catalogues-and-ebooks/${featured.slug}`">
                             <img :src="featured.image" :alt="featured.title"
                                 class="w-full h-full object-cover shadow-lg transition-transform duration-700" />
@@ -89,14 +115,18 @@ onUnmounted(() => {
                 <h3 class="text-xs font-bold uppercase tracking-widest mb-1">
                     {{ featured.title }}
                 </h3>
-                <p class="text-[10px] text-gray-500 uppercase tracking-wider mb-6">
+                <p class="text-[10px] text-gray-500 uppercase tracking-wider mb-3">
                     {{ featured.subtitle }}
                 </p>
 
                 <div class="flex items-center gap-3 md:w-2/5">
-                    <div
-                        class="w-9 h-9 border border-black flex items-center justify-center cursor-pointer hover:bg-black group/check transition-colors flex-shrink-0">
-                        <div class="w-2.5 h-2.5 bg-transparent group-hover/check:bg-white transition-colors"></div>
+                    <div @click="toggleSelection(featured.id)"
+                        class="w-9 h-9 border border-[#333] flex items-center justify-center cursor-pointer transition-colors duration-200 flex-shrink-0"
+                        :class="isSelected(featured.id) ? 'bg-[#333]' : 'bg-transparent hover:bg-gray-200'">
+                        <svg v-if="isSelected(featured.id)" xmlns="http://www.w3.org/2000/svg"
+                            class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                        </svg>
                     </div>
 
                     <a :href="`/catalogues-and-ebooks/${featured.slug}`" :class="btnClass">
@@ -119,16 +149,21 @@ onUnmounted(() => {
                                 class="w-full h-full object-cover transition-transform duration-500" />
                         </a>
                     </div>
-                    <h4 class="text-xs font-bold uppercase tracking-widest mb-1 px-2">{{ item.title }}</h4>
-                    <p class="text-[10px] text-gray-500 uppercase tracking-wider mb-6">{{ item.subtitle }}</p>
+                    <h4 class="text-xs font-bold uppercase tracking-widest mb-1">{{ item.title }}</h4>
+                    <p class="text-[10px] text-gray-500 uppercase tracking-wider mb-3">{{ item.subtitle }}</p>
                     <div class="flex items-center gap-2 md:w-2/3 mt-auto px-2">
-                        <div
-                            class="w-9 h-9 border border-black flex items-center justify-center cursor-pointer hover:bg-black group/check transition-colors flex-shrink-0">
-                            <div class="w-2.5 h-2.5 bg-transparent group-hover/check:bg-white transition-colors"></div>
+                        <div @click="toggleSelection(item.id)"
+                            class="w-9 h-9 border border-[#333] flex items-center justify-center cursor-pointer transition-colors duration-200 flex-shrink-0"
+                            :class="isSelected(item.id) ? 'bg-[#333]' : 'bg-transparent hover:bg-gray-200'">
+                            <svg v-if="isSelected(item.id)" xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
                         </div>
                         <a :href="`/catalogues-and-ebooks/thumbnails/${item.slug}/thumbnail.png`"
-                            :class="[btnClass, 'py-2.5 text-[9px]']">
-                            <span>Download</span>
+                            :class="[btnClass, 'py-2.5']">
+                            <span class="text-[7px] md:text-[9px]">Download now</span>
                             <span
                                 class="text-base leading-none group-hover:translate-x-1 transition-transform ml-2 mb-0.5">›</span>
                         </a>
@@ -150,15 +185,18 @@ onUnmounted(() => {
                 </a>
             </div>
             <h4 class="text-xs font-bold uppercase tracking-widest mb-1 px-2">{{ item.title }}</h4>
-            <p class="text-[10px] text-gray-500 uppercase tracking-wider mb-6">{{ item.subtitle }}</p>
-            <div class="flex items-center gap-2 w-2/3 mt-auto px-2">
-                <div
-                    class="w-9 h-9 border border-black flex items-center justify-center cursor-pointer hover:bg-black group/check transition-colors flex-shrink-0">
-                    <div class="w-2.5 h-2.5 bg-transparent group-hover/check:bg-white transition-colors"></div>
+            <p class="text-[10px] text-gray-500 uppercase tracking-wider mb-3">{{ item.subtitle }}</p>
+            <div class="flex items-center gap-2 md:w-2/3 mt-auto px-2">
+                <div @click="toggleSelection(item.id)"
+                    class="w-9 h-9 border border-[#333] flex items-center justify-center cursor-pointer transition-colors duration-200 flex-shrink-0"
+                    :class="isSelected(item.id) ? 'bg-[#333]' : 'bg-transparent hover:bg-gray-200'">
+                    <svg v-if="isSelected(item.id)" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                    </svg>
                 </div>
-                <a :href="`/catalogues-and-ebooks/thumbnails/${item.slug}/thumbnail.png`"
-                    :class="[btnClass, 'py-2.5 text-[9px]']">
-                    <span>Download</span>
+                <a :href="`/catalogues-and-ebooks/thumbnails/${item.slug}/thumbnail.png`" :class="[btnClass, 'py-2.5']">
+                    <span class="text-[7px] md:text-[9px]">Download now</span>
                     <span
                         class="text-base leading-none group-hover:translate-x-1 transition-transform ml-2 mb-0.5">›</span>
                 </a>
