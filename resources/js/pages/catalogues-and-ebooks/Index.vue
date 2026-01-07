@@ -2,11 +2,14 @@
 import { Head } from '@inertiajs/vue3';
 import CataloguesHero from '@/components/page-components/CataloguesHero.vue';
 import CatalogueGrid from '@/components/page-components/CatalogueGrid.vue';
+import CategorySlider from '@/components/page-components/CategorySlider.vue';
+import BestSellersProducts from '@/components/page-components/BestSellersProducts.vue';
 
 defineProps<{
     pageTitle: string;
     featuredCatalogue: any;
     regularCatalogues: any[];
+    relatedProducts: any[];
 }>();
 </script>
 
@@ -26,5 +29,11 @@ defineProps<{
             <CatalogueGrid :featured="featuredCatalogue" :list="regularCatalogues" />
         </div>
     </div>
+
+    <CategorySlider />
+
+    <BestSellersProducts :title='""' :products="relatedProducts" class="mt-[6px]"/>
+
+
 
 </template>
