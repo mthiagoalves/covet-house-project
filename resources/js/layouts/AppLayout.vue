@@ -21,7 +21,7 @@ const { isOpen: isSearchOpen } = useSearchModal();
 </script>
 
 <template>
-    <div class="bg-gray-50 text-gray-900">
+    <div class="bg-gray-50 text-gray-900 selection:bg-[#bca479] selection:text-black">
         <Header />
         <main class="flex-grow pt-[72px] md:pt-[108px]">
             <slot />
