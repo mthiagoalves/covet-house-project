@@ -34,6 +34,4 @@ defineProps<{
 
     <BestSellersProducts :title='""' :products="relatedProducts" class="mt-[6px]"/>
 
-
-
 </template>

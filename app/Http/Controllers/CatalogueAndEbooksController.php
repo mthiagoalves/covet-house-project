@@ -22,7 +22,7 @@ class CatalogueAndEbooksController extends Controller
                 'image' => $isFeatured
                     ? '/images/catalogues-and-ebooks/thumbnails/the-ultimate-inspirations-design-book-featured.png'
                     : "/images/catalogues-and-ebooks/thumbnails/catalogue-covet-house.png",
-                'slug' => "catalogue-$i",
+                'slug' => $isFeatured ? 'the-ultimate-inspirations-design-book' : "catalogue-$i",
                 'download_link' => '#',
                 'is_featured' => $isFeatured,
             ];
@@ -108,6 +108,23 @@ class CatalogueAndEbooksController extends Controller
             'regularCatalogues' => $regularCatalogues,
             'relatedProducts' => $productsMock,
 
+        ]);
+    }
+
+    public function show($slug)
+    {
+        // Recupera o mock data (na vida real viria do banco: Catalogue::where('slug', $slug)->firstOrFail())
+        $allCatalogues = $this->getMockCatalogues();
+
+        $catalogue = $allCatalogues->firstWhere('slug', $slug);
+
+        if (!$catalogue) {
+            abort(404);
+        }
+
+        return Inertia::render('catalogues-and-ebooks/Show', [
+            'catalogue' => $catalogue,
+            'pageTitle' => $catalogue['title'],
         ]);
     }
 
