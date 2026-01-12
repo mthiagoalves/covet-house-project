@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { Head, useForm } from '@inertiajs/vue3';
-import { onMounted, onUnmounted, ref } from 'vue';
+import { computed, onMounted, onUnmounted, ref } from 'vue';
 import { countries } from '@/data/countries';
 import { industries } from '@/data/industries';
+import GallerySlider from '@/components/page-components/GallerySlider.vue';
 
 const props = defineProps<{
     catalogue: any;
@@ -51,8 +52,27 @@ const submit = () => {
     });
 };
 
-const scrollToGallery = () => {
-    document.getElementById('gallery-section')?.scrollIntoView({ behavior: 'smooth' });
+const galleryImages = computed(() => {
+    return Array.from({ length: 5 }, (_, i) => {
+        const index = i + 1;
+        return {
+            id: index,
+            // Caminho: /images/catalogues-and-ebooks/{slug}/{slug}-1.jpg
+            src: `/images/catalogues-and-ebooks/${props.catalogue.slug}/${props.catalogue.slug}-${index}.jpg`,
+            alt: `${props.catalogue.slug} gallery page ${index}`
+        };
+    });
+});
+
+const galleryScroll = ref<HTMLElement | null>(null);
+
+const scrollGallery = (direction: 'left' | 'right') => {
+    if (!galleryScroll.value) return;
+    const scrollAmount = window.innerWidth * 0.6;
+    galleryScroll.value.scrollBy({
+        left: direction === 'right' ? scrollAmount : -scrollAmount,
+        behavior: 'smooth'
+    });
 };
 onMounted(() => {
     checkIsDesktop();
@@ -103,11 +123,11 @@ const inputClass = "w-full bg-[#eeeeee] border border-[#333333] text-gray-500 pl
                                     IMAGES WORTH OF THOUSAND INSPIRATIONS
                                 </h2>
 
-                                <button @click="scrollToGallery"
+                                <button @click="scrollGallery('right')"
                                     class="text-[11px] uppercase tracking-widest underline underline-offset-4 text-gray-500 hover:text-[#bca479] transition-colors self-start mb-4 cursor-pointer">
                                     View Gallery
                                 </button>
-                                <p class="text-xs leading-relaxed text-gray-500 mb-4 text-justify tracking-[1px]">
+                                <p class="text-xs leading-relaxed text-gray-500 text-justify tracking-[1px]">
                                     More than simple inspirations, creating a beautiful, balanced aesthetic is quite a
                                     task.
                                     With a clear vision of inspiring and delivering design to the world, Covet House
@@ -206,4 +226,6 @@ const inputClass = "w-full bg-[#eeeeee] border border-[#333333] text-gray-500 pl
             </div>
         </div>
     </div>
+
+    <GallerySlider :slug="catalogue.slug" />
 </template>
