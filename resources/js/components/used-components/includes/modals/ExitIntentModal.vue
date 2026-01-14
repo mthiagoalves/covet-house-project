@@ -45,20 +45,33 @@ const close = () => {
     isOpen.value = false;
 };
 
-// Lógica do Formulário
 const form = useForm({
     first_name: '',
     last_name: '',
     email: '',
+    phone: '',
     country: '',
+    industry: '',
+    company: '',
+    website: '',
+    privacy_policy: true,
+    type: '',
+    interest_in: 'annual-furniture-sale',
+    interest_in_name: 'Annual Furniture Sale',
+    form_type: 'Ebooks',
 });
 
 const submit = () => {
-    // Exemplo de envio
-    // form.post(route('newsletter.subscribe'), { onSuccess: close });
-    console.log('Exit Intent Form Submitted', form.data);
-    close();
-    form.reset();
+    form.post('/catalogues-and-ebooks/download', {
+        onSuccess: () => {
+            form.reset();
+
+            alert('Success! Your download should start shortly.');
+        },
+        onError: () => {
+            alert('Please check the required fields.');
+        }
+    });
 };
 
 const contentPopup = {
@@ -67,7 +80,7 @@ const contentPopup = {
     imgSrc: '/images/popups/annual-sale-popup.jpg',
 };
 
-const inputClass = "w-full bg-white border-0 py-2 px-2 text-black placeholder-gray-500 text-xs tracking-wider focus:ring-0";
+const inputClass = "w-full bg-white border-0 py-2 px-2 text-black placeholder-gray-500 uppercase text-xs tracking-wider focus:ring-0";
 </script>
 
 <template>
@@ -105,6 +118,8 @@ const inputClass = "w-full bg-white border-0 py-2 px-2 text-black placeholder-gr
                         </div>
 
                         <input type="email" v-model="form.email" placeholder="EMAIL*" :class="inputClass" required>
+                        <input type="text" v-model="form.phone"
+                            placeholder="Phone (Your Phone Help us Speed Up your Request)" :class="inputClass">
 
                         <select v-model="form.country"
                             :class="[inputClass, form.country === '' ? 'text-gray-500' : 'text-black']" required>
@@ -121,7 +136,7 @@ const inputClass = "w-full bg-white border-0 py-2 px-2 text-black placeholder-gr
                             <button type="submit"
                                 class="bg-white text-black text-[10px] font-normal py-2 px-8 tracking-widest hover:bg-gray-200 transition-colors uppercase cursor-pointer"
                                 :disabled="form.processing">
-                                DOWNLOAD NOW
+                                {{ form.processing ? 'Processing...' : 'Download Now' }}
                             </button>
                         </div>
                     </form>

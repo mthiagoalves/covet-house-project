@@ -112,7 +112,7 @@ const heroStyles = computed(() => {
                         <button type="submit"
                             class="border border-white text-white bg-transparent text-[10px] font-bold py-2 px-8 tracking-[0.2em] uppercase hover:bg-white hover:text-black transition-all duration-300 w-full md:w-auto cursor-pointer"
                             :disabled="form.processing">
-                            {{ form.processing ? '...' : 'DOWNLOAD NOW' }}
+                            {{ form.processing ? 'PROCESSING...' : 'DOWNLOAD NOW' }}
                         </button>
                     </div>
 

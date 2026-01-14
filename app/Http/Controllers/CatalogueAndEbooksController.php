@@ -135,10 +135,11 @@ class CatalogueAndEbooksController extends Controller
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
+            'phone' => 'nullable|string|max:50',
             'country' => 'required|string',
-            'privacy_policy' => 'accepted', // Garante que o checkbox foi marcado
+            'privacy_policy' => 'nullable|accepted',
         ]);
-
+dd($request->all());
         // 2. (Opcional) Salvar Lead no Banco de Dados
         // Lead::create($validated);
         // Mail::to($request->email)->send(new EbookRequested($validated));

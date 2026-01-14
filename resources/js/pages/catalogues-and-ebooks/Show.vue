@@ -1,19 +1,18 @@
 <script setup lang="ts">
-import { Head, useForm } from '@inertiajs/vue3';
-import { computed, onMounted, onUnmounted, ref } from 'vue';
+import GallerySlider from '@/components/page-components/GallerySlider.vue';
 import { countries } from '@/data/countries';
 import { industries } from '@/data/industries';
-import GallerySlider from '@/components/page-components/GallerySlider.vue';
+import { Head, useForm } from '@inertiajs/vue3';
+import { onMounted, onUnmounted, ref } from 'vue';
 
 const props = defineProps<{
     catalogue: any;
     pageTitle: string;
 }>();
 
-// --- LÓGICA DO FORMULÁRIO ---
 const clientType = ref('professional');
 const isExpanded = ref(false);
-const isDesktop = ref(true); // Controle de responsividade
+const isDesktop = ref(true);
 
 const form = useForm({
     first_name: '',
@@ -24,18 +23,23 @@ const form = useForm({
     industry: '',
     company: '',
     website: '',
-    privacy_policy: false,
+    privacy_policy: true,
     type: clientType.value,
+    interest_in: props.catalogue.slug,
+    interest_in_name: props.catalogue.title,
+    form_type: 'Ebooks',
 });
 
-// Verifica se é desktop
 const checkIsDesktop = () => {
     isDesktop.value = window.innerWidth >= 1024;
 };
 
-// Expande APENAS se estiver no desktop
+const collapseForm = () => {
+    isExpanded.value = false;
+    form.reset();
+};
+
 const handleEmailInput = () => {
-    // Se for mobile, não faz nada (o form já estará aberto)
     if (!isDesktop.value) return;
 
     if (form.email.length > 0 && !isExpanded.value) {
@@ -44,36 +48,38 @@ const handleEmailInput = () => {
 };
 
 const submit = () => {
-    form.transform((data) => ({
-        ...data,
-        type: clientType.value,
-    })).post('/catalogues-and-ebooks/download', {
-        onSuccess: () => alert('Download started!'),
+    form.type = clientType.value;
+
+    form.post('/catalogues-and-ebooks/download', {
+        preserveScroll: true,
+        onSuccess: () => {
+            form.reset();
+
+            alert('Success! Your download should start shortly.');
+        },
+        onError: () => {
+            alert('Please check the required fields.');
+        }
     });
 };
 
-const galleryImages = computed(() => {
-    return Array.from({ length: 5 }, (_, i) => {
-        const index = i + 1;
-        return {
-            id: index,
-            // Caminho: /images/catalogues-and-ebooks/{slug}/{slug}-1.jpg
-            src: `/images/catalogues-and-ebooks/${props.catalogue.slug}/${props.catalogue.slug}-${index}.jpg`,
-            alt: `${props.catalogue.slug} gallery page ${index}`
-        };
-    });
-});
+const scrollToGallery = () => {
+    const element = document.getElementById('gallery-section');
 
-const galleryScroll = ref<HTMLElement | null>(null);
+    if (element) {
+        const headerOffset = window.innerWidth >= 768 ? 108 : 72;
 
-const scrollGallery = (direction: 'left' | 'right') => {
-    if (!galleryScroll.value) return;
-    const scrollAmount = window.innerWidth * 0.6;
-    galleryScroll.value.scrollBy({
-        left: direction === 'right' ? scrollAmount : -scrollAmount,
-        behavior: 'smooth'
-    });
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+
+        const offsetPosition = elementPosition - headerOffset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
+    }
 };
+
 onMounted(() => {
     checkIsDesktop();
     window.addEventListener('resize', checkIsDesktop);
@@ -105,7 +111,22 @@ const inputClass = "w-full bg-[#eeeeee] border border-[#333333] text-gray-500 pl
                     </div>
 
                     <div class="lg:col-span-4 flex flex-col justify-start gap-8 h-full px-4 lg:pr-10 lg:py-5">
-
+                        <Transition enter-active-class="transition duration-300 ease-out" enter-from-class="opacity-0"
+                            enter-to-class="opacity-100" leave-active-class="transition duration-200 ease-in"
+                            leave-from-class="opacity-100" leave-to-class="opacity-0">
+                            <div v-if="isExpanded && isDesktop" class="w-full flex justify-end">
+                                <button @click="collapseForm"
+                                    class="text-gray-400 hover:text-black transition-colors p-2 cursor-pointer group flex items-center gap-1"
+                                    title="Close form and show details">
+                                    <span
+                                        class="text-[9px] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">Close</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </Transition>
                         <Transition enter-active-class="transition duration-500 ease-out"
                             leave-active-class="transition duration-300 ease-in"
                             leave-from-class="opacity-100 translate-y-0 max-h-[500px]"
@@ -123,7 +144,7 @@ const inputClass = "w-full bg-[#eeeeee] border border-[#333333] text-gray-500 pl
                                     IMAGES WORTH OF THOUSAND INSPIRATIONS
                                 </h2>
 
-                                <button @click="scrollGallery('right')"
+                                <button @click="scrollToGallery"
                                     class="text-[11px] uppercase tracking-widest underline underline-offset-4 text-gray-500 hover:text-[#bca479] transition-colors self-start mb-4 cursor-pointer">
                                     View Gallery
                                 </button>
