@@ -9,91 +9,91 @@ import 'swiper/css/navigation';
 const rooms = [
     {
         title: 'BEDROOM',
-        href: '/room/bedroom',
+        href: '/inspirations',
         imgSrc: '/images/room-slider/room-slider-1.jpg',
         priceHref: '/get-price/bedroom-item',
         aspectRatio: 'portrait'
     },
     {
         title: 'LIVING ROOM',
-        href: '/room/living-room',
+        href: '/inspirations',
         imgSrc: '/images/room-slider/room-slider-2.jpg',
         priceHref: '/get-price/living-room-item',
         aspectRatio: 'portrait'
     },
     {
         title: 'DINING ROOM',
-        href: '/room/dining-room',
+        href: '/inspirations',
         imgSrc: '/images/room-slider/room-slider-3.jpg',
         priceHref: '/get-price/dining-room-item',
         aspectRatio: 'portrait'
     },
     {
         title: 'KIDS ROOM',
-        href: '/room/kids-room',
+        href: '/inspirations',
         imgSrc: '/images/room-slider/room-slider-4.jpg',
         priceHref: '/get-price/kids-room-item',
         aspectRatio: 'landscape'
     },
     {
         title: 'BEDROOM',
-        href: '/room/bedroom',
+        href: '/inspirations',
         imgSrc: '/images/room-slider/room-slider-5.jpg',
         priceHref: '/get-price/bedroom-item',
         aspectRatio: 'portrait'
     },
     {
         title: 'LIVING ROOM',
-        href: '/room/living-room',
+        href: '/inspirations',
         imgSrc: '/images/room-slider/room-slider-6.jpg',
         priceHref: '/get-price/living-room-item',
         aspectRatio: 'portrait'
     },
     {
         title: 'DINING ROOM',
-        href: '/room/dining-room',
+        href: '/inspirations',
         imgSrc: '/images/room-slider/room-slider-7.jpg',
         priceHref: '/get-price/dining-room-item',
         aspectRatio: 'portrait'
     },
     {
         title: 'KIDS ROOM',
-        href: '/room/kids-room',
+        href: '/inspirations',
         imgSrc: '/images/room-slider/room-slider-8.jpg',
         priceHref: '/get-price/kids-room-item',
         aspectRatio: 'landscape'
     },
     {
         title: 'BEDROOM',
-        href: '/room/bedroom',
+        href: '/inspirations',
         imgSrc: '/images/room-slider/room-slider-9.jpg',
         priceHref: '/get-price/bedroom-item',
         aspectRatio: 'portrait'
     },
     {
         title: 'LIVING ROOM',
-        href: '/room/living-room',
+        href: '/inspirations',
         imgSrc: '/images/room-slider/room-slider-10.jpg',
         priceHref: '/get-price/living-room-item',
         aspectRatio: 'landscape'
     },
     {
         title: 'DINING ROOM',
-        href: '/room/dining-room',
+        href: '/inspirations',
         imgSrc: '/images/room-slider/room-slider-11.jpg',
         priceHref: '/get-price/dining-room-item',
         aspectRatio: 'landscape'
     },
     {
         title: 'KIDS ROOM',
-        href: '/room/kids-room',
+        href: '/inspirations',
         imgSrc: '/images/room-slider/room-slider-12.jpg',
         priceHref: '/get-price/kids-room-item',
         aspectRatio: 'landscape'
     },
     {
         title: 'KIDS ROOM',
-        href: '/room/kids-room',
+        href: '/inspirations',
         imgSrc: '/images/room-slider/room-slider-13.jpg',
         priceHref: '/get-price/kids-room-item',
         aspectRatio: 'landscape'
@@ -107,11 +107,12 @@ const { open } = useGeneralModal();
 function openGeneralModal(room: any) {
     const modalData = {
         title: room.title,
-        imgSrc: 'Image room: ' + room.imgSrc,
+        imgSrc: room.imgSrc,
         href: room.href,
         pagePosition: 'Bottom',
         formType: 'Price',
         page: 'Landing Pages',
+        btnName: 'GET ROOM PRICE'
     };
     open(modalData);
 }

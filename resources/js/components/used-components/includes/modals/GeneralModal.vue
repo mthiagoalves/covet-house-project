@@ -2,12 +2,10 @@
 import { useForm, Link } from '@inertiajs/vue3';
 import { watch } from 'vue';
 import { useGeneralModal } from '@/composables/useGeneralModal';
-import { countries } from '@/data/countries'; // Reutilizando sua lista de países
+import { countries } from '@/data/countries';
 
-// 1. Pega os dados e a função 'close' do nosso "cérebro"
 const { data, close } = useGeneralModal();
 
-// 2. Lógica do formulário (adaptada da sua imagem)
 const form = useForm({
     profile_type: 'professional',
     first_name: '',
@@ -16,13 +14,15 @@ const form = useForm({
     phone: '',
     company: '',
     country: '',
-    terms_accepted: false,
     interest_in: data.value.title + ' Pack' || '',
     slug: data.value.slug || '',
     page: data.value.page || '',
     pagePosition: data.value.pagePosition || '',
     formType: data.value.formType || '',
-    btnName: data.value.btnName || 'REQUEST PRICE'
+    btnName: data.value.btnName || 'REQUEST PRICE',
+    imgSrc: data.value.imgSrc || '',
+    privacy_policy: true,
+
 });
 
 watch(() => form.profile_type, (newProfile) => {
@@ -34,10 +34,14 @@ watch(() => form.profile_type, (newProfile) => {
 });
 
 const submit = () => {
-    form.post('/request-price', {
+    form.post('/downloads/general-download', {
         onSuccess: () => {
             close();
+            alert('Success! Your download should start shortly.');
             form.reset();
+        },
+        onError: () => {
+            alert('Please check the required fields.');
         }
     });
 };
@@ -61,8 +65,9 @@ const inputClass = "w-full bg-white border border-gray-300 text-[10px] py-1.5 px
                         &times;
                     </button>
 
-                    <h2 class="text-[20px] mt-4 md:mt-0 font-bold uppercase">{{ data.title }}</h2>
-                    <p class="md:text-sm text-[11px] text-gray-600 mb-6">Please fill the following form to receive your request</p>
+                    <h2 class="text-[20px] mt-4 md:mt-0 font-bold uppercase" v-html="data.title"></h2>
+                    <p class="md:text-sm text-[11px] text-gray-600 mb-6">Please fill the following form to receive your
+                        request</p>
 
                     <form @submit.prevent="submit" class="space-y-4 text-start">
                         <p class="text-[10px] text-gray-600 mb-1">SELECT YOUR PROFILE:</p>
@@ -102,8 +107,6 @@ const inputClass = "w-full bg-white border border-gray-300 text-[10px] py-1.5 px
                                 required>
                         </div>
                         <div class="flex md:flex-row flex-col items-start justify-between">
-                            <input type="checkbox" v-model="form.terms_accepted" id="modal_terms"
-                                class="form-checkbox mt-1 hidden" checked required>
                             <label for="modal_terms" class="text-[9px] text-gray-500">
                                 BY CLICKING REQUEST YOU CONFIRM THAT YOU HAVE <br class="hidden md:block">
                                 READ AND ACCEPTED OUR
@@ -112,7 +115,8 @@ const inputClass = "w-full bg-white border border-gray-300 text-[10px] py-1.5 px
                             <div class="md:text-right mt-2 md:mt-0 ml-auto md:ml-0">
                                 <button type="submit" :disabled="form.processing"
                                     class="bg-black text-[11px] text-white py-1.5 px-10 font-light tracking-wider hover:bg-gray-800 cursor-pointer">
-                                    {{ data.btnName }}
+                                    {{ form.processing ? 'PROCESSING...' : data.btnName }}
+
                                 </button>
                             </div>
                         </div>
