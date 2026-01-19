@@ -62,7 +62,7 @@ const form = useForm({
 });
 
 const submit = () => {
-    form.post('/catalogues-and-ebooks/download', {
+    form.post('/downloads/general-download', {
         onSuccess: () => {
             form.reset();
 
