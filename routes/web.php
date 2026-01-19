@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CatalogueAndEbooksController;
+use App\Http\Controllers\FormController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShowroomController;
@@ -48,8 +49,10 @@ Route::prefix('catalogues-and-ebooks')->name('catalogues-and-ebooks')->group(fun
     Route::get('/', [CatalogueAndEbooksController::class, 'index'])->name('index');
 
     Route::get('/{slug}', [CatalogueAndEbooksController::class, 'show'])->name('show');
+});
 
-    Route::post('/download', [CatalogueAndEbooksController::class, 'download'])->name('catalogues.download');
+Route::prefix('downloads')->name('downloads')->group(function () {
+    Route::post('/general-download', [FormController::class, 'generalDownload'])->name('general');
 });
 
 Route::get('dashboard', function () {
