@@ -50,7 +50,7 @@ const handleEmailInput = () => {
 const submit = () => {
     form.type = clientType.value;
 
-    form.post('/catalogues-and-ebooks/download', {
+    form.post('/downloads/general-download', {
         preserveScroll: true,
         onSuccess: () => {
             form.reset();
