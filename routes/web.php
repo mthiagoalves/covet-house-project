@@ -5,14 +5,13 @@ use App\Http\Controllers\CatalogueAndEbooksController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\ShowroomController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Laravel\Fortify\Features;
 
-Route::get('/', function () {
-    return Inertia::render('Homepage');
-})->name('home');
+Route::get('/', [PageController::class, 'index'])->name('homepage');
 
 Route::get('/all-products', [ProductController::class, 'allProducts'])->name('products.index');
 
@@ -51,13 +50,20 @@ Route::prefix('catalogues-and-ebooks')->name('catalogues-and-ebooks')->group(fun
     Route::get('/{slug}', [CatalogueAndEbooksController::class, 'show'])->name('show');
 });
 
-Route::prefix('downloads')->name('downloads')->group(function () {
-    Route::post('/general-download', [FormController::class, 'generalDownload'])->name('general');
+Route::prefix('projects-houses')->name('projects-houses')->group(function () {
+
+    Route::get('/', [ProjectsController::class, 'index'])->name('index');
+
+    Route::get('/{slug}', [ProjectsController::class, 'show'])->name('show');
 });
 
 Route::get('/thank-you-page', function () {
     return Inertia::render('ThankYou');
 })->name('thank-you-page');
+
+Route::prefix('downloads')->name('downloads')->group(function () {
+    Route::post('/general-download', [FormController::class, 'generalDownload'])->name('general');
+});
 
 Route::get('dashboard', function () {
     return Inertia::render('Dashboard');

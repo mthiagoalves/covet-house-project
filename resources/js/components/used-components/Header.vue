@@ -123,7 +123,7 @@ const mainLinks = [
             { label: 'OFFICES', href: '/rooms/offices' }
         ]
     },
-    { label: 'PROJECTS', href: '/projects' },
+    { label: 'PROJECTS', href: '/projects-houses' },
     { label: 'BLOG', href: '/blog' },
     { label: 'PRESS ROOM', href: '/press' },
     { label: 'SPECIAL PRICES', href: '/special-prices', highlight: true },
