@@ -234,7 +234,7 @@ const inputClass = "w-full bg-[#eeeeee] border border-[#333333] text-gray-500 pl
                             </div>
 
                             <button type="submit"
-                                class="bg-[#222] border border-[#333] max-w-2xs text-white text-[10px] font-bold py-3 px-8 tracking-[0.2em] uppercase hover:bg-[#bca479] hover:text-black transition-all duration-300 w-full cursor-pointer"
+                                class="bg-[#202020] border border-[#202020] max-w-2xs text-white text-[10px] font-bold py-3 px-8 tracking-[0.2em] uppercase hover:bg-[#bca479] hover:text-black transition-all duration-300 w-full cursor-pointer"
                                 :disabled="form.processing">
                                 {{ form.processing ? 'Processing...' : 'Download Now >' }}
                             </button>
