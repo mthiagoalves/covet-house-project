@@ -100,6 +100,10 @@ const rooms = [
     }
 ];
 
+const props = defineProps<{
+    hideTitle: boolean;
+}>();
+
 const modules = [Navigation];
 
 const { open } = useGeneralModal();
@@ -120,7 +124,8 @@ function openGeneralModal(room: any) {
 
 <template>
     <div class="w-full room-slider bg-black">
-        <h3 class="text-white text-[20px] text-center py-5 font-light tracking-wider">SHOP BY ROOM</h3>
+        <h3 v-if="!hideTitle" class="text-white text-[20px] text-center py-5 font-light tracking-wider">SHOP BY ROOM
+        </h3>
         <Swiper :modules="modules" :slides-per-view="1" :space-between="6" :navigation="true" :loop="true" :breakpoints="{
             768: {
                 slidesPerView: 2,
@@ -134,18 +139,18 @@ function openGeneralModal(room: any) {
             <SwiperSlide v-for="room in rooms" :key="room.title"
                 :class="room.aspectRatio === 'landscape' ? 'slide-landscape' : ''">
                 <Link :href="room.href" class="relative block group">
-                <img :src="room.imgSrc" :alt="room.title"
-                    class="w-full h-auto md:aspect-auto aspect-[3/4] object-cover object-center" />
+                    <img :src="room.imgSrc" :alt="room.title"
+                        class="w-full h-auto md:aspect-auto aspect-[3/4] object-cover object-center" />
 
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 
-                <div class="absolute bottom-6 left-0 text-white w-full text-center">
-                    <h3 class="text-sm font-bold">{{ room.title }}</h3>
-                    <button @click.prevent="openGeneralModal(room)"
-                        class="text-[12px] font-light tracking-wider text-white transition-colors border-b border-white cursor-pointer">
-                        GET ROOM PRICE >
-                    </button>
-                </div>
+                    <div class="absolute bottom-6 left-0 text-white w-full text-center">
+                        <h3 class="text-sm font-bold">{{ room.title }}</h3>
+                        <button @click.prevent="openGeneralModal(room)"
+                            class="text-[12px] font-light tracking-wider text-white transition-colors border-b border-white cursor-pointer">
+                            GET ROOM PRICE >
+                        </button>
+                    </div>
                 </Link>
             </SwiperSlide>
         </Swiper>
