@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import VideoHero from '@/components/page-components/VideoHero.vue';
-import { Head } from '@inertiajs/vue3';
-import { useGeneralModal } from '@/composables/useGeneralModal';
-import InteriorDesignSteps from '@/components/page-components/InteriorDesignSteps.vue';
-import PackagesBlock from '@/components/page-components/PackagesBlock.vue';
-import ProjectShowcaseSlider from '@/components/page-components/ProjectShowcaseSlider.vue';
 import BestSellersProducts from '@/components/page-components/BestSellersProducts.vue';
 import CategorySlider from '@/components/page-components/CategorySlider.vue';
+import HeroBannerProjects from '@/components/page-components/HeroBannerProjects.vue';
+import InteriorDesignSteps from '@/components/page-components/InteriorDesignSteps.vue';
+import PackagesBlock from '@/components/page-components/PackagesBlock.vue';
+import VideoHero from '@/components/page-components/VideoHero.vue';
 import FormHomepage from '@/components/used-components/includes/FormHomepage.vue';
+import { useGeneralModal } from '@/composables/useGeneralModal';
+import { Head } from '@inertiajs/vue3';
 
 const { open: openGeneralModal } = useGeneralModal();
 
@@ -17,7 +17,7 @@ const videoHeroData = {
 
 
 defineProps<{
-    projectsSlider: any[];
+    allProjects: any[];
     relatedProducts: any[];
 }>();
 </script>
@@ -52,9 +52,19 @@ defineProps<{
 
     <PackagesBlock />
 
-    <ProjectShowcaseSlider :slides="projectsSlider" />
+    <div class="flex items-center justify-center gap-6 mb-6">
+        <div class="h-px bg-gray-300 flex-grow md:max-w-full"></div>
 
-    <FormHomepage  class="mt-1"/>
+        <h2 class="text-xl md:text-2xl font-light tracking-[0.2em] uppercase text-center whitespace-nowrap">
+            OUR PROJECTS
+        </h2>
+
+        <div class="h-px bg-gray-300 flex-grow md:max-w-full"></div>
+    </div>
+
+    <HeroBannerProjects :projects=allProjects />
+
+    <FormHomepage class="mt-1" />
 
     <CategorySlider class="mt-1" />
 

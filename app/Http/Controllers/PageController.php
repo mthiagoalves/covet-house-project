@@ -7,6 +7,14 @@ use Inertia\Inertia;
 
 class PageController extends Controller
 {
+
+    /** Show Homepage **/
+
+    public function index()
+    {
+        return Inertia::render('Homepage');
+    }
+
     /**
      * Show page "About"
      */
@@ -88,61 +96,49 @@ class PageController extends Controller
      */
     public function interiorDesignService()
     {
-        $projectsSlider = [
+        $allProjects = [
             [
-                'id' => 1,
-                'image_url' => '/images/our-projects/opulence-revealed-a-journey-inside-a-classic-dubai-villa.jpg',
-                'image_url_mobile' => '/images/our-projects/opulence-revealed-a-journey-inside-a-classic-dubai-villa-m.jpg',
-                'title' => 'OPULENCE REVEALED',
-                'subtitle' => 'A JOURNEY INSIDE A CLASSIC DUBAI VILLA',
-                'cta_text' => 'DISCOVER MORE',
-                'cta_link' => '/projects/opulence-revealed-a-journey-inside-a-classic-dubai-villa'
+                'title' => 'A MODERN HAVEN BY THE LAKE',
+                'subtitle' => 'A SWISS VILLA BETWEEN GENEVA AND LAUSANNE',
+                'slug' => '/a-modern-haven-by-the-lake',
+
             ],
             [
-                'id' => 2,
-                'image_url' => '/images/our-projects/contemporary-oasis.jpg',
-                'image_url_mobile' => '/images/our-projects/contemporary-oasis-m.jpg',
+                'title' => 'Opulence Revealed',
+                'subtitle' => 'A Journey Inside a Classic Dubai Villa',
+                'slug' => 'opulence-revealed-a-journey-inside-a-classic-dubai-villa',
+
+            ],
+            [
                 'title' => 'CONTEMPORARY OASIS',
-                'subtitle' => 'INSIDE A MORDERN SAINT PETERSBURG VILLA',
-                'cta_text' => 'DISCOVER MORE',
-                'cta_link' => '/projects/contemporary-oasis'
+                'subtitle' => 'INSIDE A MODERN SAINT PETERSBURG VILLA',
+                'slug' => 'contemporary-oasis',
+
             ],
             [
-                'id' => 3,
-                'image_url' => '/images/our-projects/timeless-mansion.jpg',
-                'image_url_mobile' => '/images/our-projects/timeless-mansion-m.jpg',
-                'title' => 'TIMELESS MANSION',
-                'subtitle' => 'unveiling refined luxury in london',
-                'cta_text' => 'DISCOVER MORE',
-                'cta_link' => '/projects/timeless-mansion'
+                'title' => 'An Outer Space Misson',
+                'subtitle' => 'With Cozy Studio',
+                'slug' => 'an-outer-space-mission-room',
+
             ],
             [
-                'id' => 4,
-                'image_url' => '/images/our-projects/parisian-dream-home.jpg',
-                'image_url_mobile' => '/images/our-projects/parisian-dream-home-m.jpg',
-                'title' => 'PARISIAN DREAM HOME',
-                'subtitle' => 'BLEDING HISTORY, LIGHT AND MODERN BEAUTY',
-                'cta_text' => 'DISCOVER MORE',
-                'cta_link' => '/projects/parisian-dream-home'
+                'title' => 'Playground Holidays',
+                'subtitle' => 'The True Colors of Adventure in Vacations',
+                'slug' => 'playground-holidays',
+
             ],
             [
-                'id' => 5,
-                'image_url' => '/images/our-projects/an-outer-space-mission-room.jpg',
-                'image_url_mobile' => '/images/our-projects/an-outer-space-mission-room-m.jpg',
-                'title' => 'AN OUTER SPACE MISSION',
-                'subtitle' => 'COZY STUDIO',
-                'cta_text' => 'DISCOVER MORE',
-                'cta_link' => '/projects/an-outer-space-mission-room'
+                'title' => 'Timeless Mansion',
+                'subtitle' => 'Unveiling Refined Luxury In London',
+                'slug' => 'timeless-mansion',
+
             ],
             [
-                'id' => 6,
-                'image_url' => '/images/our-projects/playground-holidays.jpg',
-                'image_url_mobile' => '/images/our-projects/playground-holidays-m.jpg',
-                'title' => 'PLAYGROUND HOLIDAYS',
-                'subtitle' => 'THE TRUE COLORS OF ADVENTURE IN VACATIONS',
-                'cta_text' => 'DISCOVER MORE',
-                'cta_link' => '/projects/playground-holidays'
-            ]
+                'title' => 'Parisian Dream Home',
+                'subtitle' => 'Blending History, Light and Modern Beauty',
+                'slug' => 'parisian-dream-home',
+
+            ],
         ];
 
         $productsMock = [
@@ -203,7 +199,7 @@ class PageController extends Controller
         ];
 
         return Inertia::render('InteriorDesignService', [ // Ou o nome da sua página
-            'projectsSlider' => $projectsSlider,
+            'allProjects' => $allProjects,
             'relatedProducts' => $productsMock
 
         ]);
