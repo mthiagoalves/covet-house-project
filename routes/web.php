@@ -55,6 +55,10 @@ Route::prefix('downloads')->name('downloads')->group(function () {
     Route::post('/general-download', [FormController::class, 'generalDownload'])->name('general');
 });
 
+Route::get('/thank-you-page', function () {
+    return Inertia::render('ThankYou');
+})->name('thank-you-page');
+
 Route::get('dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
