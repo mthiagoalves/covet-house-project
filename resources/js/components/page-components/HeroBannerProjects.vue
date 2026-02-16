@@ -106,7 +106,7 @@ const props = defineProps<{
 :deep(.swiper-pagination-bullet) {
     background: transparent;
     border: 1px solid white;
-    opacity: 0.5;
+    opacity: .8;
     width: 8px;
     height: 8px;
     margin: 0 6px !important;
