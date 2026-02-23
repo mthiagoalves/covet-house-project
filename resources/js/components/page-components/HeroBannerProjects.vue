@@ -52,7 +52,7 @@ const props = defineProps<{
                     <div class="relative z-10 w-full p-6 pb-6">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
 
-                        <h1 class="relative z-10 text-[11px] md:text-[18px] font-light tracking-wider leading-relaxed uppercase"
+                        <h1 class="relative z-10 text-sm md:text-[18px] font-bold tracking-wider leading-relaxed uppercase"
                             v-html="project.title"></h1>
 
                         <h2 class="relative z-10 text-[11px] md:text-sm font-light tracking-wider leading-relaxed uppercase"

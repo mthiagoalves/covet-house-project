@@ -16,7 +16,7 @@ import { Link } from '@inertiajs/vue3';
                             class="absolute -bottom-0.5 left-0 w-full h-1/2 bg-gradient-to-t from-black/70 to-transparent">
                         </div>
                         <div class="absolute bottom-6 left-0 text-white w-full text-center z-10">
-                            <h3 class="text-md uppercase">Selected Projects, Inspiring What Comes Next</h3>
+                            <h3 class="text-sm md:text-md uppercase">Selected Projects, Inspiring What Comes Next</h3>
                             <Link href="#"
                                 class="text-[12px] font-light tracking-wider text-white transition-colors border-b border-white">
                                 DISCOVER MORE
@@ -38,7 +38,7 @@ import { Link } from '@inertiajs/vue3';
                             class="absolute -bottom-0.5 left-0 w-full h-1/2 bg-gradient-to-t from-black/70 to-transparent select-none pointer-events-none">
                         </div>
                         <div class="absolute bottom-6 left-0 text-white w-full text-center z-10">
-                            <h3 class="text-md uppercase">Looking for Interior Design Solutions <br
+                            <h3 class="text-sm md:text-md uppercase">Looking for Interior Design Solutions <br
                                     class="md:hidden block"> for Your
                                 Project?</h3>
                             <Link href="#"

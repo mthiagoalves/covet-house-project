@@ -4,11 +4,15 @@ import { computed, ref } from 'vue';
 import { Download } from 'lucide-vue-next';
 import { useGeneralModal } from '@/composables/useGeneralModal';
 import BestSellersProducts from '@/components/page-components/BestSellersProducts.vue';
+import IdServiceWithProject from '@/components/page-components/IdServiceWithProject.vue';
+import HeroBannerProjects from '@/components/page-components/HeroBannerProjects.vue';
 
 const props = defineProps<{
     project: any;
     gridImages: number;
     relatedProducts: any[];
+    allProjects: any[];
+
 }>();
 
 const modalData = {
@@ -58,7 +62,7 @@ const loadMore = () => {
         <div class="relative z-10 w-full p-6 pb-6">
             <div class="absolute inset-0 from-black/70 via-black/40 to-transparent"></div>
 
-            <h1 class="relative z-10 text-[11px] md:text-[18px] font-bold tracking-wider leading-relaxed uppercase"
+            <h1 class="relative z-10 text-sm md:text-[18px] font-bold tracking-wider leading-relaxed uppercase"
                 v-html="props.project.title"></h1>
 
             <h2 class="relative z-10 text-[11px] md:text-sm font-light tracking-wider leading-relaxed uppercase"
@@ -66,9 +70,9 @@ const loadMore = () => {
         </div>
     </div>
 
-    <div class="w-full bg-[#eeeeee] pb-4 px-10">
+    <div class="w-full bg-[#eeeeee] pb-4 md:px-10">
 
-        <div class="text-center py-16 md:py-7 px-4 w-2/3 mx-auto">
+        <div class="text-center py-4 md:py-7 px-4 md:w-2/3 mx-auto">
             <h2 class="text-xl md:text-2xl font-light uppercase tracking-[0.2em] mb-4 text-black"
                 v-html="props.project.title">
             </h2>
@@ -76,7 +80,7 @@ const loadMore = () => {
                 v-html="props.project.description">
             </p>
         </div>
-        <div class="flex justify-center mb-10">
+        <div class="flex justify-center mb-4 md:mb-10">
             <a @click="openGeneralModal(modalData)"
                 class="bg-black text-white text-[10px] md:text-[11px] font-light py-3 px-8 uppercase tracking-[0.2em] cursor-pointer flex items-center gap-3 hover:bg-[#bca479] transition-colors duration-300">
                 Download Full Project
@@ -99,6 +103,11 @@ const loadMore = () => {
     </div>
 
     <BestSellersProducts :title='"OUR CURATED PIECES"' :products="relatedProducts" />
+
+    <IdServiceWithProject :project="props.project" />
+
+    <HeroBannerProjects :projects=allProjects class="mt-[6px]"/>
+
 
 </template>
 

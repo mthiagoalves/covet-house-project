@@ -17,12 +17,13 @@ const isHomepage = computed(() => page.url === '/');
 
 const isThankYouPage = computed(() => page.url === '/thank-you-page');
 
+const isProjectPage = computed(() => page.url.startsWith('/projects-houses'));
 </script>
 
 <template>
     <RoomSlider class="pb-[4px]" :hideTitle="isThankYouPage" />
     <FormHomepage v-if="isHomepage" />
-    <IdServiceSection :class="isHomepage ? 'pt-[6px]' : 'pt-[2px]'" />
+    <IdServiceSection v-if="!isProjectPage" :class="isHomepage ? 'pt-[6px]' : 'pt-[2px]'" />
     <EbookSlider />
     <BrandsMarquee />
     <AppFooter />
