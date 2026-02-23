@@ -41,7 +41,7 @@ const loadMore = () => {
 
         <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-1 px-1">
 
-            <Link v-for="project in visibleProjects" :key="project.id" :href="`/projects/${project.slug}`"
+            <Link v-for="project in visibleProjects" :key="project.id" :href="`/projects-houses/${project.slug}`"
                 class="relative group block w-full overflow-hidden bg-gray-100">
                 <img :src="`/images/projects/thumbnails/${project.slug}.jpg`" :alt="project.title"
                     class="transition-transform duration-1000 group-hover:scale-105" loading="lazy" />
