@@ -154,6 +154,7 @@ class ProjectsController extends Controller
             'project' => $project,
             'gridImages' => $gridImages,
             'relatedProducts' => $this->productsMock,
+            'allProjects' => $this->allProjects,
         ]);
     }
 }

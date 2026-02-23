@@ -98,9 +98,14 @@ class PageController extends Controller
     {
         $allProjects = [
             [
+                'slug' => 'sky-high-dwelling',
+                'title' => 'Sky-high Dwelling',
+                'subtitle' => 'An Upscale Apartment In India by Covet House',
+            ],
+            [
                 'title' => 'A MODERN HAVEN BY THE LAKE',
                 'subtitle' => 'A SWISS VILLA BETWEEN GENEVA AND LAUSANNE',
-                'slug' => '/a-modern-haven-by-the-lake',
+                'slug' => 'a-modern-haven-by-the-lake',
 
             ],
             [
