@@ -34,7 +34,7 @@ const props = defineProps<{
         disableOnInteraction: false,
     }" :loop="true" :pagination="{ clickable: true }" :navigation="true" @swiper="onSwiper" class="w-full h-full">
         <SwiperSlide v-for="project in projects" :key="project.id">
-            <Link :href="`/projects/${project.slug}`">
+            <Link :href="`/projects-houses/${project.slug}`">
                 <div
                     class="hero-banner relative w-full hero-height flex items-end justify-center text-center text-white overflow-hidden">
 
