@@ -8,14 +8,10 @@ import { onBeforeUnmount, onMounted, ref } from 'vue';
 
 const page = usePage();
 
-// Função para verificar se o link está ativo
 const isUrlActive = (href: string) => {
-    // Se for a home, tem que ser exato
     if (href === '/') {
         return page.url === '/';
     }
-    // Para outras páginas, verifica se a URL começa com o href
-    // Ex: /about-us ativa o link /about
     return page.url.startsWith(href);
 };
 
@@ -26,15 +22,15 @@ interface LinkItem {
     href: string;
     type: 'link';
     icon?: string;
-    modalData?: undefined; // Links nunca têm modalData
+    modalData?: undefined;
 }
 
 interface ModalItem {
     label: string;
-    href?: undefined; // Modais nunca têm href
+    href?: undefined;
     type: 'modal';
     icon?: string;
-    modalData: { // Modais SEMPRE têm modalData
+    modalData: {
         title: string;
         slug: string;
         btnName: string;
@@ -186,7 +182,7 @@ const { open: openSearch } = useSearchModal();
                         <Link v-if="l.type === 'link'" :href="l.href"
                             class="flex items-center gap-1 hover:text-gray-300 transition-colors"
                             :class="isUrlActive(l.href) ? 'text-[#bca479]' : 'hover:text-gray-300 text-white'">
-                        {{ l.label }}
+                            {{ l.label }}
                         </Link>
 
                         <button v-else @click="openGeneralModal(l.modalData)"
@@ -211,9 +207,9 @@ const { open: openSearch } = useSearchModal();
                                 // Se tiver highlight (SPECIAL PRICES) -> Vermelho (sobrescreve o resto se necessário)
                                 l.highlight ? 'text-red-500 hover:text-red-600' : ''
                             ]" @mouseenter="l.caret ? openDropdown = l.label : openDropdown = null"> <span>{{ l.label
-                            }}</span>
+                                    }}</span>
 
-                            <span v-if="l.caret" aria-hidden="true"> ▾</span>
+                                <span v-if="l.caret" aria-hidden="true"> ▾</span>
                             </Link>
 
                             <transition enter-active-class="transition ease-out duration-200"
@@ -226,7 +222,7 @@ const { open: openSearch } = useSearchModal();
                                     <nav class="py-2">
                                         <Link v-for="child in l.children" :key="child.label" :href="child.href"
                                             class="block w-full px-6 py-3 text-sm text-left hover:bg-gray-100 hover:text-[#bca479] text-[12px]">
-                                        {{ child.label }}
+                                            {{ child.label }}
                                         </Link>
                                     </nav>
                                 </div>
@@ -254,7 +250,7 @@ const { open: openSearch } = useSearchModal();
                             </svg>
                         </button>
                         <Link href="/" class="block"> <img src="/images/header/logo.png" alt="Logo Covet House"
-                            class="w-[167px] h-full">
+                                class="w-[167px] h-full">
                         </Link>
                         <button class="hover:text-[#bca479] md:hidden" aria-label="Search" @click="openSearch"> <svg
                                 xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
@@ -271,7 +267,7 @@ const { open: openSearch } = useSearchModal();
                                 <li v-for="child in productLinks[0].children" :key="child.label">
                                     <Link :href="child.href" class="hover:text-[#bca479] inline-block"
                                         :class="isUrlActive(child.href) ? 'text-[#bca479]' : 'hover:text-gray-300 text-white'">
-                                    {{ child.label }}
+                                        {{ child.label }}
                                     </Link>
                                 </li>
                             </ul>
@@ -282,7 +278,7 @@ const { open: openSearch } = useSearchModal();
                                 <li v-for="child in mainLinks[3].children" :key="child.label">
                                     <Link :href="child.href" class="hover:text-[#bca479] inline-block"
                                         :class="isUrlActive(child.href) ? 'text-[#bca479]' : 'hover:text-gray-300 text-white'">
-                                    {{ child.label }}
+                                        {{ child.label }}
                                     </Link>
                                 </li>
                             </ul>
@@ -300,7 +296,7 @@ const { open: openSearch } = useSearchModal();
                 <div
                     class="h-20 flex items-center justify-between px-4 border-b border-white/10 sticky top-0 bg-[#0e0e0f] z-10">
                     <Link href="/" class="block">
-                    <img src="/images/header/logo.png" alt="Logo Covet House" class="w-[167px] h-full">
+                        <img src="/images/header/logo.png" alt="Logo Covet House" class="w-[167px] h-full">
                     </Link>
                     <button @click="mobileOpen = false" aria-label="Close menu"
                         class="p-2 hover:bg-white/5 rounded">✕</button>
@@ -311,14 +307,14 @@ const { open: openSearch } = useSearchModal();
                     <div v-for="p in productLinks" :key="p.label" class="border-b border-white/5">
 
                         <Link v-if="!p.children" :href="p.href" class="block px-3 py-3 rounded hover:bg-white/5">
-                        {{ p.label }}
+                            {{ p.label }}
                         </Link>
 
                         <div v-else>
                             <div class="flex justify-between items-center w-full">
 
                                 <Link :href="p.href" class="flex-grow px-3 py-3 hover:bg-white/5 text-left">
-                                {{ p.label }}
+                                    {{ p.label }}
                                 </Link>
 
                                 <button @click="toggleMobileMenu(p.label)"
@@ -337,7 +333,7 @@ const { open: openSearch } = useSearchModal();
                                 <div v-if="isMobileMenuOpen(p.label)" class="overflow-hidden bg-black/20">
                                     <Link v-for="child in p.children" :key="child.label" :href="child.href"
                                         class="block pl-8 pr-3 py-2 text-gray-300 hover:bg-white/10">
-                                    {{ child.label }}
+                                        {{ child.label }}
                                     </Link>
                                 </div>
                             </transition>
@@ -348,13 +344,13 @@ const { open: openSearch } = useSearchModal();
 
                         <Link v-if="!l.children" :href="l.href"
                             :class="['block px-3 py-3 rounded hover:bg-white/5', l.highlight ? 'text-red-600' : '']">
-                        {{ l.label }}
+                            {{ l.label }}
                         </Link>
 
                         <div v-else>
                             <div class="flex justify-between items-center w-full">
                                 <Link :href="l.href" class="flex-grow px-3 py-3 hover:bg-white/5 text-left">
-                                {{ l.label }}
+                                    {{ l.label }}
                                 </Link>
 
                                 <button @click="toggleMobileMenu(l.label)"
@@ -373,7 +369,7 @@ const { open: openSearch } = useSearchModal();
                                 <div v-if="isMobileMenuOpen(l.label)" class="overflow-hidden bg-black/20">
                                     <Link v-for="child in l.children" :key="child.label" :href="child.href"
                                         class="block pl-8 pr-3 py-2 text-gray-300 hover:bg-white/10">
-                                    {{ child.label }}
+                                        {{ child.label }}
                                     </Link>
                                 </div>
                             </transition>
