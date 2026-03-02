@@ -7,7 +7,7 @@ const props = defineProps<{
     showroomName: string;
     title_form?: string;
     description: string; // O texto longo sobre "48H with Covet House..."
-    imageUrl: string;
+    slug: string;
 }>();
 
 const form = useForm({
@@ -36,7 +36,7 @@ const inputClass = "w-full bg-transparent border border-gray-200 py-2 px-4 text-
     <div class="w-full flex flex-col md:flex-row min-h-[600px] md:h-[calc(100svh-108px)]">
 
         <div class="w-full md:w-1/2 relative group overflow-hidden">
-            <img :src="imageUrl" :alt="showroomName" class="absolute inset-0 w-full h-full object-cover" />
+            <img :src="`/images/showrooms/${slug}/${slug}.jpg`" :alt="showroomName" class="absolute inset-0 w-full h-full object-cover" />
 
             <div class="absolute inset-0 bg-black/60"></div>
 

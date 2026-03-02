@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Repositories\ShowroomRepository;
 use Illuminate\Support\Facades\File;
 use Inertia\Inertia;
 
 class ShowroomController extends Controller
 {
+    public function __construct(
+        private ShowroomRepository $showroomRepository
+    ) {}
     private function getMockShowrooms()
     {
         return [
@@ -622,9 +626,11 @@ class ShowroomController extends Controller
      */
     public function index()
     {
+        $showrooms = $this->showroomRepository->getAllForIndex();
+
         return Inertia::render('showrooms/Index', [
             'pageTitle' => 'Our Showrooms',
-            'showrooms' => $this->getMockShowrooms(),
+            'showrooms' => $showrooms,
             'hero' => [
                 'imageUrl' => 'https://placehold.co/1920x800/111/fff?text=Showrooms+Hero',
                 'title' => 'EXPERIENCE LUXURY DESIGN<br/><b>VISIT OUR SHOWROOMS</b>',
@@ -638,8 +644,7 @@ class ShowroomController extends Controller
      */
     public function show($slug)
     {
-        $showrooms = collect($this->getMockShowrooms());
-        $showroom = $showrooms->firstWhere('slug', $slug);
+        $showroom = $this->showroomRepository->findBySlug($slug);
 
         if (!$showroom) {
             abort(404);

@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('title_form')->nullable();
             $table->string('location')->nullable();
-            $table->string('cover_image')->nullable();
             $table->text('description')->nullable();
             $table->string('address')->nullable();
             $table->string('email')->nullable();

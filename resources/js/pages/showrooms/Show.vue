@@ -39,7 +39,7 @@ const visitDescription = "Interior designers from all over the world are invited
 
     <ShowroomHero :slides="heroSlides" />
 
-    <ShowroomVisitBlock :showroom-name="showroom.name" :description="visitDescription" :image-url="showroom.cover_image"
+    <ShowroomVisitBlock :showroom-name="showroom.name" :description="visitDescription" :slug="showroom.slug"
         :title_form="showroom.title_form" />
 
     <VirtualTourSection v-if="showroom.slug === 'covet-douro'" :showroom-name="showroom.name"

@@ -40,11 +40,11 @@ function toggleMute() {
             <div
                 class="absolute w-full z-20 h-full flex flex-col items-center justify-center pointer-events-none select-none text-white">
                 <p
-                    class="text-2xl font-bold uppercase tracking-widest mt-auto pb-1 flex flex-col items-center gap-1 text-shadow-2xs">
+                    class="text-base md:text-2xl text-center font-bold uppercase tracking-widest mt-auto pb-1 flex flex-col items-center gap-1 text-shadow-2xs">
                     {{ slides[0].title }}
                 </p>
                 <div class="pb-10 flex flex-col items-center gap-1">
-                    <p class="tracking-widest text-center font-light">{{ slides[0].subtitle }}</p>
+                    <p class="text-xs md:text-base tracking-widest text-center font-light">{{ slides[0].subtitle }}</p>
                 </div>
 
                 <a v-if="slides[0].link_url" :href="slides[0].link_url" target="_blank"
