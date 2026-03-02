@@ -25,7 +25,7 @@ defineProps<{
                 :class="index % 2 !== 0 ? 'md:flex-row-reverse' : ''">
                 <div class="w-full md:w-1/2 h-[400px] md:h-full relative overflow-hidden group">
                     <Link :href="`showrooms/${showroom.slug}`" class="block h-full w-full">
-                        <img :src="showroom.cover_image" :alt="showroom.name"
+                        <img :src="`/images/showrooms/${showroom.slug}/${showroom.slug}.jpg`" :alt="showroom.name"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                         <div
                             class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
