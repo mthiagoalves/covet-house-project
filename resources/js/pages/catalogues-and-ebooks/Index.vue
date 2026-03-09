@@ -8,7 +8,7 @@ import BestSellersProducts from '@/components/page-components/BestSellersProduct
 defineProps<{
     pageTitle: string;
     featuredCatalogue: any;
-    regularCatalogues: any[];
+    cataloguesAndEbooks: any[];
     relatedProducts: any[];
 }>();
 </script>
@@ -26,7 +26,7 @@ defineProps<{
                 ALL EDITORIAL CONTENT
             </h2>
 
-            <CatalogueGrid :featured="featuredCatalogue" :list="regularCatalogues" />
+            <CatalogueGrid :featured="featuredCatalogue" :list="cataloguesAndEbooks" />
         </div>
     </div>
 

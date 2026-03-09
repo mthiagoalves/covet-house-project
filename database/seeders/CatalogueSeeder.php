@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\CatalogueAndEbooks;
+use App\Models\CataloguesAndEbooks;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -31,8 +31,8 @@ class CatalogueSeeder extends Seeder
                 'type' => 'ebook',
                 'slug' => 'covet-house-new-catalogue',
                 'external_link' => null,
-                'is_featured' => true,
-                'has_inspirational_content' => true,
+                'is_featured' => false,
+                'has_inspirational_content' => false,
             ],
             [
                 'title' => 'ANNUAL FURNITURE SALE',
@@ -468,7 +468,7 @@ class CatalogueSeeder extends Seeder
         ];
 
         foreach ($catalogues as $catalogue) {
-            CatalogueAndEbooks::create($catalogue);
+            CataloguesAndEbooks::create($catalogue);
         }
     }
 }

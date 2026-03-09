@@ -36,7 +36,6 @@ class ShowroomSeeder extends Seeder
             ]
         ];
 
-        // Salvando um por um para o Eloquent gerenciar o created_at / updated_at
         foreach ($showrooms as $showroom) {
             Showroom::create($showroom);
         }

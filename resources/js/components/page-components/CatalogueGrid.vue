@@ -101,22 +101,22 @@ onUnmounted(() => {
 <template>
     <div class="grid grid-cols-1 lg:grid-cols-5 gap-3">
 
-        <div ref="featuredCardRef" class="lg:col-span-2 flex flex-col gap-4">
+        <div ref="featuredCardRef" class="lg:col-span-2 hidden md:flex flex-col gap-4">
             <div class="flex flex-col items-center justify-center text-center h-full">
                 <div class="bg-[#e5e5e5] mb-2 h-full">
                     <div class="w-full h-full relative group cursor-pointer overflow-hidden">
                         <a :href="`/catalogues-and-ebooks/${featured.slug}`">
-                            <img :src="featured.image" :alt="featured.title"
+                            <img :src="`/images/catalogues-and-ebooks/thumbnails/${featured.slug}-featured.png`" :alt="featured.title"
                                 class="w-full h-full object-cover shadow-lg transition-transform duration-700" />
                         </a>
                     </div>
                 </div>
 
-                <h3 class="text-xs font-bold uppercase tracking-widest mb-1">
+                <h3 class="text-[9px] md:text-xs font-bold uppercase tracking-widest mb-1">
                     {{ featured.title }}
                 </h3>
-                <p class="text-[10px] text-gray-500 uppercase tracking-wider mb-3">
-                    {{ featured.subtitle }}
+                <p class="text-[8px] md:text-[11px] text-gray-500 uppercase tracking-wider mb-3">
+                    {{ featured.type }}
                 </p>
 
                 <div class="flex items-center gap-3 md:w-2/5">
@@ -145,12 +145,12 @@ onUnmounted(() => {
                 <div v-for="item in topList" :key="item.id" class="flex flex-col items-center text-center">
                     <div class="w-full bg-[#e4e4e4] mb-2 relative overflow-hidden cursor-pointer py-4">
                         <a :href="`/catalogues-and-ebooks/${item.slug}`">
-                            <img :src="item.image" :alt="item.title"
+                            <img :src="`/images/mockup-ebooks/${item.slug}.png`" :alt="item.title"
                                 class="w-full h-full object-cover transition-transform duration-500" />
                         </a>
                     </div>
-                    <h4 class="text-xs font-bold uppercase tracking-widest mb-1">{{ item.title }}</h4>
-                    <p class="text-[10px] text-gray-500 uppercase tracking-wider mb-3">{{ item.subtitle }}</p>
+                    <h4 class="text-[9px] md:text-xs font-bold uppercase tracking-widest mb-1">{{ item.title }}</h4>
+                    <p class="text-[8px] md:text-[11px] text-gray-500 uppercase tracking-wider mb-3">{{ item.type }}</p>
                     <div class="flex items-center gap-2 md:w-2/3 mt-auto px-2">
                         <div @click="toggleSelection(item.id)"
                             class="w-9 h-9 border border-[#333] flex items-center justify-center cursor-pointer transition-colors duration-200 flex-shrink-0"
@@ -180,12 +180,12 @@ onUnmounted(() => {
         <div v-for="item in bottomList" :key="item.id" class="flex flex-col items-center text-center">
             <div class="w-full bg-[#e4e4e4] mb-2 relative overflow-hidden cursor-pointer py-4">
                 <a :href="`/catalogues-and-ebooks/${item.slug}`">
-                    <img :src="item.image" :alt="item.title"
+                    <img :src="`/images/mockup-ebooks/${item.slug}.png`" :alt="item.title"
                         class="w-full h-full object-cover transition-transform duration-500" />
                 </a>
             </div>
-            <h4 class="text-xs font-bold uppercase tracking-widest mb-1 px-2">{{ item.title }}</h4>
-            <p class="text-[10px] text-gray-500 uppercase tracking-wider mb-3">{{ item.subtitle }}</p>
+            <h4 class="text-[9px] md:text-xs font-bold uppercase tracking-widest mb-1 px-2">{{ item.title }}</h4>
+            <p class="text-[8px] md:text-[11px] text-gray-500 uppercase tracking-wider mb-3">{{ item.type }}</p>
             <div class="flex items-center gap-2 md:w-2/3 mt-auto px-2">
                 <div @click="toggleSelection(item.id)"
                     class="w-9 h-9 border border-[#333] flex items-center justify-center cursor-pointer transition-colors duration-200 flex-shrink-0"

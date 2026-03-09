@@ -2,34 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Repositories\CataloguesAndEbooksRepository;
 use Inertia\Inertia;
 
 class CatalogueAndEbooksController extends Controller
 {
-    private function getMockCatalogues()
-    {
-        $catalogues = [];
-
-        for ($i = 1; $i <= 19; $i++) {
-
-            $isFeatured = ($i === 1);
-
-            $catalogues[] = [
-                'id' => $i,
-                'title' => $isFeatured ? 'THE ULTIMATE INSPIRATIONS DESIGN BOOK' : "COVET HOUSE NEW CATALOGUE VOL. $i",
-                'subtitle' => $isFeatured ? 'EBOOK' : 'CATALOGUE',
-                'image' => $isFeatured
-                    ? '/images/catalogues-and-ebooks/thumbnails/the-ultimate-inspirations-design-book-featured.png'
-                    : "/images/catalogues-and-ebooks/thumbnails/catalogue-covet-house.png",
-                'slug' => $isFeatured ? 'the-ultimate-inspirations-design-book' : "catalogue-$i",
-                'download_link' => '#',
-                'is_featured' => $isFeatured,
-            ];
-        }
-
-        return collect($catalogues);
-    }
+    public function __construct(
+        private CataloguesAndEbooksRepository $catalogueRepository
+    ) {}
 
     public function index()
     {
@@ -89,44 +69,26 @@ class CatalogueAndEbooksController extends Controller
                 'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Consoles', 'slug' => 'consoles']]
             ],
         ];
-        $allCatalogues = $this->getMockCatalogues();
 
-        $featuredCatalogue = $allCatalogues->firstWhere('is_featured', true);
+        $cataloguesAndEbooks = $this->catalogueRepository->getAllForIndex();
 
-        $regularCatalogues = $allCatalogues
-            ->where('is_featured', false)
-            ->values()
-            ->all();
+        $featured = $this->catalogueRepository->getFeatured();
 
-        if (!$featuredCatalogue && count($regularCatalogues) > 0) {
-            $featuredCatalogue = $regularCatalogues[0];
-            array_shift($regularCatalogues);
-        }
         return Inertia::render('catalogues-and-ebooks/Index', [
             'pageTitle' => 'Catalogues & Ebooks',
-            'featuredCatalogue' => $featuredCatalogue,
-            'regularCatalogues' => $regularCatalogues,
+            'featuredCatalogue' => $featured->first(),
+            'cataloguesAndEbooks' => $cataloguesAndEbooks,
             'relatedProducts' => $productsMock,
-
         ]);
     }
 
     public function show($slug)
     {
-        // Recupera o mock data (na vida real viria do banco: Catalogue::where('slug', $slug)->firstOrFail())
-        $allCatalogues = $this->getMockCatalogues();
-
-        $catalogue = $allCatalogues->firstWhere('slug', $slug);
-
-        if (!$catalogue) {
-            abort(404);
-        }
+        $catalogue = $this->catalogueRepository->findBySlug($slug);
 
         return Inertia::render('catalogues-and-ebooks/Show', [
             'catalogue' => $catalogue,
             'pageTitle' => $catalogue['title'],
         ]);
     }
-
-
 }
