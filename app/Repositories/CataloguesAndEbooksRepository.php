@@ -13,7 +13,7 @@ class CataloguesAndEbooksRepository
     public function getAllForIndex()
     {
         return CataloguesAndEbooks::select('title', 'type', 'slug', 'external_link', 'is_featured')
-            ->orderBy('is_featured', 'desc')
+            ->whereNot('is_featured', true)
             ->orderBy('id', 'asc')
             ->get();
     }
@@ -25,7 +25,7 @@ class CataloguesAndEbooksRepository
     {
         return CataloguesAndEbooks::select('title', 'type', 'slug', 'external_link', 'is_featured')
             ->where('is_featured', true)
-            ->orderBy('id', 'desc')
+            ->orderBy('id', 'asc')
             ->get();
     }
 

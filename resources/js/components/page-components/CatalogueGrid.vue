@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Link } from '@inertiajs/vue3';
 import { ref, computed, onMounted, onUnmounted, nextTick, watch } from 'vue';
 // Props recebidas do Pai (Index.vue)
 const props = defineProps<{
@@ -101,12 +102,13 @@ onUnmounted(() => {
 <template>
     <div class="grid grid-cols-1 lg:grid-cols-5 gap-3">
 
-        <div ref="featuredCardRef" class="lg:col-span-2 hidden md:flex flex-col gap-4">
+        <div ref="featuredCardRef" class="lg:col-span-2 flex flex-col gap-4">
             <div class="flex flex-col items-center justify-center text-center h-full">
                 <div class="bg-[#e5e5e5] mb-2 h-full">
                     <div class="w-full h-full relative group cursor-pointer overflow-hidden">
                         <a :href="`/catalogues-and-ebooks/${featured.slug}`">
-                            <img :src="`/images/catalogues-and-ebooks/thumbnails/${featured.slug}-featured.png`" :alt="featured.title"
+                            <img :src="`/images/catalogues-and-ebooks/thumbnails/${featured.slug}-featured.png`"
+                                :alt="featured.title"
                                 class="w-full h-full object-cover shadow-lg transition-transform duration-700" />
                         </a>
                     </div>
@@ -144,10 +146,16 @@ onUnmounted(() => {
 
                 <div v-for="item in topList" :key="item.id" class="flex flex-col items-center text-center">
                     <div class="w-full bg-[#e4e4e4] mb-2 relative overflow-hidden cursor-pointer py-4">
-                        <a :href="`/catalogues-and-ebooks/${item.slug}`">
+                        <a v-if="item.external_link && item.external_link !== '#'" :href="item.external_link"
+                            target="_blank" rel="noopener noreferrer" class="block overflow-hidden">
                             <img :src="`/images/mockup-ebooks/${item.slug}.png`" :alt="item.title"
-                                class="w-full h-full object-cover transition-transform duration-500" />
+                                class="w-full h-full object-cover" />
                         </a>
+
+                        <Link v-else :href="`/catalogues-and-ebooks/${item.slug}`" class="block overflow-hidden">
+                            <img :src="`/images/mockup-ebooks/${item.slug}.png`" :alt="item.title"
+                                class="w-full h-full object-cover" />
+                        </Link>
                     </div>
                     <h4 class="text-[9px] md:text-xs font-bold uppercase tracking-widest mb-1">{{ item.title }}</h4>
                     <p class="text-[8px] md:text-[11px] text-gray-500 uppercase tracking-wider mb-3">{{ item.type }}</p>
@@ -179,10 +187,16 @@ onUnmounted(() => {
 
         <div v-for="item in bottomList" :key="item.id" class="flex flex-col items-center text-center">
             <div class="w-full bg-[#e4e4e4] mb-2 relative overflow-hidden cursor-pointer py-4">
-                <a :href="`/catalogues-and-ebooks/${item.slug}`">
+                <a v-if="item.external_link && item.external_link !== '#'" :href="item.external_link" target="_blank"
+                    rel="noopener noreferrer" class="block overflow-hidden">
                     <img :src="`/images/mockup-ebooks/${item.slug}.png`" :alt="item.title"
-                        class="w-full h-full object-cover transition-transform duration-500" />
+                        class="w-full h-full object-cover" />
                 </a>
+
+                <Link v-else :href="`/catalogues-and-ebooks/${item.slug}`" class="block overflow-hidden">
+                    <img :src="`/images/mockup-ebooks/${item.slug}.png`" :alt="item.title"
+                        class="w-full h-full object-cover" />
+                </Link>
             </div>
             <h4 class="text-[9px] md:text-xs font-bold uppercase tracking-widest mb-1 px-2">{{ item.title }}</h4>
             <p class="text-[8px] md:text-[11px] text-gray-500 uppercase tracking-wider mb-3">{{ item.type }}</p>
