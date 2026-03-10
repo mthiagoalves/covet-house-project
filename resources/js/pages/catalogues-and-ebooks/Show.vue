@@ -248,5 +248,5 @@ const inputClass = "w-full bg-[#eeeeee] border border-[#333333] text-gray-500 pl
         </div>
     </div>
 
-    <GallerySlider :slug="catalogue.slug" />
+    <GallerySlider v-if="catalogue.has_inspirational_content" :slug="catalogue.slug" />
 </template>
