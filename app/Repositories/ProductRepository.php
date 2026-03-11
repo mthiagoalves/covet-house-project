@@ -121,7 +121,14 @@ class ProductRepository
      */
     public function findBySlugFormatted(string $slug)
     {
-        $product = Product::with(['brand', 'category', 'subcategory'])
+        // 1. Adicionamos 'finishes' e 'ambiances' no array do with()
+        $product = Product::with([
+            'brand:id,name,slug',
+            'category:id,name,slug',
+            'subcategory:id,name,slug',
+            'finishes:id,name,slug,is_standard,visible', // Otimizando a busca de colunas
+            'ambiances' // Traz a relação dos ambientes (incluindo a tabela pivot)
+        ])
             ->where('slug', $slug)
             ->firstOrFail();
 
@@ -130,13 +137,17 @@ class ProductRepository
             'type'           => $product->type,
             'name'           => $product->name,
             'slug'           => $product->slug,
-            'is_new'         => $product->is_new,
             'has_stock'      => $product->has_stock,
-            'is_best_seller' => $product->is_best_seller,
+            'description'    => $product->description,
+            'dimensions_cm'  => $product->dimensions_cm,
+            'dimensions_in'  => $product->dimensions_in,
+            'materials_and_finishes' => $product->materials_and_finishes,
+
             'brand' => [
                 'name' => $product->brand->name ?? null,
                 'slug' => $product->brand->slug ?? null,
             ],
+
             'category' => [
                 'name' => $product->category->name ?? null,
                 'slug' => $product->category->slug ?? null,
@@ -144,7 +155,37 @@ class ProductRepository
                     'name' => $product->subcategory->name ?? null,
                     'slug' => $product->subcategory->slug ?? null,
                 ]
-            ]
+            ],
+
+            // 2. Mapeamos os acabamentos garantindo que só os visíveis retornem
+            'finishes' => $product->finishes->map(function ($finish) {
+                return [
+                    'name'        => $finish->name,
+                    'slug'        => $finish->slug,
+                    'is_standard' => $finish->is_standard,
+                ];
+            })->values()->toArray(),
+
+            // 3. Mapeamos os ambientes onde este produto aparece
+            'ambiances' => $product->ambiances
+                ->where('is_active', true)
+                ->unique('id') // unique() garante que o ambiente não duplique caso o SEU produto apareça 2x na mesma sala
+                ->map(function ($ambiance) {
+                    return [
+                        'name' => $ambiance->name,
+                        'slug' => $ambiance->slug,
+
+                        // Mapeia TODOS os produtos que pertencem a este ambiente
+                        'hotspots' => $ambiance->products->map(function ($ambianceProduct) {
+                            return [
+                                'product_name' => $ambianceProduct->name,
+                                'product_slug' => $ambianceProduct->slug,
+                                'top'          => $ambianceProduct->pivot->top ?? null,
+                                'left'         => $ambianceProduct->pivot->left ?? null,
+                            ];
+                        })->toArray(),
+                    ];
+                })->values()->toArray(),
         ];
     }
 }
