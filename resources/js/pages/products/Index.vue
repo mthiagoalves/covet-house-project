@@ -10,8 +10,7 @@ interface ProductData {
     type: 'product';
     name: string;
     slug: string;
-    main_image_url: string;
-    brand: { name: string; };
+    brand: { name: string; slug: string; };
     category: {
         name: string;
         slug: string;
@@ -149,7 +148,8 @@ const menuItems = computed(() => {
     if (props.category && props.productGroups) {
 
         const excludedSlugs = [
-            'bar-counter-stools',
+            'bar-chairs',
+            'counter-stool',
             'stools-and-benches',
         ];
 
@@ -179,7 +179,7 @@ const menuItems = computed(() => {
                 <section v-for="group in displayGroups" :key="group.category_slug" :id="group.category_slug"
                     class="scroll-mt-[72px] md:scroll-mt-[108px]">
 
-                    <h2 class="text-3xl uppercase font-normal text-black my-2 pb-2">
+                    <h2 class="text-xl uppercase font-light text-black my-2 pb-2">
                         {{ group.category_name }}
                     </h2>
 

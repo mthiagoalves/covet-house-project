@@ -7,9 +7,9 @@ const props = defineProps<{
         id: number;
         name: string;
         slug: string;
-        main_image_url: string;
         brand: {
             name: string;
+            slug: string;
         }, category: {
             name: string;
             slug: string;
@@ -36,16 +36,16 @@ function openModal() {
 <template>
     <div class="flex flex-col">
 
-        <Link href="#" class="block bg-white aspect-square group relative">
-        <img :src="product.main_image_url" :alt="product.name" class="w-full h-full object-contain" loading="lazy" />
+        <Link :href="`/products/${product.slug}`" class="block bg-white aspect-square group relative">
+        <img :src="`/images/products/thumbnails/${product.slug}-luxury-piece.jpg`" :alt="`${product.name} our luxury piece`" class="w-full h-full object-contain" loading="lazy" />
         </Link>
 
         <div class="text-black p-2 mb-2 flex flex-col justify-between items-center h-20">
             <div class="text-center">
-                <Link href="#">
+                <Link :href="`/products/${product.slug}`" class="block">
                 <h3 class="font-bold text-[9px] uppercase tracking-wider">{{ product.name }}</h3>
                 </Link>
-                <Link href="#">
+                <Link :href="`/brands/${product.brand.slug}`">
                 <p class="text-[11px] uppercase tracking-wider">{{ product.brand.name }}</p>
                 </Link>
             </div>
