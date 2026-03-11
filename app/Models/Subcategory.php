@@ -28,9 +28,9 @@ class Subcategory extends Model
      * Relação com os Produtos.
      * Uma subcategoria "tem muitos" (hasMany) produtos.
      */
-    // public function products()
-    // {
-    //     // Quando criarmos a tabela de produtos, essa relação será ativada
-    //     return $this->hasMany(Product::class);
-    // }
+    public function products()
+    {
+        // Quando criarmos a tabela de produtos, essa relação será ativada
+        return $this->hasMany(Product::class);
+    }
 }
