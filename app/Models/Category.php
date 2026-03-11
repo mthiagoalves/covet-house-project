@@ -20,7 +20,6 @@ class Category extends Model
      */
     public function subcategories()
     {
-        // Quando criarmos o model Subcategory, essa relação vai funcionar magicamente
         return $this->hasMany(Subcategory::class);
     }
 
@@ -28,13 +27,8 @@ class Category extends Model
      * Relação com Produtos.
      * Uma categoria "tem muitos" (hasMany) produtos.
      */
-    // public function products()
-    // {
-    //     // Se os produtos forem ligados diretamente à categoria principal:
-    //     return $this->hasMany(Product::class);
-
-    //     // Dica PRO: Se os produtos forem ligados APENAS à subcategoria,
-    //     // você usará o "hasManyThrough" (Tem muitos através de...) no futuro:
-    //     // return $this->hasManyThrough(Product::class, Subcategory::class);
-    // }
+    public function products()
+    {
+        return $this->hasManyThrough(Product::class, Subcategory::class);
+    }
 }
