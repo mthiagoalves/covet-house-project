@@ -21,7 +21,7 @@ class CategoryRepository
      */
     public function findBySlug(string $slug)
     {
-        return Category::where('slug', $slug)->firstOrFail();
+        return Category::where('slug', $slug)->select('name', 'slug')->firstOrFail();
     }
 
     /**
