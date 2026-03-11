@@ -22,7 +22,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Alpha',
                 'slug' => 'mock-product-alpha',
                 'is_new' => true,
-                'main_image_url' => 'https://placehold.co/800x800/333/fff?text=Product+A',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -39,7 +40,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Beta',
                 'slug' => 'mock-product-beta',
                 'is_new' => true,
-                'main_image_url' => 'https://placehold.co/800x800/444/fff?text=Product+B',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -56,7 +58,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Gamma',
                 'slug' => 'mock-product-gamma',
                 'is_new' => true,
-                'main_image_url' => 'https://placehold.co/800x800/555/fff?text=Product+G',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -73,7 +76,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Delta',
                 'slug' => 'mock-product-delta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -90,7 +94,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Epsilion',
                 'slug' => 'mock-product-epsilion',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -107,7 +112,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Zeta',
                 'slug' => 'mock-product-zeta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -124,7 +130,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Delta',
                 'slug' => 'mock-product-delta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -141,7 +148,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Epsilion',
                 'slug' => 'mock-product-epsilion',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -158,7 +166,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Zeta',
                 'slug' => 'mock-product-zeta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -175,7 +184,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Alpha',
                 'slug' => 'mock-product-alpha',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/333/fff?text=Product+A',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -192,7 +202,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Beta',
                 'slug' => 'mock-product-beta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/444/fff?text=Product+B',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -209,7 +220,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Gamma',
                 'slug' => 'mock-product-gamma',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/555/fff?text=Product+G',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -226,7 +238,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Delta',
                 'slug' => 'mock-product-delta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -243,7 +256,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Epsilion',
                 'slug' => 'mock-product-epsilion',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -260,7 +274,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Zeta',
                 'slug' => 'mock-product-zeta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -277,7 +292,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Alpha',
                 'slug' => 'mock-product-alpha',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/333/fff?text=Product+A',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -294,7 +310,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Beta',
                 'slug' => 'mock-product-beta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/444/fff?text=Product+B',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -311,7 +328,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Gamma',
                 'slug' => 'mock-product-gamma',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/555/fff?text=Product+G',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -328,7 +346,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Delta',
                 'slug' => 'mock-product-delta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -345,7 +364,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Epsilion',
                 'slug' => 'mock-product-epsilion',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -362,7 +382,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Zeta',
                 'slug' => 'mock-product-zeta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -379,7 +400,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Alpha',
                 'slug' => 'mock-product-alpha',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/333/fff?text=Product+A',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -396,7 +418,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Beta',
                 'slug' => 'mock-product-beta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/444/fff?text=Product+B',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -413,7 +436,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Gamma',
                 'slug' => 'mock-product-gamma',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/555/fff?text=Product+G',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -430,7 +454,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Delta',
                 'slug' => 'mock-product-delta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -447,7 +472,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Epsilion',
                 'slug' => 'mock-product-epsilion',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -464,7 +490,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Zeta',
                 'slug' => 'mock-product-zeta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -481,7 +508,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Alpha',
                 'slug' => 'mock-product-alpha',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/333/fff?text=Product+A',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -498,7 +526,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Beta',
                 'slug' => 'mock-product-beta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/444/fff?text=Product+B',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -515,7 +544,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Gamma',
                 'slug' => 'mock-product-gamma',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/555/fff?text=Product+G',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -532,7 +562,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Delta',
                 'slug' => 'mock-product-delta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -549,7 +580,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Epsilion',
                 'slug' => 'mock-product-epsilion',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -566,7 +598,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Zeta',
                 'slug' => 'mock-product-zeta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -583,7 +616,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Alpha',
                 'slug' => 'mock-product-alpha',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/333/fff?text=Product+A',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -600,7 +634,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Beta',
                 'slug' => 'mock-product-beta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/444/fff?text=Product+B',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -617,7 +652,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Gamma',
                 'slug' => 'mock-product-gamma',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/555/fff?text=Product+G',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -634,7 +670,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Delta',
                 'slug' => 'mock-product-delta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -651,7 +688,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Epsilion',
                 'slug' => 'mock-product-epsilion',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -668,7 +706,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Zeta',
                 'slug' => 'mock-product-zeta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Casegoods',
@@ -685,7 +724,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Alpha',
                 'slug' => 'mock-product-alpha',
                 'is_new' => true,
-                'main_image_url' => 'https://placehold.co/800x800/333/fff?text=Product+A',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -702,7 +742,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Beta',
                 'slug' => 'mock-product-beta',
                 'is_new' => true,
-                'main_image_url' => 'https://placehold.co/800x800/444/fff?text=Product+B',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -719,7 +760,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Gamma',
                 'slug' => 'mock-product-gamma',
                 'is_new' => true,
-                'main_image_url' => 'https://placehold.co/800x800/555/fff?text=Product+G',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -736,7 +778,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Delta',
                 'slug' => 'mock-product-delta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -753,7 +796,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Epsilion',
                 'slug' => 'mock-product-epsilion',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -770,7 +814,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Zeta',
                 'slug' => 'mock-product-zeta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -787,7 +832,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Alpha',
                 'slug' => 'mock-product-alpha',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/333/fff?text=Product+A',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -804,7 +850,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Beta',
                 'slug' => 'mock-product-beta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/444/fff?text=Product+B',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -821,7 +868,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Gamma',
                 'slug' => 'mock-product-gamma',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/555/fff?text=Product+G',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -838,7 +886,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Delta',
                 'slug' => 'mock-product-delta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -855,7 +904,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Epsilion',
                 'slug' => 'mock-product-epsilion',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -872,7 +922,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Zeta',
                 'slug' => 'mock-product-zeta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -889,7 +940,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Alpha',
                 'slug' => 'mock-product-alpha',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/333/fff?text=Product+A',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -906,7 +958,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Beta',
                 'slug' => 'mock-product-beta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/444/fff?text=Product+B',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -923,7 +976,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Gamma',
                 'slug' => 'mock-product-gamma',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/555/fff?text=Product+G',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -940,7 +994,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Delta',
                 'slug' => 'mock-product-delta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -957,7 +1012,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Epsilion',
                 'slug' => 'mock-product-epsilion',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -974,7 +1030,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Zeta',
                 'slug' => 'mock-product-zeta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -991,7 +1048,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Alpha',
                 'slug' => 'mock-product-alpha',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/333/fff?text=Product+A',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -1008,7 +1066,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Beta',
                 'slug' => 'mock-product-beta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/444/fff?text=Product+B',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -1025,7 +1084,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Gamma',
                 'slug' => 'mock-product-gamma',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/555/fff?text=Product+G',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -1042,7 +1102,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Delta',
                 'slug' => 'mock-product-delta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -1059,7 +1120,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Epsilion',
                 'slug' => 'mock-product-epsilion',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -1076,7 +1138,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Zeta',
                 'slug' => 'mock-product-zeta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -1093,7 +1156,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Alpha',
                 'slug' => 'mock-product-alpha',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/333/fff?text=Product+A',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -1110,7 +1174,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Beta',
                 'slug' => 'mock-product-beta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/444/fff?text=Product+B',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -1127,7 +1192,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Gamma',
                 'slug' => 'mock-product-gamma',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/555/fff?text=Product+G',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -1144,7 +1210,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Delta',
                 'slug' => 'mock-product-delta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -1161,7 +1228,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Epsilion',
                 'slug' => 'mock-product-epsilion',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
@@ -1178,7 +1246,8 @@ class ProductController extends Controller
                 'name' => 'Mock Product Zeta',
                 'slug' => 'mock-product-zeta',
                 'is_new' => false,
-                'main_image_url' => 'https://placehold.co/800x800/666/fff?text=Product+D',
+                'has_stock' => false,
+                'is_best_seller' => false,
                 'brand' => ['name' => 'Brand Name', 'slug' => 'brand-name'],
                 'category' => [
                     'name' => 'Seating',
