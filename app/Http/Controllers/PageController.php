@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\ProjectRepository;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class PageController extends Controller
 {
+
+    public function __construct(
+        private ProjectRepository $projectRepository
+    ) {}
 
     /** Show Homepage **/
 
@@ -96,55 +101,7 @@ class PageController extends Controller
      */
     public function interiorDesignService()
     {
-        $allProjects = [
-            [
-                'slug' => 'sky-high-dwelling',
-                'title' => 'Sky-high Dwelling',
-                'subtitle' => 'An Upscale Apartment In India by Covet House',
-            ],
-            [
-                'title' => 'A MODERN HAVEN BY THE LAKE',
-                'subtitle' => 'A SWISS VILLA BETWEEN GENEVA AND LAUSANNE',
-                'slug' => 'a-modern-haven-by-the-lake',
-
-            ],
-            [
-                'title' => 'Opulence Revealed',
-                'subtitle' => 'A Journey Inside a Classic Dubai Villa',
-                'slug' => 'opulence-revealed-a-journey-inside-a-classic-dubai-villa',
-
-            ],
-            [
-                'title' => 'CONTEMPORARY OASIS',
-                'subtitle' => 'INSIDE A MODERN SAINT PETERSBURG VILLA',
-                'slug' => 'contemporary-oasis',
-
-            ],
-            [
-                'title' => 'An Outer Space Misson',
-                'subtitle' => 'With Cozy Studio',
-                'slug' => 'an-outer-space-mission-room',
-
-            ],
-            [
-                'title' => 'Playground Holidays',
-                'subtitle' => 'The True Colors of Adventure in Vacations',
-                'slug' => 'playground-holidays',
-
-            ],
-            [
-                'title' => 'Timeless Mansion',
-                'subtitle' => 'Unveiling Refined Luxury In London',
-                'slug' => 'timeless-mansion',
-
-            ],
-            [
-                'title' => 'Parisian Dream Home',
-                'subtitle' => 'Blending History, Light and Modern Beauty',
-                'slug' => 'parisian-dream-home',
-
-            ],
-        ];
+        $allProjects = $this->projectRepository->getAllForIndex();
 
         $productsMock = [
             [
