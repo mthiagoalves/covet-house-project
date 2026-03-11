@@ -14,7 +14,7 @@ class CataloguesAndEbooksRepository
     {
         return CataloguesAndEbooks::select('title', 'type', 'slug', 'external_link', 'is_featured')
             ->whereNot('is_featured', true)
-            ->orderBy('id', 'asc')
+            ->orderBy('id', 'desc')
             ->get();
     }
 
@@ -25,7 +25,7 @@ class CataloguesAndEbooksRepository
     {
         return CataloguesAndEbooks::select('title', 'type', 'slug', 'external_link', 'is_featured')
             ->where('is_featured', true)
-            ->orderBy('id', 'asc')
+            ->orderBy('id', 'desc')
             ->get();
     }
 
