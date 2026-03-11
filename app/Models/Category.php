@@ -18,11 +18,11 @@ class Category extends Model
      * Relação com Subcategorias.
      * Uma categoria "tem muitas" (hasMany) subcategorias.
      */
-    // public function subcategories()
-    // {
-    //     // Quando criarmos o model Subcategory, essa relação vai funcionar magicamente
-    //     return $this->hasMany(Subcategory::class);
-    // }
+    public function subcategories()
+    {
+        // Quando criarmos o model Subcategory, essa relação vai funcionar magicamente
+        return $this->hasMany(Subcategory::class);
+    }
 
     /**
      * Relação com Produtos.
