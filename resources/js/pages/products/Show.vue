@@ -1,49 +1,50 @@
 <script setup lang="ts">
-import { Head, Link } from '@inertiajs/vue3';
-import { ref, computed, watch, onUnmounted } from 'vue';
 import { useGeneralModal } from '@/composables/useGeneralModal';
+import { Head, Link } from '@inertiajs/vue3';
 import {
-    Clock,
-    FileText,
     Box,
-    Layers,
-    Maximize,
-    Hammer,
-    Share2,
+    Clock,
     Facebook,
-    Twitter,
-    Linkedin,
+    FileText,
+    Hammer,
+    Layers,
     Mail,
+    Maximize,
+    Share2
 } from 'lucide-vue-next';
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Navigation, Thumbs, Controller } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
+import { Controller, Navigation, Thumbs } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { computed, onUnmounted, ref, watch } from 'vue';
 
-import VueEasyLightbox from 'vue-easy-lightbox';
-import 'vue-easy-lightbox/external-css/vue-easy-lightbox.css';
-import ProductAmbienceSlider from '@/components/page-components/ProductAmbienceSlider.vue';
 import BestSellersProducts from '@/components/page-components/BestSellersProducts.vue';
-import FormHomepage from '@/components/used-components/includes/FormHomepage.vue';
 import CategorySlider from '@/components/page-components/CategorySlider.vue';
+import ProductAmbienceSlider from '@/components/page-components/ProductAmbienceSlider.vue';
 import ProductDetailsBlock from '@/components/page-components/ProductDetailsBlock.vue';
 import ServiceRoomGrid from '@/components/page-components/ServiceRoomGrid.vue';
+import FormHomepage from '@/components/used-components/includes/FormHomepage.vue';
+import VueEasyLightbox from 'vue-easy-lightbox';
+import 'vue-easy-lightbox/external-css/vue-easy-lightbox.css';
 
-// --- PROPS ---
 const props = defineProps<{
     product: {
         id: number;
         name: string;
         slug: string;
         description: string;
-        is_in_stock: boolean;
+        has_stock: boolean;
         brand: { name: string; slug: string };
         category: { name: string; slug: string; subcategory: { name: string } };
         dimensions_cm: { width: string; depth: string; height: string };
         dimensions_in: { width: string; depth: string; height: string };
-        materials: string;
-        image_count: number;
+        materials_and_finishes: string;
+        ambiances?: Array<{
+            name: string;
+            slug: string;
+            hotspots?: Array<{ product_name: string; product_slug: string; top: string; left: string }>
+        }>;
         finishes?: Array<{
             name: string;
             slug: string;
@@ -52,7 +53,6 @@ const props = defineProps<{
             is_standard: boolean;
         }>;
     };
-    ambiences?: Array<{ name: string; slug: string; }>;
     bestSellersProducts: any[];
 }>();
 
@@ -60,7 +60,7 @@ const props = defineProps<{
 
 // 1. Caminho da PASTA (sem o nome do arquivo)
 const imageFolder = computed(() =>
-    `/images/products/slide-product-page/${props.product.category.slug}/${props.product.slug}`
+    `/images/products/${props.product.category.slug}/${props.product.slug}`
 );
 
 const galleryImages = computed(() => {
@@ -74,10 +74,10 @@ const galleryImages = computed(() => {
 
                 if (finish.is_standard) {
                     // Padrão: pixel-cabinet-1.jpg
-                    images.push(`${imageFolder.value}/${slug}-${i}.jpg`);
+                    images.push(`${imageFolder.value}/details-slide/${slug}-${i}.jpg`);
                 } else {
                     // Acabamento: pixel-cabinet-walnut-1.jpg
-                    images.push(`${imageFolder.value}/${slug}-${finish.slug}-${i}.jpg`);
+                    images.push(`${imageFolder.value}/details-slide/${slug}-${finish.slug}-${i}.jpg`);
                 }
 
             }
@@ -193,7 +193,7 @@ const hideLightbox = () => {
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
 
-                <div class="lg:col-span-8 flex flex-col-reverse lg:flex-row gap-4 h-[600px] lg:h-[800px]">
+                <div class="lg:col-span-8 flex flex-col-reverse lg:flex-row gap-4 first-section">
 
                     <div class="w-full lg:w-40 h-24 lg:h-full flex-shrink-0">
                         <Swiper @swiper="setThumbsSwiper" :direction="'horizontal'" :space-between="10"
@@ -230,22 +230,25 @@ const hideLightbox = () => {
 
                 <div class="lg:col-span-4 text-black flex flex-col">
 
-                    <nav class="text-xs uppercase text-gray-400 tracking-wider pb-2 border-b border-gray-200">
+                    <nav class="text-xs uppercase text-gray-400 font-light tracking-wider py-2 border-b border-gray-200">
                         <Link href="/" class="hover:text-black">HOME</Link> /
-                        <span class="hover:text-black cursor-pointer">{{ product.category.name }}</span> /
-                        <span class="text-black">{{ product.category.subcategory.name }}</span>
+                        <Link :href="`/category/${product.category.slug}`" class="hover:text-black cursor-pointer">{{
+                            product.category.name }}</Link> /
+                        <span class="text-black font-medium">{{ product.category.subcategory.name }}</span>
                     </nav>
 
                     <h1 class="text-base md:text-lg font-bold tracking-widest uppercase mb-1 pt-2">
                         {{ product.name }}
                     </h1>
-                    <h2
-                        class="text-sm md:text-base text-[#c6a479] tracking-widest uppercase pb-2 border-b border-gray-200">
-                        {{ product.brand.name }}
-                    </h2>
+                    <Link :href="`/brands/${product.brand.slug}`">
+                        <h2
+                            class="text-sm md:text-base text-[#c6a479] tracking-widest uppercase pb-2">
+                            {{ product.brand.name }}
+                        </h2>
+                    </Link>
 
-                    <div v-if="product.is_in_stock"
-                        class="flex items-center gap-2 text-[#4a7c59] text-xs font-bold tracking-wider uppercase mb-2 pt-2">
+                    <div v-if="product.has_stock"
+                        class="flex items-center gap-2 text-[#4a7c59] text-xs font-bold tracking-wider uppercase mb-2 pt-2 border-t border-gray-200">
                         <Clock class="w-4 h-4" />
                         <span>IN STOCK</span>
                     </div>
@@ -253,9 +256,9 @@ const hideLightbox = () => {
                     <div class="flex items-stretch gap-4 mb-4">
                         <div class="border border-gray-300 flex items-center px-3 w-20 justify-between">
                             <button @click="quantity > 1 ? quantity-- : null"
-                                class="text-gray-500 hover:text-black">-</button>
+                                class="text-gray-500 hover:text-black cursor-pointer">-</button>
                             <span class="text-sm font-medium">{{ quantity }}</span>
-                            <button @click="quantity++" class="text-gray-500 hover:text-black">+</button>
+                            <button @click="quantity++" class="text-gray-500 hover:text-black cursor-pointer">+</button>
                         </div>
 
                         <button @click="openGetPrice"
@@ -302,7 +305,7 @@ const hideLightbox = () => {
                             <span class="text-xs font-bold uppercase tracking-widest">MATERIALS AND FINISHES:</span>
                         </div>
                         <p class="text-[10px] text-gray-500 tracking-wide pl-6 uppercase leading-relaxed">
-                            {{ product.materials }}
+                            {{ product.materials_and_finishes }}
                         </p>
                     </div>
 
@@ -346,10 +349,10 @@ const hideLightbox = () => {
                         <span class="text-xs font-bold uppercase tracking-widest">SHARE:</span>
                         <div class="flex gap-4 text-gray-500">
                             <Share2 class="w-4 h-4 hover:text-black" />
-                            <a href='#' class="hover:text-black">
+                            <a :href="`https://www.facebook.com/sharer/sharer.php?u=https://www.covethouse.eu/products/${product.slug}`" target="_blank" class="hover:text-black">
                                 <Facebook class="w-4 h-4" />
                             </a>
-                            <a href="#" class="hover:text-black">
+                            <a :href="`mailto:?subject=Check out this product&amp;body=I found a great product on Covet House: https://www.covethouse.eu/products/${product.slug}`" class="hover:text-black">
                                 <Mail class="w-4 h-4" />
                             </a>
                         </div>
@@ -363,7 +366,8 @@ const hideLightbox = () => {
             </div>
         </div>
 
-        <ProductAmbienceSlider v-if="ambiences && ambiences.length > 0" :ambiences="ambiences" />
+        <ProductAmbienceSlider v-if="product.ambiances && product.ambiances.length > 0"
+            :ambiences="product.ambiances" />
 
         <ProductDetailsBlock :product="product" />
 
@@ -404,5 +408,16 @@ const hideLightbox = () => {
 :deep(.main-product-swiper .swiper-button-prev) {
     color: #000;
     transform: scale(0.7);
+}
+
+.first-section {
+    height: calc(100svh - 72px);
+
+}
+
+@media (min-width: 768px) {
+    .first-section {
+        height: calc(100svh - 150px);
+    }
 }
 </style>

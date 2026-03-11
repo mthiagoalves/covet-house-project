@@ -2,7 +2,7 @@
 import { ref, computed } from 'vue';
 import { useGeneralModal } from '@/composables/useGeneralModal';
 import { ChevronDown, ChevronUp } from 'lucide-vue-next';
-import { useForm } from '@inertiajs/vue3';
+import { Link, useForm } from '@inertiajs/vue3';
 import { countries } from '@/data/countries';
 import { industries } from '@/data/industries';
 
@@ -13,9 +13,10 @@ const props = defineProps<{
         description: string;
         dimensions_cm: { width: string; depth: string; height: string };
         dimensions_in: { width: string; depth: string; height: string };
-        materials: string;
+        materials_and_finishes: string;
         weight?: string;
         brand: { name: string; slug: string; };
+        category: { name: string; slug: string; };
     };
 }>();
 
@@ -89,7 +90,7 @@ const termsContent = `
 `;
 
 // --- IMAGEM TÉCNICA DINÂMICA ---
-const technicalImageUrl = computed(() => `/images/products/slide-product-page/casegoods/${props.product.slug}/human-scale.png`);
+const technicalImageUrl = computed(() => `/images/products/${props.product.category.slug}/${props.product.slug}/human-scale.png`);
 
 // --- AÇÕES ---
 const toggleExpand = () => {
@@ -171,7 +172,7 @@ const inputClass = "w-full bg-white border border-gray-300 py-2 px-4 text-xs tra
                                     <h4 class="font-bold text-black uppercase tracking-widest mb-2">MATERIALS AND
                                         FINISHES
                                     </h4>
-                                    <p class="uppercase pl-6">{{ product.materials }}</p>
+                                    <p class="uppercase pl-6">{{ product.materials_and_finishes }}</p>
                                 </div>
                                 <div v-if="product.weight">
                                     <h4 class="font-bold text-black uppercase tracking-widest mb-2">WEIGHT</h4>
@@ -180,7 +181,7 @@ const inputClass = "w-full bg-white border border-gray-300 py-2 px-4 text-xs tra
                                 <p class="mt-4 text-[13px] tracking-widest text-black leading-relaxed">
                                     Discover more about
                                     <span class="font-bold">{{ product.brand.name }}</span>
-                                    <a href="#" class="underline hover:text-black"> here</a>.
+                                    <Link :href="`/brands/${product.brand.slug}`" class="underline hover:text-black"> here</Link>.
                                 </p>
                             </div>
                         </transition>
