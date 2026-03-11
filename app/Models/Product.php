@@ -53,4 +53,11 @@ class Product extends Model
     {
         return $this->belongsToMany(Finish::class);
     }
+
+    public function ambiances()
+    {
+        return $this->belongsToMany(Ambiance::class)
+            ->withPivot('top', 'left')
+            ->withTimestamps();
+    }
 }
