@@ -49,6 +49,10 @@
         .swiper-button-next::after {
             font-size: 16px;
         }
+
+        input[type="radio"] {
+            accent-color: #a38d65;
+        }
     </style>
     @inertia
 </body>
