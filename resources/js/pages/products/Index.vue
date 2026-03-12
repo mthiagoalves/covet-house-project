@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import ProductCard from '@/components/product/ProductCard.vue';
-import { Head } from '@inertiajs/vue3';
+import { Head, Link } from '@inertiajs/vue3';
 import { computed, onMounted, ref } from 'vue';
 import AnchorMenu from '@/components/page-components/AnchorMenu.vue';
 import ProductFormCard from '@/components/product/ProductFormCard.vue';
@@ -179,7 +179,7 @@ const menuItems = computed(() => {
                 <section v-for="group in displayGroups" :key="group.category_slug" :id="group.category_slug"
                     class="scroll-mt-[72px] md:scroll-mt-[108px]">
 
-                    <h2 class="text-xl uppercase font-light text-black my-2 pb-2">
+                    <h2 class="text-xl uppercase font-light text-black my-4 tracking-widest">
                         {{ group.category_name }}
                     </h2>
 
@@ -200,7 +200,10 @@ const menuItems = computed(() => {
                             LOAD MORE >
                         </button>
                     </div>
-
+                    <Link :href="`/category/${group.category_slug}`" v-else-if="!props.category"
+                        class="text-black text-[11px] cursor-pointer font-normal tracking-widest border-b border-[#777777] uppercase">
+                        SEE ALL {{ group.category_name }} >
+                    </Link>
                 </section>
             </div>
 

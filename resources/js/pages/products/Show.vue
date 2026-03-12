@@ -45,17 +45,21 @@ const props = defineProps<{
             slug: string;
             hotspots?: Array<{ product_name: string; product_slug: string; top: string; left: string }>
         }>;
-        finishes?: Array<{
-            name: string;
-            slug: string;
-            slide_index: number;
+        // CORRIGIDO: Agora é um Objeto igual ao backend
+        finishes: {
             image_count: number;
-            is_standard: boolean;
-        }>;
+            finishes: Array<{
+                name: string;
+                slug: string;
+                slide_index: number;
+                image_count: number;
+                is_standard: boolean;
+            }> | null;
+        };
     };
     bestSellersProducts: any[];
 }>();
-
+console.log('Produto recebido no Show.vue:', props.product);
 // --- LÓGICA DE IMAGENS DINÂMICAS ---
 
 // 1. Caminho da PASTA (sem o nome do arquivo)
@@ -63,22 +67,35 @@ const imageFolder = computed(() =>
     `/images/products/${props.product.category.slug}/${props.product.slug}`
 );
 
+const finishesData = props.product.finishes;
+
 const galleryImages = computed(() => {
     const images: string[] = [];
     const slug = props.product.slug;
 
-    if (props.product.finishes) {
-        props.product.finishes.forEach(finish => {
+    // Movido para DENTRO do computed por segurança de reatividade
+
+    console.log('Dados de acabamentos para o produto:', finishesData);
+
+    // Checagem segura (TypeScript agora sabe que finishesData é um objeto)
+    if (!finishesData.finishes) {
+
+        // Pega a contagem geral que o backend calculou
+        const totalImages = finishesData.image_count || 1;
+
+        for (let i = 1; i <= totalImages; i++) {
+            // Mantive a sua extensão .jpg
+            images.push(`${imageFolder.value}/details-slide/${slug}-${i}.jpg`);
+        }
+
+    } else {
+        finishesData.finishes.forEach(finish => {
             // Loop para cada imagem deste acabamento (1 até image_count)
             for (let i = 1; i <= finish.image_count; i++) {
 
-                if (finish.is_standard) {
-                    // Padrão: pixel-cabinet-1.jpg
-                    images.push(`${imageFolder.value}/details-slide/${slug}-${i}.jpg`);
-                } else {
-                    // Acabamento: pixel-cabinet-walnut-1.jpg
-                    images.push(`${imageFolder.value}/details-slide/${slug}-${finish.slug}-${i}.jpg`);
-                }
+                // Acabamento: pixel-cabinet-walnut-1.jpg
+                images.push(`${imageFolder.value}/details-slide/${slug}-${finish.slug}-${i}.jpg`);
+
 
             }
         });
@@ -86,6 +103,7 @@ const galleryImages = computed(() => {
 
     return images;
 });
+
 
 const getFinishImage = (finishSlug: string) => {
     return `${imageFolder.value}/finishes/${finishSlug}.jpg`;
@@ -140,8 +158,8 @@ const openRequest = (type: string, title: string) => {
 };
 
 const selectedFinishName = ref(
-    props.product.finishes && props.product.finishes.length > 0
-        ? props.product.finishes[0].name
+    finishesData.finishes && finishesData.finishes.length > 0
+        ? finishesData.finishes[0].name
         : 'STANDARD'
 );
 
@@ -189,7 +207,7 @@ const hideLightbox = () => {
 
     <div class="bg-white">
 
-        <div class="mx-auto p-4 md:px-8 md:py-2">
+        <div class="mx-auto p-1 md:px-8 md:py-2">
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
 
@@ -228,9 +246,10 @@ const hideLightbox = () => {
                     </div>
                 </div>
 
-                <div class="lg:col-span-4 text-black flex flex-col">
+                <div class="lg:col-span-4 text-black flex flex-col px-3 md:px-0">
 
-                    <nav class="text-xs uppercase text-gray-400 font-light tracking-wider py-2 border-b border-gray-200">
+                    <nav
+                        class="text-xs uppercase text-gray-400 font-light tracking-wider py-2 border-b border-gray-200">
                         <Link href="/" class="hover:text-black">HOME</Link> /
                         <Link :href="`/category/${product.category.slug}`" class="hover:text-black cursor-pointer">{{
                             product.category.name }}</Link> /
@@ -241,8 +260,7 @@ const hideLightbox = () => {
                         {{ product.name }}
                     </h1>
                     <Link :href="`/brands/${product.brand.slug}`">
-                        <h2
-                            class="text-sm md:text-base text-[#c6a479] tracking-widest uppercase pb-2">
+                        <h2 class="text-sm md:text-base text-[#c6a479] tracking-widest uppercase pb-2">
                             {{ product.brand.name }}
                         </h2>
                     </Link>
@@ -287,15 +305,20 @@ const hideLightbox = () => {
                             <Maximize class="w-4 h-4 text-gray-400 rotate-45" />
                             <span class="text-xs font-bold uppercase tracking-widest">DIMENSIONS:</span>
                         </div>
-                        <div class="text-[10px] text-gray-500 tracking-wide pl-6 uppercase">
-                            WIDTH: {{ product.dimensions_cm.width }} <span class="mx-2">|</span>
-                            DEPTH: {{ product.dimensions_cm.depth }} <span class="mx-2">|</span>
-                            HEIGHT: {{ product.dimensions_cm.height }}
+                        <div v-if="product.dimensions_cm"
+                            class="text-[10px] text-gray-500 tracking-wide pl-6 uppercase flex flex-wrap">
+                            <template v-for="(value, key, index) in product.dimensions_cm" :key="'cm-' + key">
+                                <span v-if="index > 0" class="mx-2">|</span>
+                                <span>{{ key }}: {{ value }}</span>
+                            </template>
                         </div>
-                        <div class="text-[10px] text-gray-500 tracking-wide pl-6 uppercase">
-                            WIDTH: {{ product.dimensions_in.width }} <span class="mx-2">|</span>
-                            DEPTH: {{ product.dimensions_in.depth }} <span class="mx-2">|</span>
-                            HEIGHT: {{ product.dimensions_in.height }}
+
+                        <div v-if="product.dimensions_in"
+                            class="text-[10px] text-gray-500 tracking-wide pl-6 uppercase flex flex-wrap mt-1">
+                            <template v-for="(value, key, index) in product.dimensions_in" :key="'in-' + key">
+                                <span v-if="index > 0" class="mx-2">|</span>
+                                <span>{{ key }}: {{ value }}</span>
+                            </template>
                         </div>
                     </div>
 
@@ -309,7 +332,7 @@ const hideLightbox = () => {
                         </p>
                     </div>
 
-                    <div v-if="product.finishes && product.finishes.length > 0" class="mb-8">
+                    <div v-if="finishesData && finishesData.finishes && finishesData.finishes.length > 0" class="mb-8">
                         <span
                             class="text-xs font-bold uppercase tracking-widest border-b border-black pb-1 inline-block mb-4">
                             COLOR OPTIONS <span class="text-gray-400 text-[10px] font-normal">- {{ selectedFinishName
@@ -317,7 +340,7 @@ const hideLightbox = () => {
                         </span>
 
                         <div class="flex gap-4">
-                            <div v-for="finish in product.finishes" :key="finish.slug" @click="selectFinish(finish)"
+                            <div v-for="finish in finishesData.finishes" :key="finish.slug" @click="selectFinish(finish)"
                                 class="cursor-pointer group relative">
                                 <img :src="getFinishImage(finish.slug)" :alt="finish.name"
                                     class="w-12 h-12 rounded-sm transition-all duration-200" :class="[
@@ -349,10 +372,12 @@ const hideLightbox = () => {
                         <span class="text-xs font-bold uppercase tracking-widest">SHARE:</span>
                         <div class="flex gap-4 text-gray-500">
                             <Share2 class="w-4 h-4 hover:text-black" />
-                            <a :href="`https://www.facebook.com/sharer/sharer.php?u=https://www.covethouse.eu/products/${product.slug}`" target="_blank" class="hover:text-black">
+                            <a :href="`https://www.facebook.com/sharer/sharer.php?u=https://www.covethouse.eu/products/${product.slug}`"
+                                target="_blank" class="hover:text-black">
                                 <Facebook class="w-4 h-4" />
                             </a>
-                            <a :href="`mailto:?subject=Check out this product&amp;body=I found a great product on Covet House: https://www.covethouse.eu/products/${product.slug}`" class="hover:text-black">
+                            <a :href="`mailto:?subject=Check out this product&amp;body=I found a great product on Covet House: https://www.covethouse.eu/products/${product.slug}`"
+                                class="hover:text-black">
                                 <Mail class="w-4 h-4" />
                             </a>
                         </div>

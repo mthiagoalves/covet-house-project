@@ -92,6 +92,13 @@ const termsContent = `
 // --- IMAGEM TÉCNICA DINÂMICA ---
 const technicalImageUrl = computed(() => `/images/products/${props.product.category.slug}/${props.product.slug}/human-scale.png`);
 
+// Começa assumindo que a imagem vai dar certo (falso para erro)
+const hasImageError = ref(false);
+
+const handleImageError = () => {
+    hasImageError.value = true;
+};
+
 // --- AÇÕES ---
 const toggleExpand = () => {
     isExpanded.value = !isExpanded.value;
@@ -157,15 +164,20 @@ const inputClass = "w-full bg-white border border-gray-300 py-2 px-4 text-xs tra
                             <div v-if="isExpanded" class="text-xs text-gray-600 space-y-6">
                                 <div>
                                     <h4 class="font-bold text-black uppercase tracking-widest mb-2">DIMENSIONS</h4>
-                                    <div class="text-xs text-gray-500 tracking-wide pl-6">
-                                        WIDTH: {{ product.dimensions_cm.width }} <span class="mx-2">|</span>
-                                        DEPTH: {{ product.dimensions_cm.depth }} <span class="mx-2">|</span>
-                                        HEIGHT: {{ product.dimensions_cm.height }}
+                                    <div v-if="product.dimensions_cm" class="text-xs text-gray-500 tracking-wide pl-6 uppercase">
+                                        <template v-for="(value, key, index) in product.dimensions_cm"
+                                            :key="'cm-' + key">
+                                            <span v-if="index > 0" class="mx-2">|</span>
+                                            <span>{{ key }}: {{ value }}</span>
+                                        </template>
                                     </div>
-                                    <div class="text-xs text-gray-500 tracking-wide pl-6">
-                                        WIDTH: {{ product.dimensions_in.width }} <span class="mx-2">|</span>
-                                        DEPTH: {{ product.dimensions_in.depth }} <span class="mx-2">|</span>
-                                        HEIGHT: {{ product.dimensions_in.height }}
+
+                                    <div v-if="product.dimensions_in" class="text-xs text-gray-500 tracking-wide pl-6 uppercase">
+                                        <template v-for="(value, key, index) in product.dimensions_in"
+                                            :key="'in-' + key">
+                                            <span v-if="index > 0" class="mx-2">|</span>
+                                            <span>{{ key }}: {{ value }}</span>
+                                        </template>
                                     </div>
                                 </div>
                                 <div>
@@ -181,7 +193,8 @@ const inputClass = "w-full bg-white border border-gray-300 py-2 px-4 text-xs tra
                                 <p class="mt-4 text-[13px] tracking-widest text-black leading-relaxed">
                                     Discover more about
                                     <span class="font-bold">{{ product.brand.name }}</span>
-                                    <Link :href="`/brands/${product.brand.slug}`" class="underline hover:text-black"> here</Link>.
+                                    <Link :href="`/brands/${product.brand.slug}`" class="underline hover:text-black">
+                                        here</Link>.
                                 </p>
                             </div>
                         </transition>
@@ -195,10 +208,12 @@ const inputClass = "w-full bg-white border border-gray-300 py-2 px-4 text-xs tra
                         </div>
                     </div>
                     <div class="lg:col-span-5 flex flex-col items-center justify-end mx-auto"
-                        v-if="activeTab === 'additional_info'">
+                        :class="hasImageError ? 'justify-start' : 'justify-end'" v-if="activeTab === 'additional_info'">
 
                         <img :src="technicalImageUrl" :alt="`${product.name} Technical Drawing`"
-                            class="w-full max-w-[340px] h-auto object-contain mix-blend-multiply" />
+                            @error="handleImageError"
+                            class="w-full max-w-[340px] h-auto object-contain mix-blend-multiply transition-opacity duration-300"
+                            :class="hasImageError ? 'opacity-0' : 'opacity-100'" />
 
                         <button @click="openCustomizationModal"
                             class="w-full bg-[#ccc] text-black text-[10px] font-bold py-2.5 uppercase tracking-widest hover:bg-gray-400 transition-colors text-center cursor-pointer">
@@ -267,7 +282,8 @@ const inputClass = "w-full bg-white border border-gray-300 py-2 px-4 text-xs tra
 
 
                                 <div class="flex items-start justify-between gap-2"><label for="terms"
-                                        class="text-[10px]"> BY CLICKING REQUEST YOU
+                                        class="text-[10px]"> BY CLICKING
+                                        REQUEST YOU
                                         CONFIRM THAT YOU HAVE <br class="hidden md:block"> READ AND ACCEPTED OUR <a
                                             class="text-[#bca479]" href="">PRIVACY POLICY.</a></label>
                                     <button type="submit"
