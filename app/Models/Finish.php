@@ -12,12 +12,10 @@ class Finish extends Model
     protected $fillable = [
         'name',
         'slug',
-        'is_standard',
         'visible',
     ];
 
     protected $casts = [
-        'is_standard' => 'boolean',
         'visible'     => 'boolean',
     ];
 

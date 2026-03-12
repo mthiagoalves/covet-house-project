@@ -16,10 +16,7 @@ return new class extends Migration
 
             $table->string('name');
             $table->string('slug')->unique();
-
-            $table->boolean('is_standard')->default(false);
             $table->boolean('visible')->default(true);
-
             $table->timestamps();
         });
 

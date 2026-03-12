@@ -126,7 +126,7 @@ class ProductRepository
             'brand:id,name,slug',
             'category:id,name,slug',
             'subcategory:id,name,slug',
-            'finishes:id,name,slug,is_standard,visible', // Otimizando a busca de colunas
+            'finishes:id,name,slug', // Otimizando a busca de colunas
             'ambiances' // Traz a relação dos ambientes (incluindo a tabela pivot)
         ])
             ->where('slug', $slug)
@@ -162,7 +162,6 @@ class ProductRepository
                 return [
                     'name'        => $finish->name,
                     'slug'        => $finish->slug,
-                    'is_standard' => $finish->is_standard,
                 ];
             })->values()->toArray(),
 

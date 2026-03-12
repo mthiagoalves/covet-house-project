@@ -14,9 +14,9 @@ class FinishSeeder extends Seeder
     public function run(): void
     {
         $finishes = [
-            ['name' => 'Standard', 'slug' => 'standard', 'is_standard' => true, 'visible' => true],
-            ['name' => 'Heritage', 'slug' => 'heritage', 'is_standard' => false, 'visible' => true],
-            ['name' => 'Walnut Edition', 'slug' => 'walnut', 'is_standard' => false, 'visible' => true],
+            ['name' => 'Standard', 'slug' => 'standard', 'visible' => true],
+            ['name' => 'Heritage', 'slug' => 'heritage', 'visible' => true],
+            ['name' => 'Walnut Edition', 'slug' => 'walnut', 'visible' => true],
         ];
 
         foreach ($finishes as $finish) {
