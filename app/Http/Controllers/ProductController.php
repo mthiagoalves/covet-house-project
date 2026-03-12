@@ -17,6 +17,15 @@ class ProductController extends Controller
         private CategoryRepository $categoryRepository,
     ) {}
 
+    /**
+     * FUNÇÃO DE APOIO (DRY)
+     * Centraliza a busca de produtos relacionados para deixar os métodos limpos.
+     */
+    private function getRelatedProducts()
+    {
+        return $this->productRepository->getBestSellersFormatted();
+    }
+
     private function getGalleryData($categorySlug, $productSlug, $finishes)
     {
         $productPath = public_path("images/products/{$categorySlug}/{$productSlug}/details-slide/");
@@ -131,7 +140,7 @@ class ProductController extends Controller
 
         return Inertia::render('products/Show', [
             'product' => $product,
-            // 'bestSellersProducts' => $this->getBestSellersProducts(),
+            'bestSellersProducts' => $this->getRelatedProducts(),
         ]);
     }
 }

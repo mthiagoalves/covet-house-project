@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\ProductRepository;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\File;
 use App\Repositories\ProjectRepository;
@@ -10,65 +11,19 @@ use App\Repositories\ProjectRepository;
 class ProjectsController extends Controller
 {
     public function __construct(
-        private ProjectRepository $projectRepository
+        private ProjectRepository $projectRepository,
+        private ProductRepository $productRepository,
+
     ) {}
 
-    private  $productsMock = [
-        [
-            'id' => 101,
-            'name' => 'LAPIAZ SIDEBOARD',
-            'slug' => 'lapiaz-sideboard',
-            'type' => 'product',
-            'main_image_url' => 'https://placehold.co/800x800/eee/333?text=Lapiaz',
-            'brand' => ['name' => 'BOCA DO LOBO'],
-            'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Sideboards', 'slug' => 'sideboards']]
-        ],
-        [
-            'id' => 102,
-            'name' => 'CHARLA DINING CHAIR',
-            'slug' => 'charla-dining-chair',
-            'type' => 'product',
-            'main_image_url' => 'https://placehold.co/800x800/ddd/333?text=Charla',
-            'brand' => ['name' => 'LUXXU'],
-            'category' => ['name' => 'Seatings', 'slug' => 'seatings', 'subcategory' => ['name' => 'Chairs', 'slug' => 'chairs']]
-        ],
-        [
-            'id' => 103,
-            'name' => 'ARDARA CONSOLE TABLE',
-            'slug' => 'ardara-console',
-            'type' => 'product',
-            'main_image_url' => 'https://placehold.co/800x800/ccc/333?text=Ardara',
-            'brand' => ['name' => 'BRABBU'],
-            'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Consoles', 'slug' => 'consoles']]
-        ],
-        [
-            'id' => 101,
-            'name' => 'LAPIAZ SIDEBOARD',
-            'slug' => 'lapiaz-sideboard',
-            'type' => 'product',
-            'main_image_url' => 'https://placehold.co/800x800/eee/333?text=Lapiaz',
-            'brand' => ['name' => 'BOCA DO LOBO'],
-            'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Sideboards', 'slug' => 'sideboards']]
-        ],
-        [
-            'id' => 102,
-            'name' => 'CHARLA DINING CHAIR',
-            'slug' => 'charla-dining-chair',
-            'type' => 'product',
-            'main_image_url' => 'https://placehold.co/800x800/ddd/333?text=Charla',
-            'brand' => ['name' => 'LUXXU'],
-            'category' => ['name' => 'Seatings', 'slug' => 'seatings', 'subcategory' => ['name' => 'Chairs', 'slug' => 'chairs']]
-        ],
-        [
-            'id' => 103,
-            'name' => 'ARDARA CONSOLE TABLE',
-            'slug' => 'ardara-console',
-            'type' => 'product',
-            'main_image_url' => 'https://placehold.co/800x800/ccc/333?text=Ardara',
-            'brand' => ['name' => 'BRABBU'],
-            'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Consoles', 'slug' => 'consoles']]
-        ],
-    ];
+    /**
+     * FUNÇÃO DE APOIO (DRY)
+     * Centraliza a busca de produtos relacionados para deixar os métodos limpos.
+     */
+    private function getRelatedProducts()
+    {
+        return $this->productRepository->getBestSellersFormatted();
+    }
 
     /**
      * Helper para buscar imagens dinamicamente na pasta
@@ -86,7 +41,6 @@ class ProjectsController extends Controller
 
     public function index()
     {
-
         $allProjects = $this->projectRepository->getAllForIndex();
 
         return Inertia::render('projects/Index', [
@@ -107,7 +61,7 @@ class ProjectsController extends Controller
         return Inertia::render('projects/Show', [
             'project' => $project,
             'gridImages' => $gridImages,
-            'relatedProducts' => $this->productsMock,
+            'relatedProducts' =>  $this->getRelatedProducts(),
             'allProjects' => $project,
         ]);
     }

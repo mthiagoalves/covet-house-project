@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\ProductRepository;
 use App\Repositories\ProjectRepository;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -10,8 +11,18 @@ class PageController extends Controller
 {
 
     public function __construct(
-        private ProjectRepository $projectRepository
+        private ProjectRepository $projectRepository,
+        private ProductRepository $productRepository
     ) {}
+
+    /**
+     * FUNÇÃO DE APOIO (DRY)
+     * Centraliza a busca de produtos relacionados para deixar os métodos limpos.
+     */
+    private function getRelatedProducts()
+    {
+        return $this->productRepository->getBestSellersFormatted();
+    }
 
     /** Show Homepage **/
 
@@ -33,66 +44,8 @@ class PageController extends Controller
      */
     public function contact()
     {
-        // Dados mocados para o "Related Products" da página de contacto
-        $productsMock = [
-            [
-                'id' => 101,
-                'name' => 'LAPIAZ SIDEBOARD',
-                'slug' => 'lapiaz-sideboard',
-                'type' => 'product',
-                'main_image_url' => 'https://placehold.co/800x800/eee/333?text=Lapiaz',
-                'brand' => ['name' => 'BOCA DO LOBO'],
-                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Sideboards', 'slug' => 'sideboards']]
-            ],
-            [
-                'id' => 102,
-                'name' => 'CHARLA DINING CHAIR',
-                'slug' => 'charla-dining-chair',
-                'type' => 'product',
-                'main_image_url' => 'https://placehold.co/800x800/ddd/333?text=Charla',
-                'brand' => ['name' => 'LUXXU'],
-                'category' => ['name' => 'Seatings', 'slug' => 'seatings', 'subcategory' => ['name' => 'Chairs', 'slug' => 'chairs']]
-            ],
-            [
-                'id' => 103,
-                'name' => 'ARDARA CONSOLE TABLE',
-                'slug' => 'ardara-console',
-                'type' => 'product',
-                'main_image_url' => 'https://placehold.co/800x800/ccc/333?text=Ardara',
-                'brand' => ['name' => 'BRABBU'],
-                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Consoles', 'slug' => 'consoles']]
-            ],
-            [
-                'id' => 101,
-                'name' => 'LAPIAZ SIDEBOARD',
-                'slug' => 'lapiaz-sideboard',
-                'type' => 'product',
-                'main_image_url' => 'https://placehold.co/800x800/eee/333?text=Lapiaz',
-                'brand' => ['name' => 'BOCA DO LOBO'],
-                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Sideboards', 'slug' => 'sideboards']]
-            ],
-            [
-                'id' => 102,
-                'name' => 'CHARLA DINING CHAIR',
-                'slug' => 'charla-dining-chair',
-                'type' => 'product',
-                'main_image_url' => 'https://placehold.co/800x800/ddd/333?text=Charla',
-                'brand' => ['name' => 'LUXXU'],
-                'category' => ['name' => 'Seatings', 'slug' => 'seatings', 'subcategory' => ['name' => 'Chairs', 'slug' => 'chairs']]
-            ],
-            [
-                'id' => 103,
-                'name' => 'ARDARA CONSOLE TABLE',
-                'slug' => 'ardara-console',
-                'type' => 'product',
-                'main_image_url' => 'https://placehold.co/800x800/ccc/333?text=Ardara',
-                'brand' => ['name' => 'BRABBU'],
-                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Consoles', 'slug' => 'consoles']]
-            ],
-        ];
-
         return Inertia::render('Contact', [
-            'relatedProducts' => $productsMock,
+            'relatedProducts' => $this->getRelatedProducts(),
         ]);
     }
 
@@ -103,66 +56,9 @@ class PageController extends Controller
     {
         $allProjects = $this->projectRepository->getAllForIndex();
 
-        $productsMock = [
-            [
-                'id' => 101,
-                'name' => 'LAPIAZ SIDEBOARD',
-                'slug' => 'lapiaz-sideboard',
-                'type' => 'product',
-                'main_image_url' => 'https://placehold.co/800x800/eee/333?text=Lapiaz',
-                'brand' => ['name' => 'BOCA DO LOBO'],
-                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Sideboards', 'slug' => 'sideboards']]
-            ],
-            [
-                'id' => 102,
-                'name' => 'CHARLA DINING CHAIR',
-                'slug' => 'charla-dining-chair',
-                'type' => 'product',
-                'main_image_url' => 'https://placehold.co/800x800/ddd/333?text=Charla',
-                'brand' => ['name' => 'LUXXU'],
-                'category' => ['name' => 'Seatings', 'slug' => 'seatings', 'subcategory' => ['name' => 'Chairs', 'slug' => 'chairs']]
-            ],
-            [
-                'id' => 103,
-                'name' => 'ARDARA CONSOLE TABLE',
-                'slug' => 'ardara-console',
-                'type' => 'product',
-                'main_image_url' => 'https://placehold.co/800x800/ccc/333?text=Ardara',
-                'brand' => ['name' => 'BRABBU'],
-                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Consoles', 'slug' => 'consoles']]
-            ],
-            [
-                'id' => 101,
-                'name' => 'LAPIAZ SIDEBOARD',
-                'slug' => 'lapiaz-sideboard',
-                'type' => 'product',
-                'main_image_url' => 'https://placehold.co/800x800/eee/333?text=Lapiaz',
-                'brand' => ['name' => 'BOCA DO LOBO'],
-                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Sideboards', 'slug' => 'sideboards']]
-            ],
-            [
-                'id' => 102,
-                'name' => 'CHARLA DINING CHAIR',
-                'slug' => 'charla-dining-chair',
-                'type' => 'product',
-                'main_image_url' => 'https://placehold.co/800x800/ddd/333?text=Charla',
-                'brand' => ['name' => 'LUXXU'],
-                'category' => ['name' => 'Seatings', 'slug' => 'seatings', 'subcategory' => ['name' => 'Chairs', 'slug' => 'chairs']]
-            ],
-            [
-                'id' => 103,
-                'name' => 'ARDARA CONSOLE TABLE',
-                'slug' => 'ardara-console',
-                'type' => 'product',
-                'main_image_url' => 'https://placehold.co/800x800/ccc/333?text=Ardara',
-                'brand' => ['name' => 'BRABBU'],
-                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Consoles', 'slug' => 'consoles']]
-            ],
-        ];
-
-        return Inertia::render('InteriorDesignService', [ // Ou o nome da sua página
+        return Inertia::render('InteriorDesignService', [
             'allProjects' => $allProjects,
-            'relatedProducts' => $productsMock
+            'relatedProducts' => $this->getRelatedProducts(),
 
         ]);
     }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\ProductRepository;
 use Illuminate\Http\Request;
 use App\Repositories\ShowroomRepository;
 use Illuminate\Support\Facades\File;
@@ -10,34 +11,17 @@ use Inertia\Inertia;
 class ShowroomController extends Controller
 {
     public function __construct(
-        private ShowroomRepository $showroomRepository
+        private ShowroomRepository $showroomRepository,
+        private ProductRepository $productRepository
     ) {}
-    private function getMockShowrooms()
+
+    /**
+     * FUNÇÃO DE APOIO (DRY)
+     * Centraliza a busca de produtos relacionados para deixar os métodos limpos.
+     */
+    private function getRelatedProducts()
     {
-        return [
-            [
-                'name' => 'COVET DOURO',
-                'slug' => 'covet-douro',
-                'title_form' => 'SCHEDULE YOUR VISIT TO COVET DOURO',
-                'location' => 'Porto, Portugal',
-                'cover_image' => '/images/showrooms/covet-douro/covet-douro.jpg',
-                'description' => 'An ancient three-floor waterfront mansion in Oporto, filled with remarkable architectural details that hold the glory from a noble past and traditions of Portugal.',
-                'address' => 'Avenida da República, Gaia - Portugal',
-                'email' => 'douro@covethouse.eu',
-                'phone' => '+351 912 345 678',
-            ],
-            [
-                'name' => 'Curated Showroom - The Ultimate Luxury Experience',
-                'slug' => 'curated-showroom-the-ultimate-luxury-experience',
-                'location' => 'Porto, Portugal',
-                'title_form' => 'Covet House`s brand new 4`000 sqm showroom',
-                'cover_image' => '/images/showrooms/the-ultimate-curated-design-digital-showroom/the-ultimate-curated-design-digital-showroom.jpg',
-                'description' => 'A private showroom in the heart of London’s design district, offering an intimate design experience.',
-                'address' => '1 Regent Street, London - UK',
-                'email' => 'london@covethouse.eu',
-                'phone' => '+44 20 1234 5678',
-            ]
-        ];
+        return $this->productRepository->getBestSellersFormatted();
     }
 
     /**
@@ -69,69 +53,6 @@ class ShowroomController extends Controller
 
         return $images;
     }
-
-    private function getMockRelatedProducts()
-    {
-        $productsMock = [
-            [
-                'id' => 101,
-                'name' => 'LAPIAZ SIDEBOARD',
-                'slug' => 'lapiaz-sideboard',
-                'type' => 'product',
-                'main_image_url' => 'https://placehold.co/800x800/eee/333?text=Lapiaz',
-                'brand' => ['name' => 'BOCA DO LOBO'],
-                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Sideboards', 'slug' => 'sideboards']]
-            ],
-            [
-                'id' => 102,
-                'name' => 'CHARLA DINING CHAIR',
-                'slug' => 'charla-dining-chair',
-                'type' => 'product',
-                'main_image_url' => 'https://placehold.co/800x800/ddd/333?text=Charla',
-                'brand' => ['name' => 'LUXXU'],
-                'category' => ['name' => 'Seatings', 'slug' => 'seatings', 'subcategory' => ['name' => 'Chairs', 'slug' => 'chairs']]
-            ],
-            [
-                'id' => 103,
-                'name' => 'ARDARA CONSOLE TABLE',
-                'slug' => 'ardara-console',
-                'type' => 'product',
-                'main_image_url' => 'https://placehold.co/800x800/ccc/333?text=Ardara',
-                'brand' => ['name' => 'BRABBU'],
-                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Consoles', 'slug' => 'consoles']]
-            ],
-            [
-                'id' => 101,
-                'name' => 'LAPIAZ SIDEBOARD',
-                'slug' => 'lapiaz-sideboard',
-                'type' => 'product',
-                'main_image_url' => 'https://placehold.co/800x800/eee/333?text=Lapiaz',
-                'brand' => ['name' => 'BOCA DO LOBO'],
-                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Sideboards', 'slug' => 'sideboards']]
-            ],
-            [
-                'id' => 102,
-                'name' => 'CHARLA DINING CHAIR',
-                'slug' => 'charla-dining-chair',
-                'type' => 'product',
-                'main_image_url' => 'https://placehold.co/800x800/ddd/333?text=Charla',
-                'brand' => ['name' => 'LUXXU'],
-                'category' => ['name' => 'Seatings', 'slug' => 'seatings', 'subcategory' => ['name' => 'Chairs', 'slug' => 'chairs']]
-            ],
-            [
-                'id' => 103,
-                'name' => 'ARDARA CONSOLE TABLE',
-                'slug' => 'ardara-console',
-                'type' => 'product',
-                'main_image_url' => 'https://placehold.co/800x800/ccc/333?text=Ardara',
-                'brand' => ['name' => 'BRABBU'],
-                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Consoles', 'slug' => 'consoles']]
-            ],
-        ];
-
-        return $productsMock;
-    }
-
     /**
      * AQUI VOCÊ DEFINE TUDO MANUALMENTE
      * O índice (0, 1, 2...) corresponde à ordem das imagens na pasta (alfabética).
@@ -654,9 +575,6 @@ class ShowroomController extends Controller
 
         $gridImages = $this->getShowroomGridImages($slug);
 
-        $relatedProducts = $this->getMockRelatedProducts();
-
-
         $heroSlides = [];
 
         if ($slug === 'covet-douro') {
@@ -695,7 +613,7 @@ class ShowroomController extends Controller
             'gallery' => $gallery,
             'heroSlides' => $heroSlides,
             'gridImages' => $gridImages,
-            'relatedProducts' => $relatedProducts,
+            'relatedProducts' =>  $this->getRelatedProducts(),
         ]);
     }
 }

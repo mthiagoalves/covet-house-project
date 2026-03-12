@@ -59,7 +59,7 @@ const props = defineProps<{
     };
     bestSellersProducts: any[];
 }>();
-console.log('Produto recebido no Show.vue:', props.product);
+
 // --- LÓGICA DE IMAGENS DINÂMICAS ---
 
 // 1. Caminho da PASTA (sem o nome do arquivo)
@@ -72,10 +72,6 @@ const finishesData = props.product.finishes;
 const galleryImages = computed(() => {
     const images: string[] = [];
     const slug = props.product.slug;
-
-    // Movido para DENTRO do computed por segurança de reatividade
-
-    console.log('Dados de acabamentos para o produto:', finishesData);
 
     // Checagem segura (TypeScript agora sabe que finishesData é um objeto)
     if (!finishesData.finishes) {

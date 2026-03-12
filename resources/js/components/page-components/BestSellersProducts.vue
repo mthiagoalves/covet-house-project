@@ -7,22 +7,22 @@ interface ProductData {
     slug: string;
     type: 'product';
     main_image_url: string;
-    brand: { name: string; };
+    brand: { name: string; slug: string; };
     category: {
         name: string;
         slug: string;
         subcategory: { name: string; slug: string; }
     };
 }
-
 defineProps<{
     title?: string;
     products: ProductData[];
 }>();
+
 </script>
 
 <template>
-    <div class="w-full bg-white">
+    <div class="w-full bg-[#eee]">
         <h3 v-if="title" class="text-center text-xl md:text-2xl font-light tracking-widest uppercase py-5 text-black">
             {{ title }}
         </h3>

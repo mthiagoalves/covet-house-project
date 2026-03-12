@@ -28,7 +28,7 @@ class ProductRepository
                     'type'           => $product->type,
                     'name'           => $product->name,
                     'slug'           => $product->slug,
-                    'is_best_seller' => $product->is_best_seller, // Agora funciona sempre!
+                    'is_best_seller' => $product->is_best_seller,
                     'brand' => [
                         'name' => $product->brand->name ?? '',
                         'slug' => $product->brand->slug ?? '',
@@ -53,6 +53,11 @@ class ProductRepository
     private function fetchAndFormatToNewProducts($query): Collection
     {
         return $this->fetchAndFormatBase($query->where('is_new', true));
+    }
+
+    private function fetchAndFormatToBestSellers($query): Collection
+    {
+        return $this->fetchAndFormatBase($query->where('is_best_seller', true));
     }
 
     private function fetchAndFormatToCategories($query): Collection
@@ -91,6 +96,14 @@ class ProductRepository
                 'products'      => $items->values()->toArray(),
             ];
         })->values();
+    }
+
+    /**
+     * Retorna a listagem de produtos best sellers com a estrutura aninhada perfeita.
+     */
+    public function getBestSellersFormatted()
+    {
+        return $this->fetchAndFormatToBestSellers(Product::query());
     }
 
     /**

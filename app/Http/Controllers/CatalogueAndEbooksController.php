@@ -3,73 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\CataloguesAndEbooksRepository;
+use App\Repositories\ProductRepository;
 use Inertia\Inertia;
 
 class CatalogueAndEbooksController extends Controller
 {
     public function __construct(
-        private CataloguesAndEbooksRepository $catalogueRepository
+        private CataloguesAndEbooksRepository $catalogueRepository,
+        private ProductRepository $productRepository
     ) {}
+
+    /**
+     * FUNÇÃO DE APOIO (DRY)
+     * Centraliza a busca de produtos relacionados para deixar os métodos limpos.
+     */
+    private function getRelatedProducts()
+    {
+        return $this->productRepository->getBestSellersFormatted();
+    }
 
     public function index()
     {
-        $productsMock = [
-            [
-                'id' => 101,
-                'name' => 'LAPIAZ SIDEBOARD',
-                'slug' => 'lapiaz-sideboard',
-                'type' => 'product',
-                'main_image_url' => 'https://placehold.co/800x800/eee/333?text=Lapiaz',
-                'brand' => ['name' => 'BOCA DO LOBO'],
-                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Sideboards', 'slug' => 'sideboards']]
-            ],
-            [
-                'id' => 102,
-                'name' => 'CHARLA DINING CHAIR',
-                'slug' => 'charla-dining-chair',
-                'type' => 'product',
-                'main_image_url' => 'https://placehold.co/800x800/ddd/333?text=Charla',
-                'brand' => ['name' => 'LUXXU'],
-                'category' => ['name' => 'Seatings', 'slug' => 'seatings', 'subcategory' => ['name' => 'Chairs', 'slug' => 'chairs']]
-            ],
-            [
-                'id' => 103,
-                'name' => 'ARDARA CONSOLE TABLE',
-                'slug' => 'ardara-console',
-                'type' => 'product',
-                'main_image_url' => 'https://placehold.co/800x800/ccc/333?text=Ardara',
-                'brand' => ['name' => 'BRABBU'],
-                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Consoles', 'slug' => 'consoles']]
-            ],
-            [
-                'id' => 101,
-                'name' => 'LAPIAZ SIDEBOARD',
-                'slug' => 'lapiaz-sideboard',
-                'type' => 'product',
-                'main_image_url' => 'https://placehold.co/800x800/eee/333?text=Lapiaz',
-                'brand' => ['name' => 'BOCA DO LOBO'],
-                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Sideboards', 'slug' => 'sideboards']]
-            ],
-            [
-                'id' => 102,
-                'name' => 'CHARLA DINING CHAIR',
-                'slug' => 'charla-dining-chair',
-                'type' => 'product',
-                'main_image_url' => 'https://placehold.co/800x800/ddd/333?text=Charla',
-                'brand' => ['name' => 'LUXXU'],
-                'category' => ['name' => 'Seatings', 'slug' => 'seatings', 'subcategory' => ['name' => 'Chairs', 'slug' => 'chairs']]
-            ],
-            [
-                'id' => 103,
-                'name' => 'ARDARA CONSOLE TABLE',
-                'slug' => 'ardara-console',
-                'type' => 'product',
-                'main_image_url' => 'https://placehold.co/800x800/ccc/333?text=Ardara',
-                'brand' => ['name' => 'BRABBU'],
-                'category' => ['name' => 'Casegoods', 'slug' => 'casegoods', 'subcategory' => ['name' => 'Consoles', 'slug' => 'consoles']]
-            ],
-        ];
-
         $cataloguesAndEbooks = $this->catalogueRepository->getAllForIndex();
 
         $featured = $this->catalogueRepository->getFeatured();
@@ -78,7 +32,7 @@ class CatalogueAndEbooksController extends Controller
             'pageTitle' => 'Catalogues & Ebooks',
             'featuredCatalogue' => $featured->first(),
             'cataloguesAndEbooks' => $cataloguesAndEbooks,
-            'relatedProducts' => $productsMock,
+            'relatedProducts' => $this->getRelatedProducts(),
         ]);
     }
 
