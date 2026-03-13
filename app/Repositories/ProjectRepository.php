@@ -23,6 +23,14 @@ class ProjectRepository
      */
     public function findBySlug(string $slug)
     {
-        return Project::where('slug', $slug)->firstOrFail();
+        return Project::where('slug', $slug)
+            ->with([
+                // 1. Adicionamos o subcategory_id na lista de chaves!
+                'products:id,brand_id,name,slug',
+
+                // 4. Trazemos a marca
+                'products.brand:id,name,slug'
+            ])
+            ->firstOrFail();
     }
 }

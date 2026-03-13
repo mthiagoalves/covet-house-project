@@ -10,7 +10,6 @@ import HeroBannerProjects from '@/components/page-components/HeroBannerProjects.
 const props = defineProps<{
     project: any;
     gridImages: number;
-    relatedProducts: any[];
     allProjects: any[];
 
 }>();
@@ -102,7 +101,7 @@ const loadMore = () => {
         </div>
     </div>
 
-    <BestSellersProducts :title='"OUR CURATED PIECES"' :products="relatedProducts" />
+    <BestSellersProducts :title='"OUR CURATED PIECES"' :products="props.project.products" />
 
     <IdServiceWithProject :project="props.project" />
 

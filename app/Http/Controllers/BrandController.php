@@ -118,11 +118,13 @@ class BrandController extends Controller
             'subtitle' => $brand['subtitle'] ?? 'LUXURY FURNITURE',
         ];
 
+        $productsToShow = $this->brandRepository->getProductsForBrandPage($brand->id);
+
         return Inertia::render('brands/Show', [
             'brand' => $brand,
             'hero' => $heroData,
             'count_images' => $countBrandImages,
-            'relatedProducts' => $this->getRelatedProducts(),
+            'relatedProducts' => $productsToShow,
 
         ]);
     }

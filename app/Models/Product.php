@@ -24,12 +24,14 @@ class Product extends Model
         'is_new',
         'has_stock',
         'is_best_seller',
+        'show_on_brand_page'
     ];
 
     protected $casts = [
         'is_new'         => 'boolean',
         'has_stock'      => 'boolean',
         'is_best_seller' => 'boolean',
+        'show_on_brand_page' => 'boolean',
         'dimensions_cm'  => 'array',
         'dimensions_in'  => 'array',
     ];
@@ -59,5 +61,10 @@ class Product extends Model
         return $this->belongsToMany(Ambiance::class)
             ->withPivot('top', 'left')
             ->withTimestamps();
+    }
+
+    public function projects()
+    {
+        return $this->belongsToMany(Project::class);
     }
 }

@@ -12,18 +12,7 @@ class ProjectsController extends Controller
 {
     public function __construct(
         private ProjectRepository $projectRepository,
-        private ProductRepository $productRepository,
-
     ) {}
-
-    /**
-     * FUNÇÃO DE APOIO (DRY)
-     * Centraliza a busca de produtos relacionados para deixar os métodos limpos.
-     */
-    private function getRelatedProducts()
-    {
-        return $this->productRepository->getBestSellersFormatted();
-    }
 
     /**
      * Helper para buscar imagens dinamicamente na pasta
@@ -58,11 +47,13 @@ class ProjectsController extends Controller
 
         $gridImages = $this->getProjectsImages($slug);
 
+        $allProjects = $this->projectRepository->getAllForIndex();
+
+
         return Inertia::render('projects/Show', [
             'project' => $project,
             'gridImages' => $gridImages,
-            'relatedProducts' =>  $this->getRelatedProducts(),
-            'allProjects' => $project,
+            'allProjects' => $allProjects,
         ]);
     }
 }

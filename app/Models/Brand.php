@@ -26,4 +26,9 @@ class Brand extends Model
         'has_video' => 'boolean',
         'socials' => 'array', // Converte a string JSON do banco direto para Array PHP
     ];
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }
