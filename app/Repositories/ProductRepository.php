@@ -60,14 +60,9 @@ class ProductRepository
         return $this->fetchAndFormatBase($query->where('is_best_seller', true));
     }
 
-    private function fetchAndFormatToForBrandPage($query): Collection
-    {
-        return $this->fetchAndFormatBase($query->where('show_on_brand_page', true));
-    }
-
     private function fetchAndFormatToCategories($query): Collection
     {
-        return $this->fetchAndFormatBase($query);
+        return $this->fetchAndFormatBase($query->orderBy('subcategory_id')->orderBy('id', 'desc'));
     }
 
     /**

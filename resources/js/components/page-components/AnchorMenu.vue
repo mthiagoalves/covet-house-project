@@ -8,7 +8,7 @@ interface MenuItem {
     anchorHref: string;
 }
 
-defineProps<{
+const props = defineProps<{
     items: MenuItem[];
 }>();
 
@@ -50,7 +50,7 @@ function scrollTo(hash: string) {
 </script>
 
 <template>
-    <div v-if="items.length > 1" class="max-w-full mx-auto mb-2 bg-black">
+    <div v-if="items.length >= 3" class="max-w-full mx-auto mb-2 bg-black">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-[6px]">
 
             <a v-for="item in items" :key="item.title" :href="item.anchorHref" class="relative block bg-[#222]" @click.prevent="scrollTo(item.anchorHref)">

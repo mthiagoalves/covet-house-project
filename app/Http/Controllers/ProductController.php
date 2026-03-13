@@ -114,7 +114,7 @@ class ProductController extends Controller
 
     /**
      * Mostra produtos por Categoria
-     * Rota: /products/category/{slug}
+     * Rota: /category/{slug}
      */
 
     public function category($slug)
