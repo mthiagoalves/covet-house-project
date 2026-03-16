@@ -15,6 +15,888 @@ class ProductSeeder extends Seeder
         $mockProducts = [
             [
                 'type' => 'product',
+                'name' => 'Claire Console Table',
+                'slug' => 'claire-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Mid-century meets transitional style in this simple and clean console. Claire Console Table is produced in polished stainless steel and its square body contrasts with the rounded set of drawers and doors. These are finished in birdseye maple leaf to accent its presence. Altogether with the little doorknobs make this a unique piece of mid-century furniture.',
+                'dimensions_cm' => ['width' => '40 cm', 'length' => '160 cm','height' => '89 cm'],
+                'dimensions_in' => ['width' => '16"', 'length' => '63"','height' => '35"'],
+                'brand' => ['name' => 'ESSENTIAL HOME', 'slug' => 'essential-home'],
+                'materials_and_finishes' => 'FINISHES: Doors: Bird`s Eye Wood leaf, Frame: Polished Stainless Steel',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Craig Console Table',
+                'slug' => 'craig-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Craig Console Table by Essential Home is made with chic polished brass legs and structure, featuring a top made of verde guatemala marble and a gallery shelf for additional storage space in your living room or entryway.',
+                'dimensions_cm' => ['width' => '34 cm', 'length' => '122 cm','height' => '85 cm'],
+                'dimensions_in' => ['width' => '13.3"', 'length' => '48"','height' => '33.4"'],
+                'brand' => ['name' => 'ESSENTIAL HOME', 'slug' => 'essential-home'],
+                'materials_and_finishes' => 'MATERIALS: Brass & Marble. FINISHES: Polished Brass and Polished Guatemala Marble',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Cay Console',
+                'slug' => 'cay-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Cay Console by Brabbu represents Nature in its rawest form and flows through Cay Console as lava flows from a volcano eruption. With a tabletop in bronze glass and a base in casted brass, this entryway console table embodies nature’s ultimate scream. Allow yourself to hear the call, feeling its strength and reflecting it into your urban lifestyle',
+                'dimensions_cm' => ['width' => '86 cm', 'depth' => '50 cm','height' => '82 cm'],
+                'dimensions_in' => ['width' => '33.9"', 'depth' => '19.7"','height' => '32.3"'],
+                'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
+                'materials_and_finishes' => 'MATERIALS: Bronze and Glass. FINISHES: Casted Brass',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Agra Console Table',
+                'slug' => 'agra-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Agra Console Table by Brabbu is the modest setting of one of the most famous monuments in the world, the Taj Mahal, also known as the marble mausoleum. Just like it, Agra Console Table is an impressive display of craftsmanship and elegance. Made of Estremoz marble with brass details, this marble console table will add refined grace to any room of your choice.',
+                'dimensions_cm' => ['width' => '140 cm', 'depth' => '40 cm','height' => '90 cm'],
+                'dimensions_in' => ['width' => '55.1"', 'depth' => '15.7"','height' => '35.4"'],
+                'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
+                'materials_and_finishes' => 'MATERIALS: Estremoz marble. FINISHES: Estremoz Marble with Gold Plated Details',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Bastei Console',
+                'slug' => 'bastei-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Linked by a bridge, Bastei is one of the most famous rock formations in Germany. To honour such outstanding beauty, our designers created Bastei Console, by Brabbu. With a tabletop in glossy walnut root veneer and a base in glossy gold leaf, this modern entryway console table will steal all the attention of any interior design style.',
+                'dimensions_cm' => ['width' => '160 cm', 'depth' => '39 cm','height' => '89 cm'],
+                'dimensions_in' => ['width' => '62.77"', 'depth' => '15.35"','height' => '35.03"'],
+                'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
+                'materials_and_finishes' => 'Base: Glossy Gold Leaf, Top: Glossy Walnut root veneer',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Kyan Console',
+                'slug' => 'kyan-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'The incredible Beijing’ skyline inspired our designers to create KYAN Console Table, a strong and edgy furniture piece. Featuring a top in bronze glass and a base in iron with acid reaction finish, this modern console tells a story with an unfinished end.',
+                'dimensions_cm' => ['width' => '180 cm', 'depth' => '35 cm','height' => '70 cm'],
+                'dimensions_in' => ['width' => '70.86"', 'depth' => '13.77"','height' => '29.53"'],
+                'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
+                'materials_and_finishes' => 'Top in bronze glass and base in iron with acid reaction finish.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Mecca Console',
+                'slug' => 'mecca-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Mosques are magnificent architectural structures in addition to being centers of spiritual devotion. The Mecca Console Table by Brabbu is a striking piece of furniture with brushed brass matte columns that echo the mosques’ ageless architectural legacy. It was painstakingly crafted, drawing inspiration from the grandeur of mosques. A visual masterpiece is created when the opulent Nero Marquina marble top contrasts with this elaborate gold framework, artfully fusing tradition and modernity. The Mecca Console Table is more than just a piece of furniture; it’s a statement of tasteful elegance that turns any space into an opulent haven and iconic living space.',
+                'dimensions_cm' => ['width' => '160 cm', 'depth' => '45 cm','height' => '90 cm'],
+                'dimensions_in' => ['width' => '62.99"', 'depth' => '17.72"','height' => '35.43"'],
+                'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
+                'materials_and_finishes' => 'MATERIALS: BASE In Brushed Brass Matte, TOP In Marble Nero Marquina',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Bryce II Console',
+                'slug' => 'bryce-ii-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Bryce II Console pays tribute to a giant natural amphitheater caused by erosion through the Paunsaugnt Plateau. This plateau through its unique design in high gloss black lacquer and glossy gold leaf. Or versions in faux-marble painting. It is a plus to any home entryway or even as a plus in the living room or dining room.',
+                'dimensions_cm' => ['width' => '160 cm', 'depth' => '40 cm','height' => '90 cm'],
+                'dimensions_in' => ['width' => '63"', 'depth' => '15.7"','height' => '35.43"'],
+                'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
+                'materials_and_finishes' => 'STRUCTURE Black lacquer. God leaf. Glossy varnish, STRUCTURE Faux-marble painting, glossy varnish',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'BRYCE I CONSOLE',
+                'slug' => 'bryce-i-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Bryce is a giant natural amphitheatre caused by erosion through the Paunsaugnt Plateau. The BRYCE I Console pays tribute to this plateau through its unique design in high gloss black lacquer and glossy gold leaf. The BRYCE Black Lacquer Console Table will be the focus point in every room you set it in.',
+                'dimensions_cm' => ['width' => '155 cm', 'depth' => '35 cm','height' => '90 cm'],
+                'dimensions_in' => ['width' => '61.02"', 'depth' => '13.77"','height' => '35.43"'],
+                'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
+                'materials_and_finishes' => 'STRUCTURE Black lacquer. God leaf. Gloss varnish',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Koi Console Table',
+                'slug' => 'koi-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Koi Console, by Brabbu, has a base in brushed aged brass and a top in Nero Marquina marble, this foyer table will add refined elegance to any modern interior design. Koi carp is a recurring symbol of Japanese culture. Its natural color mutations reveal its capacity to adapt, just like Koi Console.',
+                'dimensions_cm' => ['width' => '160 cm', 'depth' => '45 cm','height' => '94 cm'],
+                'dimensions_in' => ['width' => '63"', 'depth' => '17.7"','height' => '37"'],
+                'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
+                'materials_and_finishes' => 'MATERIALS: Brass, Nero Marquina Marble. FINISHES: Brushed Brass Matte',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Colosseum Console',
+                'slug' => 'colosseum-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Colosseum Console, by Brabbu, was created inspired by the Roman Colosseum is one of the new seven wonders of the world. Inspired by its empowering presence. Made of red lacquer with translucent black with gloss varnish, Colosseum Console is a modern console table that will help you bring the most enduring icon of Italy to any home decor.',
+                'dimensions_cm' => ['width' => '160 cm', 'depth' => '30 cm','height' => '90 cm'],
+                'dimensions_in' => ['width' => '63"', 'depth' => '11.81"','height' => '35.43"'],
+                'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
+                'materials_and_finishes' => 'MATERIALS: MATERIALS: Structure in nero marquina faux-marble painting glossy. FINISHES: FINISHES: RED LACQUER WITH TRANSLUCENT BLACK GLOSSY VARNISH',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Ardara II Console',
+                'slug' => 'ardara-ii-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Ardara II Console Table by Brabbu, was inspired by unique structures – the dolmens are ancient stone monuments from the Neolithic period. With a finish in gold leaf with a gloss varnish, this console table will give a unique twist to any interior design.',
+                'dimensions_cm' => ['width' => '160 cm', 'depth' => '40 cm','height' => '90 cm'],
+                'dimensions_in' => ['width' => '63"', 'depth' => '15.75"','height' => '35.43"'],
+                'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
+                'materials_and_finishes' => 'SAHARA NOIR FAUX-MARBLE PAINTING GLOSSY',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Ardara Console',
+                'slug' => 'ardara-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Ardara Console Table, by Brabbu, has a finish in gold leaf with a gloss varnish, this modern console table will give a unique twist to any interior design. Dolmens are ancient stone monuments from the Neolithic period. These unique structures were the inspiration behind Ardara Console Table.',
+                'dimensions_cm' => ['width' => '160 cm', 'depth' => '40 cm','height' => '90 cm'],
+                'dimensions_in' => ['width' => '63"', 'depth' => '15.75"','height' => '35.43"'],
+                'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
+                'materials_and_finishes' => 'Structure in gold leaf with gloss varnish.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Aroma Console',
+                'slug' => 'aroma-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Aroma Console by Caffe Latte top is made from luxurious rosewood or palisander, while the support structure comes in stainless steel. No other thing is as uplifting as the coffee’s aroma in the air and this table shows how the smallest details can make the biggest impression in your interiors. If coffee is your ultimate ally throughout the day, then you must have it stylishly.',
+                'dimensions_cm' => ['width' => '184 cm', 'depth' => '44 cm','height' => '50 cm'],
+                'dimensions_in' => ['width' => '72.44"', 'depth' => '17.32"','height' => '19.68"'],
+                'brand' => ['name' => 'CAFFE LATTE', 'slug' => 'caffe-latte'],
+                'materials_and_finishes' => 'MATERIALS: STAINLESS STEEL, Wood Veneer. FINISHES: CREAM MATTE LACQUER, EPOXY STAINLESS STEEL BRONZE MATTE VARNISH, PALISANDER MATTE WOOD VENEER',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Lungo Console',
+                'slug' => 'lungo-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Lungo Console, by Caffe Latte, is a refreshing, clean, and simplistic design, the Lungo Console’s strict and harsh lines make it the sublime item for a modern interior. A subtle piece that doesn’t overpower or clashes with other designs, but still delivers a sense of splendor and taste, with the prolonged and thin stainless steel with brushed bronze finished legs, embracing a sleek and long Walnut Veneer.',
+                'dimensions_cm' => ['width' => '162 cm', 'depth' => '44 cm','height' => '99 cm'],
+                'dimensions_in' => ['width' => '63.78"', 'depth' => '17.32"','height' => '38.97"'],
+                'brand' => ['name' => 'CAFFE LATTE', 'slug' => 'caffe-latte'],
+                'materials_and_finishes' => 'Walnut Matte Wood Veneer or Walnut Root Matte Wood Veneer, Epoxy Iron Bronze Matte Varnish',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Nougat Console',
+                'slug' => 'nougat-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Nougat Console seamlessly combines style and functionality to enhance the aesthetic appeal of any space. Made from aged and hammered brushed brass, it is inspired by the balanced fusion of tastes we get when combining coffee and chocolate. Available in nero marquina marble or ash wood, the Nougat Console proves that good design goes beyond aesthetics—it should enhance the way we live. A timeless addition to any modern residential or hospitality interior.',
+                'dimensions_cm' => ['width' => '168 cm', 'depth' => '40 cm','height' => '88 cm'],
+                'dimensions_in' => ['width' => '66.14"', 'depth' => '15.78"','height' => '34.64"'],
+                'brand' => ['name' => 'CAFFE LATTE', 'slug' => 'caffe-latte'],
+                'materials_and_finishes' => 'NERO MARQUINA, AGED BRUSHED BRASS HAMMERED, AGED BRUSHED BRASS',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Liberica Console',
+                'slug' => 'liberica-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Liberica Console, by Caffe Latte, as harsh and strict lines, from design contrast perfectly with the fluidity and sort of feminine touch of the mirror. Inspired by the Coffea liberica plant, the mirror takes an oval countour, resembling the delicate shape of the plant’s leaf. Liberica Console is stainless steel with a bronze matte base, that simulates the sturdy branches that can grow up to nine meters, holding in perfect harmony a refined marble top. A minimalist design that will not go unnoticed.',
+                'dimensions_cm' => ['width' => '180 cm', 'depth' => '40 cm','height' => '208 cm'],
+                'dimensions_in' => ['width' => '70.87"', 'depth' => '15.78"','height' => '81.89"'],
+                'brand' => ['name' => 'CAFFE LATTE', 'slug' => 'caffe-latte'],
+                'materials_and_finishes' => 'Body: White Olimpic Marble, Epoxy Stainless Steel Bronze Matte Varnish, Mirror rim: Epoxy stainless steel brushed bronze varnish, Mirror: Clear Mirror',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Malawi Console',
+                'slug' => 'malawi-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Malawi Console , by Caffe Latte is all about minimalist elegance and understated charm. With a top made out of resin travertino marble and lacquered feet, Malawi Console easily sets the tone for a serene ambiance. This console is inspired by Malawi, an African country known for its sweet, delicate, and floral coffee. With a neutral design and functional aesthetic, Malawi Console shows us that there is no second chance to make a good first impression.',
+                'dimensions_cm' => ['width' => '180 cm', 'depth' => '46 cm','height' => '85 cm'],
+                'dimensions_in' => ['width' => '70.87"', 'depth' => '18.11"','height' => '33.46"'],
+                'brand' => ['name' => 'CAFFE LATTE', 'slug' => 'caffe-latte'],
+                'materials_and_finishes' => 'LAQUERED BLACK BROWN MATTE, RESIN TRAVERTINE MARBLE',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Empress Console',
+                'slug' => 'empress-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'The Empress Console is fully aware of her powers, embraced in her untamed magnetic beauty. Exquisite sand-cast brass entangled with amber rock crystals wildly grows across her sleek, curved, ash-black wood veneer. This statement console, available in a left and right, exudes boundless creativity and innovation. Beyond furniture, The Empress Console brings the allure of untamed nature and the sophistication of a work of art where every detail reflects refined craftsmanship.',
+                'dimensions_cm' => ['width' => '140 cm', 'depth' => '50 cm','height' => '90 cm'],
+                'dimensions_in' => ['width' => '55"', 'depth' => '20"','height' => '35"'],
+                'brand' => ['name' => 'KOKET', 'slug' => 'koket'],
+                'materials_and_finishes' => 'Base Detail: Cast Brass (Semi Gloss Finish), Front Detail Stones: Aragonite , Brazilian Citrine and Quartz Crystal, Front Detail: Cast Brass (Semi Gloss Finish), Structure: Black Tulip Veneer (Matte Finish), Top: Cast Brass (Semi Gloss Finish)',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Ribbon Console',
+                'slug' => 'ribbon-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Get wrapped up in the rhythmic design of the Ribbon console table by Koket.The provocative twists and turns of the base are delicately adorned in gleaming metalic leaf, mimicking the sheen of a girl’s hair ribbon. The luxury console table’s playful base is topped with a pristine high gloss black lacquer top.',
+                'dimensions_cm' => ['width' => '170 cm', 'depth' => '50 cm','height' => '90 cm'],
+                'dimensions_in' => ['width' => '67"', 'depth' => '20"','height' => '35"'],
+                'brand' => ['name' => 'KOKET', 'slug' => 'koket'],
+                'materials_and_finishes' => 'Base: Broken Gold Leaf (High Gloss Finish) and Black Lacquer (High Gloss Finish), Top: Black Lacquer (High Gloss Finish)',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Dovedale Console',
+                'slug' => 'dovedale-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Dovedale Console, by Covet Collection, is a marvelous and discreet console with the incorporated and unifying characteristic of the granite stone in its center for a sublime look. From the Dovedale family, inspired by the Stepping Stone the wooden carved base provides a distinctive natural appeal by being shaped in different levels and different colors, while the hardwood lacquered with amobe-bluette top and drawer uses a contemporary square shape. An indispensable item for any room or setting.',
+                'dimensions_cm' => ['width' => '120 cm', 'depth' => '57 cm','height' => '68 cm'],
+                'dimensions_in' => ['width' => '47.24"', 'depth' => '22.44"','height' => '26.77"'],
+                'brand' => ['name' => 'COVET COLLECTION', 'slug' => 'covet-collection'],
+                'materials_and_finishes' => 'BODY: OAK WOOD WITH BLUE STAIN VARNISH, OAK WOOD WITH MATTE STAIN VARNISH. DETAIL: BRILLIANT BLACK CERAMIC STONE',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Valdés Console',
+                'slug' => 'valdes-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Valdés Console, by Covet House, is an enormous round mirror combined with a dark walnut top, over two sublime designed legs. Beautifully crafted and naturally inspired. The Valdés Peninsula has been listed as a UNESCO World Heritage Place for its global significance as a site for marine animal conservation, where its shape and crystal-clear water served as the inspiration for this unique console.',
+                'dimensions_cm' => ['depth' => '45 cm', 'length' => '200 cm','height' => '230 cm'],
+                'dimensions_in' => ['depth' => '17.71"', 'length' => '78.74"','height' => '90.55"'],
+                'brand' => ['name' => 'COVET COLLECTION', 'slug' => 'covet-collection'],
+                'materials_and_finishes' => 'BODY: DARK WALNUT VENEER, MARBLE PATAGÓNIA. DRAWERS: DARK WALNUT VENEER, IRON WITH MATE CHAMPAGNE TEXTURED FINE POWDER. FEET: Wood with Mate champagne textured fine powder. MIRROR: NORMAL MIRROR WITH EDGE IN IRON WITH MATE CHAMPAGNE TEXTURED FINE POWDER',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Linear Console',
+                'slug' => 'linear-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Linear Console, by Covet Collection, is simple in form, yet luxurious in materials and details, this marble and polished stainless steel console are a must-have in modern luxurious interiors. The very definition of elegant luxury.',
+                'dimensions_cm' => ['width' => '120 cm', 'depth' => '50 cm','height' => '90 cm'],
+                'dimensions_in' => ['width' => '47.24"', 'depth' => '16.68"','height' => '35.43"'],
+                'brand' => ['name' => 'COVET COLLECTION', 'slug' => 'covet-collection'],
+                'materials_and_finishes' => 'BODY: NERO MARQUINA MARBLE, POLISHED STAINLESS STEEL',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Mood Console',
+                'slug' => 'mood-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'The MOOD Console is designed to set the tone for your home, defining a modern aesthetic while uplifting your mood. There’s no second chance to make a great first impression, and this console ensures just that. Crafted from glossy, gold-plated stainless steel, it perfectly marries the purity of white with the warmth of gold. This harmonious blend effortlessly enhances any space, making the MOOD Console a must-have for those who appreciate refined elegance and contemporary style.',
+                'dimensions_cm' => ['width' => '167 cm', 'depth' => '45 cm','height' => '86 cm'],
+                'dimensions_in' => ['width' => '65.75"', 'depth' => '17.71"','height' => '33.86"'],
+                'brand' => ['name' => 'COVET COLLECTION', 'slug' => 'covet-collection'],
+                'materials_and_finishes' => 'BODY: GOLD PLATED STAINLESS STEEL GLOSSY, WHITE OLIMPIC MARBLE. TOP: GOLD PLATED STAINLESS STEEL GLOSSY',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Anjelica Console',
+                'slug' => 'anjelica-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Consoles are versatile pieces that provide a surface without taking up too much space. Anjelica Console, by Covet Collection, is a modern wood and marble console table that features one drawer for extra storage. Its sculptural form and high-end materials bring character and charm to a room, be it a modern hallway or entryway, or living room.',
+                'dimensions_cm' => ['width' => '115 cm', 'depth' => '40 cm','height' => '90 cm'],
+                'dimensions_in' => ['width' => '45.27"', 'depth' => '15.74"','height' => '35.43"'],
+                'brand' => ['name' => 'COVET COLLECTION', 'slug' => 'covet-collection'],
+                'materials_and_finishes' => 'BODY: Ash Wood Matte Varnish, Cream Velvet, estremoz marble, NERO MARQUINA MARBLE, POLISHED BRASS',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Plata Console',
+                'slug' => 'plata-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Plata Console, by Covet House, its exciting two rounded legs converge with the modern straight lines from the top, creating a combination of both natural and contemporary elements. Named after Rio de Plata, one of the places visited by the Portuguese adventurers in the early European exploration of the Patagonia region, this sublime console has a mix of metal and Patagonia marble.',
+                'dimensions_cm' => ['depth' => '40 cm', 'length' => '170 cm','height' => '87 cm'],
+                'dimensions_in' => ['depth' => '15.74"', 'length' => '62.92"','height' => '34.25"'],
+                'brand' => ['name' => 'COVET COLLECTION', 'slug' => 'covet-collection'],
+                'materials_and_finishes' => 'BODY: WOOD WITH MATE CHAMPAGNE TEXTURED FINE POWDER. FEET: MARBLE PATAGÓNIA, Wood with Mate champagne textured fine powder. TOP: MARBLE PATAGÓNIA',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Vertigo Console Table',
+                'slug' => 'vertigo-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Prove to be impressive through its conspicuous and elegant lines, the prodigious Vertigo Console Table has a striking dynamic pose. In either modern or classic entrance halls, the shimmering line in gold plated brass merge in any living room decoration in Nero Marquina marble finish. A fascinating and exclusive console that exhales luxury and a cohesive style.',
+                'dimensions_cm' => ['depth' => '45 cm', 'length' => '160 cm','height' => '92.5 cm'],
+                'dimensions_in' => ['depth' => '17.7"', 'length' => '63.1"','height' => '36.4"'],
+                'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
+                'materials_and_finishes' => 'MATERIALS: Body: Brass & Marble. FINISHES: Body: Gold plated & Marble Nero Marquina',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Spear Console Table',
+                'slug' => 'spear-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Spear Console Table by Luxxu was designed through an imposing sharp pen. The diversity of its materials from brass, wood, leather, and marble results in a console with straight lines. From Ancient Rome comes its inspiration, bringing a timeless design to this art piece. A symbiosis of toughness and elegance, perfect to bring an environment to its most luxurious ambiance.',
+                'dimensions_cm' => ['depth' => '44 cm', 'length' => '138 cm','height' => '88.5 cm'],
+                'dimensions_in' => ['depth' => '17.3"', 'length' => '54.3"','height' => '34.8"'],
+                'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
+                'materials_and_finishes' => 'MATERIALS: Brass, Wood Leather & Marble. FINISHES: Polished Brass, Black Lacquer, Black Leather & Nero Marquina Marble',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Apotheosis Console Table',
+                'slug' => 'apotheosis-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Apotheosis Console Table by Luxxu is a hymn to sophistication and design, that creates a strong presence that will revolutionize the looks of any project. It’s straight lines make for a glorious construction, embodying the spirit of exclusive design. A daring and elegant balance between marble, lacquer, and brass lines..',
+                'dimensions_cm' => ['depth' => '53 cm', 'length' => '180 cm','height' => '87 cm'],
+                'dimensions_in' => ['depth' => '21"', 'length' => '70.9"','height' => '34.3"'],
+                'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
+                'materials_and_finishes' => 'MATERIALS: Brass, Wood & Marble. FINISHES: Polished brass, Black lacquer & Nero marquina marble',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Beyond Console',
+                'slug' => 'beyond-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Beyond Console, by Luxxu, with the best handmade techniques finds balance in a delicate work in wood softened with touches of brass that reflect warm and golden tones on its polished surface. An impressive display of elegance, Beyond Console, shows the exquisite capacity to fill a variety of ambiances thanks to its luxury presence.',
+                'dimensions_cm' => ['depth' => '40 cm', 'length' => '160 cm','height' => '90 cm'],
+                'dimensions_in' => ['depth' => '15.7"', 'length' => '63"','height' => '35.4"'],
+                'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
+                'materials_and_finishes' => 'MATERIALS: Brass and Wood. FINISHES: Body: Gold plated & Black lacquer',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Myllo Console',
+                'slug' => 'myllo-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Myllo Console, by Luxxu, functions as a symbol of solitude and innovation. Composed by Marble and Polished Brass it reflects the rawness and perfection of an engineer’s masterpiece, fragile as it may appear but solid and firm and promises to hold your breath. It’s a statement piece that holds any room’s highest expectations.',
+                'dimensions_cm' => ['width' => '142 cm', 'depth' => '36 cm','height' => '100 cm'],
+                'dimensions_in' => ['width' => '55.9"', 'depth' => '15.17"','height' => '39.37"'],
+                'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
+                'materials_and_finishes' => 'MATERIALS: Brass, Glass, Wood & Marble. FINISHES: Polished brass, Black glass, Black lacquer & Nero marquina',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Algerone Console',
+                'slug' => 'algerone-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Algerone Console, by Luxxu is an opulent console with acute geometric features, inspired by architectural elements. Just like its counterparts, it was designed to remind us of the unique strength and class that only marble has. Its Statuario marble top is supported by a sleek base adorned with synthetic leather and brass details. A design that will redefine the way one perceives console tables.',
+                'dimensions_cm' => ['depth' => '47 cm', 'length' => '160 cm','height' => '83 cm'],
+                'dimensions_in' => ['depth' => '18.5"', 'length' => '62.99"','height' => '32.68"'],
+                'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
+                'materials_and_finishes' => 'BODY: gray leather, POLISHED BRASS, Statuário Marble',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Suspicion Console',
+                'slug' => 'suspicion-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Suspicion Console, by Luxxu, is daringly sculpted in stone and fills any room with lavishing luxury, the zenith between elegance and balance. This marble console table is the epitome of intricate equilibrium, joining marble with fine brass lines.',
+                'dimensions_cm' => ['depth' => '40 cm', 'length' => '170 cm','height' => '86 cm'],
+                'dimensions_in' => ['depth' => '15.7"', 'length' => '66.93"','height' => '33.9"'],
+                'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
+                'materials_and_finishes' => 'MATERIALS: Brass & Marble. FINISHES: Polished brass, Nero marquina marble & amarillo triana Marble',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Infinity Console',
+                'slug' => 'infinity-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Infinity Console is stunning in either modern or classic entrance halls and a great addition to any living room decoration. Handcrafted by our talented craftsmen, this prodigious piece has a striking geometric mosaic wood veneer top and a copper leaf base finished with high gloss varnish. Boca do Lobo’s furniture exhales style, grace and luxury and this is certainly the case for Infinity console, a fascinating and exclusive piece, proven to be impressive and eye-catching through its sinuous and elegant lines. Infinity holds a shimmering aura that gets a classy touch to any living space.',
+                'dimensions_cm' => ['depth' => '40 cm', 'height' => '86 cm'],
+                'dimensions_in' => ['depth' => '15.7"', 'height' => '33.9"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'Wood, Copper leaf, Marquetry in ebony leaf, high gloss varnish',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Sinuous Console',
+                'slug' => 'sinuous-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Boca do Lobo is an exclusive design furniture company that transcends the fusion of traditional and contemporary design. With Sinuous Patina Console, you will successfully create a luxurious environment. Sinuous lines draw the elegant character of this console, gathering the styling of the best sellers of Coolors Collection. Sinuous is made for those who love harmonious lines mixed with exquisite detail. Its design is seductive and lures you into a magical and golden world. To achieve extravagance, Boca Do Lobo’s artisans handcrafted the structure in mahogany with a high gloss black lacquer finish and top coated in polished brass plated, bringing up the vivid and bright side of Boca do Lobo. Contains three drawers.',
+                'dimensions_cm' => ['depth' => '47 cm', 'height' => '80 cm'],
+                'dimensions_in' => ['depth' => '18.5"', 'height' => '31.5"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'Mahogany, High Gloss Varnish, Polished Brass',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Lumiere Console',
+                'slug' => 'lumiere-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Lumiere Console, by Boca do Lobo. is a sculptural set composed of a large wall mirror, lamp, and console lying in one arched frame made of wood folded by polished stainless steel that portrays a perfect mirror. Through the manual fitting of gold hammered brass sheet bursts an antique fixture with an intricate edge detailing arm topped by an elegant pane lantern hand-sculpted by casting mold. In the lower section, Lumiere Console is a unique console made of cast brass arises to add to this artwork piece an extra functionality.',
+                'dimensions_cm' => ['width' => '150 cm', 'depth' => '83 cm', 'height' => '250 cm'],
+                'dimensions_in' => ['width' => '59"', 'depth' => '32.68"', 'height' => '98.4"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'MATERIALS: Glass, Stainless Steel, Wood. FINISHES: Gold plated and Casted Brass',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Lapiaz Console',
+                'slug' => 'lapiaz-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Lapiaz Console, by Boca do Lobo takes exceptional craftsmanship and design to a new realm. Finding beauty in the most unexpected places, this contemporary design piece is inspired by authentic karst formations. Its organic features are achieved through the manual fitting of polished brass, and a sharp finish in polished stainless steel that portrays a perfect mirror. The hammered gold details and the mirrored façade conveys both dynamics and elegance, a beautiful duality between power and refinement to bring a new contemporary verve into interior design. Lapiaz Console Table functional artwork piece born from cold and freshly cracked to showing off the world rich, golden details.',
+                'dimensions_cm' => ['width' => '170 cm', 'depth' => '40 cm', 'height' => '85 cm'],
+                'dimensions_in' => ['width' => '66.9"', 'depth' => '15.7"', 'height' => '33.5"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'MATERIALS: Brass, Steel, Wood. FINISHES: Polished Brass, Polished Stainless Steel',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Soho Console',
+                'slug' => 'soho-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Soho Console, a tribute to Soho Sideboard, has been launched by Boca Do Lobo. A collection of wood drawers finished in mirror and black glass with etched detailing, gold leaf, diamond matched rosewood veneer, high gloss blue or pink lacquer, and white lacquer with hand carved relief patterning. The drawers are accented with handmade brass pulls, some of which are plated in chrome, and cut glass knobs. All the drawers are customized as we also offer you the possibility to change the materials and the finishing.',
+                'dimensions_cm' => ['depth' => '43 cm', 'height' => '87 cm'],
+                'dimensions_in' => ['depth' => '16.8"', 'height' => '34.3"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'Bronze glass, brass, fabric, rosewood, golden leaf, lacquered glass, crystal.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Empire Console',
+                'slug' => 'empire-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Empire Console is a sublime piece built in marble with polished brass details. Its cracks are hand-carved and inserted through polished brass sheets, which are hand-hammered for a unique finish. Empire Console by Boca do Lobo was designed to make an impression. This unique console is a unique masterpiece that will fit perfectly in exclusive entryways or hallways and empowering spaces. Empire Console was made for those with refined minds and tastes.',
+                'dimensions_cm' => ['width' => '180 cm', 'depth' => '46 cm', 'height' => '85 cm'],
+                'dimensions_in' => ['width' => '70.9"', 'depth' => '18.1"', 'height' => '33.5"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'MATERIALS: Marble. FINISHES: Nero Marquina Marble',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Stonehenge Console',
+                'slug' => 'stonehenge-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Stonehenge Console, by Boca do Lobo, promises to elevate your living space to the next level. The metallic hues make an elegant contrast while beautifully combining and paying tribute to the Neolithic and Bronze Ages. Found inspiration in the prehistoric monument Stonehenge, positioned asymmetrically and composed of striking finishes and materials Brass and Marble.',
+                'dimensions_cm' => ['width' => '129 cm', 'depth' => '56 cm', 'height' => '91 cm'],
+                'dimensions_in' => ['width' => '51.2"', 'depth' => '22"', 'height' => '35.8"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'MATERIALS: Brass, GLASS, Marble, Metal. FINISHES: Polished Brass',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Monochrome Console',
+                'slug' => 'monochrome-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Monochrome Console is a remarkable piece that stands out in any room or setting, it’s a demonstration of both imagination and strong design skills, combined exceptional craftsmanship. It expresses a leading-edge outlook through its distinct shape and colour. Available in purple and electric blue, the Monochrome transmits attitude and spine.',
+                'dimensions_cm' => ['depth' => '54 cm', 'height' => '87 cm'],
+                'dimensions_in' => ['depth' => '21.3"', 'height' => '34.3"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'Molded fiberglass filled with expandable polyurethane, High gloss electric purple translucid.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Newton console',
+                'slug' => 'newton-console',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Newton Console by Boca do Lobo is a standout piece of international desire that distinguishes itself from all the other designs by its futuristic forms. Defying the laws of physics, this futuristic console has been designed by taking inspiration from its elder brother – Newton dining table.',
+                'dimensions_cm' => ['width' => '120 cm', 'depth' => '48 cm', 'height' => '85 cm'],
+                'dimensions_in' => ['width' => '47.2"', 'depth' => '18.9"', 'height' => '33.5"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'Aluminum, Black Lacquer and Gold Plated.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Consoles',
+                        'slug' => 'consoles'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
                 'name' => 'Brando Sideboard',
                 'slug' => 'brando-sideboard',
                 'is_new' => false,
