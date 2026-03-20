@@ -15,14 +15,413 @@ class ProductSeeder extends Seeder
         $mockProducts = [
             [
                 'type' => 'product',
+                'name' => 'Monocles Tall Cabinet',
+                'slug' => 'monocles-tall-cabinet',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Monocles Tall Cabinet by Essential Home is both a stylish and functional piece of furniture. It blends mid-century charm with a contemporary design style, featuring tapered legs with brass ferrules and a body built in solid walnut wood. Both the sides and back have engraved circles, a high-end detail for any interior design project.',
+                'dimensions_cm' => ['width' => '50.8 cm', 'length' => '59.5 cm', 'height' => '173 cm'],
+                'dimensions_in' => ['width' => '20"', 'length' => '23.43"', 'height' => '68.11"'],
+                'brand' => ['name' => 'ESSENTIAL HOME', 'slug' => 'essential-home'],
+                'materials_and_finishes' => 'Gold Plated Brass, Matte Black and Varnished Walnut',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Cabinet',
+                        'slug' => 'cabinet'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Monocles Cabinet',
+                'slug' => 'monocles-cabinet',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Monocles Cabinet by Essential Home is a drinks cabinet with a fresh and sleek look, Monocles Cabinet combines style and functionality. Protruding circles of different sizes at the front, showing that a calculated imperfection goes a long way in design. You’ll find yourself taken back in time as soon as you take a look at this piece.',
+                'dimensions_cm' => ['width' => '49.5 cm', 'length' => '168 cm', 'height' => '173 cm'],
+                'dimensions_in' => ['width' => '19.4"', 'length' => '66.1"', 'height' => '68.1"'],
+                'brand' => ['name' => 'ESSENTIAL HOME', 'slug' => 'essential-home'],
+                'materials_and_finishes' => 'Gold Plated Brass, Matte Black and Varnished Walnut',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Cabinet',
+                        'slug' => 'cabinet'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Hepburn Cabinet',
+                'slug' => 'hepburn-cabinet',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Hepburn Cabinet, by Essential Home, was inspired by one of the most refined names in the Hollywood industry. With a body handmade in walnut and two-door handles made of polished brass, this mid-century modern cabinet stands out thanks to its leather upholstered applique at the bottom. The mid-century bar cabinet stands on four slender and handmade polished brass legs. Hepburn Cabinet can be used as a drinks cabinet, sitting well in a modern home bar, or a private country club salon. For an even more unique approach, Hepburn’s many features can be customized to your liking.',
+                'dimensions_cm' => ['width' => '52 cm', 'length' => '140 cm', 'height' => '150 cm'],
+                'dimensions_in' => ['width' => '20.47"', 'length' => '55.12"', 'height' => '59"'],
+                'brand' => ['name' => 'ESSENTIAL HOME', 'slug' => 'essential-home'],
+                'materials_and_finishes' => 'MATERIALS: Brass, EH beige Leather, Walnut Wood. FINISHES: Polished Brass',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Cabinet',
+                        'slug' => 'cabinet'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'HUANG CABINET',
+                'slug' => 'huang-cabinet',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Huang is a mountain range in eastern China known for its spectacular scenery. Inspired by this magnificence, our designers created HUANG Cabinet. It features an outside in walnut root veneer, an inside in rosewood veneer and details in matte hammered brushed aged brass. This modern wood cabinet brings instant character to modern interior design.',
+                'dimensions_cm' => ['width' => '100 cm', 'depth' => '50 cm', 'height' => '210 cm'],
+                'dimensions_in' => ['width' => '39.37"', 'depth' => '19.68"', 'height' => '82.67"'],
+                'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
+                'materials_and_finishes' => 'Structure in matte walnut root veneer (outside) and in matte palisander wood veneer (inside), with brushed aged hammered matte brass base.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Cabinet',
+                        'slug' => 'cabinet'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Camilia Cabinet',
+                'slug' => 'camilia-cabinet',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Designed passionately and exquisitely by the incomparable talents powering KOKET, the Camilia Cabinet was created to grace the most regal of dining rooms with its elegance and splendor. Inspired by the aristocratic palaces of the Alexandrian pashas of Egypt, the mother of pearl Camilia is crowned by an artisan hand-carved peacock, meticulously engraved and delicately finished in metal leaf.',
+                'dimensions_cm' => ['width' => '189 cm', 'depth' => '54 cm', 'height' => '91 cm'],
+                'dimensions_in' => ['width' => '74"', 'depth' => '21"', 'height' => '36"'],
+                'brand' => ['name' => 'KOKET', 'slug' => 'koket'],
+                'materials_and_finishes' => 'Back: Poplar Veneer (High Gloss Finish), Base Interior: Gold Leaf (High Gloss Finish), Details: Gold Leaf (High Gloss Finish), Feet: Polished Brass (High Gloss Finish), Interior: Bronze Glass and Poplar Veneer (High Gloss Finish), Structure: Mother Of Pearl Gold, Top: Gold Leaf (High Gloss Finish)',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Cabinet',
+                        'slug' => 'cabinet'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Temptation Folie Feather Bar Cabinet',
+                'slug' => 'temptation-folie-feather-bar-cabinet',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Enticing admirers with its exotic feather doors and sexy curved lacquered legs, the Temptation Bar Cabinet  by Koket will steal cocktail hour. The chic black and gold interior is perfectly designed to store your wine and cocktail accouterments. Open or closed with its flirty tassel pulls exposed, this bar cabinet is ready for a party or a romantic night in. Cheers!',
+                'dimensions_cm' => ['width' => '175 cm', 'depth' => '115 cm', 'height' => '66 cm'],
+                'dimensions_in' => ['width' => '69"', 'depth' => '45"', 'height' => '26"'],
+                'brand' => ['name' => 'KOKET', 'slug' => 'koket'],
+                'materials_and_finishes' => 'Base: Black Lacquer, Door Details: Polished Brass (High Gloss Finish), Door Front: Folie Feathers from the KOKET Textiles collection, Door Structure: Black Lacquer (High Gloss Finish), Drawers Handles: Burlesque Clear Glass Pull, Drawers: Black Lacquer (High Gloss Finish)',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Cabinet',
+                        'slug' => 'cabinet'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Divine Peacock Feather Armoire',
+                'slug' => 'divine-peacock-feather-armoire',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'The Divine Peacock Feather Armoire by Koket is an utterly desirable double door pagoda top armoire is covered in delicate, individually placed natural feathers. An exquisite metal ribbon opens the doors to a lavish interior graced with four drawers and two adjustable shelves. The top and base feature a hand-applied metalic leaf for added glamour.',
+                'dimensions_cm' => ['width' => '105 cm', 'depth' => '65 cm', 'height' => '210 cm'],
+                'dimensions_in' => ['width' => '41"', 'depth' => '26"', 'height' => '83"'],
+                'brand' => ['name' => 'KOKET', 'slug' => 'koket'],
+                'materials_and_finishes' => 'Base: Gold Leaf (High Gloss Finish), Door Frame: Polished Brass (High Gloss Finish), Doors: Iridescent Peacock Feathers from the KOKET Textiles collection, Handle: Gold Plated Brass and Hammered Pique Brass (High Gloss Finish), Interior: Black Lacquer (High Gloss Finish) and Aged Mirror, Shelves: Smoked Glass, Structure: Black Lacquer (High Gloss Finish), Top: Gold Leaf (High Gloss Finish)',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Cabinet',
+                        'slug' => 'cabinet'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Spellbound Cabinet',
+                'slug' => 'spellbound-cabinet',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'There is a sense of reveal and conceal as KOKET takes a beautiful chest in high gloss lacquer and adorns it in metal organic lace, revealing a mesmerizing hint of what lies beneath. Interior opens to four drawers embellished with organic hardware with a finish to match the exterior.',
+                'dimensions_cm' => ['width' => '205 cm', 'depth' => '57.5 cm', 'height' => '88 cm'],
+                'dimensions_in' => ['width' => '81"', 'depth' => '23"', 'height' => '35"'],
+                'brand' => ['name' => 'KOKET', 'slug' => 'koket'],
+                'materials_and_finishes' => 'Base: Aged Brass (High Gloss Finish), Door Front: Black Lacquer (High Gloss Finish), Door Interior: Black Lacquer (High Gloss Finish), Frame: Aged Gold Leaf (High Gloss Finish), Handle: Aged Brass (High Gloss Finish), Interior: Black Lacquer (High Gloss Finish) and Smoked Glass, Structure: Black Lacquer (High Gloss Finish)',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Cabinet',
+                        'slug' => 'cabinet'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Anjelica Bar Cabinet',
+                'slug' => 'anjelica-bar-cabinet',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Anjelica Bar Cabinet, by Covet Collection, is an Art Deco-inspired circular bar cabinet with a decidedly modern look that features two sliding doors and an incorporated sliding table to allow the user to pour a drink directly on-site. It also features two white glass shelves and an additional drawer at the bottom. This gorgeous wood bar cabinet is a statement piece for any modern living room.',
+                'dimensions_cm' => ['width' => '170 cm', 'depth' => '55 cm', 'height' => '196 cm'],
+                'dimensions_in' => ['width' => '66.92"', 'depth' => '21.65"', 'height' => '77.16"'],
+                'brand' => ['name' => 'COVET COLLECTION', 'slug' => 'covet-collection'],
+                'materials_and_finishes' => 'ASH WOOD MATTE VARNISH, BLACK LEATHER, CLEAR WHITE GLASS, CREAM VELVET, Estremoz marble, Nero Marquina Marble, Polished brass.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Cabinet',
+                        'slug' => 'cabinet'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Victoria Cabinet',
+                'slug' => 'victoria-cabinet',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Victoria Cabinet by Boca do Lobo transcends traditional and modern boundaries. Each fusion of art and design is handcrafted from the finest materials by master artisans using production methods developed to preserve traditional techniques and deliver the highest quality.',
+                'dimensions_cm' => ['depth' => '64 cm', 'height' => '145 cm'],
+                'dimensions_in' => ['depth' => '25.2"', 'height' => '57.1"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'Mahogany, Smoked glass, Lacquered black glass, Lacquered in black with a high gloss varnish and a high gloss translucent yellow.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Cabinet',
+                        'slug' => 'cabinet'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Guggenheim Patch Cabinet',
+                'slug' => 'guggenheim-patch-cabinet',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Guggenheim Patch Cabinet by Boca do Lobo is between the finest and most elegant cabinets of its collections. This handcrafted, extremely versatile and unique cabinet is ideal for storing glassware and fine silver collectibles in the dining room or any other of your collections – a great compliment to any classic or modern interior setting. The Guggenheim Patch Cabinet is available in two finishes (rosewood or palisander), with black lacquered wood top and legs. Boca do Lobo‘s Guggenheim is handcrafted in Portugal, according to traditional methods, by master artisans who pulse the art of work wood and glass in their veins.',
+                'dimensions_cm' => ['width' => '110 cm', 'depth' => '49 cm', 'height' => '210 cm'],
+                'dimensions_in' => ['width' => '43.3"', 'depth' => '19.3"', 'height' => '82.7"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'MATERIALS: Brass, ebony veneer, mahogany wood, mirror, rosewood wood veneer. FINISHES: high gloss varnish, polished ornaments in the glass',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Cabinet',
+                        'slug' => 'cabinet'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'D. Manuel Cabinet',
+                'slug' => 'd-manuel-cabinet',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'The Angra Cupboard  by Boca do Lobo is an exquisite fusion of aesthetics and functionality. Perched elegantly on a distinctive curved golden base reminiscent of the captivating cliffs of Angra do Heroismo in Portugal’s Azores, this cupboard transcends mere storage. Crafted with a keen eye for design, the Angra Cupboard invites you to elevate your living space with sophistication. Beyond a mere repository for your belongings, it’s a testament to artistry and the rich tapestry of historical landscapes. Immerse yourself in a design narrative that goes beyond the ordinary, transforming your space into a haven of inspiration and refined style.',
+                'dimensions_cm' => ['width' => '116 cm', 'depth' => '60 cm', 'height' => '161 cm'],
+                'dimensions_in' => ['width' => '45.7"', 'depth' => '23.6"', 'height' => '63.4"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'MATERIALS: LACQUER, Wood. FINISHES: Black Lacquer Gradient, Copper Leaf, Mahogany legs with black lacquer finish.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Cabinet',
+                        'slug' => 'cabinet'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'ANGRA CUPBOARD',
+                'slug' => 'angra-cupboard',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'The Angra Cupboard  by Boca do Lobo is an exquisite fusion of aesthetics and functionality. Perched elegantly on a distinctive curved golden base reminiscent of the captivating cliffs of Angra do Heroismo in Portugal’s Azores, this cupboard transcends mere storage. Crafted with a keen eye for design, the Angra Cupboard invites you to elevate your living space with sophistication. Beyond a mere repository for your belongings, it’s a testament to artistry and the rich tapestry of historical landscapes. Immerse yourself in a design narrative that goes beyond the ordinary, transforming your space into a haven of inspiration and refined style.',
+                'dimensions_cm' => ['width' => '116 cm', 'depth' => '60 cm', 'height' => '161 cm'],
+                'dimensions_in' => ['width' => '45.7"', 'depth' => '23.6"', 'height' => '63.4"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'MATERIALS: Base: Polished Hammered Brass, Casted Brass Handles and Smoked Glass, Interior: Smoked Glass Shelf and Grey Mirror, Structure: Black Lacquered Glossy, Top: Sahara Noir Marble',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Cabinet',
+                        'slug' => 'cabinet'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'PIXEL II CABINET',
+                'slug' => 'pixel-ii-cabinet',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Iconic and unparalleled, the Pixel Bar Cabinet by Boca do Lobo presents a ground-breaking work of pioneering design. This piece carries the dedication and art of those who built it, and a variety of traditional production techniques to craft an avant-garde furniture piece that is authentic, joyful and a perfect match for the digital age. Its playful character is captured in shape and colour palette, challenging design and finest craftsmanship. Made out of 1088 triangles, the upper part of the Pixel Bar Cabinet plays with perception and combines exceptional materials with a green composition to give the cabinet a unique, striking design.',
+                'dimensions_cm' => ['width' => '91 cm', 'depth' => '46 cm', 'height' => '203 cm'],
+                'dimensions_in' => ['width' => '35.8"', 'depth' => '118.1"', 'height' => '79.9"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'Acrylic, Gold Leaf, Mirror, Translucid Emerald Lacquer, Triangles: Lacquered Wood, Wood',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Cabinet',
+                        'slug' => 'cabinet'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'D.Heritage Cabinet',
+                'slug' => 'd-heritage-cabinet',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'D.Heritage Cabinet, by Boca do Lobo, is a cross between two of Boca do Lobo’s most iconic design pieces, keeping the form of the Dom Manuel cabinet, with the use of the azulejo finish found on the Heritage pieces. Used to tell tales and stories, azulejo tiles became increasingly popular during King Manuel’s reign, representing a landmark in Portuguese architecture. The D.Heritage Cabinet is a tribute to the country’s grand epoch, as well as to its traditional artisan crafts which Boca do Lobo seeks to keep alive.',
+                'dimensions_cm' => ['width' => '85 cm', 'depth' => '45 cm', 'height' => '202 cm'],
+                'dimensions_in' => ['width' => '33.5"', 'depth' => '17.7"', 'height' => '79.5"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'MATERIALS: GLASS, LACQUER, Tiles. FINISHES: Hand Painted Tiles - Azulejo, Lathe work, Leaf guilding, Mahogany legs with black lacquer finish',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Cabinet',
+                        'slug' => 'cabinet'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Symphony Cabinet',
+                'slug' => 'symphony-cabinet',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Symphony Cabinet by Boca do Lobo is inspired by the movement and evolution of music, from the natural flow of sound to its various epochs and styles. Re-interpreting key design elements found in church organs, violins and the details of brass instruments, the Symphony Cabinet seeks to move and stir emotion much like a musical composition. Handcrafted from the finest materials, with a vision and aesthetic achieved by our designers and craftsmen alone, the Symphony Cabinet is a quintessential piece of pure elegance and style.',
+                'dimensions_cm' => ['width' => '85 cm', 'depth' => '45 cm', 'height' => '202 cm'],
+                'dimensions_in' => ['width' => '33.5"', 'depth' => '17.7"', 'height' => '79.5"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'MATERIALS: POPLAR ROOT AND BRASS, Steel. FINISHES: GOLD FINISH POPLAR ROOT & POLISHED BRASS, Stainless Steel',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Cabinet',
+                        'slug' => 'cabinet'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Heritage Cabinet',
+                'slug' => 'heritage-cabinet',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Heritage Cabinet by Boca do Lobo is an elegant décor piece to compliment the decoration of any interior setting. A highly coveted ensemble of hand-painted tiles like those of an expertly curate art collection brings together master artisans and craftsmen for Boca do Lobo’s Heritage. In Heritage Cabinet interior, there is one door and four drawers, fully lined with golden leaf.',
+                'dimensions_cm' => ['width' => '92 cm', 'depth' => '50 cm', 'height' => '182 cm'],
+                'dimensions_in' => ['width' => '32.6"', 'depth' => '19.7"', 'height' => '71.71"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'Gold Leaf, Hand Painted Tiles, Brass, Bronze Glass, Wood lacquered in white a high gloss varnish',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Cabinet',
+                        'slug' => 'cabinet'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Lapiaz Cabinet',
+                'slug' => 'lapiaz-cabinet',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Lapiaz Cabinet, by Boca do Lobo, takes exceptional craftsmanship and design to a new realm. Finding beauty in the most unexpected places, this contemporary design piece is inspired by authentic karst formations. Its organic features are achieved through the manual fitting of polished brass, and a sharp finish in polished stainless steel that portrays a perfect mirror. Lapiaz Cabinet has different-shaped doors and drawers open to a distinct poplar root wood veneer interior. The hammered gold details and the mirrored façade conveys both dynamics and elegance, a beautiful duality between power and refinement to bring a new contemporary verve into interior design. A functional artwork piece born from cold and freshly cracked to show off the world’s rich, golden details.',
+                'dimensions_cm' => ['width' => '91 cm', 'depth' => '46 cm', 'height' => '203 cm'],
+                'dimensions_in' => ['width' => '35.83"', 'depth' => '18.11"', 'height' => '79.92"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'MATERIALS: STEEL, BRASS, TRANSPARENT GLASS, CLEAR MIRROR. FINISHES: POLISHED STAINLESS STEEL, POPLAR ROOT GLOSSY WOOD VENEER, POLISHED HAMMERED BRASS GLOSSY, GOLD FINISH',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Cabinet',
+                        'slug' => 'cabinet'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Pixel Cabinet',
+                'slug' => 'pixel-cabinet',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Pixel Cabinet by Boca do Lobo is an effort to honor the union between design and craftsmanship. The 1088 triangles that complete Pixel Cabinet carries the dedication and art of those who built it – with a diversity of finishes never seen before. The polished brass base gives Pixel Cabinet a unique personality, a strong and at the same time sophisticated character.',
+                'dimensions_cm' => ['width' => '81 cm', 'depth' => '60 cm', 'height' => '163 cm'],
+                'dimensions_in' => ['width' => '31.5"', 'depth' => '23.6"', 'height' => '64.2"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'BASE: WOOD, MIRROR, ACRYLIC, GOLD LEAF, SILVER LEAF. VARIED CHOICE OF COLORS',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Cabinet',
+                        'slug' => 'cabinet'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
                 'name' => 'Claire Console Table',
                 'slug' => 'claire-console',
                 'is_new' => false,
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Mid-century meets transitional style in this simple and clean console. Claire Console Table is produced in polished stainless steel and its square body contrasts with the rounded set of drawers and doors. These are finished in birdseye maple leaf to accent its presence. Altogether with the little doorknobs make this a unique piece of mid-century furniture.',
-                'dimensions_cm' => ['width' => '40 cm', 'length' => '160 cm','height' => '89 cm'],
-                'dimensions_in' => ['width' => '16"', 'length' => '63"','height' => '35"'],
+                'dimensions_cm' => ['width' => '40 cm', 'length' => '160 cm', 'height' => '89 cm'],
+                'dimensions_in' => ['width' => '16"', 'length' => '63"', 'height' => '35"'],
                 'brand' => ['name' => 'ESSENTIAL HOME', 'slug' => 'essential-home'],
                 'materials_and_finishes' => 'FINISHES: Doors: Bird`s Eye Wood leaf, Frame: Polished Stainless Steel',
                 'category' => [
@@ -42,8 +441,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Craig Console Table by Essential Home is made with chic polished brass legs and structure, featuring a top made of verde guatemala marble and a gallery shelf for additional storage space in your living room or entryway.',
-                'dimensions_cm' => ['width' => '34 cm', 'length' => '122 cm','height' => '85 cm'],
-                'dimensions_in' => ['width' => '13.3"', 'length' => '48"','height' => '33.4"'],
+                'dimensions_cm' => ['width' => '34 cm', 'length' => '122 cm', 'height' => '85 cm'],
+                'dimensions_in' => ['width' => '13.3"', 'length' => '48"', 'height' => '33.4"'],
                 'brand' => ['name' => 'ESSENTIAL HOME', 'slug' => 'essential-home'],
                 'materials_and_finishes' => 'MATERIALS: Brass & Marble. FINISHES: Polished Brass and Polished Guatemala Marble',
                 'category' => [
@@ -63,8 +462,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Cay Console by Brabbu represents Nature in its rawest form and flows through Cay Console as lava flows from a volcano eruption. With a tabletop in bronze glass and a base in casted brass, this entryway console table embodies nature’s ultimate scream. Allow yourself to hear the call, feeling its strength and reflecting it into your urban lifestyle',
-                'dimensions_cm' => ['width' => '86 cm', 'depth' => '50 cm','height' => '82 cm'],
-                'dimensions_in' => ['width' => '33.9"', 'depth' => '19.7"','height' => '32.3"'],
+                'dimensions_cm' => ['width' => '86 cm', 'depth' => '50 cm', 'height' => '82 cm'],
+                'dimensions_in' => ['width' => '33.9"', 'depth' => '19.7"', 'height' => '32.3"'],
                 'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
                 'materials_and_finishes' => 'MATERIALS: Bronze and Glass. FINISHES: Casted Brass',
                 'category' => [
@@ -84,8 +483,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Agra Console Table by Brabbu is the modest setting of one of the most famous monuments in the world, the Taj Mahal, also known as the marble mausoleum. Just like it, Agra Console Table is an impressive display of craftsmanship and elegance. Made of Estremoz marble with brass details, this marble console table will add refined grace to any room of your choice.',
-                'dimensions_cm' => ['width' => '140 cm', 'depth' => '40 cm','height' => '90 cm'],
-                'dimensions_in' => ['width' => '55.1"', 'depth' => '15.7"','height' => '35.4"'],
+                'dimensions_cm' => ['width' => '140 cm', 'depth' => '40 cm', 'height' => '90 cm'],
+                'dimensions_in' => ['width' => '55.1"', 'depth' => '15.7"', 'height' => '35.4"'],
                 'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
                 'materials_and_finishes' => 'MATERIALS: Estremoz marble. FINISHES: Estremoz Marble with Gold Plated Details',
                 'category' => [
@@ -105,8 +504,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Linked by a bridge, Bastei is one of the most famous rock formations in Germany. To honour such outstanding beauty, our designers created Bastei Console, by Brabbu. With a tabletop in glossy walnut root veneer and a base in glossy gold leaf, this modern entryway console table will steal all the attention of any interior design style.',
-                'dimensions_cm' => ['width' => '160 cm', 'depth' => '39 cm','height' => '89 cm'],
-                'dimensions_in' => ['width' => '62.77"', 'depth' => '15.35"','height' => '35.03"'],
+                'dimensions_cm' => ['width' => '160 cm', 'depth' => '39 cm', 'height' => '89 cm'],
+                'dimensions_in' => ['width' => '62.77"', 'depth' => '15.35"', 'height' => '35.03"'],
                 'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
                 'materials_and_finishes' => 'Base: Glossy Gold Leaf, Top: Glossy Walnut root veneer',
                 'category' => [
@@ -126,8 +525,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'The incredible Beijing’ skyline inspired our designers to create KYAN Console Table, a strong and edgy furniture piece. Featuring a top in bronze glass and a base in iron with acid reaction finish, this modern console tells a story with an unfinished end.',
-                'dimensions_cm' => ['width' => '180 cm', 'depth' => '35 cm','height' => '70 cm'],
-                'dimensions_in' => ['width' => '70.86"', 'depth' => '13.77"','height' => '29.53"'],
+                'dimensions_cm' => ['width' => '180 cm', 'depth' => '35 cm', 'height' => '70 cm'],
+                'dimensions_in' => ['width' => '70.86"', 'depth' => '13.77"', 'height' => '29.53"'],
                 'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
                 'materials_and_finishes' => 'Top in bronze glass and base in iron with acid reaction finish.',
                 'category' => [
@@ -147,8 +546,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Mosques are magnificent architectural structures in addition to being centers of spiritual devotion. The Mecca Console Table by Brabbu is a striking piece of furniture with brushed brass matte columns that echo the mosques’ ageless architectural legacy. It was painstakingly crafted, drawing inspiration from the grandeur of mosques. A visual masterpiece is created when the opulent Nero Marquina marble top contrasts with this elaborate gold framework, artfully fusing tradition and modernity. The Mecca Console Table is more than just a piece of furniture; it’s a statement of tasteful elegance that turns any space into an opulent haven and iconic living space.',
-                'dimensions_cm' => ['width' => '160 cm', 'depth' => '45 cm','height' => '90 cm'],
-                'dimensions_in' => ['width' => '62.99"', 'depth' => '17.72"','height' => '35.43"'],
+                'dimensions_cm' => ['width' => '160 cm', 'depth' => '45 cm', 'height' => '90 cm'],
+                'dimensions_in' => ['width' => '62.99"', 'depth' => '17.72"', 'height' => '35.43"'],
                 'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
                 'materials_and_finishes' => 'MATERIALS: BASE In Brushed Brass Matte, TOP In Marble Nero Marquina',
                 'category' => [
@@ -168,8 +567,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Bryce II Console pays tribute to a giant natural amphitheater caused by erosion through the Paunsaugnt Plateau. This plateau through its unique design in high gloss black lacquer and glossy gold leaf. Or versions in faux-marble painting. It is a plus to any home entryway or even as a plus in the living room or dining room.',
-                'dimensions_cm' => ['width' => '160 cm', 'depth' => '40 cm','height' => '90 cm'],
-                'dimensions_in' => ['width' => '63"', 'depth' => '15.7"','height' => '35.43"'],
+                'dimensions_cm' => ['width' => '160 cm', 'depth' => '40 cm', 'height' => '90 cm'],
+                'dimensions_in' => ['width' => '63"', 'depth' => '15.7"', 'height' => '35.43"'],
                 'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
                 'materials_and_finishes' => 'STRUCTURE Black lacquer. God leaf. Glossy varnish, STRUCTURE Faux-marble painting, glossy varnish',
                 'category' => [
@@ -189,8 +588,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Bryce is a giant natural amphitheatre caused by erosion through the Paunsaugnt Plateau. The BRYCE I Console pays tribute to this plateau through its unique design in high gloss black lacquer and glossy gold leaf. The BRYCE Black Lacquer Console Table will be the focus point in every room you set it in.',
-                'dimensions_cm' => ['width' => '155 cm', 'depth' => '35 cm','height' => '90 cm'],
-                'dimensions_in' => ['width' => '61.02"', 'depth' => '13.77"','height' => '35.43"'],
+                'dimensions_cm' => ['width' => '155 cm', 'depth' => '35 cm', 'height' => '90 cm'],
+                'dimensions_in' => ['width' => '61.02"', 'depth' => '13.77"', 'height' => '35.43"'],
                 'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
                 'materials_and_finishes' => 'STRUCTURE Black lacquer. God leaf. Gloss varnish',
                 'category' => [
@@ -210,8 +609,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Koi Console, by Brabbu, has a base in brushed aged brass and a top in Nero Marquina marble, this foyer table will add refined elegance to any modern interior design. Koi carp is a recurring symbol of Japanese culture. Its natural color mutations reveal its capacity to adapt, just like Koi Console.',
-                'dimensions_cm' => ['width' => '160 cm', 'depth' => '45 cm','height' => '94 cm'],
-                'dimensions_in' => ['width' => '63"', 'depth' => '17.7"','height' => '37"'],
+                'dimensions_cm' => ['width' => '160 cm', 'depth' => '45 cm', 'height' => '94 cm'],
+                'dimensions_in' => ['width' => '63"', 'depth' => '17.7"', 'height' => '37"'],
                 'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
                 'materials_and_finishes' => 'MATERIALS: Brass, Nero Marquina Marble. FINISHES: Brushed Brass Matte',
                 'category' => [
@@ -231,8 +630,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Colosseum Console, by Brabbu, was created inspired by the Roman Colosseum is one of the new seven wonders of the world. Inspired by its empowering presence. Made of red lacquer with translucent black with gloss varnish, Colosseum Console is a modern console table that will help you bring the most enduring icon of Italy to any home decor.',
-                'dimensions_cm' => ['width' => '160 cm', 'depth' => '30 cm','height' => '90 cm'],
-                'dimensions_in' => ['width' => '63"', 'depth' => '11.81"','height' => '35.43"'],
+                'dimensions_cm' => ['width' => '160 cm', 'depth' => '30 cm', 'height' => '90 cm'],
+                'dimensions_in' => ['width' => '63"', 'depth' => '11.81"', 'height' => '35.43"'],
                 'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
                 'materials_and_finishes' => 'MATERIALS: MATERIALS: Structure in nero marquina faux-marble painting glossy. FINISHES: FINISHES: RED LACQUER WITH TRANSLUCENT BLACK GLOSSY VARNISH',
                 'category' => [
@@ -252,8 +651,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Ardara II Console Table by Brabbu, was inspired by unique structures – the dolmens are ancient stone monuments from the Neolithic period. With a finish in gold leaf with a gloss varnish, this console table will give a unique twist to any interior design.',
-                'dimensions_cm' => ['width' => '160 cm', 'depth' => '40 cm','height' => '90 cm'],
-                'dimensions_in' => ['width' => '63"', 'depth' => '15.75"','height' => '35.43"'],
+                'dimensions_cm' => ['width' => '160 cm', 'depth' => '40 cm', 'height' => '90 cm'],
+                'dimensions_in' => ['width' => '63"', 'depth' => '15.75"', 'height' => '35.43"'],
                 'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
                 'materials_and_finishes' => 'SAHARA NOIR FAUX-MARBLE PAINTING GLOSSY',
                 'category' => [
@@ -273,8 +672,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Ardara Console Table, by Brabbu, has a finish in gold leaf with a gloss varnish, this modern console table will give a unique twist to any interior design. Dolmens are ancient stone monuments from the Neolithic period. These unique structures were the inspiration behind Ardara Console Table.',
-                'dimensions_cm' => ['width' => '160 cm', 'depth' => '40 cm','height' => '90 cm'],
-                'dimensions_in' => ['width' => '63"', 'depth' => '15.75"','height' => '35.43"'],
+                'dimensions_cm' => ['width' => '160 cm', 'depth' => '40 cm', 'height' => '90 cm'],
+                'dimensions_in' => ['width' => '63"', 'depth' => '15.75"', 'height' => '35.43"'],
                 'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
                 'materials_and_finishes' => 'Structure in gold leaf with gloss varnish.',
                 'category' => [
@@ -294,8 +693,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Aroma Console by Caffe Latte top is made from luxurious rosewood or palisander, while the support structure comes in stainless steel. No other thing is as uplifting as the coffee’s aroma in the air and this table shows how the smallest details can make the biggest impression in your interiors. If coffee is your ultimate ally throughout the day, then you must have it stylishly.',
-                'dimensions_cm' => ['width' => '184 cm', 'depth' => '44 cm','height' => '50 cm'],
-                'dimensions_in' => ['width' => '72.44"', 'depth' => '17.32"','height' => '19.68"'],
+                'dimensions_cm' => ['width' => '184 cm', 'depth' => '44 cm', 'height' => '50 cm'],
+                'dimensions_in' => ['width' => '72.44"', 'depth' => '17.32"', 'height' => '19.68"'],
                 'brand' => ['name' => 'CAFFE LATTE', 'slug' => 'caffe-latte'],
                 'materials_and_finishes' => 'MATERIALS: STAINLESS STEEL, Wood Veneer. FINISHES: CREAM MATTE LACQUER, EPOXY STAINLESS STEEL BRONZE MATTE VARNISH, PALISANDER MATTE WOOD VENEER',
                 'category' => [
@@ -315,8 +714,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Lungo Console, by Caffe Latte, is a refreshing, clean, and simplistic design, the Lungo Console’s strict and harsh lines make it the sublime item for a modern interior. A subtle piece that doesn’t overpower or clashes with other designs, but still delivers a sense of splendor and taste, with the prolonged and thin stainless steel with brushed bronze finished legs, embracing a sleek and long Walnut Veneer.',
-                'dimensions_cm' => ['width' => '162 cm', 'depth' => '44 cm','height' => '99 cm'],
-                'dimensions_in' => ['width' => '63.78"', 'depth' => '17.32"','height' => '38.97"'],
+                'dimensions_cm' => ['width' => '162 cm', 'depth' => '44 cm', 'height' => '99 cm'],
+                'dimensions_in' => ['width' => '63.78"', 'depth' => '17.32"', 'height' => '38.97"'],
                 'brand' => ['name' => 'CAFFE LATTE', 'slug' => 'caffe-latte'],
                 'materials_and_finishes' => 'Walnut Matte Wood Veneer or Walnut Root Matte Wood Veneer, Epoxy Iron Bronze Matte Varnish',
                 'category' => [
@@ -336,8 +735,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Nougat Console seamlessly combines style and functionality to enhance the aesthetic appeal of any space. Made from aged and hammered brushed brass, it is inspired by the balanced fusion of tastes we get when combining coffee and chocolate. Available in nero marquina marble or ash wood, the Nougat Console proves that good design goes beyond aesthetics—it should enhance the way we live. A timeless addition to any modern residential or hospitality interior.',
-                'dimensions_cm' => ['width' => '168 cm', 'depth' => '40 cm','height' => '88 cm'],
-                'dimensions_in' => ['width' => '66.14"', 'depth' => '15.78"','height' => '34.64"'],
+                'dimensions_cm' => ['width' => '168 cm', 'depth' => '40 cm', 'height' => '88 cm'],
+                'dimensions_in' => ['width' => '66.14"', 'depth' => '15.78"', 'height' => '34.64"'],
                 'brand' => ['name' => 'CAFFE LATTE', 'slug' => 'caffe-latte'],
                 'materials_and_finishes' => 'NERO MARQUINA, AGED BRUSHED BRASS HAMMERED, AGED BRUSHED BRASS',
                 'category' => [
@@ -357,8 +756,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Liberica Console, by Caffe Latte, as harsh and strict lines, from design contrast perfectly with the fluidity and sort of feminine touch of the mirror. Inspired by the Coffea liberica plant, the mirror takes an oval countour, resembling the delicate shape of the plant’s leaf. Liberica Console is stainless steel with a bronze matte base, that simulates the sturdy branches that can grow up to nine meters, holding in perfect harmony a refined marble top. A minimalist design that will not go unnoticed.',
-                'dimensions_cm' => ['width' => '180 cm', 'depth' => '40 cm','height' => '208 cm'],
-                'dimensions_in' => ['width' => '70.87"', 'depth' => '15.78"','height' => '81.89"'],
+                'dimensions_cm' => ['width' => '180 cm', 'depth' => '40 cm', 'height' => '208 cm'],
+                'dimensions_in' => ['width' => '70.87"', 'depth' => '15.78"', 'height' => '81.89"'],
                 'brand' => ['name' => 'CAFFE LATTE', 'slug' => 'caffe-latte'],
                 'materials_and_finishes' => 'Body: White Olimpic Marble, Epoxy Stainless Steel Bronze Matte Varnish, Mirror rim: Epoxy stainless steel brushed bronze varnish, Mirror: Clear Mirror',
                 'category' => [
@@ -378,8 +777,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Malawi Console , by Caffe Latte is all about minimalist elegance and understated charm. With a top made out of resin travertino marble and lacquered feet, Malawi Console easily sets the tone for a serene ambiance. This console is inspired by Malawi, an African country known for its sweet, delicate, and floral coffee. With a neutral design and functional aesthetic, Malawi Console shows us that there is no second chance to make a good first impression.',
-                'dimensions_cm' => ['width' => '180 cm', 'depth' => '46 cm','height' => '85 cm'],
-                'dimensions_in' => ['width' => '70.87"', 'depth' => '18.11"','height' => '33.46"'],
+                'dimensions_cm' => ['width' => '180 cm', 'depth' => '46 cm', 'height' => '85 cm'],
+                'dimensions_in' => ['width' => '70.87"', 'depth' => '18.11"', 'height' => '33.46"'],
                 'brand' => ['name' => 'CAFFE LATTE', 'slug' => 'caffe-latte'],
                 'materials_and_finishes' => 'LAQUERED BLACK BROWN MATTE, RESIN TRAVERTINE MARBLE',
                 'category' => [
@@ -399,8 +798,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'The Empress Console is fully aware of her powers, embraced in her untamed magnetic beauty. Exquisite sand-cast brass entangled with amber rock crystals wildly grows across her sleek, curved, ash-black wood veneer. This statement console, available in a left and right, exudes boundless creativity and innovation. Beyond furniture, The Empress Console brings the allure of untamed nature and the sophistication of a work of art where every detail reflects refined craftsmanship.',
-                'dimensions_cm' => ['width' => '140 cm', 'depth' => '50 cm','height' => '90 cm'],
-                'dimensions_in' => ['width' => '55"', 'depth' => '20"','height' => '35"'],
+                'dimensions_cm' => ['width' => '140 cm', 'depth' => '50 cm', 'height' => '90 cm'],
+                'dimensions_in' => ['width' => '55"', 'depth' => '20"', 'height' => '35"'],
                 'brand' => ['name' => 'KOKET', 'slug' => 'koket'],
                 'materials_and_finishes' => 'Base Detail: Cast Brass (Semi Gloss Finish), Front Detail Stones: Aragonite , Brazilian Citrine and Quartz Crystal, Front Detail: Cast Brass (Semi Gloss Finish), Structure: Black Tulip Veneer (Matte Finish), Top: Cast Brass (Semi Gloss Finish)',
                 'category' => [
@@ -420,8 +819,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Get wrapped up in the rhythmic design of the Ribbon console table by Koket.The provocative twists and turns of the base are delicately adorned in gleaming metalic leaf, mimicking the sheen of a girl’s hair ribbon. The luxury console table’s playful base is topped with a pristine high gloss black lacquer top.',
-                'dimensions_cm' => ['width' => '170 cm', 'depth' => '50 cm','height' => '90 cm'],
-                'dimensions_in' => ['width' => '67"', 'depth' => '20"','height' => '35"'],
+                'dimensions_cm' => ['width' => '170 cm', 'depth' => '50 cm', 'height' => '90 cm'],
+                'dimensions_in' => ['width' => '67"', 'depth' => '20"', 'height' => '35"'],
                 'brand' => ['name' => 'KOKET', 'slug' => 'koket'],
                 'materials_and_finishes' => 'Base: Broken Gold Leaf (High Gloss Finish) and Black Lacquer (High Gloss Finish), Top: Black Lacquer (High Gloss Finish)',
                 'category' => [
@@ -441,8 +840,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Dovedale Console, by Covet Collection, is a marvelous and discreet console with the incorporated and unifying characteristic of the granite stone in its center for a sublime look. From the Dovedale family, inspired by the Stepping Stone the wooden carved base provides a distinctive natural appeal by being shaped in different levels and different colors, while the hardwood lacquered with amobe-bluette top and drawer uses a contemporary square shape. An indispensable item for any room or setting.',
-                'dimensions_cm' => ['width' => '120 cm', 'depth' => '57 cm','height' => '68 cm'],
-                'dimensions_in' => ['width' => '47.24"', 'depth' => '22.44"','height' => '26.77"'],
+                'dimensions_cm' => ['width' => '120 cm', 'depth' => '57 cm', 'height' => '68 cm'],
+                'dimensions_in' => ['width' => '47.24"', 'depth' => '22.44"', 'height' => '26.77"'],
                 'brand' => ['name' => 'COVET COLLECTION', 'slug' => 'covet-collection'],
                 'materials_and_finishes' => 'BODY: OAK WOOD WITH BLUE STAIN VARNISH, OAK WOOD WITH MATTE STAIN VARNISH. DETAIL: BRILLIANT BLACK CERAMIC STONE',
                 'category' => [
@@ -462,8 +861,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Valdés Console, by Covet House, is an enormous round mirror combined with a dark walnut top, over two sublime designed legs. Beautifully crafted and naturally inspired. The Valdés Peninsula has been listed as a UNESCO World Heritage Place for its global significance as a site for marine animal conservation, where its shape and crystal-clear water served as the inspiration for this unique console.',
-                'dimensions_cm' => ['depth' => '45 cm', 'length' => '200 cm','height' => '230 cm'],
-                'dimensions_in' => ['depth' => '17.71"', 'length' => '78.74"','height' => '90.55"'],
+                'dimensions_cm' => ['depth' => '45 cm', 'length' => '200 cm', 'height' => '230 cm'],
+                'dimensions_in' => ['depth' => '17.71"', 'length' => '78.74"', 'height' => '90.55"'],
                 'brand' => ['name' => 'COVET COLLECTION', 'slug' => 'covet-collection'],
                 'materials_and_finishes' => 'BODY: DARK WALNUT VENEER, MARBLE PATAGÓNIA. DRAWERS: DARK WALNUT VENEER, IRON WITH MATE CHAMPAGNE TEXTURED FINE POWDER. FEET: Wood with Mate champagne textured fine powder. MIRROR: NORMAL MIRROR WITH EDGE IN IRON WITH MATE CHAMPAGNE TEXTURED FINE POWDER',
                 'category' => [
@@ -483,8 +882,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Linear Console, by Covet Collection, is simple in form, yet luxurious in materials and details, this marble and polished stainless steel console are a must-have in modern luxurious interiors. The very definition of elegant luxury.',
-                'dimensions_cm' => ['width' => '120 cm', 'depth' => '50 cm','height' => '90 cm'],
-                'dimensions_in' => ['width' => '47.24"', 'depth' => '16.68"','height' => '35.43"'],
+                'dimensions_cm' => ['width' => '120 cm', 'depth' => '50 cm', 'height' => '90 cm'],
+                'dimensions_in' => ['width' => '47.24"', 'depth' => '16.68"', 'height' => '35.43"'],
                 'brand' => ['name' => 'COVET COLLECTION', 'slug' => 'covet-collection'],
                 'materials_and_finishes' => 'BODY: NERO MARQUINA MARBLE, POLISHED STAINLESS STEEL',
                 'category' => [
@@ -504,8 +903,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'The MOOD Console is designed to set the tone for your home, defining a modern aesthetic while uplifting your mood. There’s no second chance to make a great first impression, and this console ensures just that. Crafted from glossy, gold-plated stainless steel, it perfectly marries the purity of white with the warmth of gold. This harmonious blend effortlessly enhances any space, making the MOOD Console a must-have for those who appreciate refined elegance and contemporary style.',
-                'dimensions_cm' => ['width' => '167 cm', 'depth' => '45 cm','height' => '86 cm'],
-                'dimensions_in' => ['width' => '65.75"', 'depth' => '17.71"','height' => '33.86"'],
+                'dimensions_cm' => ['width' => '167 cm', 'depth' => '45 cm', 'height' => '86 cm'],
+                'dimensions_in' => ['width' => '65.75"', 'depth' => '17.71"', 'height' => '33.86"'],
                 'brand' => ['name' => 'COVET COLLECTION', 'slug' => 'covet-collection'],
                 'materials_and_finishes' => 'BODY: GOLD PLATED STAINLESS STEEL GLOSSY, WHITE OLIMPIC MARBLE. TOP: GOLD PLATED STAINLESS STEEL GLOSSY',
                 'category' => [
@@ -525,8 +924,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Consoles are versatile pieces that provide a surface without taking up too much space. Anjelica Console, by Covet Collection, is a modern wood and marble console table that features one drawer for extra storage. Its sculptural form and high-end materials bring character and charm to a room, be it a modern hallway or entryway, or living room.',
-                'dimensions_cm' => ['width' => '115 cm', 'depth' => '40 cm','height' => '90 cm'],
-                'dimensions_in' => ['width' => '45.27"', 'depth' => '15.74"','height' => '35.43"'],
+                'dimensions_cm' => ['width' => '115 cm', 'depth' => '40 cm', 'height' => '90 cm'],
+                'dimensions_in' => ['width' => '45.27"', 'depth' => '15.74"', 'height' => '35.43"'],
                 'brand' => ['name' => 'COVET COLLECTION', 'slug' => 'covet-collection'],
                 'materials_and_finishes' => 'BODY: Ash Wood Matte Varnish, Cream Velvet, estremoz marble, NERO MARQUINA MARBLE, POLISHED BRASS',
                 'category' => [
@@ -546,8 +945,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Plata Console, by Covet House, its exciting two rounded legs converge with the modern straight lines from the top, creating a combination of both natural and contemporary elements. Named after Rio de Plata, one of the places visited by the Portuguese adventurers in the early European exploration of the Patagonia region, this sublime console has a mix of metal and Patagonia marble.',
-                'dimensions_cm' => ['depth' => '40 cm', 'length' => '170 cm','height' => '87 cm'],
-                'dimensions_in' => ['depth' => '15.74"', 'length' => '62.92"','height' => '34.25"'],
+                'dimensions_cm' => ['depth' => '40 cm', 'length' => '170 cm', 'height' => '87 cm'],
+                'dimensions_in' => ['depth' => '15.74"', 'length' => '62.92"', 'height' => '34.25"'],
                 'brand' => ['name' => 'COVET COLLECTION', 'slug' => 'covet-collection'],
                 'materials_and_finishes' => 'BODY: WOOD WITH MATE CHAMPAGNE TEXTURED FINE POWDER. FEET: MARBLE PATAGÓNIA, Wood with Mate champagne textured fine powder. TOP: MARBLE PATAGÓNIA',
                 'category' => [
@@ -567,8 +966,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Prove to be impressive through its conspicuous and elegant lines, the prodigious Vertigo Console Table has a striking dynamic pose. In either modern or classic entrance halls, the shimmering line in gold plated brass merge in any living room decoration in Nero Marquina marble finish. A fascinating and exclusive console that exhales luxury and a cohesive style.',
-                'dimensions_cm' => ['depth' => '45 cm', 'length' => '160 cm','height' => '92.5 cm'],
-                'dimensions_in' => ['depth' => '17.7"', 'length' => '63.1"','height' => '36.4"'],
+                'dimensions_cm' => ['depth' => '45 cm', 'length' => '160 cm', 'height' => '92.5 cm'],
+                'dimensions_in' => ['depth' => '17.7"', 'length' => '63.1"', 'height' => '36.4"'],
                 'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
                 'materials_and_finishes' => 'MATERIALS: Body: Brass & Marble. FINISHES: Body: Gold plated & Marble Nero Marquina',
                 'category' => [
@@ -588,8 +987,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Spear Console Table by Luxxu was designed through an imposing sharp pen. The diversity of its materials from brass, wood, leather, and marble results in a console with straight lines. From Ancient Rome comes its inspiration, bringing a timeless design to this art piece. A symbiosis of toughness and elegance, perfect to bring an environment to its most luxurious ambiance.',
-                'dimensions_cm' => ['depth' => '44 cm', 'length' => '138 cm','height' => '88.5 cm'],
-                'dimensions_in' => ['depth' => '17.3"', 'length' => '54.3"','height' => '34.8"'],
+                'dimensions_cm' => ['depth' => '44 cm', 'length' => '138 cm', 'height' => '88.5 cm'],
+                'dimensions_in' => ['depth' => '17.3"', 'length' => '54.3"', 'height' => '34.8"'],
                 'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
                 'materials_and_finishes' => 'MATERIALS: Brass, Wood Leather & Marble. FINISHES: Polished Brass, Black Lacquer, Black Leather & Nero Marquina Marble',
                 'category' => [
@@ -609,8 +1008,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Apotheosis Console Table by Luxxu is a hymn to sophistication and design, that creates a strong presence that will revolutionize the looks of any project. It’s straight lines make for a glorious construction, embodying the spirit of exclusive design. A daring and elegant balance between marble, lacquer, and brass lines..',
-                'dimensions_cm' => ['depth' => '53 cm', 'length' => '180 cm','height' => '87 cm'],
-                'dimensions_in' => ['depth' => '21"', 'length' => '70.9"','height' => '34.3"'],
+                'dimensions_cm' => ['depth' => '53 cm', 'length' => '180 cm', 'height' => '87 cm'],
+                'dimensions_in' => ['depth' => '21"', 'length' => '70.9"', 'height' => '34.3"'],
                 'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
                 'materials_and_finishes' => 'MATERIALS: Brass, Wood & Marble. FINISHES: Polished brass, Black lacquer & Nero marquina marble',
                 'category' => [
@@ -630,8 +1029,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Beyond Console, by Luxxu, with the best handmade techniques finds balance in a delicate work in wood softened with touches of brass that reflect warm and golden tones on its polished surface. An impressive display of elegance, Beyond Console, shows the exquisite capacity to fill a variety of ambiances thanks to its luxury presence.',
-                'dimensions_cm' => ['depth' => '40 cm', 'length' => '160 cm','height' => '90 cm'],
-                'dimensions_in' => ['depth' => '15.7"', 'length' => '63"','height' => '35.4"'],
+                'dimensions_cm' => ['depth' => '40 cm', 'length' => '160 cm', 'height' => '90 cm'],
+                'dimensions_in' => ['depth' => '15.7"', 'length' => '63"', 'height' => '35.4"'],
                 'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
                 'materials_and_finishes' => 'MATERIALS: Brass and Wood. FINISHES: Body: Gold plated & Black lacquer',
                 'category' => [
@@ -651,8 +1050,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Myllo Console, by Luxxu, functions as a symbol of solitude and innovation. Composed by Marble and Polished Brass it reflects the rawness and perfection of an engineer’s masterpiece, fragile as it may appear but solid and firm and promises to hold your breath. It’s a statement piece that holds any room’s highest expectations.',
-                'dimensions_cm' => ['width' => '142 cm', 'depth' => '36 cm','height' => '100 cm'],
-                'dimensions_in' => ['width' => '55.9"', 'depth' => '15.17"','height' => '39.37"'],
+                'dimensions_cm' => ['width' => '142 cm', 'depth' => '36 cm', 'height' => '100 cm'],
+                'dimensions_in' => ['width' => '55.9"', 'depth' => '15.17"', 'height' => '39.37"'],
                 'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
                 'materials_and_finishes' => 'MATERIALS: Brass, Glass, Wood & Marble. FINISHES: Polished brass, Black glass, Black lacquer & Nero marquina',
                 'category' => [
@@ -672,8 +1071,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Algerone Console, by Luxxu is an opulent console with acute geometric features, inspired by architectural elements. Just like its counterparts, it was designed to remind us of the unique strength and class that only marble has. Its Statuario marble top is supported by a sleek base adorned with synthetic leather and brass details. A design that will redefine the way one perceives console tables.',
-                'dimensions_cm' => ['depth' => '47 cm', 'length' => '160 cm','height' => '83 cm'],
-                'dimensions_in' => ['depth' => '18.5"', 'length' => '62.99"','height' => '32.68"'],
+                'dimensions_cm' => ['depth' => '47 cm', 'length' => '160 cm', 'height' => '83 cm'],
+                'dimensions_in' => ['depth' => '18.5"', 'length' => '62.99"', 'height' => '32.68"'],
                 'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
                 'materials_and_finishes' => 'BODY: gray leather, POLISHED BRASS, Statuário Marble',
                 'category' => [
@@ -693,8 +1092,8 @@ class ProductSeeder extends Seeder
                 'has_stock' => false,
                 'is_best_seller' => false,
                 'description' => 'Suspicion Console, by Luxxu, is daringly sculpted in stone and fills any room with lavishing luxury, the zenith between elegance and balance. This marble console table is the epitome of intricate equilibrium, joining marble with fine brass lines.',
-                'dimensions_cm' => ['depth' => '40 cm', 'length' => '170 cm','height' => '86 cm'],
-                'dimensions_in' => ['depth' => '15.7"', 'length' => '66.93"','height' => '33.9"'],
+                'dimensions_cm' => ['depth' => '40 cm', 'length' => '170 cm', 'height' => '86 cm'],
+                'dimensions_in' => ['depth' => '15.7"', 'length' => '66.93"', 'height' => '33.9"'],
                 'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
                 'materials_and_finishes' => 'MATERIALS: Brass & Marble. FINISHES: Polished brass, Nero marquina marble & amarillo triana Marble',
                 'category' => [
