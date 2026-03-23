@@ -15,6 +15,1287 @@ class ProductSeeder extends Seeder
         $mockProducts = [
             [
                 'type' => 'product',
+                'name' => 'QUANTUM MIRROR',
+                'slug' => 'quantum-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'A contemporary descendant of midcentury modern style, the Quantum Mirror is not just a spot-on reﬂection of the atomic age design, it is a leap forward. A set of gold plated spheres arranged in a circular pattern creates a stunning visual effect. It is the ideal finishing touch for a modern living room or bedroom. A magnificent design inspired in the 50’s legacy.',
+                'dimensions_cm' => ['width' => '8.3 cm', 'diameter' => '150 cm'],
+                'dimensions_in' => ['width' => '3.27"', 'diameter' => '59"'],
+                'brand' => ['name' => 'ESSENTIAL HOME', 'slug' => 'essential-home'],
+                'materials_and_finishes' => 'FINISHES: Brass and Mirror',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Diamond Small Mirror',
+                'slug' => 'diamond-small-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Diamond Small Mirror by Essential Home was inspired by the asymmetrical and dazzling shapes of a diamond rock, this five-sided polygon small wall mirror is the ultimate combination of geometry and design. The use of a polished brass structure enhances the luxurious element within this object resulting in a sophisticated dynamic piece that stands out in any ambiance.',
+                'dimensions_cm' => ['width' => '14.7 cm', 'length' => '96.3 cm', 'height' => '110 cm'],
+                'dimensions_in' => ['width' => '5.79"', 'length' => '37.99"', 'height' => '43.5"'],
+                'brand' => ['name' => 'ESSENTIAL HOME', 'slug' => 'essential-home'],
+                'materials_and_finishes' => 'FINISHES: Polished Brass and Mirror.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Diamond Mirror',
+                'slug' => 'diamond-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Diamond Big Mirror, by Essential Home, is a full-length version of the diamond-shaped mirror. Crafted in a polished brass structure it produces a tall sleek design, merging geometry and innovation in the same object. This Gorgeous piece will add a luxurious and rich element to any interior.',
+                'dimensions_cm' => ['width' => '89.1 cm', 'depth' => '15.1 cm', 'height' => '180 cm'],
+                'dimensions_in' => ['width' => '35.08"', 'depth' => '5.94"', 'height' => '70.87"'],
+                'brand' => ['name' => 'ESSENTIAL HOME', 'slug' => 'essential-home'],
+                'materials_and_finishes' => 'MATERIALS: BRASS AND CLEAR MIRROR. FINISHES: Polished Brass',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Wilde Mirror',
+                'slug' => 'wilde-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Wilde Mirror is a beautifully designed vanity wall mirror. It features three panels and irregular shape with a golden strap of plated brass that evokes a mid-century modern style while adding a hint of reﬁnement to any interior. It can be hanged above a sideboard or a console and still give that retro look to your bedroom or living room.',
+                'dimensions_cm' => ['width' => '3 cm', 'length' => '168 cm', 'height' => '101 cm'],
+                'dimensions_in' => ['width' => '1.18"', 'length' => '66.14"', 'height' => '38.76"'],
+                'brand' => ['name' => 'ESSENTIAL HOME', 'slug' => 'essential-home'],
+                'materials_and_finishes' => 'FINISHES: Brass and Mirror',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Shirley Mirror',
+                'slug' => 'shirley-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Shirley Mirror is a beautiful piece of circular geometry. This large circular mirror is a structure made out of curved tubes of polished golden brass that sustain a large circular mirror in the middle. The polished brass promotes a sense of luxury and the circular shape feels very organic and almost naval-like.',
+                'dimensions_cm' => ['width' => '16 cm', 'length' => '124.5 cm', 'height' => '124.5 cm'],
+                'dimensions_in' => ['width' => '6.3"', 'length' => '49.02"', 'height' => '49.02"'],
+                'brand' => ['name' => 'ESSENTIAL HOME', 'slug' => 'essential-home'],
+                'materials_and_finishes' => 'Polished Brass, Matte RAL colors and Mirror.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Kayan Round Mirror',
+                'slug' => 'kayan-round-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Kayan Round Mirror will surely spice up a boring wall. Kayan women are known for using neck rings with the intention of lengthening their necks. All the way from Myanmar, Kayan Round Mirror is made of a unique aged brushed brass structure.',
+                'dimensions_cm' => ['width' => '95 cm', 'depth' => '4 cm', 'height' => '95 cm'],
+                'dimensions_in' => ['width' => '37.4"', 'depth' => '1.6"', 'height' => '37.4"'],
+                'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
+                'materials_and_finishes' => 'Aged brushed brass and flat mirror.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'HULI I Mirror',
+                'slug' => 'huli-i-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Huli I Mirror, by Brabbu, is inspired by a tribe from Papua New Guinea known for painting their faces yellow, red, and white to impress the enemy. This ritual was the inspiration behind this piece, made of matte casted brass. It is more than a wall mirror, it is a decorative item that will spice any wall.',
+                'dimensions_cm' => ['depth' => '6 cm', 'diameter' => '120 cm'],
+                'dimensions_in' => ['depth' => '2.36"', 'diameter' => '47.2"'],
+                'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
+                'materials_and_finishes' => 'MATERIALS: CONVEX MIRROR AND CASTED BRASS. FINISHES: Casted Polished Brass Matte',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Helios Mirror',
+                'slug' => 'helios-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Helios Mirror by Brabbu was inspired by Greek Mythology, and it means the personification of the Sun. It is said that each dawn, he rose from the far ends of the earth with the shining aureole of the Sun. This inspired the creation of Helios Mirror. With a finish in golden leaf, this decorative mirror will bring a charming touch to a blank wall.',
+                'dimensions_cm' => ['width' => '120 cm', 'depth' => '14 cm', 'height' => '120 cm'],
+                'dimensions_in' => ['width' => '47.2"', 'depth' => '5.5"', 'height' => '47.2"'],
+                'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
+                'materials_and_finishes' => 'MATERIALS: Glossy Gold Leaf',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Kumi II Mirror',
+                'slug' => 'kumi-ii-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'With origins in Japan, Kumi is an oyster with an undeniable beauty. Kumi Mirror pays tribute to its allure through its glossy hammered aged brass. This decorative wall mirror is a treasure coveted by many.',
+                'dimensions_cm' => ['width' => '120 cm', 'depth' => '16 cm', 'height' => '100 cm'],
+                'dimensions_in' => ['width' => '47.2"', 'depth' => '6.29"', 'height' => '39.37"'],
+                'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
+                'materials_and_finishes' => 'Glossy hammered aged brass. Smoked Mirror., Smoked Mirror.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Kumi I Mirror',
+                'slug' => 'kumi-i-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Kumi I Mirror by Brabbu is an oyster with undeniable beauty with origins in Japan. This mirror pays tribute to its allure through its glossy hammered aged brass. This decorative rectangular wall mirror is a treasure coveted by many, place it in any modern home decor and see it come to life!',
+                'dimensions_cm' => ['width' => '100 cm', 'depth' => '17 cm', 'height' => '180 cm'],
+                'dimensions_in' => ['width' => '39.37"', 'depth' => '6.7"', 'height' => '70.9"'],
+                'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
+                'materials_and_finishes' => 'MATERIALS: Brass, FLAT MIRROR. FINISHES: glossy brushed aged hammered brass',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Saya Mirror',
+                'slug' => 'saya-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Saya de Malha Bank, the largest submerged ocean bank in the world, inspired the creation of Saya Mirror. It is composed by a polished nickel concave frame, with an undulating surface covered in casted brass details, and a convex mirror. These shapes recreate the oceanic bank that was named by Portuguese sailors when they were sailing between Cape of Good Hope and India.',
+                'dimensions_cm' => ['width' => '115 cm', 'depth' => '16 cm', 'height' => '115 cm'],
+                'dimensions_in' => ['width' => '45.27"', 'depth' => '6.29"', 'height' => '45.27"'],
+                'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
+                'materials_and_finishes' => 'Concave and convex polished nickel. Casted brass details.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Cay Rectangular Mirror',
+                'slug' => 'cay-rectangular-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Nature in its rawest form flows through this charismatic furniture piece as lava flows from a volcano eruption. Moulded by casted brass and flat mirror, CAY Rectangular Mirror embodies nature’s ultimate scream. Allow yourself to hear the call, feeling its strength and reflecting it into your urban lifestyle.',
+                'dimensions_cm' => ['depth' => '6 cm', 'diameter' => '140 cm'],
+                'dimensions_in' => ['depth' => '2.36"', 'diameter' => '55.11"'],
+                'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
+                'materials_and_finishes' => 'Matte casted brass and flat mirror.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Cay Mirror',
+                'slug' => 'cay-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Nature in its rawest form flows through this charismatic furniture piece as lava flows during a volcano eruption. Cay Mirror embodies nature ́s ultimate scream, molded by casted brass and a flat mirror, Allow yourself to hear the ultimate call, feeling its strength and reflecting it into your urban lifestyle.',
+                'dimensions_cm' => ['depth' => '6 cm', 'diameter' => '140 cm'],
+                'dimensions_in' => ['depth' => '2.36"', 'diameter' => '55.11"'],
+                'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
+                'materials_and_finishes' => 'Matte casted brass and flat mirror.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Kilimanjaro Mirror',
+                'slug' => 'kilimanjaro-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Kilimanjaro mirror was inspired on Mount Kilimanjaro, a dormant volcano in Tanzania and the highest mountain in Africa. Known for its ideal climatic conditions but scarce harvest infrastructure, Tanzania is where the finest exclusive coffee beans come from. Just like that, the Kilimanjaro mirror brings a distinct and refined atmosphere to your home decor where less will always be more.',
+                'dimensions_cm' => ['width' => '110 cm', 'depth' => '10 cm', 'height' => '110 cm'],
+                'dimensions_in' => ['width' => '43.71"', 'depth' => '3.94"', 'height' => '43.71"'],
+                'brand' => ['name' => 'CAFFE LATTE', 'slug' => 'caffe-latte'],
+                'materials_and_finishes' => 'A square mirror supported by a solid mahogany wood frame.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Persia Mirror',
+                'slug' => 'persia-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Persia mirror seeks to provide a link between the past and the present because we all know coffee is synonymous with cultural heritage. A stylish piece that adds class to any room, Persia’s hexagonal frame is made from either oak or mahogany wood. The wood can be lacquered in white, black, silver or gold.',
+                'dimensions_cm' => ['width' => '90 cm', 'depth' => '8 cm', 'height' => '90 cm'],
+                'dimensions_in' => ['width' => '35.43"', 'depth' => '3.15"', 'height' => '35.43"'],
+                'brand' => ['name' => 'CAFFE LATTE', 'slug' => 'caffe-latte'],
+                'materials_and_finishes' => 'Convex mirror and a handcrafted octagonal frame.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Altura Mirror',
+                'slug' => 'altura-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Altura Mirror, by Caffe Latte, is a tall mirror that creates the same feelings in your living room or other areas. With balanced and clean designed mirrors on both sides, and adaptability with swivel panels for a different experience each time. Sharp straight lines for a modern appeal and bronze mirror finish for that subtle, yet pronounced, chicness.',
+                'dimensions_cm' => ['width' => '43 cm', 'depth' => '3 cm', 'height' => '300 cm'],
+                'dimensions_in' => ['width' => '16.93"', 'depth' => '1.18"', 'height' => '118.11"'],
+                'brand' => ['name' => 'CAFFE LATTE', 'slug' => 'caffe-latte'],
+                'materials_and_finishes' => 'Body: Epoxy Stainless Steel Dark Bronze Matte Varnish Bronze Mirror Aged Mirror',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Canephora Mirror',
+                'slug' => 'canephora-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Canephora Mirror, though widely known as Coffea robusta, the plant is scientifically identified as Coffea canephora, from which the name of this three-set mirror is taken. The mirror borrows inspiration not only from the name but from the organic shapes of the coffee beans produced by this plant as well. A modern set composed of different sized mirrors, with forms resembling three coffee beans made with extremely high-quality handcrafted techniques, with a reflecting surface enclosed by an exquisite aged brass frame. Canephora mirror is a versatile piece, ideal for an entrance or energizing a living room aesthetic.',
+                'dimensions_cm' => ['width' => '242 cm', 'depth' => '10 cm', 'height' => '285 cm'],
+                'dimensions_in' => ['width' => '95.27"', 'depth' => '3.9"', 'height' => '112.20"'],
+                'brand' => ['name' => 'CAFFE LATTE', 'slug' => 'caffe-latte'],
+                'materials_and_finishes' => 'Aged brass, regular mirror',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Goddess Mirror',
+                'slug' => 'goddess-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'The Goddess Mirror is a stunning, brilliant, and unique piece, radiating strength and power. Over 200 brass hands spiral around the circular mirror, symbolically reaching to lift you onto the pedestal where you belong.Each hand is individually crafted by KOKET artisans, then painstakingly polished one by one resulting in this masterful piece of interior jewelry.',
+                'dimensions_cm' => ['width' => '150 cm', 'depth' => '20 cm', 'height' => '150 cm'],
+                'dimensions_in' => ['width' => '59"', 'depth' => '8"', 'height' => '59"'],
+                'brand' => ['name' => 'KOKET', 'slug' => 'koket'],
+                'materials_and_finishes' => 'Back: Polished Brass (High Gloss Finish), Mirror: Clear Glass (Convex Mirror), Structure: Polished Brass (High Gloss Finish).',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Revê 2-Tier Mirror',
+                'slug' => 'reve-2-tier-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Poetry of design lies in the creation of illusions. Lust after the Revê mirror by Koket finished in a matte exterior with a high gloss metallic interior, unleashing the rules of reality and giving you the power of self-exploration.',
+                'dimensions_cm' => ['width' => '145 cm', 'depth' => '30 cm', 'height' => '145 cm'],
+                'dimensions_in' => ['width' => '57"', 'depth' => '12"', 'height' => '57"'],
+                'brand' => ['name' => 'KOKET', 'slug' => 'koket'],
+                'materials_and_finishes' => 'Back: Gold Powder (Matte Finish), Inner Ring: Black Lacquer (Matte Finish), Mirror: Clear Mirror (Convex Mirror), Outer Ring: Bright Gold (High Gloss Finish)',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Serpentine Apple-Shaped Mirror',
+                'slug' => 'serpentine-apple-shaped-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Be transformed as you gaze into the Serpentine II’s apple-shaped mirror by Koket. Framed in two intertwined serpent forms made of hand-carved wood this mirror is the perfect way to add a touch of exoticism to any interior setting.',
+                'dimensions_cm' => ['width' => '135.8 cm', 'depth' => '9.4 cm', 'height' => '126 cm'],
+                'dimensions_in' => ['width' => '53"', 'depth' => '4"', 'height' => '50"'],
+                'brand' => ['name' => 'KOKET', 'slug' => 'koket'],
+                'materials_and_finishes' => 'Back: Broken Gold Leaf (High Gloss Finish), Mirror: Bronze Mirror (Plain Mirror), Structure: Broken Gold Leaf (High Gloss Finish)',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Mood Mirror',
+                'slug' => 'mood-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'The MOOD Mirror is the perfect addition to a living room, dining room, or bedroom, adapting to your mood and style. While its primary role is to reflect light and space, the MOOD Mirror transcends mere practicality, becoming a captivating focal point that elevates the aesthetics of any room. Made with poplar wood, glossy gold-plated stainless steel, and a clear mirror, this piece combines function with luxury, offering both utility and beauty.',
+                'dimensions_cm' => ['width' => '90 cm', 'depth' => '10.8 cm', 'height' => '100 cm'],
+                'dimensions_in' => ['width' => '35.43"', 'depth' => '4.25"', 'height' => '39.34"'],
+                'brand' => ['name' => 'COVET COLLECTION', 'slug' => 'covet-collection'],
+                'materials_and_finishes' => 'BODY: GOLD PLATED STAINLESS STEEL GLOSSY. MIRROR: Clear Mirror',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Fractal Logo Mirror',
+                'slug' => 'fractal-logo-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Fractal Logo Mirror, by Covet Collection, is a polished stainless steel mirror, the reflection of harmony in chaos. It is an ode to geometry and simple forms that when repeated in a loop become almost hypnotic.',
+                'dimensions_cm' => ['width' => '155 cm', 'depth' => '15 cm', 'height' => '220 cm'],
+                'dimensions_in' => ['width' => '61.02"', 'depth' => '5.90"', 'height' => '86.61"'],
+                'brand' => ['name' => 'COVET COLLECTION', 'slug' => 'covet-collection'],
+                'materials_and_finishes' => 'BODY: POLISHED STAINLESS STEEL',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Chiloé Mirror',
+                'slug' => 'chiloe-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Chiloé Mirror, by Covet House, is based upon the Chiloe Archipelago of the Patagonian region, with one small island mostly surrounded by water on the eastern and western sides. Chiloé Mirror mirrors exactly this landmass and its morphology. Embodying the island, this mirror has a small Patagonian marble circle, while the two circular mirrors: a clear mirror and an aged mirror, represent the clear and crystal waters of the archipelago. The fine metal champagne finishes and the built-in light elevate the Chiloé Mirror to a refined and timeless piece.',
+                'dimensions_cm' => ['depth' => '10 cm', 'length' => '218 cm', 'height' => '147 cm'],
+                'dimensions_in' => ['depth' => '3.93"', 'length' => '85.82"', 'height' => '57.9"'],
+                'brand' => ['name' => 'COVET COLLECTION', 'slug' => 'covet-collection'],
+                'materials_and_finishes' => 'BODY: REGULAR MIRROR AGED MIRROR MARBLE PATAGÓNIA. LIGHT LED: LIGHTING TAPE. LIGHT STRUTURE: BRASS PIPE WITH MATE CHAMPAGNE TEXTURED FINE POWDER',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Slater Mirror',
+                'slug' => 'slater-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Slater Mirror, by Covet House is the perfect arty piece to add to any room, reflecting some of the best handcraft techniques. Slater Mirror is defined by amorphous and organic shapes, where a mirror is merged with chic metal champagne. Slater Mirror is a set of three pieces, with endless possibilities and combinations.',
+                'dimensions_cm' => ['depth' => '3 cm', 'length' => '100 cm', 'height' => '160 cm'],
+                'dimensions_in' => ['depth' => '1.18"', 'length' => '39.37"', 'height' => '62.99"'],
+                'brand' => ['name' => 'COVET COLLECTION', 'slug' => 'covet-collection'],
+                'materials_and_finishes' => 'MIRROR: CLEAR MIRROR, MIRROR FRAME: WOOD WITH MATTE CHAMPAGNE TEXTURED FINE POWDER',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Sapphire Mirror',
+                'slug' => 'sapphire-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Sapphire mirror gets its name from its resemblance to the blue precious stone: Sapphire. Made out of Cornered Polished Brass this mirror is a versatile piece for luxury bathrooms. It can be displayed in both vertical or horizontal orientation.',
+                'dimensions_cm' => ['width' => '55 cm', 'depth' => '2.5 cm', 'height' => '90 cm'],
+                'dimensions_in' => ['width' => '21.65"', 'depth' => '0.98"', 'height' => '35.43"'],
+                'brand' => ['name' => 'MAISON VALENTINA', 'slug' => 'maison-valentina'],
+                'materials_and_finishes' => 'MATERIALS: Cornered Polished Brass',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Blaze Mirror',
+                'slug' => 'blaze-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Blaze Mirror is a fiercely burning fire capable of accentuating any wall and stun you at every look. It features a round mirror made entirely from polished brass and designed with concentric circles. It is accented by engraved nail head trims along the body and a LED strip that provides a soft and cozy light for any ambiance.',
+                'dimensions_cm' => ['depth' => '7 cm', 'height' => '120 cm'],
+                'dimensions_in' => ['depth' => '2.79"', 'height' => '47.4"'],
+                'brand' => ['name' => 'MAISON VALENTINA', 'slug' => 'maison-valentina'],
+                'materials_and_finishes' => 'MATERIALS: Body in brass.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Colosseum Mirror',
+                'slug' => 'colosseum-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Colosseum Mirror, by Maison Valentina, is a rounded oblong mirror inspired by the most iconic buildings from Ancient Rome, because of its massive size and concentric shape. It features a frame produced in polished brass accented by an LED strip around the whole body.',
+                'dimensions_cm' => ['width' => '100 cm', 'depth' => '7 cm', 'height' => '210 cm'],
+                'dimensions_in' => ['width' => '39.37"', 'depth' => '2.79"', 'height' => '82.68"'],
+                'brand' => ['name' => 'MAISON VALENTINA', 'slug' => 'maison-valentina'],
+                'materials_and_finishes' => 'MATERIALS: Brass, FLAT MIRROR. FINISHES: POLISHED BRASS GLOSSY',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Shield Oval Mirror',
+                'slug' => 'shield-oval-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Shield Oval Mirror is a round mirror made entirely from mirror, polished brass and a Nero Marquina marble bar. Inspired in the most ancient and valuable armor, the Shield of Achilles, we re-designed the Shield Mirror, meaning of protection and security. Decorative yet practical, you will have a divine mirror just for you.',
+                'dimensions_cm' => ['width' => '90 cm', 'depth' => '8 cm', 'height' => '210 cm'],
+                'dimensions_in' => ['width' => '35.43"', 'depth' => '3.15"', 'height' => '82.68"'],
+                'brand' => ['name' => 'MAISON VALENTINA', 'slug' => 'maison-valentina'],
+                'materials_and_finishes' => 'Brass, mirror and marble.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Glimmer Mirror',
+                'slug' => 'glimmer-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Glimmer Mirror, as its name states, adds to your project a faint and elegant light. Glimmer Mirror’s subtle lines and crystal details are the results of a precise handcrafted process. A precious piece of art with eight brass details adorned with crystal appointments that elevate any environment. Luxury and glamour are surely granted.',
+                'dimensions_cm' => ['depth' => '15 cm', 'height' => '120 cm'],
+                'dimensions_in' => ['depth' => '5.9"', 'height' => '47.2"'],
+                'brand' => ['name' => 'MAISON VALENTINA', 'slug' => 'maison-valentina'],
+                'materials_and_finishes' => 'Mirror with brass details and a crystal appointment.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Tortoise Mirror',
+                'slug' => 'tortoise-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'This unique mirror is inspired in the Tortoises hard outer shell. It’s made of high gloss black lacquered wood that contrasts with hexagonal Anthracite, Nero Marquina and Yellow Triano marble details. This glamorous pattern makes this piece easy to combine in different luxurious environments.',
+                'dimensions_cm' => ['depth' => '5.3 cm', 'height' => '120 cm'],
+                'dimensions_in' => ['depth' => '2.09"', 'height' => '47.2"'],
+                'brand' => ['name' => 'MAISON VALENTINA', 'slug' => 'maison-valentina'],
+                'materials_and_finishes' => 'MATERIALS: High Gloss black lacquered Wood with hexagonal marble details Polished Brass.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Colosseum Floor Mirror',
+                'slug' => 'colosseum-floor-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Colosseum Floor Mirror, by Maison Valentina, is supported by a Nero Marquina marble base accented by a brass trim around it. The frame structure is built in polished brass tubes, assembled to produce an oblong shape. Colosseum Floor Mirror rings rotate 360 degrees, making this mirror a flexible and perfect piece to decorate your luxury bathroom.',
+                'dimensions_cm' => ['width' => '80 cm', 'depth' => '50 cm', 'height' => '203 cm'],
+                'dimensions_in' => ['width' => '31.5"', 'depth' => '19.69"', 'height' => '79.92"'],
+                'brand' => ['name' => 'MAISON VALENTINA', 'slug' => 'maison-valentina'],
+                'materials_and_finishes' => 'MATERIALS: Brass, Mirror and Marble. FINISHES: Nero Marquina Marble and Glossy Polished Brass',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'SHIELD MIRROR',
+                'slug' => 'shield-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'The shield is a round mirror made entirely from mirrored glass, polished brass, and a Nero Marquina marble bar. Inspired in the most ancient and valuable armor, the Shield of Achilles, we re-designed the Shield Mirror, the meaning of protection and security. Decorative yet practical, you will have a divine item to boost your modern bathroom interior design.',
+                'dimensions_cm' => ['width' => '100 cm', 'depth' => '8 cm', 'height' => '135 cm'],
+                'dimensions_in' => ['width' => '39.37"', 'depth' => '3.15"', 'height' => '53.15"'],
+                'brand' => ['name' => 'MAISON VALENTINA', 'slug' => 'maison-valentina'],
+                'materials_and_finishes' => 'Mirror: Flat Mirror; Structure: Polished Brass; Centre bar: Nero Marquina marble',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Bubble Gum Small Mirror',
+                'slug' => 'bubble-gum-small-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Bubble Gum Small Mirror is the accessory you need to embellish any children’s bedroom. With its elegant design inspired by the fun shapes of the kid’s favorite candies, this luxury wall mirror will add playfulness to any project.',
+                'dimensions_cm' => ['width' => '110 cm', 'depth' => '4 cm', 'height' => '65 cm'],
+                'dimensions_in' => ['width' => '43.30"', 'depth' => '1.57"', 'height' => '25.60"'],
+                'brand' => ['name' => 'CIRCU', 'slug' => 'circu'],
+                'materials_and_finishes' => 'MATERIALS: Wood, Brass, Velvet, Mirror. FINISHES: Glossy Laquered, Gold Plated and Velvet and LED light',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Bubble Gum Big Mirror',
+                'slug' => 'bubble-gum-big-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Bubble Gum Big Mirror is the accessory you need to embellish any children’s bedroom. With its elegant design inspired by the fun shapes of the kid’s favorite candies, this luxury wall mirror will add playfulness to any project.',
+                'dimensions_cm' => ['width' => '123 cm', 'depth' => '12 cm', 'height' => '180 cm'],
+                'dimensions_in' => ['width' => '48.43"', 'depth' => '4.72"', 'height' => '70.82"'],
+                'brand' => ['name' => 'CIRCU', 'slug' => 'circu'],
+                'materials_and_finishes' => 'MATERIALS: Wood, Brass, Velvet, Mirror. FINISHES: Glossy Laquered, Gold Plated and Velvet and LED light',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Cloud Mirror',
+                'slug' => 'cloud-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Cloud Mirror is the perfect piece of decoration that will embellish any children’s bedroom. It resembles every fantasy story created by Pixar and automatically magnifies the beauty of the room. In front of it, your child can be and do anything he/she dreams of.',
+                'dimensions_cm' => ['width' => '76 cm', 'depth' => '40 cm', 'height' => '185 cm'],
+                'dimensions_in' => ['width' => '30"', 'depth' => '15.7"', 'height' => '72.8"'],
+                'brand' => ['name' => 'CIRCU', 'slug' => 'circu'],
+                'materials_and_finishes' => 'MATERIALS: Wood, Mirror and Brass. FINISHES: Light Pink Glossy Varnish',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Chameleon Mirror',
+                'slug' => 'chameleon-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Magic Mirror on the wall, who’s the fairest one of all?’’ is one of the most remarkable quotes of the Disney universe and, for Circu, an inspiration for this mirror. This exquisite wall mirror is the perfect piece of decoration to create a charming environment in the child’s bedroom. The varnish applied to the mirror has a Chameleon effect, that gives the illusion of color changing, bringing a magical feeling to this unique item. The Chameleon Mirror is made entirely by hand, using traditional techniques of carving, with a silver leaf finishing.',
+                'dimensions_cm' => ['width' => '70 cm', 'depth' => '6 cm', 'height' => '155 cm'],
+                'dimensions_in' => ['width' => '27.5"', 'depth' => '2.4"', 'height' => '61"'],
+                'brand' => ['name' => 'CIRCU', 'slug' => 'circu'],
+                'materials_and_finishes' => 'MATERIALS: Wood. FINISHES: Silver leaf, pink or blue translucent varnish',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Bunny Floor Mirror',
+                'slug' => 'bunny-floor-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Inspired by Alice in Wonderland, the Bunny Mirror, by Circu is the perfect piece to add cuteness and embellish any kid’s bedroom. In front of it, the Bunny Mirror promises to take your little one into a fantasy land where he/she can explore their wildest dreams while being fascinated by the beauty of nature.',
+                'dimensions_cm' => ['width' => '125 cm', 'depth' => '52 cm', 'height' => '215 cm'],
+                'dimensions_in' => ['width' => '49.2"', 'depth' => '20.5"', 'height' => '84.6"'],
+                'brand' => ['name' => 'CIRCU', 'slug' => 'circu'],
+                'materials_and_finishes' => 'Paris Velvet, Regular Mirror (Silver Mirror)',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Magical Mirror',
+                'slug' => 'magical-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Magical Mirror, by Circu is the perfect wall mirror to give your little majesty’s room a charming decor. Inspired by the mirror of the wicked witch of Snow White, this kids’ mirror is also magical! “Magic Mirror on the wall, who’s the fairest one of all?” is one of the most remarkable quotes of the Disney universe and an inspiration for this item. This unique item appears as a normal mirror but, with magic, it turns into a movie screen, due to the 22’’ TV inside. Made entirely by hand, using traditional techniques of carving, Magical Mirror features silver leaf finishes with pink translucent varnish applied.',
+                'dimensions_cm' => ['width' => '70 cm', 'depth' => '10 cm', 'height' => '155 cm'],
+                'dimensions_in' => ['width' => '27.5"', 'depth' => '3.9"', 'height' => '61"'],
+                'brand' => ['name' => 'CIRCU', 'slug' => 'circu'],
+                'materials_and_finishes' => 'Silver leaf, Pink Translucent Varnish',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Orbis Mirror',
+                'slug' => 'orbis-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Orbis Mirror was inspired by ancient times in history, adopting the same simplicity of the golden era. Creates an atmosphere of irresistible exposure and exclusivity, this creation aims to total immersion in sumptuously glamorous interiors and the gold color enhances the luxurious details present in its design.',
+                'dimensions_cm' => ['depth' => '9.1 cm', 'diameter' => '101.3 cm'],
+                'dimensions_in' => ['depth' => '3.58"', 'diameter' => '39.8"'],
+                'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
+                'materials_and_finishes' => 'MATERIALS: Brass & Mirror. FINISHES: Polished brass & Smoked black mirror',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Crown Mirror',
+                'slug' => 'crown-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'More than just a simple piece of art, the Crown Mirror represents a living tribute to beauty. The breathtaking combination of smoked black mirror and gold plated brass, challenges the notion of exquisiteness and breaks all the creative boundaries.',
+                'dimensions_cm' => ['depth' => '7.1 cm', 'diameter' => '82.8 cm'],
+                'dimensions_in' => ['depth' => '2.8"', 'diameter' => '32.6"'],
+                'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
+                'materials_and_finishes' => 'MATERIALS: Brass & Mirror. FINISHES: Gold plated & Smoked black mirror',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Crackle Mirror',
+                'slug' => 'crackle-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Crackle Mirror by Luxxu is made of the finest gold-plated brass and smoked black mirror. Inspired by the opulence of golden nuggets it is graced with the ability to create exclusive and refined ambiances. This geometric design resembles a shattered mirror and promises to create the most glamorous interiors.',
+                'dimensions_cm' => ['width' => '82 cm', 'depth' => '12.9 cm', 'height' => '144 cm'],
+                'dimensions_in' => ['width' => '32.28"', 'depth' => '5.08"', 'height' => '56.69"'],
+                'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
+                'materials_and_finishes' => 'MATERIALS: Brass & Mirror. FINISHES: Polished brass & Smoked black mirror',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Darian Mirror',
+                'slug' => 'darian-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Darian Gold Mirror by Luxxu is made of brass, the only material that has perfect harmony in order to create a masterpiece like the Darian Gold Mirror. A simple yet unique luxury item that captures both the functionality of a mirror and the splendor of an art piece. Decorative, practical, and divine.',
+                'dimensions_cm' => ['depth' => '15 cm', 'height' => '100 cm'],
+                'dimensions_in' => ['depth' => '5.9"', 'height' => '39.4"'],
+                'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
+                'materials_and_finishes' => 'MATERIALS: Brass & Mirror. FINISHES: Polished brass & Black mirror',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Vertigo Set Mirror',
+                'slug' => 'vertigo-set-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'The Vertigo Set Mirror is the perfect accent piece for a modern living room, a luxury dining room, a dreamy master bedroom, or a statement entryway. This wall mirror set has a sleek design made of gold-plated brass and smoked black mirror.',
+                'dimensions_cm' => ['depth' => '5 cm', 'length' => '179 cm', 'height' => '210 cm'],
+                'dimensions_in' => ['depth' => '2"', 'length' => '70.5"', 'height' => '82.7"'],
+                'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
+                'materials_and_finishes' => 'Body: Brass & Mirror. Body: Gold plated & Smoked black mirror',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Metamorphosis Convex Mirror',
+                'slug' => 'convex-metamorphosis-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'The Convex Metamorphosis Mirror is more than just a simple piece of art. It represents a living tribute to the beauty of an uncompromised mindset, breaking creative boundaries and taking Boca do Lobo to unknown territories never explored before. Playing on the concept of evolution, and challenging the notion of beauty, the Convex Metamorphosis Mirror takes a clean form and transforms it into an exceptional piece of luxury furniture.',
+                'dimensions_cm' => ['depth' => '18 cm', 'diameter' => '120 cm'],
+                'dimensions_in' => ['depth' => '7.08"', 'diameter' => '47.2"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'The Convex Metamorphosis Mirror is made from brass. Its concave shape is achieved through the manual hammering of a brass sheet, coated in a nickel bath. Its exterior ring is kept simple, treated with varnish coats, and polished to achieve reflection. The insects are also cast from brass, and undergo a chemical treatment for finish.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Concave Metamorphosis Mirror',
+                'slug' => 'concave-metamorphosis-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'The Concave Metamorphosis Mirror portrays a territorial dispute, where chaos is indulged and spread across simplicity represented by the clean slate upon which it takes place. A take on metamorphosis from both its literal and philosophical meaning, this luxurious mirror represents the removal of creative boundaries and tests the beauty ideal.',
+                'dimensions_cm' => ['width' => '150 cm', 'depth' => '35 cm', 'height' => '150 cm'],
+                'dimensions_in' => ['width' => '59.1"', 'depth' => '13.8"', 'height' => '59.1"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'The Concave Metamorphosis Mirror is made from brass. Its is hand hammered to shape, coated in a nickel bath. The insects are also cast from brass, and undergo a chemical treatment for finish.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Ring Filigree Mirror',
+                'slug' => 'ring-filigree-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Ring Filigree Mirror by Boca do Lobo flourishes in a traditional homage to Portuguese culture and commitment, like a jewel that reflects eternal beauty when it is contemplated. The Ring Filigree Mirror edge is made of brass cords gilded in 18k gold, conceiving an exquisite gold round frame that elevates any setting into world-class interiors. A precious piece of art that pays tribute to the finest craftsmanship, ideal for a unique and exclusive home.',
+                'dimensions_cm' => ['depth' => '10 cm', 'diameter' => '124 cm'],
+                'dimensions_in' => ['depth' => '3.9"', 'diameter' => '48.8"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'MATERIALS: Wood, brass, mirror',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Marie Antoinette Mirror',
+                'slug' => 'marie-antoinette-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Marie Antoinette Mirror by Boca do Lobo represents an attitude and the characteristics of a critical “époque” that shaped French history. Inspired by the controversy behind her time in the French Court and the lavish lifestyle led by the last generation of the French Royal Family, the Marie Antoinette Mirror represents the importance given to greatness and extravagance, from its size to finishing details. A mirror will always be an object that evokes supreme beauty with an inexplicable mystical appreciation.',
+                'dimensions_cm' => ['width' => '105 cm', 'depth' => '9 cm', 'height' => '222 cm'],
+                'dimensions_in' => ['width' => '41.3"', 'depth' => '3.5"', 'height' => '87.4"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'FINISHES: Black gold with high gloss varnish finish on mahogony structure',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Metamorphosis Mirror',
+                'slug' => 'metamorphosis-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Metamorphosis Mirror is a contemporary art imagined for those who appreciate the great things in life, finding beauty in the most unexpected places. Metamorphosis large round wall mirror is conceived with the concave shape of polished stainless steel and coated in a nickel bath. A restless yet sleek gold scorpion of casted brass raises in the centre, landed in a polished stainless steel semi-sphere encircled by a warm light. This statement wall decoration piece is born from the finest craftsmanship for the most exceptional rooms and remarkable interiors. A tribute to the darkest side of nature where challenges never cease to exist.',
+                'dimensions_cm' => ['depth' => '22 cm', 'diameter' => '145.5 cm'],
+                'dimensions_in' => ['depth' => '8.6"', 'diameter' => '57.2"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'The Concave Metamorphosis Mirror is made from brass. Its is hand hammered to shape, coated in a nickel bath. The insects are also cast from brass, and undergo a chemical treatment for finish.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Ring Rectangular Mirror',
+                'slug' => 'ring-rectangular-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Ring Rectangular Mirror by Boca do Lobo is like a jewel that reflects eternal beauty when it is contemplated, the mirror of the soul, which aspires to the sublime. Exploring the main function of a mirror, the richness of Ring Rectangular Mirror lies within its reflection. Ring evokes an antique unreachable treasure that could only be found in the most remote place on Earth. Ring contains a mirror frame in black lacquered high gloss, with a minimalist line on the outside and another carved handmade on the inside. A precious piece of art with its interior made of refined carved wood as exquisite as its owner. Ideal for a unique and exclusive home, Ring Rectangular Mirror will reflect elegance once it’s in your living room or your bedroom.',
+                'dimensions_cm' => ['width' => '100 cm', 'depth' => '12 cm', 'height' => '200 cm'],
+                'dimensions_in' => ['width' => '39.4"', 'depth' => '4.7"', 'height' => '78.7"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'MATERIALS: Wood. FINISHES: mahogany wood, gold leaf, mirror, fixind support',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Ring Round Mirror',
+                'slug' => 'ring-round-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Ring Round Mirror, by Boca do Lobo, is like a jewel that reflects eternal beauty when it’s admired, it is the soul, which aspires to the sublime. The richness of this large wall mirror lies within its reflection. Ring Round Mirror evokes an antique unreachable treasure that could only be found in the most remote place on Earth. The Ring Round Mirror contains a mirror frame in black lacquered high gloss, with a minimalist line on the outside and another carved handmade one on the inside. A precious piece of art with its interior made of refined carved wood, as exquisite as its owner. Ideal for a unique and exclusive home, this piece will reflect elegance once it’s in your living room or your bedroom.',
+                'dimensions_cm' => ['depth' => '12 cm', 'diameter' => '120 cm'],
+                'dimensions_in' => ['depth' => '4.7"', 'diameter' => '47.2"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'MATERIALS: Mahogany Wood, Gold Leaf, Clear Mirror. FINISHES: Gold Leaf Glossy',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Newton Mirror',
+                'slug' => 'newton-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Newton Mirror by Boca do Lobo defies the laws of physics. This futuristic piece of furniture has been designed by taking inspiration from its elder brother – Newton Console. Newton Mirror is a standout piece of international desire that distinguishes itself from all the other designs by its futuristic forms.',
+                'dimensions_cm' => ['width' => '117 cm', 'depth' => '12.6 cm', 'height' => '116 cm'],
+                'dimensions_in' => ['width' => '46"', 'depth' => '4.9"', 'height' => '45.7"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'MATERIALS: Aluminum. FINISHES: Black Lacquer and Gold Plated',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Magma Mirror',
+                'slug' => 'magma-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Magma Mirror found its inspiration deep beneath the surface of the Earth, where three physical parameters: temperature, pressure, and composition are responsible for creating something so complex and potent. Magma Mirror’s subtle lines are the result of a precise handcrafted process. The shape of the mirror emulate suspended crystals and fragments of unmelted rocks transported in the magma; that crystallized during movement.',
+                'dimensions_cm' => ['depth' => '6 cm', 'diameter' => '100 cm'],
+                'dimensions_in' => ['depth' => '2.3"', 'diameter' => '39"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'Polished Casted Aluminum and mirror.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Lapiaz Mirror',
+                'slug' => 'lapiaz-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Lapiaz Mirror by Boca do Lobo takes exceptional craftsmanship and design to a new realm. Finding beauty in the most unexpected places, Lapiaz Mirror is a contemporary design piece, inspired by authentic karst formations created by surface dissolution, freezing, or thawing of limestone or dolomite rocks. The organic features of Lapiaz Mirror are achieved through the manual fitting of golden polished brass and finishes in polished stainless steel. The hammered gold details and the mirrored façade conveys a beautiful duality between power and refinement to bring a new contemporary verve into interior design. A functional artwork piece born from cold and freshly cracked to show off the world’s rich, golden details.',
+                'dimensions_cm' => ['depth' => '18 cm', 'diameter' => '150 cm'],
+                'dimensions_in' => ['depth' => '7"', 'diameter' => '59"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'MATERIALS: Stainless steel and brass. FINISHES: stainless steel structure, with hammered high polished brass.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Lumiere Rectangular Mirror',
+                'slug' => 'lumiere-rectangular-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Lumiere Rectangular Mirror by Boca do Lobo sculpture is made of wood folded by polished stainless steel that portrays a perfect mirror. Through the manual fitting of gold hammered brass sheet bursts an antique fixture with an intricate edge detailing arm topped by an elegant pane lantern hand-sculpted by casting mold. Born from the rich tradition of iron forging and skilled goldsmiths, Lumiere Rectangular Mirror is a soulful piece with classic distinction for outstanding private residences to the greatest contract settings.',
+                'dimensions_cm' => ['width' => '150 cm', 'height' => '250 cm'],
+                'dimensions_in' => ['width' => '59"', 'height' => '98.4"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'MATERIALS: Casted Brass, Gold plated brass, STAINLESS STEEL, Wood',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Lumiere Round Mirror',
+                'slug' => 'lumiere-round-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Lumiere Round Mirror by Boca do Lobo exemplifies the contemporary dualities of art and functionality. The large round wall lamp sculpture is made of wood folded by polished stainless steel which portrays a perfect mirror. Through the manual fitting of hammered polished brass, sheet bursts an antique fixture with an intricate edge detailing arm topped by an elegant pane lantern hand-sculpted by a casting mold.',
+                'dimensions_cm' => ['depth' => '103 cm', 'diameter' => '200 cm', 'height' => '220 cm'],
+                'dimensions_in' => ['depth' => '40.5"', 'diameter' => '78.7"', 'height' => '86.6"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'MATERIALS: Casted Brass, GLASS, Gold plated brass, STAINLESS STEEL, Wood',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Angra Mirror',
+                'slug' => 'angra-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Angra Mirror by Boca do Lobo is an exceptional mirror that offers a tribute to the historical city of “Angra do Heroismo” in Azores, Portugal. This seductive and elegant mirror is outstanding in its shape and curved design. The polished brass creates a superb accent providing a glamorous design.',
+                'dimensions_cm' => ['depth' => '15 cm', 'diameter' => '110 cm'],
+                'dimensions_in' => ['depth' => '5.9"', 'diameter' => '43.3"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'MATERIALS: Brass, STAINLESS STEEL. FINISHES: Casted Brass, Niquel Plated Stainless Steel',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Halo Mirror',
+                'slug' => 'halo-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Halo Mirror by Boca do Lobo was inspired by a phenomenon produced by light interacting with ice crystals suspended in the atmosphere, the Halo. Halos can have many forms, ranging from colored or white rings to arcs and spots in the sky. Composed by a set of three mirrors, it allows for different displays and creative settings. Halo Mirror has three mirrors with different shapes have an elegant gold frame accent, perfect for contemporary interiors and elegant rooms, from stylish bedrooms to upscale halls or living rooms.',
+                'dimensions_cm' => ['width' => '150 cm', 'depth' => '9 cm', 'height' => '216 cm'],
+                'dimensions_in' => ['width' => '59.1"', 'depth' => '3.5"', 'height' => '85"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'MATERIALS: Mirror and Brass. FINISHES: Clean Mirror, Polished Hammered Brass',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Robin Mirror',
+                'slug' => 'robin-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Robin Mirror by Boca do Lobo embodies the strength and character of the noble ages, giving them a modern approach. By honoring the history of one of the best archers in English literature, this exquisite piece was given a strong visual texture through the use of handmade nails, each one unique in its finishing, size, and character. The fish-eye mirror is supported by a brass structure that turns Robin into one of the most emblematic pieces of the entire collection.',
+                'dimensions_cm' => ['diameter' => '120 cm', 'height' => '15 cm'],
+                'dimensions_in' => ['diameter' => '47.2"', 'height' => '5.9"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'Metal Work, Metal Casting, Wood Work',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Venice Mirror',
+                'slug' => 'venice-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Venice Mirror, by Boca do Lobo, is hand-cut and carved by an experienced artisan who’s passion for glasswork goes back as far as his childhood. Venice Mirror represents Boca do Lobo’s ambition to bring value to true craftsmanship through contemporary design. Mirrors are, in some cultures, believed to have enchanting powers thanks to their ability to reflect light and show appearance precisely and incredibly. Through a passionate explosion of romance and drama, the Venice Mirror stirs emotion in anyone that catches its eye.',
+                'dimensions_cm' => ['width' => '147 cm', 'depth' => '6 cm', 'height' => '214 cm'],
+                'dimensions_in' => ['width' => '57.9"', 'depth' => '2.4"', 'height' => '84.3"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'MATERIALS: GLASS, venetian mirror, Wood. FINISHES: Venetian mirror, lacquered wood finished in dark red with a high gloss varnish coat',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Filigree Mirror',
+                'slug' => 'filigree-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Filigree Mirror by Boca do Lobo resorts to one of the oldest jewelry-making techniques known. Completely handcrafted, with each brass cord fitted with precision, the Filigree Mirror flourishes in a shape traditional to Portuguese culture and art. A true work of art, this luxurious mirror plays tribute to Boca do Lobo’s core values heritage and craftsmanship.',
+                'dimensions_cm' => ['width' => '152 cm', 'depth' => '10 cm', 'height' => '99 cm'],
+                'dimensions_in' => ['width' => '59.8"', 'depth' => '3.9"', 'height' => '39.8"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'Metal Work, Filigree work.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Glance Mirror',
+                'slug' => 'glance-mirror',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Glance Mirror, by Boca do Lobo, tells us the story of what seems confused and cluttered can, in a glance, acquire a new meaning, capable of inspiring and becharming us. The crossroads of life, and the reason among the chaos. The concept of a defragmented mirror brings out its noblest gold backdrop, where its unique beauty comes from daring to risk and challenge the conventional.',
+                'dimensions_cm' => ['depth' => '4 cm', 'diameter' => '140 cm'],
+                'dimensions_in' => ['depth' => '1.6"', 'diameter' => '55.1"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'Gold Chrome with Gloss Varnish Finish, Normal Mirror, Solid Wood',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Mirrors',
+                        'slug' => 'mirrors'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
                 'name' => 'Monocles Tall Cabinet',
                 'slug' => 'monocles-tall-cabinet',
                 'is_new' => false,
