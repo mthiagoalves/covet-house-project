@@ -12,9 +12,6 @@ import {
     Maximize,
     Share2
 } from 'lucide-vue-next';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/thumbs';
 import { Controller, Navigation, Thumbs } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { computed, onUnmounted, ref, watch } from 'vue';
@@ -48,6 +45,7 @@ const props = defineProps<{
         // CORRIGIDO: Agora é um Objeto igual ao backend
         finishes: {
             image_count: number;
+            gallery_urls: any[];
             finishes: Array<{
                 name: string;
                 slug: string;
@@ -73,7 +71,6 @@ const galleryImages = computed(() => {
     const images: string[] = [];
     const slug = props.product.slug;
 
-    // Checagem segura (TypeScript agora sabe que finishesData é um objeto)
     if (!finishesData.finishes) {
 
         // Pega a contagem geral que o backend calculou
@@ -218,21 +215,26 @@ const hideLightbox = () => {
                                     spaceBetween: 10
                                 }
                             }" :modules="modules" class="h-full w-full thumb-swiper">
-                            <SwiperSlide v-for="(img, idx) in galleryImages" :key="idx"
+
+                            <SwiperSlide v-for="(img, idx) in product.finishes.gallery_urls" :key="idx"
                                 class="cursor-pointer border border-transparent hover:border-gray-400 transition-colors">
-                                <img :src="img" :alt="`${product.name} view ${idx}`"
+                                <img :src="img" :alt="`${product.name} view ${idx + 1}`"
                                     class="w-full h-full object-cover" />
                             </SwiperSlide>
+
                         </Swiper>
                     </div>
 
                     <div class="flex-grow h-full bg-[#f4f4f4] relative min-w-0">
                         <Swiper :modules="modules" :thumbs="{ swiper: thumbsSwiper }" :navigation="true"
                             class="h-full w-full main-product-swiper" @swiper="onMainSwiperInit">
-                            <SwiperSlide v-for="(img, idx) in galleryImages" :key="idx" class="cursor-pointer">
+
+                            <SwiperSlide v-for="(img, idx) in product.finishes.gallery_urls" :key="idx"
+                                class="cursor-pointer">
                                 <img :src="img" :alt="product.name" class="w-full h-full object-cover"
                                     @click="showLightbox(idx)" />
                             </SwiperSlide>
+
                         </Swiper>
 
                         <button class="absolute bottom-4 right-4 z-10 text-gray-400 hover:text-black transition-colors"
@@ -283,15 +285,15 @@ const hideLightbox = () => {
 
                     <div class="space-y-3 mb-4 border-b border-gray-200 pb-4">
                         <button @click="openRequest('Product Sheet', 'PRODUCT SHEET PDF')"
-                            class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider hover:text-[#c6a479] transition-colors cursor-pointer">
+                            class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider hover:text-[#c6a479] transition-colors cursor-pointer border-b-[1px] pb-1.5">
                             <FileText class="w-4 h-4" /> PRODUCT SHEET PDF >
                         </button>
                         <button @click="openRequest('3D Files', 'DOWNLOAD 3D FILES')"
-                            class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider hover:text-[#c6a479] transition-colors cursor-pointer">
+                            class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider hover:text-[#c6a479] transition-colors cursor-pointer border-b-[1px] pb-1.5">
                             <Box class="w-4 h-4" /> DOWNLOAD 3D / DWG FILES >
                         </button>
                         <button @click="openRequest('Samples', 'REQUEST SAMPLES')"
-                            class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider hover:text-[#c6a479] transition-colors cursor-pointer">
+                            class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider hover:text-[#c6a479] transition-colors cursor-pointer border-b-[1px] pb-1.5">
                             <Layers class="w-4 h-4" /> REQUEST SAMPLES >
                         </button>
                     </div>
@@ -332,12 +334,12 @@ const hideLightbox = () => {
                         <span
                             class="text-xs font-bold uppercase tracking-widest border-b border-black pb-1 inline-block mb-4">
                             COLOR OPTIONS <span class="text-gray-400 text-[10px] font-normal">- {{ selectedFinishName
-                                }}</span>
+                            }}</span>
                         </span>
 
-                        <div class="flex gap-4">
-                            <div v-for="finish in finishesData.finishes" :key="finish.slug" @click="selectFinish(finish)"
-                                class="cursor-pointer group relative">
+                        <div v-if="product.finishes.finishes" class="flex gap-4">
+                            <div v-for="finish in product.finishes.finishes" :key="finish.slug"
+                                @click="selectFinish(finish)" class="cursor-pointer group relative">
                                 <img :src="getFinishImage(finish.slug)" :alt="finish.name"
                                     class="w-12 h-12 rounded-sm transition-all duration-200" :class="[
                                         selectedFinishName === finish.name
@@ -379,8 +381,8 @@ const hideLightbox = () => {
                         </div>
                     </div>
 
-                    <p class="text-[9px] text-gray-400 text-center mt-4 uppercase tracking-widest">
-                        HANDCRAFTED AND MADE IN PORTUGAL
+                    <p class="text-[10px] text-gray-400 text-center mt-4 uppercase tracking-widest">
+                        HANDCRAFTED AND MADE <b>IN PORTUGAL</b>
                     </p>
 
                 </div>
@@ -400,8 +402,8 @@ const hideLightbox = () => {
 
         <BestSellersProducts :products="bestSellersProducts" class="pt-[6px]" />
 
-        <VueEasyLightbox :visible="lightboxVisible" :imgs="galleryImages" :index="lightboxIndex" @hide="hideLightbox"
-            :moveDisabled="false" />
+        <VueEasyLightbox :visible="lightboxVisible" :imgs="product.finishes.gallery_urls" :index="lightboxIndex"
+            @hide="hideLightbox" :moveDisabled="false" />
     </div>
 </template>
 

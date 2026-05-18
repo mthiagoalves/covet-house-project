@@ -62,7 +62,7 @@ class ProductRepository
 
     private function fetchAndFormatToCategories($query): Collection
     {
-        return $this->fetchAndFormatBase($query->orderBy('subcategory_id')->orderBy('id', 'desc'));
+        return $this->fetchAndFormatBase($query->orderBy('id', 'desc'));
     }
 
     /**

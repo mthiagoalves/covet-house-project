@@ -11,6 +11,7 @@ interface ProductData {
     name: string;
     slug: string;
     brand: { name: string; slug: string; };
+    is_best_seller: boolean;
     category: {
         name: string;
         slug: string;
@@ -28,12 +29,6 @@ interface FormCardData {
 }
 
 type GridItem = ProductData | FormCardData;
-
-interface ProductGroup {
-    category_name: string;
-    category_slug: string;
-    products: GridItem[];
-}
 
 const props = defineProps<{
     pageTitle: string;
@@ -115,6 +110,20 @@ function loadMore(groupSlug: string) {
     }
 }
 
+const bestSellers = computed(() => {
+    if (!props.productGroups) return [];
+
+    // flatMap: Extrai os produtos de todos os grupos e junta em um único array
+    const extracted = props.productGroups.flatMap(group =>
+        group.products.filter(item => item.type === 'product' && item.is_best_seller)
+    ) as ProductData[];
+
+    // Proteção extra: Remove duplicatas caso o mesmo produto venha em subcategorias diferentes
+    const uniqueBestSellers = Array.from(new Map(extracted.map(item => [item.id, item])).values());
+
+    return extracted;
+});
+
 const displayGroups = computed(() => {
     if (!props.productGroups) return [];
 
@@ -122,11 +131,14 @@ const displayGroups = computed(() => {
 
         let productsWithInjections: GridItem[] = [...group.products];
 
+        // Injeção do Form de Seating
         if (!props.category && group.category_slug === 'seating') {
             productsWithInjections.splice(7, 0, formCardToInject);
         }
 
-        if (props.category?.slug === 'casegoods' && group.category_slug === 'consoles') {
+        // CÓDIGO REFATORADO: Mais limpo e fácil de dar manutenção
+        const casegoodsSubcategories = ['consoles', 'cabinets', 'screens', 'bookcases'];
+        if (props.category?.slug === 'casegoods' && casegoodsSubcategories.includes(group.category_slug)) {
             productsWithInjections.splice(4, 0, formCardToInject);
         }
 
@@ -174,7 +186,18 @@ const menuItems = computed(() => {
     <div class="bg-[#eeeeee] text-white min-h-screen">
         <AnchorMenu :items="menuItems" />
         <div class="max-w-full mx-auto p-1 text-center">
+            <section id="best-sellers"
+                class="scroll-mt-[72px] md:scroll-mt-[108px] mb-4">
+                <h2 class="text-xl uppercase font-light text-black my-4 tracking-widest">
+                    BEST SELLERS
+                </h2>
 
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-1">
+                    <template v-for="item in bestSellers" :key="'bs-' + item.id">
+                        <ProductCard :product="item" />
+                    </template>
+                </div>
+            </section>
             <div v-if="displayGroups.length > 0">
                 <section v-for="group in displayGroups" :key="group.category_slug" :id="group.category_slug"
                     class="scroll-mt-[72px] md:scroll-mt-[108px]">
@@ -194,7 +217,7 @@ const menuItems = computed(() => {
                     </div>
 
                     <div v-if="props.category && group.products.length < group.totalProducts"
-                        class="text-center mt-4 mb-8">
+                        class="text-center mt-4 mb-4">
                         <button @click="loadMore(group.category_slug)"
                             class="text-[#777777] text-xs p-1 cursor-pointer font-semibold tracking-wider border-b border-[#777777]">
                             LOAD MORE >
