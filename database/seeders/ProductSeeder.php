@@ -15,6 +15,447 @@ class ProductSeeder extends Seeder
         $mockProducts = [
             [
                 'type' => 'product',
+                'name' => 'Mulligan Bookcase',
+                'slug' => 'mulligan-bookcase',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Mulligan Bookcase is a sleek mid-century modern design piece. Built around a gold plated brass structure, holding glossy black poplar doors and drawers, accentuated by contemporary stylish brass handles and smoked glass shelves.',
+                'dimensions_cm' => ['width' => '62.4 cm', 'length' => '205 cm', 'height' => '219 cm'],
+                'dimensions_in' => ['width' => '24.45"', 'length' => '80.71"', 'height' => '86.22"'],
+                'brand' => ['name' => 'ESSENTIAL HOME', 'slug' => 'essential-home'],
+                'materials_and_finishes' => 'FINISHES: Gold Plated Brass, Smoked Glass and Glossy Black Popular',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Bookcases',
+                        'slug' => 'bookcases'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Minelli Bookcase',
+                'slug' => 'minelli-bookcase',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Minelli Bookcase is perfect for any mid-century lover. It’s a furniture piece that definitely calls attention in the best way, providing elegance and space with its walnut wood and smoked glass shelves, as well as a whole structure built-in polished brass.',
+                'dimensions_cm' => ['width' => '40 cm', 'length' => '144 cm', 'height' => '258 cm'],
+                'dimensions_in' => ['width' => '15.75"', 'length' => '56.69"', 'height' => '101.57"'],
+                'brand' => ['name' => 'ESSENTIAL HOME', 'slug' => 'essential-home'],
+                'materials_and_finishes' => 'Polished Brass, Varnished Walnut and Smoked Glass.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Bookcases',
+                        'slug' => 'bookcases'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Caffeine Bookcase',
+                'slug' => 'caffeine-bookcase',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Caffeine is one of the biggest components of coffee: strong, exotic, full-bodied and delicate. Caffeine Bookcase is the ideal piece for your modern and contemporary living room, providing elegance and space with its walnut wood matte and bronze matte finishes. The bookcase has modular feet that adapt quickly to any room.',
+                'dimensions_cm' => ['width' => '140 cm', 'height' => '204 cm'],
+                'dimensions_in' => ['width' => '55.12"', 'height' => '80.3"'],
+                'brand' => ['name' => 'CAFFE LATTE', 'slug' => 'caffe-latte'],
+                'materials_and_finishes' => 'Epoxy Iron Bronze Matte Varnish, Walnut Root Matte Wood Veneer',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Bookcases',
+                        'slug' => 'bookcases'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Carrera Bookcase',
+                'slug' => 'carrera-bookcase',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Carrera Bookcase, by Covet House, is tall and serves as the homage to this natural, beautiful phenomenon. Extensive utility compartments in dark walnut veneer over a Patagonia marble top, finishing in an exquisite modern metal champagne structure. The massive marble deposits on the border of General Carrera Lake have been eroded away by the water over 6,200 years, resulting in caves, tunnels, and massive columns of pure marble.',
+                'dimensions_cm' => ['depth' => '42.8 cm', 'lenght' => '175 cm', 'height' => '182 cm'],
+                'dimensions_in' => ['depth' => '16.85"', 'lenght' => '68.89"', 'height' => '71.65"'],
+                'brand' => ['name' => 'COVET COLLECTION', 'slug' => 'covet-collection'],
+                'materials_and_finishes' => 'DIVIDERS: Wood Veneer Walnut. SHELVES: Marble Patagónia. STRUCTURE: Stainless Steel with Matte champagne textured fine powder',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Bookcases',
+                        'slug' => 'bookcases'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Fantasy Air L.E Bookcase',
+                'slug' => 'fantasy-air-limited-edition-bookcase',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Fantasy Air Bookcase Limited Edition is a kids’ bookcase inspired by the Disney movie “Up” and it is the perfect storage item for dreamy bedroom decoration. With a creative and playful design, the Fantasy Air Bookcase is inspired by vintage travel suitcases to reinforce the connection between children and exploring. The decorative suitcases are piled up to provide extra storage. The limited-edition exclusivity is provided by the gold leaf applied on the shelves that give a luxurious look to the item. Built-in wood, lacquered in glossy white, with details in synthetic leather and gold plated finishes.',
+                'dimensions_cm' => ['width' => '100 cm', 'depth' => '46 cm', 'height' => '190 cm'],
+                'dimensions_in' => ['width' => '40"', 'depth' => '18.01"', 'height' => '74.8"'],
+                'brand' => ['name' => 'CIRCU', 'slug' => 'circu'],
+                'materials_and_finishes' => 'MATERIALS: Wood, Metal, Synthetic Leather, Gold Leaf. FINISHES: Lacquered in glossy white, Metal parts in Gold Plated finishing, Strips in Gold synthetic leather',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Bookcases',
+                        'slug' => 'bookcases'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Fantasy Air Bookcase',
+                'slug' => 'fantasy-air-bookcase',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Fantasy Air Bookcase is a kids’ bookcase inspired by the Disney movie “Up” and it is the perfect storage item for dreamy bedroom decoration. With a creative and playful design, the Fantasy Air Bookcase is inspired by vintage travel suitcases to reinforce the connection between children and exploring. The decorative suitcases are piled up to provide extra storage. Built-in wood, lacquered in glossy white, with details in synthetic leather and gold plated finishes.',
+                'dimensions_cm' => ['width' => '100 cm', 'depth' => '46 cm', 'height' => '190 cm'],
+                'dimensions_in' => ['width' => '40"', 'depth' => '18.01"', 'height' => '74.8"'],
+                'brand' => ['name' => 'CIRCU', 'slug' => 'circu'],
+                'materials_and_finishes' => 'MATERIALS: Wood, Metal, Synthetic Leather, Gold Leaf. FINISHES: Lacquered in glossy white, Metal parts in Gold Plated finishing, Strips in Gold synthetic leather',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Bookcases',
+                        'slug' => 'bookcases'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Puzzled Bookcase',
+                'slug' => 'puzzled-bookcase',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Puzzled Bookcase was inspired by geometric spaces and with the drive and passion to create a piece where kids can explore their imagination and allow dreams to get out of the box. With the Puzzled Bookcase, every piece of their dreams has now a place to come to life. Just like a puzzle, this magical bookcase will adapt itself to your project design so you can enjoy fullest the space of your room without comprising the style of your decor. Combining brass details with Its acrylic structure and lacquered wood on the base of the shelves, the Illusion Bookcase will be the perfect luxury storage piece for those who seek extra space for their kid’s goods without the feeling of being overcrowded.',
+                'dimensions_cm' => ['width' => '171 cm', 'depth' => '53.4 cm', 'height' => '180 cm'],
+                'dimensions_in' => ['width' => '67.3"', 'depth' => '21"', 'height' => '70.9"'],
+                'brand' => ['name' => 'CIRCU', 'slug' => 'circu'],
+                'materials_and_finishes' => 'MATERIALS: Wood, Metal, Synthetic Leather, Gold Leaf. FINISHES: Lacquered in glossy white, Metal parts in Gold Plated finishing, Strips in Gold synthetic leather',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Bookcases',
+                        'slug' => 'bookcases'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Waltz Bookcase',
+                'slug' => 'waltz-bookcase',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'With an unmistakable style, this exquisite piece joins the best materials with the finest techniques of our craftsman. An anthem of sophistication and exclusive design.',
+                'dimensions_cm' => ['width' => '134 cm', 'depth' => '52 cm', 'height' => '200 cm'],
+                'dimensions_in' => ['width' => '52.76"', 'depth' => '20.47"', 'height' => '78.74"'],
+                'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
+                'materials_and_finishes' => 'MATERIALS: Body: Brass, Wood, Glass & Leather. FINISHES: Body: Polished brass, Black lacquer, Walnut Root, Smoked Glass & Black Leather',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Bookcases',
+                        'slug' => 'bookcases'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'LLoyd Bookcase',
+                'slug' => 'lloyd-bookcase',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'The Lloyd Bookcase is crafted with timeless and subtle lignes to be able to complement any interior. This functional yet decorative bookcase will subtly enhancing your projects.',
+                'dimensions_cm' => ['width' => '173 cm', 'height' => '182 cm'],
+                'dimensions_in' => ['width' => '68.71"', 'height' => '71.65"'],
+                'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
+                'materials_and_finishes' => 'Brass, Wood & Leather',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Bookcases',
+                        'slug' => 'bookcases'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Apotheosis Bookcase',
+                'slug' => 'apotheosis-bookcase',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Apotheosis Bookcase by Luxxu is a true anthem to sophistication and design. Inspired by Greek Mythology, its’ sleek, straight lines make for a magnificent creation and an exclusive design piece, the ultimate product for office spaces and luxurious living rooms.',
+                'dimensions_cm' => ['width' => '140 cm', 'depth' => '50 cm', 'height' => '200 cm'],
+                'dimensions_in' => ['width' => '55.12"', 'depth' => '19.69"', 'height' => '78.74"'],
+                'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
+                'materials_and_finishes' => 'MATERIALS: Brass, Wood & Leather. FINISHES: Polished brass, Walnut Root, Black Lacquer & Black Leather',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Bookcases',
+                        'slug' => 'bookcases'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Coleccionista Bookcase',
+                'slug' => 'coleccionista-bookcase',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Coleccionista Bookcase drawers’ typology can be chosen according to your tastes and preferences. You may even be inspired by all Boca do Lobo pieces to chose different types of drawers. The Coleccionista Bookcase can be placed or against a wall or it can serve as a separator division. The drawers have double-sided in order you can decorate both divisions, as well as to ensure the functionality of this piece of furniture.',
+                'dimensions_cm' => ['width' => '242 cm', 'depth' => '35 cm', 'height' => '362 cm'],
+                'dimensions_in' => ['width' => '95.3"', 'depth' => '13.8"', 'height' => '142.5"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'Wood, Lacquered, Metal, Ceramics, Silver Leaf, Copper Leaf, Portuguese Tiles and Glass.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Bookcases',
+                        'slug' => 'bookcases'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Garrett BookCase',
+                'slug' => 'garret-bookcase',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Garrett Bookcase combines functionality and beauty in an exceptional way. With elegant lines, and impeccable finish, this bookcase is a statement of style for any environment. Inspired by one of Portugal’s most known writer, Almeida Garrett, was born a design piece meant to keep knowledge on display, the Garrett Bookcase by Boca do Lobo. This Bookcase offers an elegant space to display your books, decorative objects and precious collections, adding a touch of sophistication and organization to your living or working space.',
+                'dimensions_cm' => ['width' => '220 cm', 'depth' => '40 cm', 'height' => '202 cm'],
+                'dimensions_in' => ['width' => '78.7"', 'depth' => '15.7"', 'height' => '79.5"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'Black lacquered wood, Casted Brass, Portoro Marble',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Bookcases',
+                        'slug' => 'bookcases'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Giulietta Screen',
+                'slug' => 'giulietta-screen',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Giulietta Screen is a precious crossing curved brass frame of this beautiful screen, named after Giulietta Masina, creates an elegant dialogue with the upholstery – deep yellow or peacock velvet combined with a fifties’ taste fabric.',
+                'dimensions_cm' => ['width' => '5 cm', 'length' => '175 cm', 'height' => '172 cm'],
+                'dimensions_in' => ['width' => '1.96"', 'length' => '68.89"', 'height' => '67.71"'],
+                'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
+                'materials_and_finishes' => 'FINISHES: Brushed Brass; Cover: Essential Home textile',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Screens',
+                        'slug' => 'screens'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Delphi Screen',
+                'slug' => 'delphi-screen',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Back to a world of magic, Delphi, ancient Greece’s holiest, prophesied the future of kings and countries. Delphi Screen brings oracle to life through its bird’s eye wood veneer, glossy elm root wood veneer and polished hammered brass. This folding screen is sure to impress.',
+                'dimensions_cm' => ['width' => '170 cm', 'depth' => '3 cm', 'height' => '185 cm'],
+                'dimensions_in' => ['width' => '66.90"', 'depth' => '1.18"', 'height' => '72.83"'],
+                'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
+                'materials_and_finishes' => 'Panels in bird’s eye wood veneer, elm root wood veneer and brass aged patina, Structure in brass',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Screens',
+                        'slug' => 'screens'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Hanoi Screen',
+                'slug' => 'hanoi-screen',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'The Hanoi Screen Divider is structured in gold plated brass and black matte lacquer. Inspired by the cubic shape museum built in Hanoi, Vietnam, to tell stories about its city and people. This screen divider will add a touch of character to your modern interior design.',
+                'dimensions_cm' => ['width' => '50 cm', 'depth' => '10 cm', 'max heigth' => '360 cm'],
+                'dimensions_in' => ['width' => '19.68"', 'depth' => '3.94"', 'min height' => '320"'],
+                'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
+                'materials_and_finishes' => 'Strucuture black matte lacquered, tube gold plated brass.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Screens',
+                        'slug' => 'screens'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Koi II Screen',
+                'slug' => 'koi-ii-screen',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Koi II Screen by Brabbu fits in any modern home decor. The Koi scales from the sides of the folding screen shine and reflect the sun on its brass surface. Koi means love and affection so the carp is also a symbol of love and friendship which will be conveyed into a modern home decor.',
+                'dimensions_cm' => ['width' => '258 cm', 'depth' => '4 cm', 'heigth' => '180 cm'],
+                'dimensions_in' => ['width' => '101.57"', 'depth' => '1.57"', 'height' => '70.86"'],
+                'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
+                'materials_and_finishes' => 'Structure in brushed aged brass.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Screens',
+                        'slug' => 'screens'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Koi Screen',
+                'slug' => 'koi-screen',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Koi Screen fits in any modern home decor, revealing its capacity to adapt thanks to its natural colour mutations.  The Koi scales from the sides of the folding screen shine and reflect the sun on its brass surface. Koi means love and affection so the carp is also a symbol of love and friendship which will be conveyed into modern home decor.',
+                'dimensions_cm' => ['width' => '258 cm', 'depth' => '4 cm', 'heigth' => '121 cm'],
+                'dimensions_in' => ['width' => '101.57"', 'depth' => '1.57"', 'height' => '47.63"'],
+                'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
+                'materials_and_finishes' => 'Structure in brushed aged brass.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Screens',
+                        'slug' => 'screens'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Arabica Screen',
+                'slug' => 'arabica-screen',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Arabica screen is a striking piece of furniture that can really enhance the mood in any space. A visually attracting aesthetic meets a functional purpose with Arabica, made from bronze mirror and Emperador marble with a dark polished finish. The perfect choice for hospitality settings and residential interiors.',
+                'dimensions_cm' => ['width' => '87 cm', 'depth' => '4 cm', 'heigth' => '300 cm'],
+                'dimensions_in' => ['width' => '32.25"', 'depth' => '1.57"', 'height' => '118.11"'],
+                'brand' => ['name' => 'CAFFE LATTE', 'slug' => 'caffe-latte'],
+                'materials_and_finishes' => 'Bronze Mirror, Emperador Light Marble, Epoxy Stainless Steel Bronze Matte Varnish',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Screens',
+                        'slug' => 'screens'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Empire Screen',
+                'slug' => 'empire-screen',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Empire Screen by Luxxu donates a deluxe feel to the most stylish spaces. The three panels are made in the smoked mirror and gold plated brass. The Empire Screen is not only important for decoration but these partitions are also convenient to divide spaces. The ultimate luxury for a dressing room by providing privacy.',
+                'dimensions_cm' => ['depth' => '4', 'lenght' => '180 cm', 'heigth' => '209 cm'],
+                'dimensions_in' => ['depth' => '1.6"', 'lenght' => '70.9"', 'height' => '82.3"'],
+                'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
+                'materials_and_finishes' => 'MATERIALS: Brass and Glass. FINISHES: Gold plated & Smoked black mirror',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Screens',
+                        'slug' => 'screens'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Gold Folding Screen',
+                'slug' => 'gold-folding-screen',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Gold Folding Screen was a status symbol in those ancient times that inspired our present furniture makers who adopted the concept of gold leafing. Our talented designers and master artisans created this highly desirable statement piece that is jewelry for the home. Possession of furniture with gold and silver leafing symbolizes wealth and prosperity.',
+                'dimensions_cm' => ['depth' => '14 cm', 'heigth' => '145 cm'],
+                'dimensions_in' => ['depth' => '5.5', 'height' => '57.1"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'Fiberglass filled with expandable polyurethane.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Screens',
+                        'slug' => 'screens'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Avenue Folding Screen',
+                'slug' => 'avenue-folding-screen',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Avenue Folding Screen is a distinctive folding screen so elegant that can be easily placed in your home. Avenue is a striking piece that attracts attention and lightens the mood in any space. Its unique characteristics allow it to become a work of art by itself, or it can serve a functional purpose as a room divider. Place Avenue in your bedroom, in your entrance hall, or in your living room. It will look beautiful in all of these spaces. Composed of six rotating panels finished in gold leaf with a high gloss varnish, black high gloss lacquer, and a geometric mosaic of walnut veneer, and a book-matched ebony veneer covered with high gloss varnish.',
+                'dimensions_cm' => ['width' => '185 cm', 'depth' => '4 cm', 'heigth' => '190 cm'],
+                'dimensions_in' => ['width' => '72.4"', 'depth' => '1.6', 'height' => '74.8"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'Ebony leaf, Walnut Leaf, Golden Leaf and Metal.',
+                'category' => [
+                    'name' => 'Casegoods',
+                    'slug' => 'casegoods',
+                    'subcategory' => [
+                        'name' => 'Screens',
+                        'slug' => 'screens'
+                    ]
+                ]
+            ],
+            [
+                'type' => 'product',
                 'name' => 'QUANTUM MIRROR',
                 'slug' => 'quantum-mirror',
                 'is_new' => false,
