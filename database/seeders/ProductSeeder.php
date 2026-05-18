@@ -247,7 +247,7 @@ class ProductSeeder extends Seeder
             [
                 'type' => 'product',
                 'name' => 'Garrett BookCase',
-                'slug' => 'garret-bookcase',
+                'slug' => 'garrett-bookcase',
                 'is_new' => false,
                 'has_stock' => false,
                 'is_best_seller' => false,
@@ -1699,7 +1699,7 @@ class ProductSeeder extends Seeder
                 'slug' => 'filigree-mirror',
                 'is_new' => false,
                 'has_stock' => false,
-                'is_best_seller' => false,
+                'is_best_seller' => true,
                 'description' => 'Filigree Mirror by Boca do Lobo resorts to one of the oldest jewelry-making techniques known. Completely handcrafted, with each brass cord fitted with precision, the Filigree Mirror flourishes in a shape traditional to Portuguese culture and art. A true work of art, this luxurious mirror plays tribute to Boca do Lobo’s core values heritage and craftsmanship.',
                 'dimensions_cm' => ['width' => '152 cm', 'depth' => '10 cm', 'height' => '99 cm'],
                 'dimensions_in' => ['width' => '59.8"', 'depth' => '3.9"', 'height' => '39.8"'],
@@ -1720,7 +1720,7 @@ class ProductSeeder extends Seeder
                 'slug' => 'glance-mirror',
                 'is_new' => false,
                 'has_stock' => false,
-                'is_best_seller' => false,
+                'is_best_seller' => true,
                 'description' => 'Glance Mirror, by Boca do Lobo, tells us the story of what seems confused and cluttered can, in a glance, acquire a new meaning, capable of inspiring and becharming us. The crossroads of life, and the reason among the chaos. The concept of a defragmented mirror brings out its noblest gold backdrop, where its unique beauty comes from daring to risk and challenge the conventional.',
                 'dimensions_cm' => ['depth' => '4 cm', 'diameter' => '140 cm'],
                 'dimensions_in' => ['depth' => '1.6"', 'diameter' => '55.1"'],
@@ -1751,8 +1751,8 @@ class ProductSeeder extends Seeder
                     'name' => 'Casegoods',
                     'slug' => 'casegoods',
                     'subcategory' => [
-                        'name' => 'Cabinet',
-                        'slug' => 'cabinet'
+                        'name' => 'Cabinets',
+                        'slug' => 'cabinets'
                     ]
                 ]
             ],
@@ -1772,8 +1772,8 @@ class ProductSeeder extends Seeder
                     'name' => 'Casegoods',
                     'slug' => 'casegoods',
                     'subcategory' => [
-                        'name' => 'Cabinet',
-                        'slug' => 'cabinet'
+                        'name' => 'Cabinets',
+                        'slug' => 'cabinets'
                     ]
                 ]
             ],
@@ -1793,8 +1793,8 @@ class ProductSeeder extends Seeder
                     'name' => 'Casegoods',
                     'slug' => 'casegoods',
                     'subcategory' => [
-                        'name' => 'Cabinet',
-                        'slug' => 'cabinet'
+                        'name' => 'Cabinets',
+                        'slug' => 'cabinets'
                     ]
                 ]
             ],
@@ -1814,8 +1814,8 @@ class ProductSeeder extends Seeder
                     'name' => 'Casegoods',
                     'slug' => 'casegoods',
                     'subcategory' => [
-                        'name' => 'Cabinet',
-                        'slug' => 'cabinet'
+                        'name' => 'Cabinets',
+                        'slug' => 'cabinets'
                     ]
                 ]
             ],
@@ -1835,8 +1835,8 @@ class ProductSeeder extends Seeder
                     'name' => 'Casegoods',
                     'slug' => 'casegoods',
                     'subcategory' => [
-                        'name' => 'Cabinet',
-                        'slug' => 'cabinet'
+                        'name' => 'Cabinets',
+                        'slug' => 'cabinets'
                     ]
                 ]
             ],
@@ -1856,8 +1856,8 @@ class ProductSeeder extends Seeder
                     'name' => 'Casegoods',
                     'slug' => 'casegoods',
                     'subcategory' => [
-                        'name' => 'Cabinet',
-                        'slug' => 'cabinet'
+                        'name' => 'Cabinets',
+                        'slug' => 'cabinets'
                     ]
                 ]
             ],
@@ -1877,8 +1877,8 @@ class ProductSeeder extends Seeder
                     'name' => 'Casegoods',
                     'slug' => 'casegoods',
                     'subcategory' => [
-                        'name' => 'Cabinet',
-                        'slug' => 'cabinet'
+                        'name' => 'Cabinets',
+                        'slug' => 'cabinets'
                     ]
                 ]
             ],
@@ -1898,8 +1898,8 @@ class ProductSeeder extends Seeder
                     'name' => 'Casegoods',
                     'slug' => 'casegoods',
                     'subcategory' => [
-                        'name' => 'Cabinet',
-                        'slug' => 'cabinet'
+                        'name' => 'Cabinets',
+                        'slug' => 'cabinets'
                     ]
                 ]
             ],
@@ -1919,8 +1919,8 @@ class ProductSeeder extends Seeder
                     'name' => 'Casegoods',
                     'slug' => 'casegoods',
                     'subcategory' => [
-                        'name' => 'Cabinet',
-                        'slug' => 'cabinet'
+                        'name' => 'Cabinets',
+                        'slug' => 'cabinets'
                     ]
                 ]
             ],
@@ -1940,8 +1940,8 @@ class ProductSeeder extends Seeder
                     'name' => 'Casegoods',
                     'slug' => 'casegoods',
                     'subcategory' => [
-                        'name' => 'Cabinet',
-                        'slug' => 'cabinet'
+                        'name' => 'Cabinets',
+                        'slug' => 'cabinets'
                     ]
                 ]
             ],
@@ -1961,8 +1961,8 @@ class ProductSeeder extends Seeder
                     'name' => 'Casegoods',
                     'slug' => 'casegoods',
                     'subcategory' => [
-                        'name' => 'Cabinet',
-                        'slug' => 'cabinet'
+                        'name' => 'Cabinets',
+                        'slug' => 'cabinets'
                     ]
                 ]
             ],
@@ -1973,7 +1973,7 @@ class ProductSeeder extends Seeder
                 'is_new' => false,
                 'has_stock' => false,
                 'is_best_seller' => false,
-                'description' => 'The Angra Cupboard  by Boca do Lobo is an exquisite fusion of aesthetics and functionality. Perched elegantly on a distinctive curved golden base reminiscent of the captivating cliffs of Angra do Heroismo in Portugal’s Azores, this cupboard transcends mere storage. Crafted with a keen eye for design, the Angra Cupboard invites you to elevate your living space with sophistication. Beyond a mere repository for your belongings, it’s a testament to artistry and the rich tapestry of historical landscapes. Immerse yourself in a design narrative that goes beyond the ordinary, transforming your space into a haven of inspiration and refined style.',
+                'description' => 'D. Manuel Cabinet, by Boca do Lobo, body is made from wood and coated in copper leaf, finished with a black lacquer gradient that highlights its imposing architectural lines, causing the same impression as the first glimpse at a great cathedral. D. Manuel Cabinet has two overlay doors give way to an interior lined in copper that boasts a glass shelf and a set of four drawers. In absolute contrast with the modern body of this statement piece, the legs are carved from solid mahogany and it features a turned twist style, making the D. Manuel Cabinet a versatile cabinet for either classical rooms or modern houses.',
                 'dimensions_cm' => ['width' => '116 cm', 'depth' => '60 cm', 'height' => '161 cm'],
                 'dimensions_in' => ['width' => '45.7"', 'depth' => '23.6"', 'height' => '63.4"'],
                 'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
@@ -1982,8 +1982,8 @@ class ProductSeeder extends Seeder
                     'name' => 'Casegoods',
                     'slug' => 'casegoods',
                     'subcategory' => [
-                        'name' => 'Cabinet',
-                        'slug' => 'cabinet'
+                        'name' => 'Cabinets',
+                        'slug' => 'cabinets'
                     ]
                 ]
             ],
@@ -2003,8 +2003,8 @@ class ProductSeeder extends Seeder
                     'name' => 'Casegoods',
                     'slug' => 'casegoods',
                     'subcategory' => [
-                        'name' => 'Cabinet',
-                        'slug' => 'cabinet'
+                        'name' => 'Cabinets',
+                        'slug' => 'cabinets'
                     ]
                 ]
             ],
@@ -2024,8 +2024,8 @@ class ProductSeeder extends Seeder
                     'name' => 'Casegoods',
                     'slug' => 'casegoods',
                     'subcategory' => [
-                        'name' => 'Cabinet',
-                        'slug' => 'cabinet'
+                        'name' => 'Cabinets',
+                        'slug' => 'cabinets'
                     ]
                 ]
             ],
@@ -2045,8 +2045,8 @@ class ProductSeeder extends Seeder
                     'name' => 'Casegoods',
                     'slug' => 'casegoods',
                     'subcategory' => [
-                        'name' => 'Cabinet',
-                        'slug' => 'cabinet'
+                        'name' => 'Cabinets',
+                        'slug' => 'cabinets'
                     ]
                 ]
             ],
@@ -2066,8 +2066,8 @@ class ProductSeeder extends Seeder
                     'name' => 'Casegoods',
                     'slug' => 'casegoods',
                     'subcategory' => [
-                        'name' => 'Cabinet',
-                        'slug' => 'cabinet'
+                        'name' => 'Cabinets',
+                        'slug' => 'cabinets'
                     ]
                 ]
             ],
@@ -2087,8 +2087,8 @@ class ProductSeeder extends Seeder
                     'name' => 'Casegoods',
                     'slug' => 'casegoods',
                     'subcategory' => [
-                        'name' => 'Cabinet',
-                        'slug' => 'cabinet'
+                        'name' => 'Cabinets',
+                        'slug' => 'cabinets'
                     ]
                 ]
             ],
@@ -2108,8 +2108,8 @@ class ProductSeeder extends Seeder
                     'name' => 'Casegoods',
                     'slug' => 'casegoods',
                     'subcategory' => [
-                        'name' => 'Cabinet',
-                        'slug' => 'cabinet'
+                        'name' => 'Cabinets',
+                        'slug' => 'cabinets'
                     ]
                 ]
             ],
@@ -2119,7 +2119,7 @@ class ProductSeeder extends Seeder
                 'slug' => 'pixel-cabinet',
                 'is_new' => false,
                 'has_stock' => false,
-                'is_best_seller' => false,
+                'is_best_seller' => true,
                 'description' => 'Pixel Cabinet by Boca do Lobo is an effort to honor the union between design and craftsmanship. The 1088 triangles that complete Pixel Cabinet carries the dedication and art of those who built it – with a diversity of finishes never seen before. The polished brass base gives Pixel Cabinet a unique personality, a strong and at the same time sophisticated character.',
                 'dimensions_cm' => ['width' => '81 cm', 'depth' => '60 cm', 'height' => '163 cm'],
                 'dimensions_in' => ['width' => '31.5"', 'depth' => '23.6"', 'height' => '64.2"'],
@@ -2129,8 +2129,8 @@ class ProductSeeder extends Seeder
                     'name' => 'Casegoods',
                     'slug' => 'casegoods',
                     'subcategory' => [
-                        'name' => 'Cabinet',
-                        'slug' => 'cabinet'
+                        'name' => 'Cabinets',
+                        'slug' => 'cabinets'
                     ]
                 ]
             ],
@@ -2392,7 +2392,7 @@ class ProductSeeder extends Seeder
                 'slug' => 'ardara-console',
                 'is_new' => false,
                 'has_stock' => false,
-                'is_best_seller' => false,
+                'is_best_seller' => true,
                 'description' => 'Ardara Console Table, by Brabbu, has a finish in gold leaf with a gloss varnish, this modern console table will give a unique twist to any interior design. Dolmens are ancient stone monuments from the Neolithic period. These unique structures were the inspiration behind Ardara Console Table.',
                 'dimensions_cm' => ['width' => '160 cm', 'depth' => '40 cm', 'height' => '90 cm'],
                 'dimensions_in' => ['width' => '63"', 'depth' => '15.75"', 'height' => '35.43"'],
@@ -2749,7 +2749,7 @@ class ProductSeeder extends Seeder
                 'slug' => 'beyond-console',
                 'is_new' => false,
                 'has_stock' => false,
-                'is_best_seller' => false,
+                'is_best_seller' => true,
                 'description' => 'Beyond Console, by Luxxu, with the best handmade techniques finds balance in a delicate work in wood softened with touches of brass that reflect warm and golden tones on its polished surface. An impressive display of elegance, Beyond Console, shows the exquisite capacity to fill a variety of ambiances thanks to its luxury presence.',
                 'dimensions_cm' => ['depth' => '40 cm', 'length' => '160 cm', 'height' => '90 cm'],
                 'dimensions_in' => ['depth' => '15.7"', 'length' => '63"', 'height' => '35.4"'],
@@ -2812,7 +2812,7 @@ class ProductSeeder extends Seeder
                 'slug' => 'suspicion-console',
                 'is_new' => false,
                 'has_stock' => false,
-                'is_best_seller' => false,
+                'is_best_seller' => true,
                 'description' => 'Suspicion Console, by Luxxu, is daringly sculpted in stone and fills any room with lavishing luxury, the zenith between elegance and balance. This marble console table is the epitome of intricate equilibrium, joining marble with fine brass lines.',
                 'dimensions_cm' => ['depth' => '40 cm', 'length' => '170 cm', 'height' => '86 cm'],
                 'dimensions_in' => ['depth' => '15.7"', 'length' => '66.93"', 'height' => '33.9"'],
@@ -3446,7 +3446,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Nubian Sideboard is a versatile piece fit for living rooms, dining rooms or elegant hotels. Made with high quality wood and gold brass, it is the embodiment of luxury and an auspicious highlight in any ambiance.',
                 'dimensions_cm' => ['depth' => '55 cm', 'length' => '231 cm', 'height' => '89 cm'],
                 'dimensions_in' => ['depth' => '21.65"', 'length' => '90.95"', 'height' => '35.04"'],
-                'brand' => ['name' => 'Luxxu', 'slug' => 'luxxu'],
+                'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
                 'materials_and_finishes' => 'MATERIALS: Body: Brass, Wood, Marble, Glass & Mirror. FINISHES: Body: Polished Brass, Shiny Black Lacquer, Black Glass, Smoked Mirror, Smoked Glass, Walnut Root & Nero Marquina Marble',
                 'category' => [
                     'name' => 'Casegoods',
@@ -3467,7 +3467,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Darian Sideboard draws inspiration from the power of the shield and sphere of protection, as well as the dynamic from its irregular shape. A precise knowledge of production techniques and materials, each with different specialties, from metal-work to wood carving. It features a cluster of gold plated brass asymmetrical bars envelope a wood structure in black lacquer, the resulting works are a blend of artful and stout personality.',
                 'dimensions_cm' => ['width' => '210 cm', 'depth' => '50 cm', 'height' => '92 cm'],
                 'dimensions_in' => ['width' => '82.7"', 'depth' => '19.7"', 'height' => '36.2"'],
-                'brand' => ['name' => 'Luxxu', 'slug' => 'luxxu'],
+                'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
                 'materials_and_finishes' => 'MATERIALS: Body: Brass & Wood. FINISHES: Body: Polished brass & Black lacquer',
                 'category' => [
                     'name' => 'Casegoods',
@@ -3488,7 +3488,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Tenor Sideboard, by Luxxu, was created to be magnanimous in its appearance, the smooth and elegant shapes of this black sideboard, highly stylish, provide a generous amount of storage space being imposing and lends an attractive presence to any room. The gold-plated brass asymmetric bars give the extraordinary touch in framed of this particleboard ends with a textured surface using a black lacquer finish. Tenor Sideboard is a unique product for those who have a peculiar taste for new editions and conceptual designs.',
                 'dimensions_cm' => ['width' => '228.8 cm', 'depth' => '50 cm', 'height' => '76 cm'],
                 'dimensions_in' => ['width' => '89.8"', 'depth' => '19.7"', 'height' => '30.1"'],
-                'brand' => ['name' => 'Luxxu', 'slug' => 'luxxu'],
+                'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
                 'materials_and_finishes' => 'MATERIALS: Brass & Wood. FINISHES: Polished brass & Black lacquer',
                 'category' => [
                     'name' => 'Casegoods',
@@ -3509,7 +3509,7 @@ class ProductSeeder extends Seeder
                 'description' => 'The Algerone Sideboard, by Luxxu, showcases a medley of luxurious materials while providing practical functionality. The smoked glass doors add a touch of sophistication and offer a glance at the items stored inside. With the powerful presence of Statuario marble and the opulent appeal of polished brass details, this design piece will make a modern statement in any dining room or hallway decor.',
                 'dimensions_cm' => ['depth' => '58 cm', 'length' => '210 cm', 'height' => '78.5 cm'],
                 'dimensions_in' => ['depth' => '22.8"', 'length' => '82.68"', 'height' => '31"'],
-                'brand' => ['name' => 'Luxxu', 'slug' => 'luxxu'],
+                'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
                 'materials_and_finishes' => 'Grey Leather & Smoked Glass, Polished Brass, Statuario Marble. MATERIALS: Brass, GLASS, Leather, Marble, Wood',
                 'category' => [
                     'name' => 'Casegoods',
@@ -3631,7 +3631,7 @@ class ProductSeeder extends Seeder
                 'slug' => 'voltaire-walnut-sideboard',
                 'is_new' => false,
                 'has_stock' => false,
-                'is_best_seller' => true,
+                'is_best_seller' => false,
                 'description' => 'Voltaire Walnut Sideboard, by Boca do Lobo, is a contemporary piece enveloped by manually sculptured panels with decorative elements finished in high gloss black lacquer. The statement twist lies on the asymmetrical hand-hammered fitting of a golden polished brass sheet on the right side of the top, and base detail.',
                 'dimensions_cm' => ['width' => '271 cm', 'depth' => '71 cm', 'height' => '96 cm'],
                 'dimensions_in' => ['width' => '107"', 'depth' => '28"', 'height' => '38"'],
@@ -3652,7 +3652,7 @@ class ProductSeeder extends Seeder
                 'slug' => 'soho-sideboard',
                 'is_new' => false,
                 'has_stock' => false,
-                'is_best_seller' => true,
+                'is_best_seller' => false,
                 'description' => 'Soho Sideboard named the first collection of Boca do Lobo, boosting its first international steps. It was presented for the first time in London, one of the biggest and international stages of design. The attitude and irreverence reflected by this piece made it an icon, never unnoticed in any part of the world. Drawers that count different and varied techniques from glass to wood, lacquer color to mirror and gold leaf compose this contemporary sideboard, finely refined by brass handles. Boca do Lobo’s Soho modern sideboard is an exquisite work of art and one of our best sellers.',
                 'dimensions_cm' => ['width' => '48 cm', 'height' => '90 cm'],
                 'dimensions_in' => ['width' => '18.9"', 'height' => '35.4"'],
@@ -3673,7 +3673,7 @@ class ProductSeeder extends Seeder
                 'slug' => 'diamond-emerald-sideboard',
                 'is_new' => false,
                 'has_stock' => false,
-                'is_best_seller' => true,
+                'is_best_seller' => false,
                 'description' => 'Diamond Emerald Sideboard, by Boca do Lobo, with the style of a precious jewel, colored in green emerald, will make a splash in interior design since it is one of the hottest color trends for 2013. Like the amethyst Diamond, the new Diamond Emerald Sideboard also features three highly sculptured doors leading to a gold leaf interior with shelving and two drawers. The exterior of this fanciful piece is now presented in silver leaf finished with a luxurious shade of translucent green emerald with high gloss varnish. And instead of the whimsical lion’s head feet, the new diamond presents a base made from mahogany lined with a bronze mirror.',
                 'dimensions_cm' => ['width' => '180 cm', 'depth' => '60 cm', 'height' => '83 cm'],
                 'dimensions_in' => ['width' => '70.9"', 'depth' => '23.6"', 'height' => '32.7"'],
@@ -3715,7 +3715,7 @@ class ProductSeeder extends Seeder
                 'slug' => 'diamond-pyrite-sideboard',
                 'is_new' => false,
                 'has_stock' => false,
-                'is_best_seller' => true,
+                'is_best_seller' => false,
                 'description' => 'Diamond Pyrite Sideboard by Boca do Lobo was projected to be the jewel in the crown of the Portuguese brand Boca do Lobo. Diamond Pyrite Sideboard is a reflection of the furniture jeweler’s expertise and quintessence, undoubtedly deserving its title. This opulent object, full of resources and desire, has two carefully sculpted doors that reveal a lined interior with shelves and two drawers. This piece is inspired by the gothic furniture of the romantic period, with its capacity to take advantage of the power of imagination, prevision, and escape, without forgetting its unique character.',
                 'dimensions_cm' => ['width' => '185 cm', 'depth' => '60 cm', 'height' => '83 cm'],
                 'dimensions_in' => ['width' => '72.8"', 'depth' => '23.6"', 'height' => '32.7"'],
@@ -3757,7 +3757,7 @@ class ProductSeeder extends Seeder
                 'slug' => 'lapiaz-sideboard',
                 'is_new' => false,
                 'has_stock' => false,
-                'is_best_seller' => true,
+                'is_best_seller' => false,
                 'description' => 'Lapiaz Sideboard, by Boca do Lobo, originates from one of Boca do Lobo’s iconic design pieces. Based on the same aesthetic that created a legacy, this piece takes exceptional craftsmanship and design to a new realm. Consisting of two individual modules, the Lapiaz is finished in polished stainless steel that portrays a perfect mirror, with a poplar root wood veneer interior.',
                 'dimensions_cm' => ['width' => '220 cm', 'depth' => '50 cm', 'height' => '82 cm'],
                 'dimensions_in' => ['width' => '86.6"', 'depth' => '19.7"', 'height' => '32.3"'],

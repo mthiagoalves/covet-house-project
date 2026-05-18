@@ -24,7 +24,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->json('dimensions_cm')->nullable();
             $table->json('dimensions_in')->nullable();
-            $table->string('materials_and_finishes')->nullable();
+            $table->text('materials_and_finishes')->nullable();
 
             // Flags
             $table->boolean('visible_in_all_products')->default(false);
