@@ -53,6 +53,15 @@
         input[type="radio"] {
             accent-color: #a38d65;
         }
+
+        @media (max-width: 756px) {
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                width: 9px;
+                height: 9px;
+            }
+        }
     </style>
     @inertia
 </body>
