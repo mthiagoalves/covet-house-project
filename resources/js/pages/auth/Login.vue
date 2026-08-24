@@ -6,7 +6,6 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import AuthBase from '@/layouts/AuthLayout.vue';
-import { register } from '@/routes';
 import { store } from '@/routes/login';
 import { request } from '@/routes/password';
 import { Form, Head } from '@inertiajs/vue3';
@@ -39,7 +38,7 @@ defineProps<{
             v-slot="{ errors, processing }"
             class="flex flex-col gap-6"
         >
-            <div class="grid gap-6">
+            <div class="grid gap-6 text-white">
                 <div class="grid gap-2">
                     <Label for="email">Email address</Label>
                     <Input
@@ -99,14 +98,6 @@ defineProps<{
                     />
                     Log in
                 </Button>
-            </div>
-
-            <div
-                class="text-center text-sm text-muted-foreground"
-                v-if="canRegister"
-            >
-                Don't have an account?
-                <TextLink :href="register()" :tabindex="5">Sign up</TextLink>
             </div>
         </Form>
     </AuthBase>
