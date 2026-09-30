@@ -3,7 +3,7 @@ import { useForm } from '@inertiajs/vue3';
 import { countries } from '@/data/countries'; // Certifique-se que este arquivo existe
 import { industries } from '@/data/industries';
 
-const props = defineProps<{
+defineProps<{
     showroomName: string;
     title_form?: string;
     description: string; // O texto longo sobre "48H with Covet House..."

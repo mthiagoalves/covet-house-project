@@ -100,7 +100,8 @@ const rooms = [
     }
 ];
 
-const props = defineProps<{
+
+defineProps<{
     hideTitle: boolean;
 }>();
 

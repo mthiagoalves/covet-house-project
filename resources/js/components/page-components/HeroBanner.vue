@@ -2,7 +2,7 @@
 import { Link } from '@inertiajs/vue3';
 import { computed } from 'vue';
 
-const props = defineProps<{
+const {imageUrl, altText, title, buttonHref, buttonText} = defineProps<{
     imageUrl: string;
     altText: string;
     title: string;
@@ -10,8 +10,8 @@ const props = defineProps<{
     buttonHref?: string;
 }>();
 
-const mobileImageUrl = computed(() => `url('${props.imageUrl}-mobile.jpg')`);
-const desktopImageUrl = computed(() => `url('${props.imageUrl}.jpg')`);
+const mobileImageUrl = computed(() => `url('${imageUrl}-mobile.jpg')`);
+const desktopImageUrl = computed(() => `url('${imageUrl}.jpg')`);
 </script>
 
 <template>

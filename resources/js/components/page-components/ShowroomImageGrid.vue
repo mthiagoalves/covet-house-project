@@ -14,7 +14,8 @@ interface GridItem {
     title?: string | null;
 }
 
-const props = defineProps<{
+
+defineProps<{
     images: GridItem[]; // Atualizado para receber objetos
 }>();
 

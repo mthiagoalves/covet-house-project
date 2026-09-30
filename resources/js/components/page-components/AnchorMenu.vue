@@ -8,7 +8,8 @@ interface MenuItem {
     anchorHref: string;
 }
 
-const props = defineProps<{
+
+defineProps<{
     items: MenuItem[];
 }>();
 

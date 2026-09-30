@@ -18,7 +18,7 @@ interface Ambience {
     hotspots?: Hotspot[];
 }
 
-const props = defineProps<{
+defineProps<{
     ambiences: Ambience[];
 }>();
 
