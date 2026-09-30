@@ -15,6 +15,195 @@ class ProductSeeder extends Seeder
         $mockProducts = [
             [
                 'type' => 'product',
+                'name' => 'Rocky Rocket Armchair',
+                'slug' => 'rocky-rocket-armchair',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Rocky Rocket Armchair by Circu it’s a children’s interactive chair, painted in a red and white checkered pattern. The moon rocket has become an iconic symbol for kids since it began to pop up across children’s playgrounds during the 20th century and the space age era.This interactive chair features an educational light and sound system to foster curiosity and excitement among kids. It is built using top-quality materials such as wood, being robust in design and dreamy on the interiors, due to its red velvet upholstered walls and cushioned flooring.',
+                'dimensions_cm' => ['width' => '200 cm', 'depth' => '160 cm', 'height' => '295 cm'],
+                'dimensions_in' => ['width' => '78.7"', 'depth' => '62.9"', 'height' => '116"'],
+                'brand' => ['name' => 'CIRCU', 'slug' => 'circu'],
+                'materials_and_finishes' => 'Glossy Varnish, Velvet Flocking Technique, Gold Leaf, Chrome Plated Finishes',
+                'category' => [
+                    'name' => 'Seating',
+                    'slug' => 'seating',
+                    'subcategory' => [
+                        'name' => 'Armchairs',
+                        'slug' => 'Armchairs',
+                    ],
+                ],
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Anguis Armchair',
+                'slug' => 'anguis-armchair',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Anguis Modern Armchair, by Luxxu, is a modern upholstery solution that stands out in any lounge or living room due to its contrasting yet harmonious textures. The round shape ensures comfort, while the brass legs contrast with the black velvet and wood finish to create a sophisticated and lavish armchair. Made only with the finest materials, it brings a touch of luxury to any interior.',
+                'dimensions_cm' => ['width' => '77 cm', 'depth' => '60 cm', 'height' => '77 cm', 'seat depth' => '44 cm', 'seat height' => '48 cm'],
+                'dimensions_in' => ['width' => '30.31"', 'depth' => '23.62"', 'height' => '30.31"', 'seat depth' => '17.32"', 'seat height' => '18.9"'],
+                'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
+                'materials_and_finishes' => 'Chronus Dark Black, Polished Brass Glossy, Safety Velvet Stopfire Fr 23 Charcoal Gray, Walnut Root Glossy Wood Veneer',
+                'category' => [
+                    'name' => 'Seating',
+                    'slug' => 'seating',
+                    'subcategory' => [
+                        'name' => 'Armchairs',
+                        'slug' => 'Armchairs',
+                    ],
+                ],
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Anguis Armchair',
+                'slug' => 'anguis-armchair',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Anguis Modern Armchair, by Luxxu, is a modern upholstery solution that stands out in any lounge or living room due to its contrasting yet harmonious textures. The round shape ensures comfort, while the brass legs contrast with the black velvet and wood finish to create a sophisticated and lavish armchair. Made only with the finest materials, it brings a touch of luxury to any interior.',
+                'dimensions_cm' => ['width' => '77 cm', 'depth' => '60 cm', 'height' => '77 cm', 'seat depth' => '44 cm', 'seat height' => '48 cm'],
+                'dimensions_in' => ['width' => '30.31"', 'depth' => '23.62"', 'height' => '30.31"', 'seat depth' => '17.32"', 'seat height' => '18.9"'],
+                'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
+                'materials_and_finishes' => 'Chronus Dark Black, Polished Brass Glossy, Safety Velvet Stopfire Fr 23 Charcoal Gray, Walnut Root Glossy Wood Veneer',
+                'category' => [
+                    'name' => 'Seating',
+                    'slug' => 'seating',
+                    'subcategory' => [
+                        'name' => 'Armchairs',
+                        'slug' => 'Armchairs',
+                    ],
+                ],
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Saboteur Armchair',
+                'slug' => 'saboteur-armchair',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Saboteur Single Sofa is inspired by the noir movie scene, the Saboteur is the perfect meeting between luxury and comfort. Using only the finest materials, such as velvet and brass, this armchair will become your favorite dwelling in the house.',
+                'dimensions_cm' => ['width' => '86 cm', 'length' => '107 cm', 'height' => '74 cm', 'seat depth' => '60 cm', 'seat height' => '40 cm'],
+                'dimensions_in' => ['width' => '33.9"', 'length' => '42.1"', 'height' => '29.1"', 'seat depth' => '24"', 'seat height' => '15.7"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'MATERIALS: Body: Wood, Brass & Velvet. FINISHES: Body: Polished brass, Black leather & Gray velvet',
+                'category' => [
+                    'name' => 'Seating',
+                    'slug' => 'seating',
+                    'subcategory' => [
+                        'name' => 'Armchairs',
+                        'slug' => 'Armchairs',
+                    ],
+                ],
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Soleil Armchair',
+                'slug' => 'soleil-armchair',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Soleil Armchair by Boca do Lobo is a synthesis of styles and senses. Inspired by the spirit and mission of the famous Cirque de Soleil, the purpose is to invoke, provoke and evoke. Soft, sultry curves gently embrace the sitter in this elegant vintage and contemporary style sofa. Except for the supreme levels of comfort, the armchair through the brass details perfectly complements the elegant lines of a timeless piece.',
+                'dimensions_cm' => ['width' => '111 cm', 'depth' => '103 cm', 'height' => '68.5 cm'],
+                'dimensions_in' => ['width' => '43.7"', 'depth' => '40.66"', 'height' => '26.97"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'Brass Patina, Fabric: Aldeco sucesso 12, Leather, Polished Brass',
+                'category' => [
+                    'name' => 'Seating',
+                    'slug' => 'seating',
+                    'subcategory' => [
+                        'name' => 'Armchairs',
+                        'slug' => 'Armchairs',
+                    ],
+                ],
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Angra Armchair',
+                'slug' => 'angra-armchair',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'The Angra armchair is a harmonious fusion of art and comfort inspired by the extraordinary Angra sideboard. This armchair nestles on an unexpectedly curved golden base drawing its essence from the dramatic cliffs of Angra do Heroismo on the Azores island in Portugal. As you sink into the plush cushions of this armchair, you’re not just sitting; you’re embarking on a journey through design and natural beauty. A unique piece that is an invitation to elevate your space and encapsulates sophistication paying homage to historical landscapes and contemporary aesthetics.',
+                'dimensions_cm' => ['width' => '81 cm', 'depth' => '86 cm', 'height' => '70 cm', 'back height' => '38 cm', 'seat depth' => '59 cm', 'seat height' => '70 cm'],
+                'dimensions_in' => ['width' => '19.7"', 'depth' => '19.7"', 'height' => '28"', 'back height' => '15"', 'seat depth' => '23.2"', 'seat height' => '27.6"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'Upholstery: Sierra Disegno 315 Base: polished hammered brass.',
+                'category' => [
+                    'name' => 'Seating',
+                    'slug' => 'seating',
+                    'subcategory' => [
+                        'name' => 'Armchairs',
+                        'slug' => 'Armchairs',
+                    ],
+                ],
+            ],
+            [
+                'type' => 'product',
+                'name' => 'nº 11 Armchair',
+                'slug' => 'n11-armchair',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'The Nº11 chair takes the cue from key figures of the surrealist movement such as Salvador Dali and René Magritte and turns their work into a subtle art furniture piece. Made from gold plated solid cast brass with a varnish finish, this accent chair features a large bow back rail that’s held by languid spindles that drip solid metal from the apron up, while the legs are lavishly curved creating a visual effect that defies the laws of physics. The seat is upholstered in fine velvet and is available in different colors to better suit any upscale dining or living room. Combining an avant-garde approach with classic and emblematic lines, Nº 11 features remarkable craftsmanship and embodies the richest metalwork techniques from which skilled artisans built their reputation throughout the years. A statement chair to enhance a glamorous experience and memorable moments.',
+                'dimensions_cm' => ['width' => '50 cm', 'depth' => '50 cm', 'height' => '71 cm'],
+                'dimensions_in' => ['width' => '19.7"', 'depth' => '19.7"', 'height' => '28"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'The Nº11 is made from solid brass, with a high polish finish, protected with a varnish coat. It features a velvet upholsted seat.',
+                'category' => [
+                    'name' => 'Seating',
+                    'slug' => 'seating',
+                    'subcategory' => [
+                        'name' => 'Armchairs',
+                        'slug' => 'Armchairs',
+                    ],
+                ],
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Imperfectio Armchair',
+                'slug' => 'imperfectio-armchair',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'Imperfectio Armchair, by Boca do Lobo, is the expression of imperfect aesthetic, the appeal of that which is authentic art that is truer to life. Imperfectio armchair praises artisanal work as the ultimate form of art that is quite intentionally imperfect. Through its unique existence and shapes, Imperfectio armchair determines its own history. The irregularities and flaws over the manual hammered brass expose the beauty of imperfection. Some parts are roughly asymmetrical at the surface yet comfortable and smooth in a peculiar way to excite a desire for complementing your living room.',
+                'dimensions_cm' => ['width' => '108 cm', 'depth' => '96 cm', 'height' => '67 cm', 'seat height' => '45 cm'],
+                'dimensions_in' => ['width' => '42.5"', 'depth' => '37.7"', 'height' => '26.3"', 'seat height' => '17.7"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'Fabric: MORGAN PRO 925 PUTTY, Polished brass, Leather.',
+                'category' => [
+                    'name' => 'Seating',
+                    'slug' => 'seating',
+                    'subcategory' => [
+                        'name' => 'Armchairs',
+                        'slug' => 'Armchairs',
+                    ],
+                ],
+            ],
+            [
+                'type' => 'product',
+                'name' => 'Imperfectio Round Armchair',
+                'slug' => 'imperfectio-round-armchair',
+                'is_new' => false,
+                'has_stock' => false,
+                'is_best_seller' => false,
+                'description' => 'The sumptuous Imperfectio Armchair is the expression of imperfect aesthetic and the appeal of authentic art that is truer to life. An accent armchair that praises artisanal work as the ultimate form of art that is quite intentionally imperfect. Through its unique existence and shapes, the modern and round armchair determines its history. The irregularities and flaws over the manual hammered brass expose the beauty of imperfection. Some parts are roughly asymmetrical at the surface yet comfortable and smooth in a peculiar way to excite a desire for complementing your living room.',
+                'dimensions_cm' => ['width' => '100 cm', 'depth' => '65 cm', 'height' => '65 cm'],
+                'dimensions_in' => ['width' => '24.45"', 'depth' => '25.6"', 'height' => '25.6"'],
+                'brand' => ['name' => 'BOCA DO LOBO', 'slug' => 'boca-do-lobo'],
+                'materials_and_finishes' => 'Polished brass, wood, and fabric. Fabric: Macau Sand.',
+                'category' => [
+                    'name' => 'Seating',
+                    'slug' => 'seating',
+                    'subcategory' => [
+                        'name' => 'Armchairs',
+                        'slug' => 'Armchairs',
+                    ],
+                ],
+            ],
+            [
+                'type' => 'product',
                 'name' => 'Mulligan Bookcase',
                 'slug' => 'mulligan-bookcase',
                 'is_new' => false,
@@ -30,9 +219,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Bookcases',
-                        'slug' => 'bookcases'
-                    ]
-                ]
+                        'slug' => 'bookcases',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -51,9 +240,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Bookcases',
-                        'slug' => 'bookcases'
-                    ]
-                ]
+                        'slug' => 'bookcases',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -72,9 +261,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Bookcases',
-                        'slug' => 'bookcases'
-                    ]
-                ]
+                        'slug' => 'bookcases',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -93,9 +282,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Bookcases',
-                        'slug' => 'bookcases'
-                    ]
-                ]
+                        'slug' => 'bookcases',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -114,9 +303,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Bookcases',
-                        'slug' => 'bookcases'
-                    ]
-                ]
+                        'slug' => 'bookcases',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -135,9 +324,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Bookcases',
-                        'slug' => 'bookcases'
-                    ]
-                ]
+                        'slug' => 'bookcases',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -156,9 +345,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Bookcases',
-                        'slug' => 'bookcases'
-                    ]
-                ]
+                        'slug' => 'bookcases',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -177,9 +366,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Bookcases',
-                        'slug' => 'bookcases'
-                    ]
-                ]
+                        'slug' => 'bookcases',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -198,9 +387,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Bookcases',
-                        'slug' => 'bookcases'
-                    ]
-                ]
+                        'slug' => 'bookcases',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -219,9 +408,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Bookcases',
-                        'slug' => 'bookcases'
-                    ]
-                ]
+                        'slug' => 'bookcases',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -240,9 +429,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Bookcases',
-                        'slug' => 'bookcases'
-                    ]
-                ]
+                        'slug' => 'bookcases',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -261,9 +450,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Bookcases',
-                        'slug' => 'bookcases'
-                    ]
-                ]
+                        'slug' => 'bookcases',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -282,9 +471,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Screens',
-                        'slug' => 'screens'
-                    ]
-                ]
+                        'slug' => 'screens',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -303,9 +492,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Screens',
-                        'slug' => 'screens'
-                    ]
-                ]
+                        'slug' => 'screens',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -324,9 +513,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Screens',
-                        'slug' => 'screens'
-                    ]
-                ]
+                        'slug' => 'screens',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -345,9 +534,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Screens',
-                        'slug' => 'screens'
-                    ]
-                ]
+                        'slug' => 'screens',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -366,9 +555,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Screens',
-                        'slug' => 'screens'
-                    ]
-                ]
+                        'slug' => 'screens',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -387,9 +576,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Screens',
-                        'slug' => 'screens'
-                    ]
-                ]
+                        'slug' => 'screens',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -408,9 +597,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Screens',
-                        'slug' => 'screens'
-                    ]
-                ]
+                        'slug' => 'screens',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -429,9 +618,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Screens',
-                        'slug' => 'screens'
-                    ]
-                ]
+                        'slug' => 'screens',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -450,9 +639,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Screens',
-                        'slug' => 'screens'
-                    ]
-                ]
+                        'slug' => 'screens',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -471,9 +660,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -492,9 +681,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -513,9 +702,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -534,9 +723,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -555,9 +744,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -576,9 +765,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -597,9 +786,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -618,9 +807,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -639,9 +828,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -660,9 +849,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -681,9 +870,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -702,9 +891,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -723,9 +912,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -744,9 +933,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -765,9 +954,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -786,9 +975,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -807,9 +996,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -828,9 +1017,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -849,9 +1038,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -870,9 +1059,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -891,9 +1080,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -912,9 +1101,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -933,9 +1122,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -954,9 +1143,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -975,9 +1164,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -996,9 +1185,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1017,9 +1206,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1038,9 +1227,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1059,9 +1248,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1080,9 +1269,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1101,9 +1290,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1122,9 +1311,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1143,9 +1332,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1164,9 +1353,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1185,9 +1374,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1206,9 +1395,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1227,9 +1416,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1248,9 +1437,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1269,9 +1458,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1290,9 +1479,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1311,9 +1500,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1332,9 +1521,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1353,9 +1542,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1374,9 +1563,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1395,9 +1584,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1416,9 +1605,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1437,9 +1626,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1458,9 +1647,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1479,9 +1668,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1500,9 +1689,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1521,9 +1710,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1542,9 +1731,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1563,9 +1752,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1584,9 +1773,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1605,9 +1794,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1626,9 +1815,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1647,9 +1836,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1668,9 +1857,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1689,9 +1878,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1710,9 +1899,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1731,9 +1920,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Mirrors',
-                        'slug' => 'mirrors'
-                    ]
-                ]
+                        'slug' => 'mirrors',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1752,9 +1941,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Cabinets',
-                        'slug' => 'cabinets'
-                    ]
-                ]
+                        'slug' => 'cabinets',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1773,9 +1962,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Cabinets',
-                        'slug' => 'cabinets'
-                    ]
-                ]
+                        'slug' => 'cabinets',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1794,9 +1983,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Cabinets',
-                        'slug' => 'cabinets'
-                    ]
-                ]
+                        'slug' => 'cabinets',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1815,9 +2004,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Cabinets',
-                        'slug' => 'cabinets'
-                    ]
-                ]
+                        'slug' => 'cabinets',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1836,9 +2025,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Cabinets',
-                        'slug' => 'cabinets'
-                    ]
-                ]
+                        'slug' => 'cabinets',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1857,9 +2046,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Cabinets',
-                        'slug' => 'cabinets'
-                    ]
-                ]
+                        'slug' => 'cabinets',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1878,9 +2067,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Cabinets',
-                        'slug' => 'cabinets'
-                    ]
-                ]
+                        'slug' => 'cabinets',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1899,9 +2088,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Cabinets',
-                        'slug' => 'cabinets'
-                    ]
-                ]
+                        'slug' => 'cabinets',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1920,9 +2109,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Cabinets',
-                        'slug' => 'cabinets'
-                    ]
-                ]
+                        'slug' => 'cabinets',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1941,9 +2130,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Cabinets',
-                        'slug' => 'cabinets'
-                    ]
-                ]
+                        'slug' => 'cabinets',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1962,9 +2151,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Cabinets',
-                        'slug' => 'cabinets'
-                    ]
-                ]
+                        'slug' => 'cabinets',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -1983,9 +2172,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Cabinets',
-                        'slug' => 'cabinets'
-                    ]
-                ]
+                        'slug' => 'cabinets',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2004,9 +2193,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Cabinets',
-                        'slug' => 'cabinets'
-                    ]
-                ]
+                        'slug' => 'cabinets',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2025,9 +2214,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Cabinets',
-                        'slug' => 'cabinets'
-                    ]
-                ]
+                        'slug' => 'cabinets',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2046,9 +2235,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Cabinets',
-                        'slug' => 'cabinets'
-                    ]
-                ]
+                        'slug' => 'cabinets',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2067,9 +2256,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Cabinets',
-                        'slug' => 'cabinets'
-                    ]
-                ]
+                        'slug' => 'cabinets',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2088,9 +2277,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Cabinets',
-                        'slug' => 'cabinets'
-                    ]
-                ]
+                        'slug' => 'cabinets',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2109,9 +2298,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Cabinets',
-                        'slug' => 'cabinets'
-                    ]
-                ]
+                        'slug' => 'cabinets',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2130,9 +2319,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Cabinets',
-                        'slug' => 'cabinets'
-                    ]
-                ]
+                        'slug' => 'cabinets',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2151,9 +2340,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2172,9 +2361,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2193,9 +2382,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2214,9 +2403,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2235,9 +2424,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2256,9 +2445,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2277,9 +2466,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2298,9 +2487,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2319,9 +2508,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2340,9 +2529,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2361,9 +2550,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2382,9 +2571,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2403,9 +2592,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2424,9 +2613,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2445,9 +2634,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2466,9 +2655,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2487,9 +2676,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2508,9 +2697,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2529,9 +2718,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2550,9 +2739,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2571,9 +2760,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2592,9 +2781,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2613,9 +2802,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2634,9 +2823,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2655,9 +2844,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2676,9 +2865,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2697,9 +2886,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2718,9 +2907,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2739,9 +2928,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2760,9 +2949,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2781,9 +2970,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2802,9 +2991,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2823,9 +3012,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2844,9 +3033,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2865,9 +3054,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2886,9 +3075,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2907,9 +3096,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2928,9 +3117,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2949,9 +3138,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2970,9 +3159,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -2991,9 +3180,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3012,9 +3201,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Consoles',
-                        'slug' => 'consoles'
-                    ]
-                ]
+                        'slug' => 'consoles',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3033,9 +3222,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3054,9 +3243,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3075,9 +3264,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3096,9 +3285,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3117,9 +3306,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3138,9 +3327,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3159,9 +3348,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3180,9 +3369,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3201,9 +3390,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3222,9 +3411,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3243,9 +3432,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3264,9 +3453,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3285,9 +3474,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3306,9 +3495,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3327,9 +3516,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3348,9 +3537,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3369,9 +3558,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3390,9 +3579,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3411,9 +3600,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3432,9 +3621,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3453,9 +3642,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3474,9 +3663,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3495,9 +3684,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3516,9 +3705,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3537,9 +3726,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3558,9 +3747,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3579,9 +3768,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3600,9 +3789,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3621,9 +3810,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3642,9 +3831,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3663,9 +3852,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3684,9 +3873,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3705,9 +3894,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3726,9 +3915,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3747,9 +3936,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3768,9 +3957,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
             [
                 'type' => 'product',
@@ -3789,9 +3978,9 @@ class ProductSeeder extends Seeder
                     'slug' => 'casegoods',
                     'subcategory' => [
                         'name' => 'Sideboards',
-                        'slug' => 'sideboards'
-                    ]
-                ]
+                        'slug' => 'sideboards',
+                    ],
+                ],
             ],
         ];
 
@@ -3813,23 +4002,23 @@ class ProductSeeder extends Seeder
             // Só insere se encontrar todas as relações corretamente
             if ($brandId && $categoryId && $subcategoryId) {
                 $productsToInsert[] = [
-                    'brand_id'       => $brandId,
-                    'category_id'    => $categoryId,
+                    'brand_id' => $brandId,
+                    'category_id' => $categoryId,
                     'subcategory_id' => $subcategoryId,
-                    'type'           => $item['type'] ?? 'product',
-                    'name'           => $item['name'],
-                    'slug'           => $item['slug'],
-                    'description'    => $item['description'] ?? null,
-                    'dimensions_cm'  => isset($item['dimensions_cm']) ? json_encode($item['dimensions_cm']) : null,
-                    'dimensions_in'  => isset($item['dimensions_in']) ? json_encode($item['dimensions_in']) : null,
-                    'materials_and_finishes'    => $item['materials_and_finishes'] ?? null,
+                    'type' => $item['type'] ?? 'product',
+                    'name' => $item['name'],
+                    'slug' => $item['slug'],
+                    'description' => $item['description'] ?? null,
+                    'dimensions_cm' => isset($item['dimensions_cm']) ? json_encode($item['dimensions_cm']) : null,
+                    'dimensions_in' => isset($item['dimensions_in']) ? json_encode($item['dimensions_in']) : null,
+                    'materials_and_finishes' => $item['materials_and_finishes'] ?? null,
                     'visible_in_all_products' => $item['visible_in_all_products'] ?? false,
                     'show_on_brand_page' => $item['show_on_brand_page'] ?? false,
-                    'is_new'         => $item['is_new'] ?? false,
-                    'has_stock'      => $item['has_stock'] ?? false,
+                    'is_new' => $item['is_new'] ?? false,
+                    'has_stock' => $item['has_stock'] ?? false,
                     'is_best_seller' => $item['is_best_seller'] ?? false,
-                    'created_at'     => $now,
-                    'updated_at'     => $now,
+                    'created_at' => $now,
+                    'updated_at' => $now,
                 ];
             } else {
                 $this->command->warn("Produto '{$item['name']}' ignorado. Verifique se os slugs de Brand, Category ou Subcategory estão corretos.");
@@ -3837,9 +4026,9 @@ class ProductSeeder extends Seeder
         }
 
         // 4. Salva tudo no banco de dados com uma única query (Bulk Insert)
-        if (!empty($productsToInsert)) {
+        if (! empty($productsToInsert)) {
             Product::insert($productsToInsert);
-            $this->command->info(count($productsToInsert) . ' produtos inseridos com sucesso!');
+            $this->command->info(count($productsToInsert).' produtos inseridos com sucesso!');
         }
     }
 }
