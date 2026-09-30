@@ -34,15 +34,16 @@ return Application::configure(basePath: dirname(__DIR__))
                     ->setStatusCode(404);
             }
 
-            $response = parent::render($request, $e);
-            $status = $response->getStatusCode();
+            if ($e instanceof \Symfony\Component\HttpKernel\Exception\HttpExceptionInterface && !$request->wantsJson()) {
+                $status = $e->getStatusCode();
 
-            if (!app()->environment(['local', 'testing']) && in_array($status, [500, 503, 404, 403])) {
-                return Inertia::render('Error', ['status' => $status])
-                    ->toResponse($request)
-                    ->setStatusCode($status);
+                if (!app()->environment(['local', 'testing']) && in_array($status, [500, 503, 404, 403])) {
+                    return Inertia::render('Error', ['status' => $status])
+                        ->toResponse($request)
+                        ->setStatusCode($status);
+                }
             }
 
-            return $response;
+            return null;
         });
     })->create();
