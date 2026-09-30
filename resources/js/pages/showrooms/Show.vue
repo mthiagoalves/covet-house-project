@@ -20,14 +20,12 @@ const props = defineProps<{
 
 const { open: openGeneral } = useGeneralModal();
 
-const openBookVisit = () => {
-    openGeneral({
-        title: `VISIT ${props.showroom.name}`,
-        slug: `visit-${props.showroom.slug}`,
-        btnName: 'REQUEST VISIT',
-        formType: 'Visit'
-    });
-};
+openGeneral({
+    title: `VISIT ${props.showroom.name}`,
+    slug: `visit-${props.showroom.slug}`,
+    btnName: 'REQUEST VISIT',
+    formType: 'Visit'
+});
 
 const visitDescription = "Interior designers from all over the world are invited to come to Porto to celebrate design and the excellence of craftsmanship with Covet House. '48H with Covet House in Porto' consists of a visit to Covet House's brand new 4000 sqm showroom featuring a wide range of product categories and styles in a unique exhibition concept. The showroom features our famous best-selling designs and will be updated with new products every season. Moreover, visitors will tour the several production units and meet our skilled craftsmen in person while also being acquainted with our new and improved production capacity.";
 

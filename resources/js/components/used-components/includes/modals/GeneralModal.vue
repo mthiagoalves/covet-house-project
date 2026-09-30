@@ -1,10 +1,18 @@
 <script setup lang="ts">
 import { useForm, Link } from '@inertiajs/vue3';
-import { watch } from 'vue';
+import { ref, watch } from 'vue';
 import { useGeneralModal } from '@/composables/useGeneralModal';
 import { countries } from '@/data/countries';
 
 const { data, close } = useGeneralModal();
+
+// Permite que a animação de saída termine antes de fechar o modal no composable.
+const isVisible = ref(true);
+const submittedSuccessfully = ref(false);
+
+const requestClose = () => {
+    isVisible.value = false;
+};
 
 const form = useForm({
     profile_type: 'professional',
@@ -25,6 +33,15 @@ const form = useForm({
 
 });
 
+const afterLeave = () => {
+    close();
+
+    if (submittedSuccessfully.value) {
+        alert('Success! Your download should start shortly.');
+        form.reset();
+    }
+};
+
 watch(() => form.profile_type, (newProfile) => {
     if (newProfile === 'professional') {
         form.reset('phone');
@@ -36,9 +53,8 @@ watch(() => form.profile_type, (newProfile) => {
 const submit = () => {
     form.post('/downloads/general-download', {
         onSuccess: () => {
-            close();
-            alert('Success! Your download should start shortly.');
-            form.reset();
+            submittedSuccessfully.value = true;
+            requestClose();
         },
         onError: () => {
             alert('Please check the required fields.');
@@ -50,80 +66,103 @@ const inputClass = "w-full bg-white border border-gray-300 text-[10px] py-1.5 px
 </script>
 
 <template>
-    <transition enter-active-class="transition-opacity duration-300 ease-out" enter-from-class="opacity-0"
-        enter-to-class="opacity-100" leave-active-class="transition-opacity duration-200 ease-in"
-        leave-from-class="opacity-100" leave-to-class="opacity-0">
-        <div class="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4" @click.self="close">
-            <transition enter-active-class="transition-all duration-300 ease-out"
-                enter-from-class="opacity-0 -translate-y-10" enter-to-class="opacity-100 translate-y-0"
-                leave-active-class="transition-all duration-200 ease-in" leave-from-class="opacity-100 translate-y-0"
-                leave-to-class="opacity-0 -translate-y-10">
-                <div class="relative w-full max-w-2xl bg-white text-black shadow-xl py-4 px-6 text-center">
-                    <button @click="close"
-                        class="absolute top-1 right-4 text-3xl text-gray-400 hover:text-black cursor-pointer"
-                        aria-label="Fechar modal">
-                        &times;
-                    </button>
+    <Transition name="modal" appear @after-leave="afterLeave">
+        <div v-if="isVisible" class="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4"
+            @click.self="requestClose">
+            <div class="modal-panel relative w-full max-w-2xl bg-white text-black shadow-xl py-4 px-6 text-center">
+                <button @click="requestClose"
+                    class="absolute top-1 right-4 text-3xl text-gray-400 hover:text-black cursor-pointer"
+                    aria-label="Fechar modal">
+                    &times;
+                </button>
 
-                    <h2 class="text-[20px] mt-4 md:mt-0 font-bold uppercase" v-html="data.title"></h2>
-                    <p class="md:text-sm text-[11px] text-gray-600 mb-6">Please fill the following form to receive your
-                        request</p>
+                <h2 class="text-[20px] mt-4 md:mt-0 font-bold uppercase" v-html="data.title"></h2>
+                <p class="md:text-sm text-[11px] text-gray-600 mb-6">Please fill the following form to receive your
+                    request</p>
 
-                    <form @submit.prevent="submit" class="space-y-4 text-start">
-                        <p class="text-[10px] text-gray-600 mb-1">SELECT YOUR PROFILE:</p>
-                        <div class="flex gap-6 mb-4 text-sm">
+                <form @submit.prevent="submit" class="space-y-4 text-start">
+                    <p class="text-[10px] text-gray-600 mb-1">SELECT YOUR PROFILE:</p>
+                    <div class="flex gap-6 mb-4 text-sm">
 
-                            <label class="flex items-center gap-2 cursor-pointer text-[10px]">
-                                <input type="radio" v-model="form.profile_type" value="professional"
-                                    class="form-radio text-black focus:ring-black">
-                                PROFESSIONAL
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer text-[10px]">
-                                <input type="radio" v-model="form.profile_type" value="private_client"
-                                    class="form-radio text-black focus:ring-black">
-                                PRIVATE CLIENT
-                            </label>
+                        <label class="flex items-center gap-2 cursor-pointer text-[10px]">
+                            <input type="radio" v-model="form.profile_type" value="professional"
+                                class="form-radio text-black focus:ring-black">
+                            PROFESSIONAL
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer text-[10px]">
+                            <input type="radio" v-model="form.profile_type" value="private_client"
+                                class="form-radio text-black focus:ring-black">
+                            PRIVATE CLIENT
+                        </label>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input type="text" v-model="form.first_name" placeholder="FIRST NAME*" :class="inputClass"
+                            required>
+                        <input type="text" v-model="form.last_name" placeholder="LAST NAME*" :class="inputClass"
+                            required>
+                    </div>
+
+                    <input type="email" v-model="form.email" placeholder="EMAIL*" :class="inputClass" required>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input type="tel" v-model="form.phone" placeholder="PHONE*" :class="inputClass" required>
+                        <select v-model="form.country" :class="inputClass" required>
+                            <option value="" disabled>SELECT YOUR COUNTRY*</option>
+                            <option v-for="c in countries" :key="c.code" :value="c.name">{{ c.name }}</option>
+                        </select>
+                    </div>
+
+                    <div v-if="form.profile_type === 'professional'">
+                        <input type="text" v-model="form.company" placeholder="COMPANY*" :class="inputClass"
+                            required>
+                    </div>
+                    <div class="flex md:flex-row flex-col items-start justify-between">
+                        <label for="modal_terms" class="text-[9px] text-gray-500">
+                            BY CLICKING REQUEST YOU CONFIRM THAT YOU HAVE <br class="hidden md:block">
+                            READ AND ACCEPTED OUR
+                            <Link href="/privacy-policy" class="text-[#bca479]">PRIVACY POLICY.</Link>
+                        </label>
+                        <div class="md:text-right mt-2 md:mt-0 ml-auto md:ml-0">
+                            <button type="submit" :disabled="form.processing"
+                                class="bg-black text-[11px] text-white py-1.5 px-10 font-light tracking-wider hover:bg-gray-800 cursor-pointer">
+                                {{ form.processing ? 'PROCESSING...' : data.btnName }}
+
+                            </button>
                         </div>
+                    </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <input type="text" v-model="form.first_name" placeholder="FIRST NAME*" :class="inputClass"
-                                required>
-                            <input type="text" v-model="form.last_name" placeholder="LAST NAME*" :class="inputClass"
-                                required>
-                        </div>
-
-                        <input type="email" v-model="form.email" placeholder="EMAIL*" :class="inputClass" required>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <input type="tel" v-model="form.phone" placeholder="PHONE*" :class="inputClass" required>
-                            <select v-model="form.country" :class="inputClass" required>
-                                <option value="" disabled>SELECT YOUR COUNTRY*</option>
-                                <option v-for="c in countries" :key="c.code" :value="c.name">{{ c.name }}</option>
-                            </select>
-                        </div>
-
-                        <div v-if="form.profile_type === 'professional'">
-                            <input type="text" v-model="form.company" placeholder="COMPANY*" :class="inputClass"
-                                required>
-                        </div>
-                        <div class="flex md:flex-row flex-col items-start justify-between">
-                            <label for="modal_terms" class="text-[9px] text-gray-500">
-                                BY CLICKING REQUEST YOU CONFIRM THAT YOU HAVE <br class="hidden md:block">
-                                READ AND ACCEPTED OUR
-                                <Link href="/privacy-policy" class="text-[#bca479]">PRIVACY POLICY.</Link>
-                            </label>
-                            <div class="md:text-right mt-2 md:mt-0 ml-auto md:ml-0">
-                                <button type="submit" :disabled="form.processing"
-                                    class="bg-black text-[11px] text-white py-1.5 px-10 font-light tracking-wider hover:bg-gray-800 cursor-pointer">
-                                    {{ form.processing ? 'PROCESSING...' : data.btnName }}
-
-                                </button>
-                            </div>
-                        </div>
-
-                    </form>
-                </div>
-            </transition>
+                </form>
+            </div>
         </div>
-    </transition>
+    </Transition>
 </template>
+
+<style scoped>
+.modal-enter-active {
+    transition: opacity 300ms ease-out;
+}
+
+.modal-leave-active {
+    transition: opacity 200ms ease-in;
+}
+
+.modal-enter-from,
+.modal-leave-to {
+    opacity: 0;
+}
+
+.modal-enter-active .modal-panel {
+    transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+.modal-leave-active .modal-panel {
+    transition: opacity 200ms ease-in, transform 200ms ease-in;
+}
+
+.modal-enter-from .modal-panel,
+.modal-leave-to .modal-panel {
+    opacity: 0;
+    transform: translateY(-2.5rem);
+}
+</style>

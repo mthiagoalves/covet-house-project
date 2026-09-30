@@ -123,7 +123,7 @@ const onMainSwiperInit = (swiper: any) => {
 // Ao clicar na cor, muda o slide principal
 const goToSlide = (index: number) => {
     if (mainSwiperInstance.value) {
-        // @ts-ignore
+        // @ts-expect-error: incompatible type unknow
         mainSwiperInstance.value.slideTo(index);
     }
 };

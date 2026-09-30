@@ -118,8 +118,8 @@ const bestSellers = computed(() => {
         group.products.filter(item => item.type === 'product' && item.is_best_seller)
     ) as ProductData[];
 
-    // Proteção extra: Remove duplicatas caso o mesmo produto venha em subcategorias diferentes
-    const uniqueBestSellers = Array.from(new Map(extracted.map(item => [item.id, item])).values());
+    // Proteção extra: Remove duplicatas caso o mesmo produto venha em subcategorias diferentes (remover comentario apos temos todos os produtos em DB)
+    // const uniqueBestSellers = Array.from(new Map(extracted.map(item => [item.id, item])).values());
 
     return extracted;
 });
