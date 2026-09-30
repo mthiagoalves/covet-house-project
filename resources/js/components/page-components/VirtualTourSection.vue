@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-const props = defineProps<{
+const {virtualTourUrl, showroomName, showroomSlug} = defineProps<{
     showroomName: string;
     showroomSlug: string;
     virtualTourUrl: string;
