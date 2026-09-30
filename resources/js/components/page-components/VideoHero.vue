@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 
-const props = defineProps<{
+const { videoUrlBase } = defineProps<{
     videoUrlBase: string;
     title?: string;
     subtitle?: string;
@@ -9,8 +9,8 @@ const props = defineProps<{
 
 const videoPlayer = ref<HTMLVideoElement | null>(null);
 
-const mobileVideoUrl = computed(() => `${props.videoUrlBase}-mobile.mp4`);
-const desktopVideoUrlMp4 = computed(() => `${props.videoUrlBase}.mp4`);
+const mobileVideoUrl = computed(() => `${videoUrlBase}-mobile.mp4`);
+const desktopVideoUrlMp4 = computed(() => `${videoUrlBase}.mp4`);
 
 const isMuted = ref(true);
 function toggleMute() {
@@ -27,7 +27,7 @@ function toggleMute() {
         <video ref="videoPlayer" class="absolute inset-0 w-full h-full object-cover z-0" autoplay loop muted playsinline
             preload="auto">
             <source :src="desktopVideoUrlMp4" type="video/mp4" media="all and (min-width: 768px)">
-            <source :src="desktopVideoUrlMp4" type="video/mp4" media="(max-width: 767px)">
+            <source :src="mobileVideoUrl" type="video/mp4" media="(max-width: 767px)">
             O seu navegador não suporta a tag de vídeo.
         </video>
 

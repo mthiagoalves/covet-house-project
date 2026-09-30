@@ -22,7 +22,7 @@ const onSwiper = (swiper: SwiperType) => {
 
 const modules = [Autoplay, EffectFade, Navigation, Pagination];
 
-const props = defineProps<{
+defineProps<{
     projects: any[];
 }>();
 
