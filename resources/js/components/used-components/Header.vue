@@ -167,9 +167,6 @@ function onScroll() { isSticky.value = window.scrollY > 24 }
 onMounted(() => { window.addEventListener('scroll', onScroll) })
 onBeforeUnmount(() => { window.removeEventListener('scroll', onScroll) })
 
-const currentUrl = usePage().url;
-const isActive = (href: string) => currentUrl === href;
-
 const { open: openSearch } = useSearchModal();
 </script>
 <template>
