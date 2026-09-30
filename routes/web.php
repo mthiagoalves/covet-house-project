@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Laravel\Fortify\Features;
 
-Route::get('/', [PageController::class, 'index'])->name('homepage');
+Route::get('/', [PageController::class, 'index'])->name('home');
 
 Route::get('/all-products', [ProductController::class, 'allProducts'])->name('products.index');
 
