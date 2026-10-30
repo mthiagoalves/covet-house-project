@@ -3,7 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Finish;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Product;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 
 class FinishSeeder extends Seeder
@@ -13,14 +14,30 @@ class FinishSeeder extends Seeder
      */
     public function run(): void
     {
-        $finishes = [
-            ['name' => 'Standard', 'slug' => 'standard', 'visible' => true],
-            ['name' => 'Heritage', 'slug' => 'heritage', 'visible' => true],
-            ['name' => 'Walnut Edition', 'slug' => 'walnut', 'visible' => true],
+        // 1. Lista de acabamentos base para criar
+        $finishesList = [
+            'Standard',
+            'Walnut Wood',
+            'Oak Wood',
+            'Polished Brass',
+            'Brushed Brass',
+            'Copper',
+            'Nero Marquina Marble',
+            'Carrara Marble',
+            'Gold Plated',
+            'Black'
         ];
 
-        foreach ($finishes as $finish) {
-            Finish::create($finish);
+        $createdFinishes = [];
+
+        foreach ($finishesList as $finishName) {
+            $createdFinishes[] = Finish::firstOrCreate(
+                ['slug' => Str::slug($finishName)], 
+                [
+                    'name' => $finishName,
+                    'visible' => true
+                ]
+            );
         }
     }
 }
