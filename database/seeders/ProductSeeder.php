@@ -30,7 +30,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -51,7 +51,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -72,7 +72,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -93,7 +93,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -114,7 +114,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -135,7 +135,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -156,7 +156,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -177,7 +177,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -198,7 +198,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -219,7 +219,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -240,7 +240,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -261,7 +261,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -282,7 +282,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -303,7 +303,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -324,7 +324,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -345,7 +345,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -366,7 +366,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -387,7 +387,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -408,7 +408,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -429,7 +429,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -450,7 +450,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -471,7 +471,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -492,28 +492,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
-                    ],
-                ],
-            ],
-            [
-                'type' => 'product',
-                'name' => 'Davis Armchair',
-                'slug' => 'davis-armchair',
-                'is_new' => false,
-                'has_stock' => false,
-                'is_best_seller' => false,
-                'description' => 'Kansas Armchair button-tufted back chair is upholstered in synthetic leather and has an ebony wood veneer with glossy varnish legs, making it the perfect addition to any living room set. Each Spring, from 1866 to 1885, cowboys drove from Texas to railheads in Kansas. KANSAS Occasional Chair is a tribute to their courage.',
-                'dimensions_cm' => ['width' => '74 cm', 'depth' => '78 cm', 'height' => '101 cm', 'seat depth' => '53 cm', 'seat height' => '43 cm', 'armrest height' => '58 cm'],
-                'dimensions_in' => ['width' => '29.13"', 'depth' => '35.04"', 'height' => '39"', 'seat depth' => '20.87"', 'seat height' => '16.90"', 'armrest height' => '22.83'],
-                'brand' => ['name' => 'BRABBU', 'slug' => 'brabbu'],
-                'materials_and_finishes' => 'COL 100,1 sq ft, COM 6,5 mts | 255,90” (Standard width 1,40mts | 55”), FABRIC Cotton velvet, FABRIC NEEDED 6,5 mts | 255,90” (Standard width 1,40mts | 55”), FABRIC REFERENCE BB MOSS I - Colour 31, LEGS Green matte lacquered',
-                'category' => [
-                    'name' => 'Seating',
-                    'slug' => 'seating',
-                    'subcategory' => [
-                        'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -534,7 +513,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -555,7 +534,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -576,7 +555,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -597,7 +576,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -618,7 +597,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -639,7 +618,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -660,7 +639,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -681,7 +660,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -702,7 +681,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -723,7 +702,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -744,7 +723,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -765,7 +744,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -786,7 +765,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -807,7 +786,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -828,7 +807,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -849,7 +828,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -870,7 +849,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -891,7 +870,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -912,7 +891,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -933,7 +912,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -954,7 +933,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -975,7 +954,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -996,7 +975,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -1017,7 +996,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -1038,7 +1017,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -1059,7 +1038,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -1080,7 +1059,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -1101,7 +1080,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -1122,7 +1101,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -1143,7 +1122,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -1164,7 +1143,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -1185,7 +1164,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -1206,7 +1185,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -1227,7 +1206,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -1248,7 +1227,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -1269,7 +1248,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -1290,7 +1269,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -1311,7 +1290,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -1332,7 +1311,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -1353,7 +1332,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -1374,7 +1353,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -1395,7 +1374,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -1416,28 +1395,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
-                    ],
-                ],
-            ],
-            [
-                'type' => 'product',
-                'name' => 'Anguis Armchair',
-                'slug' => 'anguis-armchair',
-                'is_new' => false,
-                'has_stock' => false,
-                'is_best_seller' => false,
-                'description' => 'Anguis Modern Armchair, by Luxxu, is a modern upholstery solution that stands out in any lounge or living room due to its contrasting yet harmonious textures. The round shape ensures comfort, while the brass legs contrast with the black velvet and wood finish to create a sophisticated and lavish armchair. Made only with the finest materials, it brings a touch of luxury to any interior.',
-                'dimensions_cm' => ['width' => '77 cm', 'depth' => '60 cm', 'height' => '77 cm', 'seat depth' => '44 cm', 'seat height' => '48 cm'],
-                'dimensions_in' => ['width' => '30.31"', 'depth' => '23.62"', 'height' => '30.31"', 'seat depth' => '17.32"', 'seat height' => '18.9"'],
-                'brand' => ['name' => 'LUXXU', 'slug' => 'luxxu'],
-                'materials_and_finishes' => 'Chronus Dark Black, Polished Brass Glossy, Safety Velvet Stopfire Fr 23 Charcoal Gray, Walnut Root Glossy Wood Veneer',
-                'category' => [
-                    'name' => 'Seating',
-                    'slug' => 'seating',
-                    'subcategory' => [
-                        'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -1458,7 +1416,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -1479,7 +1437,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -1500,7 +1458,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -1521,7 +1479,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -1542,7 +1500,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
@@ -1563,7 +1521,7 @@ class ProductSeeder extends Seeder
                     'slug' => 'seating',
                     'subcategory' => [
                         'name' => 'Armchairs',
-                        'slug' => 'Armchairs',
+                        'slug' => 'armchairs',
                     ],
                 ],
             ],
