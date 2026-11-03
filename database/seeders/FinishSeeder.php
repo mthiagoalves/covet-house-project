@@ -25,7 +25,17 @@ class FinishSeeder extends Seeder
             'Nero Marquina Marble',
             'Carrara Marble',
             'Gold Plated',
-            'Black'
+            'Black',
+            'White',
+            'Beauty Green',
+            'Paris Pink',
+            'Paris Light Grey',
+            'Paris Light Blue',
+            'Milk Velvet',
+            'Venus Yellow',
+            'Venus Lilac',
+            'Paris Cream',
+            'Paris Mouse'
         ];
 
         $createdFinishes = [];
